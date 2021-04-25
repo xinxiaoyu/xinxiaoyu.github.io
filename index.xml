@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 25 Apr 2021 16:37:08 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>腾讯云Mysql物理备份恢复</title>
-      <link>https://xinxiaoyu.github.io/post/mysql-recovery/</link>
+      <link>https://xinxiaoyu.github.io/post/2020-04/mysql-recovery/</link>
       <pubDate>Sun, 25 Apr 2021 16:37:08 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/mysql-recovery/</guid>
+      <guid>https://xinxiaoyu.github.io/post/2020-04/mysql-recovery/</guid>
       <description>使用物理备份恢复数据库（使用物理备份恢复数据库）
 建议使用两台机器进行操作，一台安装 XtraBackup（2.4.6 及以上的版本） 工具，另一台安装MySQL server5.7。（因为两者依赖的库可能存在冲突）
 确认恢复方案，找到相应的全量备份，binlog文件。
