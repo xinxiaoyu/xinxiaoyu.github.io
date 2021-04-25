@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 堂吉诃德</title>
-    <link>https://xinxiaoyu.github.io/post/</link>
-    <description>Recent content in Posts on 堂吉诃德</description>
+    <title>数据库MySQL on 堂吉诃德</title>
+    <link>https://xinxiaoyu.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93mysql/</link>
+    <description>Recent content in 数据库MySQL on 堂吉诃德</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 25 Apr 2021 16:37:08 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Apr 2021 16:37:08 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>腾讯云Mysql物理备份恢复</title>
       <link>https://xinxiaoyu.github.io/post/2021-04/mysql-recovery/</link>
