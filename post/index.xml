@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 21 May 2021 17:09:05 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 20:01:36 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python的selenium库使用汇总</title>
+      <link>http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
+      
+      <guid>http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
+      <description>一、 下载对应浏览器的webdriver 如chrome对应的下载地址： https://chromedriver.chromium.org/downloads 二、 本地起一个debug端口 如windows的cmd中的命令为： C:\abs_path\chrome.exe --remote-debugging-port=9222 --user-data-dir=&amp;quot;C:\selenum\AutomationProfile&amp;quot; 这会打开一个浏览器窗口（新标签页） 三、 在上面打开的浏览器窗口中可以先人工做相关的登录操作，从而避免认证（如需要登录）的问题。 这个窗口就是se</description>
+    </item>
+    
+    <item>
+      <title>Docker镜像清理</title>
+      <link>http://blog.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
+      <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
+      
+      <guid>http://blog.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
+      <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos ~]# docker system df TYPE TOTAL SIZE RECLAIMABLE Images 955 77.06GB 74.21GB (96%) Containers 65 3.28MB 0B (0%) Local Volumes 0 0B 0B Build Cache 0 0B 0B 最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。 可以回收的镜</description>
+    </item>
+    
     <item>
       <title>Hugo使用</title>
       <link>http://blog.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</link>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 堂吉哈哈德的博客</title>
+    <link>http://blog.tangjihede.fun/categories/Python/</link>
+    <description>Recent content in Python on 堂吉哈哈德的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 21 May 2021 20:01:36 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/categories/Python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python的selenium库使用汇总</title>
+      <link>http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
+      
+      <guid>http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
+      <description>一、 下载对应浏览器的webdriver 如chrome对应的下载地址： https://chromedriver.chromium.org/downloads 二、 本地起一个debug端口 如windows的cmd中的命令为： C:\abs_path\chrome.exe --remote-debugging-port=9222 --user-data-dir=&amp;quot;C:\selenum\AutomationProfile&amp;quot; 这会打开一个浏览器窗口（新标签页） 三、 在上面打开的浏览器窗口中可以先人工做相关的登录操作，从而避免认证（如需要登录）的问题。 这个窗口就是se</description>
+    </item>
+    
+  </channel>
+</rss>
