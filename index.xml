@@ -6,7 +6,16 @@
     <description>Recent content on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 21 May 2021 20:01:36 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 May 2021 10:13:46 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL用户权限汇总</title>
+      <link>http://blog.tangjihede.fun/post/mysql_privileges/</link>
+      <pubDate>Mon, 24 May 2021 10:13:46 +0800</pubDate>
+      
+      <guid>http://blog.tangjihede.fun/post/mysql_privileges/</guid>
+      <description>一、 全局权限,作用于整个 MySQL 实例：mysql.user表 mysql&amp;gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user; +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | Host | User | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | % | lang | Y | Y | Y | Y | N | N | | 192.168.2.% | lang | Y | Y | Y | Y | N | N | | localhost | mysql.infoschema | Y | N | N | N | N | N | | localhost | mysql.session | N | N | N | N | N | N | | localhost | mysql.sys | N | N | N | N | N | N | | localhost</description>
+    </item>
+    
     <item>
       <title>Tools</title>
       <link>http://blog.tangjihede.fun/tools/</link>
@@ -59,6 +68,24 @@
       
       <guid>http://blog.tangjihede.fun/archives/</guid>
       <description>title: &amp;ldquo;归档&amp;rdquo; description: devops type: archives</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://blog.tangjihede.fun/series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.tangjihede.fun/series/</guid>
+      <description>title: &amp;quot;&amp;quot; description: 系列 type: series</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://blog.tangjihede.fun/tags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.tangjihede.fun/tags/</guid>
+      <description>title: &amp;ldquo;标签&amp;rdquo; description: devops type: tags</description>
     </item>
     
     <item>

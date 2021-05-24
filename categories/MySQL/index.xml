@@ -6,7 +6,16 @@
     <description>Recent content in MySQL on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 21 May 2021 15:35:48 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/categories/MySQL/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 May 2021 10:13:46 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/categories/MySQL/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL用户权限汇总</title>
+      <link>http://blog.tangjihede.fun/post/mysql_privileges/</link>
+      <pubDate>Mon, 24 May 2021 10:13:46 +0800</pubDate>
+      
+      <guid>http://blog.tangjihede.fun/post/mysql_privileges/</guid>
+      <description>一、 全局权限,作用于整个 MySQL 实例：mysql.user表 mysql&amp;gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user; +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | Host | User | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | % | lang | Y | Y | Y | Y | N | N | | 192.168.2.% | lang | Y | Y | Y | Y | N | N | | localhost | mysql.infoschema | Y | N | N | N | N | N | | localhost | mysql.session | N | N | N | N | N | N | | localhost | mysql.sys | N | N | N | N | N | N | | localhost</description>
+    </item>
+    
     <item>
       <title>腾讯云Mysql物理备份恢复数据库</title>
       <link>http://blog.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>

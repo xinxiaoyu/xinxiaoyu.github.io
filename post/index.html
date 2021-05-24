@@ -77,6 +77,31 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.tangjihede.fun/post/mysql_privileges/" title="MySQL用户权限汇总">MySQL用户权限汇总</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月24日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/MySQL'>MySQL</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            一、 全局权限,作用于整个 MySQL 实例：mysql.user表 mysql&gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user; +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | Host | User | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | % | lang | Y | Y | Y | Y | N | N | | 192.168.2.% | lang | Y | Y | Y | Y | N | N | | localhost | mysql.infoschema | Y | N | N | N | N | N | | localhost | mysql.session | N | N | N | N | N | N | | localhost | mysql.sys | N | N | N | N | N | N | | localhost……
+        </div>
+        <p class="readmore"><a href="http://blog.tangjihede.fun/post/mysql_privileges/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/" title="Python的selenium库使用汇总">Python的selenium库使用汇总</a>
             </h1>
         </header>
@@ -240,6 +265,10 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.tangjihede.fun/post/mysql_privileges/" title="MySQL用户权限汇总">MySQL用户权限汇总</a>
+    </li>
+    
+    <li>
         <a href="http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/" title="Python的selenium库使用汇总">Python的selenium库使用汇总</a>
     </li>
     
@@ -268,7 +297,7 @@ if (!doNotTrack) {
     
     <li><a href="http://blog.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
     
-    <li><a href="http://blog.tangjihede.fun/categories/MySQL/">MySQL (1)</a></li>
+    <li><a href="http://blog.tangjihede.fun/categories/MySQL/">MySQL (2)</a></li>
     
     <li><a href="http://blog.tangjihede.fun/categories/Python/">Python (1)</a></li>
     
@@ -278,6 +307,8 @@ if (!doNotTrack) {
     <section class="widget">
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="http://blog.tangjihede.fun/tags/2021-Q2/">2021-Q2</a>
     
 </div>
     </section>
