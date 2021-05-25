@@ -9,21 +9,21 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>2021-Q2 | 堂吉哈哈德的博客</title>
-    <meta property="og:title" content="2021-Q2 - 堂吉哈哈德的博客">
+    <title>Ansible | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Ansible - 堂吉哈哈德的博客">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="2021-Q2">
+    <meta name="description" content="Ansible">
         
     <meta name="author" content="堂吉哈哈德">
-    <meta property="og:url" content="http://blog.tangjihede.fun/tags/2021-Q2/">
+    <meta property="og:url" content="http://blog.tangjihede.fun/categories/Ansible/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml" href="http://blog.tangjihede.fun/tags/2021-Q2/index.xml" title="堂吉哈哈德的博客" />
+    <link rel="alternate" type="application/rss+xml" href="http://blog.tangjihede.fun/categories/Ansible/index.xml" title="堂吉哈哈德的博客" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -74,9 +74,9 @@
 <div class="res-cons">
     
     <h3 class="archive-title">
-        包含标签
-        <span class="keyword">2021-Q2</span>
-        的文章
+        分类
+        <span class="keyword">Ansible</span>
+        中的文章
     </h3>
     
 
@@ -84,115 +84,23 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="http://blog.tangjihede.fun/post/mysql_privileges/">MySQL用户权限汇总</a>
+                <a href="http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/">Ansible知识点</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2021年5月24日
+            2019年11月13日
         </date>
         
         <div class="post-meta meta-category">
             |
             
-            <a href='/categories/MySQL'>MySQL</a>
+            <a href='/categories/Ansible'>Ansible</a>
             
         </div>
         
         <div class="post-content">
-            一、 全局权限,作用于整个 MySQL 实例：mysql.user表 mysql&gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user; +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | Host | User | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | % | lang | Y | Y | Y | Y | N | N | | 192.168.2.% | lang | Y | Y | Y | Y | N | N | | localhost | mysql.infoschema | Y | N | N | N | N | N | | localhost | mysql.session | N | N | N | N | N | N | | localhost | mysql.sys | N | N | N | N | N | N | | localhost……
-            <p class="readmore"><a href="http://blog.tangjihede.fun/post/mysql_privileges/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/">Python的selenium库使用汇总</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年5月21日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Python'>Python</a>
-            
-        </div>
-        
-        <div class="post-content">
-            一、 下载对应浏览器的webdriver 如chrome对应的下载地址： https://chromedriver.chromium.org/downloads 二、 本地起一个debug端口 如windows的cmd中的命令为： C:\abs_path\chrome.exe --remote-debugging-port=9222 --user-data-dir=&quot;C:\selenum\AutomationProfile&quot; 这会打开一个浏览器窗口（新标签页） 三、 在上面打开的浏览器窗口中可以先人工做相关的登录操作，从而避免认证（如需要登录）的问题。 这个窗口就是se……
-            <p class="readmore"><a href="http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/">Docker镜像清理</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年5月21日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Kubernetes'>Kubernetes</a>
-            
-        </div>
-        
-        <div class="post-content">
-            运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos ~]# docker system df TYPE TOTAL SIZE RECLAIMABLE Images 955 77.06GB 74.21GB (96%) Containers 65 3.28MB 0B (0%) Local Volumes 0 0B 0B Build Cache 0 0B 0B 最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。 可以回收的镜……
-            <p class="readmore"><a href="http://blog.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/">Hugo使用</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年5月21日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Hugo'>Hugo</a>
-            
-        </div>
-        
-        <div class="post-content">
-            零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个blog的项目为： hugo new site blog ## hugo为下载的hugo执行文件，如windows平台的应该为\path\hugo.exe 然后我们一般会直接进入到blog目录中操作。 cd blog 一、 主题使用，地址 https://github.com/flysnow-org/maupassant-hugo 该页面有使用的文档。 注意创建文章的命令为hugo new post……
-            <p class="readmore"><a href="http://blog.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/">腾讯云Mysql物理备份恢复数据库</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年5月21日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/MySQL'>MySQL</a>
-            
-        </div>
-        
-        <div class="post-content">
-            使用物理备份恢复数据库（使用物理备份恢复数据库） 建议使用两台机器进行操作，一台安装 XtraBackup（2.4.6 及以上的版本） 工具，另一台安装MySQL server5.7。（因为两者依赖的库可能存在冲突） 确认恢复方案，找到相应的全量备份，binlog文件。 Percona XtraBackup……
-            <p class="readmore"><a href="http://blog.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/">阅读全文</a></p>
+            1. 指定单个ip运行（使用root用户) ansible all -i 10.10.120.255, -m ping -u root #检测连接是否正常 10.10.120.255 | SUCCESS =&gt; { &quot;ansible_facts&quot;: { &quot;discovered_interpreter_python&quot;: &quot;/usr/bin/python&quot; }, &quot;changed&quot;: false, &quot;ping&quot;: &quot;pong&quot; } 还有setup模块打印出的信息，在使用变量/判断的时候可以拿到很多有用的信息，比如指定操作系统平台或版本信息 ansible-playbook all -i 10.10.1.3, test.yml ansible-playbook的用法 2. 使用yum安装htt……
+            <p class="readmore"><a href="http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/">阅读全文</a></p>
         </div>
     </article>
     

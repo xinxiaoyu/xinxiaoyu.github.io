@@ -199,6 +199,56 @@
     
     
     
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.tangjihede.fun/post/lvm/" title="LVM在线扩容分区空间">LVM在线扩容分区空间</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年8月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Linux'>Linux</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            LVM一般用于linux/unix系统在线扩容磁盘空间，典型的场景比如说根分区（已是LVM）磁盘快满了，文件又不能删，这时候LVM就上场了。 LVM扩容其实一共有4步操作： 1、将新盘或新分区创建为PV 2、将此PV加入已有的VG 3、扩容LV（在此VG上） 4、系统识别（生效操作） 比如我……
+        </div>
+        <p class="readmore"><a href="http://blog.tangjihede.fun/post/lvm/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Ansible知识点">Ansible知识点</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年11月13日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Ansible'>Ansible</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1. 指定单个ip运行（使用root用户) ansible all -i 10.10.120.255, -m ping -u root #检测连接是否正常 10.10.120.255 | SUCCESS =&gt; { &quot;ansible_facts&quot;: { &quot;discovered_interpreter_python&quot;: &quot;/usr/bin/python&quot; }, &quot;changed&quot;: false, &quot;ping&quot;: &quot;pong&quot; } 还有setup模块打印出的信息，在使用变量/判断的时候可以拿到很多有用的信息，比如指定操作系统平台或版本信息 ansible-playbook all -i 10.10.1.3, test.yml ansible-playbook的用法 2. 使用yum安装htt……
+        </div>
+        <p class="readmore"><a href="http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/">阅读全文</a></p>
+    </article>
+    
+    
+    
 
 
 
@@ -284,6 +334,14 @@ if (!doNotTrack) {
         <a href="http://blog.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/" title="腾讯云Mysql物理备份恢复数据库">腾讯云Mysql物理备份恢复数据库</a>
     </li>
     
+    <li>
+        <a href="http://blog.tangjihede.fun/post/lvm/" title="LVM在线扩容分区空间">LVM在线扩容分区空间</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Ansible知识点">Ansible知识点</a>
+    </li>
+    
 </ul>
     </section>
 
@@ -293,9 +351,13 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
+    <li><a href="http://blog.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
+    
     <li><a href="http://blog.tangjihede.fun/categories/Hugo/">Hugo (1)</a></li>
     
     <li><a href="http://blog.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
+    <li><a href="http://blog.tangjihede.fun/categories/Linux/">Linux (1)</a></li>
     
     <li><a href="http://blog.tangjihede.fun/categories/MySQL/">MySQL (2)</a></li>
     
@@ -307,6 +369,10 @@ if (!doNotTrack) {
     <section class="widget">
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="http://blog.tangjihede.fun/tags/2019-Q4/">2019-Q4</a>
+    
+    <a href="http://blog.tangjihede.fun/tags/2020-Q3/">2020-Q3</a>
     
     <a href="http://blog.tangjihede.fun/tags/2021-Q2/">2021-Q2</a>
     

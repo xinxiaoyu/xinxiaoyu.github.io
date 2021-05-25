@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ansible on 堂吉哈哈德的博客</title>
+    <link>http://blog.tangjihede.fun/categories/Ansible/</link>
+    <description>Recent content in Ansible on 堂吉哈哈德的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Nov 2019 17:52:22 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/categories/Ansible/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible知识点</title>
+      <link>http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Wed, 13 Nov 2019 17:52:22 +0800</pubDate>
+      
+      <guid>http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <description>1. 指定单个ip运行（使用root用户) ansible all -i 10.10.120.255, -m ping -u root #检测连接是否正常 10.10.120.255 | SUCCESS =&amp;gt; { &amp;quot;ansible_facts&amp;quot;: { &amp;quot;discovered_interpreter_python&amp;quot;: &amp;quot;/usr/bin/python&amp;quot; }, &amp;quot;changed&amp;quot;: false, &amp;quot;ping&amp;quot;: &amp;quot;pong&amp;quot; } 还有setup模块打印出的信息，在使用变量/判断的时候可以拿到很多有用的信息，比如指定操作系统平台或版本信息 ansible-playbook all -i 10.10.1.3, test.yml ansible-playbook的用法 2. 使用yum安装htt</description>
+    </item>
+    
+  </channel>
+</rss>
