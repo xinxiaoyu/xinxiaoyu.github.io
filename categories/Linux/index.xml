@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on 堂吉哈哈德的博客</title>
-    <link>https://www..tangjihede.fun/categories/Linux/</link>
+    <link>https://www.tangjihede.fun/categories/Linux/</link>
     <description>Recent content in Linux on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 01 Aug 2020 12:49:14 +0800</lastBuildDate><atom:link href="https://www..tangjihede.fun/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Aug 2020 12:49:14 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LVM在线扩容分区空间</title>
-      <link>https://www..tangjihede.fun/post/lvm/</link>
+      <link>https://www.tangjihede.fun/post/lvm/</link>
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
-      <guid>https://www..tangjihede.fun/post/lvm/</guid>
+      <guid>https://www.tangjihede.fun/post/lvm/</guid>
       <description>LVM一般用于linux/unix系统在线扩容磁盘空间，典型的场景比如说根分区（已是LVM）磁盘快满了，文件又不能删，这时候LVM就上场了。 LVM扩容其实一共有4步操作： 1、将新盘或新分区创建为PV 2、将此PV加入已有的VG 3、扩容LV（在此VG上） 4、系统识别（生效操作） 比如我</description>
     </item>
     

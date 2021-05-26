@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on 堂吉哈哈德的博客</title>
-    <link>https://www..tangjihede.fun/categories/Kubernetes/</link>
+    <link>https://www.tangjihede.fun/categories/Kubernetes/</link>
     <description>Recent content in Kubernetes on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 21 May 2021 19:48:19 +0800</lastBuildDate><atom:link href="https://www..tangjihede.fun/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 19:48:19 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker镜像清理</title>
-      <link>https://www..tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
+      <link>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
       <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://www..tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
+      <guid>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
       <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos ~]# docker system df TYPE TOTAL SIZE RECLAIMABLE Images 955 77.06GB 74.21GB (96%) Containers 65 3.28MB 0B (0%) Local Volumes 0 0B 0B Build Cache 0 0B 0B 最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。 可以回收的镜</description>
     </item>
     
