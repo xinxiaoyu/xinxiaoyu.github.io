@@ -62,6 +62,15 @@
     </item>
     
     <item>
+      <title>LVS</title>
+      <link>https://www.tangjihede.fun/post/lvs/</link>
+      <pubDate>Thu, 26 Nov 2020 19:18:54 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/lvs/</guid>
+      <description>1.1 初步介绍 负载均衡（Load balancing）是运维工程师必须要掌握的一项技术，因为其应用广泛且往往位于业务的核心位置。广义上的负载均衡是指将一组任务分配到一组资源（计算单元）上的过程。在运维领域里，则基本上是和WEB类型的业务打交道，即主要处理TCP、HTTP、HTTPS等协</description>
+    </item>
+    
+    <item>
       <title>LVM在线扩容分区空间</title>
       <link>https://www.tangjihede.fun/post/lvm/</link>
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
