@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on 堂吉哈哈德的博客</title>
-    <link>http://blog.tangjihede.fun/categories/Hugo/</link>
+    <link>https://www..tangjihede.fun/categories/Hugo/</link>
     <description>Recent content in Hugo on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 21 May 2021 17:09:05 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/categories/Hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 17:09:05 +0800</lastBuildDate><atom:link href="https://www..tangjihede.fun/categories/Hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo使用</title>
-      <link>http://blog.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</link>
+      <link>https://www..tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://www..tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
       <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个blog的项目为： hugo new site blog ## hugo为下载的hugo执行文件，如windows平台的应该为\path\hugo.exe 然后我们一般会直接进入到blog目录中操作。 cd blog 一、 主题使用，地址 https://github.com/flysnow-org/maupassant-hugo 该页面有使用的文档。 注意创建文章的命令为hugo new post</description>
     </item>
     

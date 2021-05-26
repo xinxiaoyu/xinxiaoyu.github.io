@@ -2,116 +2,116 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>堂吉哈哈德的博客</title>
-    <link>http://blog.tangjihede.fun/</link>
+    <link>https://www..tangjihede.fun/</link>
     <description>Recent content on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 24 May 2021 10:13:46 +0800</lastBuildDate><atom:link href="http://blog.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 May 2021 10:13:46 +0800</lastBuildDate><atom:link href="https://www..tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL用户权限汇总</title>
-      <link>http://blog.tangjihede.fun/post/mysql_privileges/</link>
+      <link>https://www..tangjihede.fun/post/mysql_privileges/</link>
       <pubDate>Mon, 24 May 2021 10:13:46 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/post/mysql_privileges/</guid>
+      <guid>https://www..tangjihede.fun/post/mysql_privileges/</guid>
       <description>一、 全局权限,作用于整个 MySQL 实例：mysql.user表 mysql&amp;gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user; +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | Host | User | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | % | lang | Y | Y | Y | Y | N | N | | 192.168.2.% | lang | Y | Y | Y | Y | N | N | | localhost | mysql.infoschema | Y | N | N | N | N | N | | localhost | mysql.session | N | N | N | N | N | N | | localhost | mysql.sys | N | N | N | N | N | N | | localhost</description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>http://blog.tangjihede.fun/tools/</link>
+      <link>https://www..tangjihede.fun/tools/</link>
       <pubDate>Fri, 21 May 2021 20:48:18 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/tools/</guid>
+      <guid>https://www..tangjihede.fun/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python的selenium库使用汇总</title>
-      <link>http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
+      <link>https://www..tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
       <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://www..tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
       <description>一、 下载对应浏览器的webdriver 如chrome对应的下载地址： https://chromedriver.chromium.org/downloads 二、 本地起一个debug端口 如windows的cmd中的命令为： C:\abs_path\chrome.exe --remote-debugging-port=9222 --user-data-dir=&amp;quot;C:\selenum\AutomationProfile&amp;quot; 这会打开一个浏览器窗口（新标签页） 三、 在上面打开的浏览器窗口中可以先人工做相关的登录操作，从而避免认证（如需要登录）的问题。 这个窗口就是se</description>
     </item>
     
     <item>
       <title>Docker镜像清理</title>
-      <link>http://blog.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
+      <link>https://www..tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
       <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
+      <guid>https://www..tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
       <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos ~]# docker system df TYPE TOTAL SIZE RECLAIMABLE Images 955 77.06GB 74.21GB (96%) Containers 65 3.28MB 0B (0%) Local Volumes 0 0B 0B Build Cache 0 0B 0B 最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。 可以回收的镜</description>
     </item>
     
     <item>
       <title>Hugo使用</title>
-      <link>http://blog.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</link>
+      <link>https://www..tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://www..tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
       <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个blog的项目为： hugo new site blog ## hugo为下载的hugo执行文件，如windows平台的应该为\path\hugo.exe 然后我们一般会直接进入到blog目录中操作。 cd blog 一、 主题使用，地址 https://github.com/flysnow-org/maupassant-hugo 该页面有使用的文档。 注意创建文章的命令为hugo new post</description>
     </item>
     
     <item>
       <title>腾讯云Mysql物理备份恢复数据库</title>
-      <link>http://blog.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>https://www..tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Fri, 21 May 2021 15:35:48 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>https://www..tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>使用物理备份恢复数据库（使用物理备份恢复数据库） 建议使用两台机器进行操作，一台安装 XtraBackup（2.4.6 及以上的版本） 工具，另一台安装MySQL server5.7。（因为两者依赖的库可能存在冲突） 确认恢复方案，找到相应的全量备份，binlog文件。 Percona XtraBackup</description>
     </item>
     
     <item>
       <title>LVM在线扩容分区空间</title>
-      <link>http://blog.tangjihede.fun/post/lvm/</link>
+      <link>https://www..tangjihede.fun/post/lvm/</link>
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/post/lvm/</guid>
+      <guid>https://www..tangjihede.fun/post/lvm/</guid>
       <description>LVM一般用于linux/unix系统在线扩容磁盘空间，典型的场景比如说根分区（已是LVM）磁盘快满了，文件又不能删，这时候LVM就上场了。 LVM扩容其实一共有4步操作： 1、将新盘或新分区创建为PV 2、将此PV加入已有的VG 3、扩容LV（在此VG上） 4、系统识别（生效操作） 比如我</description>
     </item>
     
     <item>
       <title>Ansible知识点</title>
-      <link>http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <link>https://www..tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
       <pubDate>Wed, 13 Nov 2019 17:52:22 +0800</pubDate>
       
-      <guid>http://blog.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <guid>https://www..tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
       <description>1. 指定单个ip运行（使用root用户) ansible all -i 10.10.120.255, -m ping -u root #检测连接是否正常 10.10.120.255 | SUCCESS =&amp;gt; { &amp;quot;ansible_facts&amp;quot;: { &amp;quot;discovered_interpreter_python&amp;quot;: &amp;quot;/usr/bin/python&amp;quot; }, &amp;quot;changed&amp;quot;: false, &amp;quot;ping&amp;quot;: &amp;quot;pong&amp;quot; } 还有setup模块打印出的信息，在使用变量/判断的时候可以拿到很多有用的信息，比如指定操作系统平台或版本信息 ansible-playbook all -i 10.10.1.3, test.yml ansible-playbook的用法 2. 使用yum安装htt</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://blog.tangjihede.fun/archives/</link>
+      <link>https://www..tangjihede.fun/archives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.tangjihede.fun/archives/</guid>
+      <guid>https://www..tangjihede.fun/archives/</guid>
       <description>title: &amp;ldquo;归档&amp;rdquo; description: devops type: archives</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://blog.tangjihede.fun/series/</link>
+      <link>https://www..tangjihede.fun/series/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.tangjihede.fun/series/</guid>
+      <guid>https://www..tangjihede.fun/series/</guid>
       <description>title: &amp;quot;&amp;quot; description: 系列 type: series</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://blog.tangjihede.fun/tags/</link>
+      <link>https://www..tangjihede.fun/tags/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.tangjihede.fun/tags/</guid>
+      <guid>https://www..tangjihede.fun/tags/</guid>
       <description>title: &amp;ldquo;标签&amp;rdquo; description: devops type: tags</description>
     </item>
     
     <item>
       <title>搜索</title>
-      <link>http://blog.tangjihede.fun/search/</link>
+      <link>https://www..tangjihede.fun/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.tangjihede.fun/search/</guid>
+      <guid>https://www..tangjihede.fun/search/</guid>
       <description></description>
     </item>
     
