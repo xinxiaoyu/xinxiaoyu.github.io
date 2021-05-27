@@ -104,6 +104,29 @@
         </div>
     </article>
     
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.tangjihede.fun/post/kubectl_command/">Kubectl常用命令汇总</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月26日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            从容器中拷贝文件 1 kubectl cp -n namespace pod_name:app/test.txt ./test.txt 查看pod详情 1 kubectl describe pods -n namespace 删除节点 1 2 3 4 5 6 7 #先停止服务 systemctl stop docker systemctl stop kubelet kubectl delete node node_name 删除pod 1 2 3 4 kubectl delete pod pod_name -n namespace 强制删除 kubectl delete pod pod_name -n namespace --grace-period=0 --force 回滚 kubectl rollout history deployment/grafana -n kubesphere-monitoring-system kubectl rollout history deployment/grafana --revision=83 -n kubesphere-monitoring-system kubectl rollout undo deployment/grafana --to-revision=1 -n kubesphere-monitoring-system……
+            <p class="readmore"><a href="https://www.tangjihede.fun/post/kubectl_command/">阅读全文</a></p>
+        </div>
+    </article>
+    
 
     
 
@@ -192,6 +215,10 @@ if (!doNotTrack) {
     </li>
     
     <li>
+        <a href="https://www.tangjihede.fun/post/kubectl_command/" title="Kubectl常用命令汇总">Kubectl常用命令汇总</a>
+    </li>
+    
+    <li>
         <a href="https://www.tangjihede.fun/post/lvs/" title="LVS">LVS</a>
     </li>
     
@@ -216,7 +243,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Hugo/">Hugo (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (1)</a></li>
     
@@ -240,6 +267,8 @@ if (!doNotTrack) {
     <a href="https://www.tangjihede.fun/tags/2020-Q4/">2020-Q4</a>
     
     <a href="https://www.tangjihede.fun/tags/2021-Q2/">2021-Q2</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021-Q4/">2021-Q4</a>
     
 </div>
     </section>
@@ -267,6 +296,11 @@ if (!doNotTrack) {
             <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
         </ul>
     </section>
+    <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+    </span>
+
 </div>
             </div>
         </div>
