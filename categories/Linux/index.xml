@@ -13,7 +13,16 @@
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/lvm/</guid>
-      <description>LVM一般用于linux/unix系统在线扩容磁盘空间，典型的场景比如说根分区（已是LVM）磁盘快满了，文件又不能删，这时候LVM就上场了。 LVM扩容其实一共有4步操作： 1、将新盘或新分区创建为PV 2、将此PV加入已有的VG 3、扩容LV（在此VG上） 4、系统识别（生效操作） 比如我</description>
+      <description>LVM一般用于lin</description>
+    </item>
+    
+    <item>
+      <title>Ipmi常用命令</title>
+      <link>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 28 Jun 2018 14:07:35 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>远程连接后打印硬件信</description>
     </item>
     
   </channel>

@@ -6,14 +6,23 @@
     <description>Recent content on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 24 May 2021 10:13:46 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 May 2021 13:58:28 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Haproxy简单记录</title>
+      <link>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 28 May 2021 13:58:28 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
+      <description>1 HAProxy介绍</description>
+    </item>
+    
     <item>
       <title>MySQL用户权限汇总</title>
       <link>https://www.tangjihede.fun/post/mysql_privileges/</link>
       <pubDate>Mon, 24 May 2021 10:13:46 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/mysql_privileges/</guid>
-      <description>一、 全局权限,作用于整个 MySQL 实例：mysql.user表 mysql&amp;gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user; +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | Host | User | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | % | lang | Y | Y | Y | Y | N | N | | 192.168.2.% | lang | Y | Y | Y | Y | N | N | | localhost | mysql.infoschema | Y | N | N | N | N | N | | localhost | mysql.session | N | N | N | N | N | N | | localhost | mysql.sys | N | N | N | N | N | N | | localhost</description>
+      <description>一、 全局权限,作用于</description>
     </item>
     
     <item>
@@ -31,7 +40,7 @@
       <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
-      <description>一、 下载对应浏览器的webdriver 如chrome对应的下载地址： https://chromedriver.chromium.org/downloads 二、 本地起一个debug端口 如windows的cmd中的命令为： C:\abs_path\chrome.exe --remote-debugging-port=9222 --user-data-dir=&amp;quot;C:\selenum\AutomationProfile&amp;quot; 这会打开一个浏览器窗口（新标签页） 三、 在上面打开的浏览器窗口中可以先人工做相关的登录操作，从而避免认证（如需要登录）的问题。 这个窗口就是se</description>
+      <description>一、 下载对应浏览器的</description>
     </item>
     
     <item>
@@ -40,7 +49,7 @@
       <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
-      <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos ~]# docker system df TYPE TOTAL SIZE RECLAIMABLE Images 955 77.06GB 74.21GB (96%) Containers 65 3.28MB 0B (0%) Local Volumes 0 0B 0B Build Cache 0 0B 0B 最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。 可以回收的镜</description>
+      <description>运行docker system df</description>
     </item>
     
     <item>
@@ -49,7 +58,7 @@
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
-      <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个blog的项目为： hugo new site blog ## hugo为下载的hugo执行文件，如windows平台的应该为\path\hugo.exe 然后我们一般会直接进入到blog目录中操作。 cd blog 一、 主题使用，地址 https://github.com/flysnow-org/maupassant-hugo 该页面有使用的文档。 注意创建文章的命令为hugo new post</description>
+      <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接</description>
     </item>
     
     <item>
@@ -58,7 +67,16 @@
       <pubDate>Fri, 21 May 2021 15:35:48 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-      <description>使用物理备份恢复数据库（使用物理备份恢复数据库） 建议使用两台机器进行操作，一台安装 XtraBackup（2.4.6 及以上的版本） 工具，另一台安装MySQL server5.7。（因为两者依赖的库可能存在冲突） 确认恢复方案，找到相应的全量备份，binlog文件。 Percona XtraBackup</description>
+      <description>使用物理备份恢复数据</description>
+    </item>
+    
+    <item>
+      <title>Nginx简单介绍</title>
+      <link>https://www.tangjihede.fun/post/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 28 Dec 2020 13:40:50 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
+      <description>1. Nginx介绍 准确</description>
     </item>
     
     <item>
@@ -67,7 +85,7 @@
       <pubDate>Sat, 26 Dec 2020 18:03:09 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/kubectl_command/</guid>
-      <description>从容器中拷贝文件 1 kubectl cp -n namespace pod_name:app/test.txt ./test.txt 查看pod详情 1 kubectl describe pods -n namespace 删除节点 1 2 3 4 5 6 7 #先停止服务 systemctl stop docker systemctl stop kubelet kubectl delete node node_name 删除pod 1 2 3 4 kubectl delete pod pod_name -n namespace 强制删除 kubectl delete pod pod_name -n namespace --grace-period=0 --force 回滚 kubectl rollout history deployment/grafana -n kubesphere-monitoring-system kubectl rollout history deployment/grafana --revision=83 -n kubesphere-monitoring-system kubectl rollout undo deployment/grafana --to-revision=1 -n kubesphere-monitoring-system</description>
+      <description>从容器中拷贝文件 1 kubectl</description>
     </item>
     
     <item>
@@ -76,7 +94,7 @@
       <pubDate>Thu, 26 Nov 2020 19:18:54 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/lvs/</guid>
-      <description>1.1 初步介绍 负载均衡（Load balancing）是运维工程师必须要掌握的一项技术，因为其应用广泛且往往位于业务的核心位置。广义上的负载均衡是指将一组任务分配到一组资源（计算单元）上的过程。在运维领域里，则基本上是和WEB类型的业务打交道，即主要处理TCP、HTTP、HTTPS等协</description>
+      <description>1.1 初步介绍 负载均衡（</description>
     </item>
     
     <item>
@@ -85,7 +103,7 @@
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/lvm/</guid>
-      <description>LVM一般用于linux/unix系统在线扩容磁盘空间，典型的场景比如说根分区（已是LVM）磁盘快满了，文件又不能删，这时候LVM就上场了。 LVM扩容其实一共有4步操作： 1、将新盘或新分区创建为PV 2、将此PV加入已有的VG 3、扩容LV（在此VG上） 4、系统识别（生效操作） 比如我</description>
+      <description>LVM一般用于lin</description>
     </item>
     
     <item>
@@ -94,7 +112,25 @@
       <pubDate>Wed, 13 Nov 2019 17:52:22 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
-      <description>1. 指定单个ip运行（使用root用户) ansible all -i 10.10.120.255, -m ping -u root #检测连接是否正常 10.10.120.255 | SUCCESS =&amp;gt; { &amp;quot;ansible_facts&amp;quot;: { &amp;quot;discovered_interpreter_python&amp;quot;: &amp;quot;/usr/bin/python&amp;quot; }, &amp;quot;changed&amp;quot;: false, &amp;quot;ping&amp;quot;: &amp;quot;pong&amp;quot; } 还有setup模块打印出的信息，在使用变量/判断的时候可以拿到很多有用的信息，比如指定操作系统平台或版本信息 ansible-playbook all -i 10.10.1.3, test.yml ansible-playbook的用法 2. 使用yum安装htt</description>
+      <description>1. 指定单个ip运行（</description>
+    </item>
+    
+    <item>
+      <title>Ipmi常用命令</title>
+      <link>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 28 Jun 2018 14:07:35 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>远程连接后打印硬件信</description>
+    </item>
+    
+    <item>
+      <title>不同性格的表述方式</title>
+      <link>https://www.tangjihede.fun/post/%E4%B8%8D%E5%90%8C%E6%80%A7%E6%A0%BC%E7%9A%84%E8%A1%A8%E8%BF%B0%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Mon, 02 Oct 2017 14:26:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/%E4%B8%8D%E5%90%8C%E6%80%A7%E6%A0%BC%E7%9A%84%E8%A1%A8%E8%BF%B0%E6%96%B9%E5%BC%8F/</guid>
+      <description>本文仅限娱乐哈 『今晚</description>
     </item>
     
     <item>

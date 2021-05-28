@@ -13,7 +13,7 @@
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
-      <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个blog的项目为： hugo new site blog ## hugo为下载的hugo执行文件，如windows平台的应该为\path\hugo.exe 然后我们一般会直接进入到blog目录中操作。 cd blog 一、 主题使用，地址 https://github.com/flysnow-org/maupassant-hugo 该页面有使用的文档。 注意创建文章的命令为hugo new post</description>
+      <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接</description>
     </item>
     
   </channel>

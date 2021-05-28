@@ -6,14 +6,23 @@
     <description>Recent content in 2021-Q2 on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 24 May 2021 10:13:46 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2021-Q2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 May 2021 13:58:28 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2021-Q2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Haproxy简单记录</title>
+      <link>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 28 May 2021 13:58:28 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
+      <description>1 HAProxy介绍</description>
+    </item>
+    
     <item>
       <title>MySQL用户权限汇总</title>
       <link>https://www.tangjihede.fun/post/mysql_privileges/</link>
       <pubDate>Mon, 24 May 2021 10:13:46 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/mysql_privileges/</guid>
-      <description>一、 全局权限,作用于整个 MySQL 实例：mysql.user表 mysql&amp;gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user; +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | Host | User | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+ | % | lang | Y | Y | Y | Y | N | N | | 192.168.2.% | lang | Y | Y | Y | Y | N | N | | localhost | mysql.infoschema | Y | N | N | N | N | N | | localhost | mysql.session | N | N | N | N | N | N | | localhost | mysql.sys | N | N | N | N | N | N | | localhost</description>
+      <description>一、 全局权限,作用于</description>
     </item>
     
     <item>
@@ -22,7 +31,7 @@
       <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
-      <description>一、 下载对应浏览器的webdriver 如chrome对应的下载地址： https://chromedriver.chromium.org/downloads 二、 本地起一个debug端口 如windows的cmd中的命令为： C:\abs_path\chrome.exe --remote-debugging-port=9222 --user-data-dir=&amp;quot;C:\selenum\AutomationProfile&amp;quot; 这会打开一个浏览器窗口（新标签页） 三、 在上面打开的浏览器窗口中可以先人工做相关的登录操作，从而避免认证（如需要登录）的问题。 这个窗口就是se</description>
+      <description>一、 下载对应浏览器的</description>
     </item>
     
     <item>
@@ -31,7 +40,7 @@
       <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
-      <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos ~]# docker system df TYPE TOTAL SIZE RECLAIMABLE Images 955 77.06GB 74.21GB (96%) Containers 65 3.28MB 0B (0%) Local Volumes 0 0B 0B Build Cache 0 0B 0B 最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。 可以回收的镜</description>
+      <description>运行docker system df</description>
     </item>
     
     <item>
@@ -40,7 +49,7 @@
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
-      <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个blog的项目为： hugo new site blog ## hugo为下载的hugo执行文件，如windows平台的应该为\path\hugo.exe 然后我们一般会直接进入到blog目录中操作。 cd blog 一、 主题使用，地址 https://github.com/flysnow-org/maupassant-hugo 该页面有使用的文档。 注意创建文章的命令为hugo new post</description>
+      <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接</description>
     </item>
     
     <item>
@@ -49,7 +58,7 @@
       <pubDate>Fri, 21 May 2021 15:35:48 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-      <description>使用物理备份恢复数据库（使用物理备份恢复数据库） 建议使用两台机器进行操作，一台安装 XtraBackup（2.4.6 及以上的版本） 工具，另一台安装MySQL server5.7。（因为两者依赖的库可能存在冲突） 确认恢复方案，找到相应的全量备份，binlog文件。 Percona XtraBackup</description>
+      <description>使用物理备份恢复数据</description>
     </item>
     
   </channel>

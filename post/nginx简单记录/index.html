@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Nginx简单介绍 | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Nginx简单介绍 - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-12-28T13:40:50&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-12-28T13:40:50&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="Nginx简单介绍">
+        
+    <meta name="author" content="堂吉哈哈德">
+    <meta property="og:url" content="https://www.tangjihede.fun/post/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.tangjihede.fun/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">专注于Devops相关技术</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.tangjihede.fun/">首页</a>
+                    
+                    <a  href="https://www.tangjihede.fun/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://www.tangjihede.fun/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.tangjihede.fun/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Nginx简单介绍</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月28日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/LoadBalancing'>LoadBalancing</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h4 id="1-nginx介绍">1. Nginx介绍</h4>
+<p>准确地说，Nginx是一个HTTP服务器和反向代理服务器，可代理通用的TCP/UDP、HTTP以及Mail等服务，最初由俄罗斯人Igor Sysoev编写，也是一款开源软件。Nginx凭借着自身强大的产品功能，已被业界广泛采用。淘宝的Tengine都是基于Nginx的。</p>
+<p>Nginx产品有着众多特征，负载均衡便是其中之一。Nginx服务器实现的负载均衡大多是七层负载均衡，但同时也具有四层负载均衡的能力。，</p>
+<p>Nginx还有一个付费版Nginx Plus，相比Nginx有一些高级的功能。</p>
+<h4 id="2-nginx-简单使用">2. Nginx 简单使用</h4>
+<h4 id="21-安装">2.1 安装</h4>
+<p>如果系统是CentOS的话，可直接使用epel源进行安装：</p>
+<p>安装epel源</p>
+<p><code>sudo yum install epel-release</code></p>
+<p>安装Nginx</p>
+<p><code>sudo yum install nginx</code></p>
+<p>如果系统是Ubuntu，可用如下命令安装：</p>
+<p><code>sudo apt install nginx</code></p>
+<p>如果想使用源码编译安装的话，可到Nginx官网 <a href="http://nginx.org/">http://nginx.org/</a> 下载源码后安装。</p>
+<p>源码安装需要解决一些软件依赖的问题。比如http重写功能（http_rewrite_module）要用到的pcre库，http压缩功能（http_gzip_module）用到的zlib库，https协议用的openssl等，这些也需要单独下载源码后编译安装，然后在nginx configure时指定这些库所在的路径。</p>
+<h4 id="22-配置文件">2.2 配置文件</h4>
+<p>Nginx的配置文件主要是nginx.conf，可配置的指令非常的多。另外需要注释的行可在行首使用符号’#’。
+从架构上看，配置可分为三大块，如下：</p>
+<pre><code>全局配置块
+
+Events配置块 {
+}
+
+http配置块 {
+  server {
+    location {
+    }
+  }
+}
+</code></pre><p>其中http配置块又包括server和location两个小块，server块用来指定开放的端口和域名等一些配置，location是用来匹配特定的URI后所采取的动作。同一指令放在不同的块中，其作用域也不相同</p>
+<h4 id="3-简单使用">3 简单使用</h4>
+<h4 id="31-静态网站">3.1 静态网站</h4>
+<p>在http块中添加如下配置，可以使服务器做为静态网站。</p>
+<pre><code>server {
+    listen       80;
+    server_name  www.example.com;    
+
+    location / {
+        root   html;
+        index  index.html index.htm;
+    }
+}
+</code></pre><p>server_name 指令表示http匹配的域名，一旦匹配，便执行location块中的内容。</p>
+<p>location 指令表示匹配到的URI，‘/’表示匹配所有地址，匹配成功则执行location块。</p>
+<p>root 指令用来设置根目录，就是静态文件所在的路径，如果使用yum或者apt方式安装，根目录路径一般为 /usr/share/nginx/html/ ，此处只有一个html，为相对路径。</p>
+<p>Index 指令用来指定网站首页文件，即用户访问www.example.com，实际等于访问www.example.com/index.html ，如果index.html不存在，则为www.example.com/index.htm。</p>
+<h4 id="32-代理服务器">3.2 代理服务器</h4>
+<p>在http块中添加如下配置，可以使服务器成为http代理服务器。</p>
+<pre><code>server {
+    listen       80;
+    server_name  www.example.com;    
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+    }
+}
+</code></pre><p>这是代理服务器的最简单配置，proxy_pass指令指明了真正提供服务的服务器地址。如此处的127.0.0.1:8080表示为本机的tomcat服务。</p>
+<p>理解了上面的两种用法，下面就可以说说Nginx的负载均衡功能了。</p>
+<h4 id="34-http负载均衡">3.4 HTTP负载均衡</h4>
+<p>上面的http代理服务器功能，只代理了一台服务器（127.0.0.1:8080），其实如果换成代理多台服务器，那么可以说它就是负载均衡了。</p>
+<p>那配置块里应该怎么写入多台服务器呢？答案是需要使用upstream指令把他们放到一起，该指令位于http块中。如下便是定义了一组服务器，并命名为backend。</p>
+<pre><code>http {
+    upstream backend {
+        server 192.168.1.100:8080;
+        server 192.168.1.101:8080;
+        server 192.168.1.102:8080;
+    }
+}
+</code></pre><p>要将请求传递给服务器组，需要在proxy_pass指令中引用该组的名称backend，即用backend名字代替原来单台配置里的127.0.0.1:8080，参考如下配置：</p>
+<pre><code>server {
+    location / {
+        proxy_pass http://backend;
+    }
+}
+</code></pre><p>这样Nginx就会将请求默认以轮询（round-robin）的方式发送给upstream backend里的服务器了。</p>
+<p>分发请求方式当然也支持加权轮询，如下就是给服务器设置不同的权值：</p>
+<pre><code>http {
+    upstream backend {
+        server 192.168.1.100 weight=3;
+        server 192.168.1.101;
+        server 192.168.1.102;
+    }
+}
+</code></pre><p>在这种配置下，每5个新的请求，其中3个请求会被分配到192.168.1.100，1个请求会被分配到192.168.1.101，1个请求会被分配到192.168.1.102。</p>
+<p>Nginx还支持另外两种负载均衡方式，分别是最小连接（Least connected load balancing）和ip-hash。</p>
+<p>在一些请求需要较长时间才能完成的情况下，最小连接可以更加公平地控制应用实例的负载，尽量避免过多的请求让繁忙的应用服务器超载，使新的请求被分配到一个不太繁忙的服务器上。</p>
+<p>nginx中的最小连接负载均衡是在服务器组配置中使用least_conn指令时激活的。</p>
+<p>最小连接的用法实例：</p>
+<pre><code>upstream backend {
+    least_conn;
+    server backend1.example.com;
+    server backend2.example.com;
+}
+</code></pre><p>在轮询或最小连接负载均衡的情况下，每个后续客户端的请求都有可能被分配到不同的服务器上。</p>
+<p>但如果需要将客户端绑定到特定的应用服务器上，换句话说，使客户端的会话 &ldquo;粘性 &ldquo;或 &ldquo;持久性&rdquo;，即总是试图选择一个特定的服务器，那么可以使用ip-hash负载均衡机制。</p>
+<p>ip-hash用法实例：</p>
+<pre><code>upstream backend {
+    ip_hash;
+    server backend1.example.com;
+    server backend2.example.com;
+}
+</code></pre><p>Nginx中的反向代理能够对服务器进行健康检查。如果某台服务器的响应出现错误，nginx会将这台服务器标记为失败，并会在一段时间内避免选择这台服务器进行后续的入站请求。</p>
+<p>max_fails指令设置了在失败超时（fail_timeout）期间与服务器通信的连续失败次数。默认情况下，max_fails设置为1。当它被设置为0时，该服务器的健康检查将被禁用。fail_timeout参数还定义了服务器被标记为失败的时间。在fail_timeout时间间隔后，nginx将开始探测服务器的实时客户端请求。如果探测成功，服务器将被标记为可用服务器。</p>
+<pre><code>upstream backend {
+    ip_hash;
+    server backend1.example.com max_fails=3 weight=2 fail_timeout=2s;;
+    server backend2.example.com;
+}
+</code></pre><h4 id="35-tcpudp负载均衡">3.5 TCP/UDP负载均衡</h4>
+<p>知道了HTTP负载均衡的使用，我们下面说说Nginx的TCP和UDP负载均衡。</p>
+<p>Nginx 1.9版本后开始支持TCP、UDP的负载均衡，但是需要在编译的时候指定stream模块（&ndash;with-stream）。</p>
+<p>TCP、UDP负载均衡使用最高层级的stream块（HTTP是http块），比如下面的配置，和HTTP负载均衡配置是差不多的：</p>
+<pre><code>stream {
+    upstream tcp_backend {
+        server backend1.example.com:8080;
+}
+    upstream udp_backend {
+        server backend1.example.com:53;
+    }
+
+    # tcp协议
+    server {
+       listen     80;
+       proxy_pass tcp_backend;
+}
+
+# udp协议
+    server {
+       listen     53 udp;
+       proxy_pass udp_backend;
+    }
+}
+</code></pre><p>listen指令默认是指tcp协议，除非写明udp协议。</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.tangjihede.fun/">堂吉哈哈德</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">https://www.tangjihede.fun/post/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/lvs/">LVS</a></li>
+        
+        <li><a href="/post/kubectl_command/">Kubectl常用命令汇总</a></li>
+        
+        <li><a href="/post/lvm/">LVM在线扩容分区空间</a></li>
+        
+        <li><a href="/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/">Ansible知识点</a></li>
+        
+        <li><a href="/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Ipmi常用命令</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2020-Q4'>2020-Q4</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108398306-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.tangjihede.fun/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.tangjihede.fun/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Hugo/">Hugo (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.tangjihede.fun/tags/2017-Q4/">2017-Q4</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2018-Q2/">2018-Q2</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2019-Q4/">2019-Q4</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2020-Q3/">2020-Q3</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2020-Q4/">2020-Q4</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021-Q2/">2021-Q2</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021-Q4/">2021-Q4</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+    <br>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+    </span>
+
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

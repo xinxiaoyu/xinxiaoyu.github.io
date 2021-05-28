@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 24 May 2021 10:13:46 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 May 2021 13:58:28 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LoadBalancing</title>
+      <link>https://www.tangjihede.fun/categories/LoadBalancing/</link>
+      <pubDate>Fri, 28 May 2021 13:58:28 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/LoadBalancing/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>MySQL</title>
       <link>https://www.tangjihede.fun/categories/MySQL/</link>
@@ -44,15 +53,6 @@
     </item>
     
     <item>
-      <title>LoadBalancing</title>
-      <link>https://www.tangjihede.fun/categories/LoadBalancing/</link>
-      <pubDate>Thu, 26 Nov 2020 19:18:54 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/LoadBalancing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>https://www.tangjihede.fun/categories/Linux/</link>
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
@@ -67,6 +67,15 @@
       <pubDate>Wed, 13 Nov 2019 17:52:22 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/categories/Ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HahaWriting</title>
+      <link>https://www.tangjihede.fun/categories/HahaWriting/</link>
+      <pubDate>Mon, 02 Oct 2017 14:26:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/HahaWriting/</guid>
       <description></description>
     </item>
     
