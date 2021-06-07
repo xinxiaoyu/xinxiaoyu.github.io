@@ -2,26 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.tangjihede.fun/tags/2021-Q2/</loc>
-    <lastmod>2021-05-28T13:58:28+08:00</lastmod>
+    <loc>https://www.tangjihede.fun/tags/2021/</loc>
+    <lastmod>2021-05-27T10:34:50+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/categories/</loc>
-    <lastmod>2021-05-28T13:58:28+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2021-05-28T13:58:28+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/categories/LoadBalancing/</loc>
-    <lastmod>2021-05-28T13:58:28+08:00</lastmod>
+    <loc>https://www.tangjihede.fun/post/jenkins_pipeline/</loc>
+    <lastmod>2021-05-27T10:34:50+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/</loc>
-    <lastmod>2021-05-28T13:58:28+08:00</lastmod>
+    <lastmod>2021-05-27T10:34:50+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/tags/</loc>
-    <lastmod>2021-05-28T13:58:28+08:00</lastmod>
+    <lastmod>2021-05-27T10:34:50+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/</loc>
-    <lastmod>2021-05-28T13:58:28+08:00</lastmod>
+    <lastmod>2021-05-27T10:34:50+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/</loc>
+    <lastmod>2021-05-24T10:13:46+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/MySQL/</loc>
     <lastmod>2021-05-24T10:13:46+08:00</lastmod>
@@ -53,23 +50,23 @@
     <loc>https://www.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2021-05-21T15:35:48+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/tags/2020-Q4/</loc>
+    <loc>https://www.tangjihede.fun/tags/2020/</loc>
+    <lastmod>2020-12-28T13:40:50+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/LoadBalancing/</loc>
     <lastmod>2020-12-28T13:40:50+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2020-12-28T13:40:50+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/tags/2021-Q4/</loc>
-    <lastmod>2020-12-26T18:03:09+08:00</lastmod>
-  </url><url>
     <loc>https://www.tangjihede.fun/post/kubectl_command/</loc>
     <lastmod>2020-12-26T18:03:09+08:00</lastmod>
   </url><url>
+    <loc>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2020-11-28T13:58:28+08:00</lastmod>
+  </url><url>
     <loc>https://www.tangjihede.fun/post/lvs/</loc>
     <lastmod>2020-11-26T19:18:54+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/tags/2020-Q3/</loc>
-    <lastmod>2020-08-01T12:49:14+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/Linux/</loc>
     <lastmod>2020-08-01T12:49:14+08:00</lastmod>
@@ -77,7 +74,7 @@
     <loc>https://www.tangjihede.fun/post/lvm/</loc>
     <lastmod>2020-08-01T12:49:14+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/tags/2019-Q4/</loc>
+    <loc>https://www.tangjihede.fun/tags/2019/</loc>
     <lastmod>2019-11-13T17:52:22+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/Ansible/</loc>
@@ -86,13 +83,13 @@
     <loc>https://www.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</loc>
     <lastmod>2019-11-13T17:52:22+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/tags/2018-Q2/</loc>
+    <loc>https://www.tangjihede.fun/tags/2018/</loc>
     <lastmod>2018-06-28T14:07:35+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2018-06-28T14:07:35+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/tags/2017-Q4/</loc>
+    <loc>https://www.tangjihede.fun/tags/2017/</loc>
     <lastmod>2017-10-02T14:26:31+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/HahaWriting/</loc>
@@ -109,6 +106,8 @@
   </url><url>
     <loc>https://www.tangjihede.fun/tags/</loc>
     <priority>0</priority>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/CI/CD/</loc>
   </url><url>
     <loc>https://www.tangjihede.fun/series/</loc>
   </url><url>
