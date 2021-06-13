@@ -25,5 +25,14 @@
       <description>远程连接后打印硬件信</description>
     </item>
     
+    <item>
+      <title>Shell知识点合集</title>
+      <link>https://www.tangjihede.fun/post/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</link>
+      <pubDate>Sat, 11 Jun 2016 09:58:13 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</guid>
+      <description>数组 1 2 3 4 5 arr=(str1 str2 str3)</description>
+    </item>
+    
   </channel>
 </rss>
