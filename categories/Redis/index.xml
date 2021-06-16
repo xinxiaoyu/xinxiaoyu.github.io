@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on 堂吉哈哈德的博客</title>
+    <link>https://www.tangjihede.fun/categories/Redis/</link>
+    <description>Recent content in Redis on 堂吉哈哈德的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Jun 2016 09:37:58 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis安装使用</title>
+      <link>https://www.tangjihede.fun/post/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 15 Jun 2016 09:37:58 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <description>一、 简单介绍 Redi</description>
+    </item>
+    
+  </channel>
+</rss>

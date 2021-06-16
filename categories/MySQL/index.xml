@@ -34,5 +34,14 @@
       <description>使用物理备份恢复数据</description>
     </item>
     
+    <item>
+      <title>MySQL安装使用</title>
+      <link>https://www.tangjihede.fun/post/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 15 Jun 2016 09:45:39 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <description>一、 简单介绍 MySQ</description>
+    </item>
+    
   </channel>
 </rss>
