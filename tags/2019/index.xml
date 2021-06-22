@@ -13,7 +13,7 @@
       <pubDate>Wed, 13 Nov 2019 17:52:22 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
-      <description>1. 指定单个ip运行（</description>
+      <description>1. 指定单个ip运行（使用root用户) ansible</description>
     </item>
     
   </channel>

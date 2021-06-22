@@ -13,7 +13,7 @@
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/lvm/</guid>
-      <description>LVM一般用于lin</description>
+      <description>LVM一般用于linux/unix系统在</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 28 Jun 2018 14:07:35 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>远程连接后打印硬件信</description>
+      <description>远程连接后打印硬件信息 ipmitool -I lanplus -H ip -U user -P passwd</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Sat, 11 Jun 2016 09:58:13 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</guid>
-      <description>数组 1 2 3 4 5 arr=(str1 str2 str3)</description>
+      <description>数组 1 2 3 4 5 arr=(str1 str2 str3) for i in ${arr[@]} do echo $i done 预定</description>
     </item>
     
   </channel>

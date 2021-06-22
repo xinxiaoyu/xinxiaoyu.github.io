@@ -13,7 +13,16 @@
       <pubDate>Thu, 28 Jun 2018 14:07:35 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>远程连接后打印硬件信</description>
+      <description>远程连接后打印硬件信息 ipmitool -I lanplus -H ip -U user -P passwd</description>
+    </item>
+    
+    <item>
+      <title>Redis导入rdb文件</title>
+      <link>https://www.tangjihede.fun/post/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Fri, 22 Jun 2018 13:53:40 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</guid>
+      <description>1. 查看运行的redis配置项dir的配置</description>
     </item>
     
   </channel>
