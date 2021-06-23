@@ -429,7 +429,114 @@ adder <span style="color:#099">56</span> <span style="color:#099">78</span>
 <span style="color:#000;font-weight:bold">done</span>
 </code></pre></td></tr></table>
 </div>
+</div><ol start="8">
+<li>批量创建用户</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000;font-weight:bold">for</span><span style="color:#000;font-weight:bold">((</span><span style="color:#008080">i</span><span style="color:#000;font-weight:bold">=</span>1;i&lt;<span style="color:#000;font-weight:bold">=</span>20;i++<span style="color:#000;font-weight:bold">))</span>
+<span style="color:#000;font-weight:bold">do</span>
+  useradd user<span style="color:#008080">$i</span>
+  <span style="color:#008080">ran</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">$(</span><span style="color:#0086b3">echo</span> <span style="color:#008080">$RANDOM</span> | md5sum | head -c 5<span style="color:#000;font-weight:bold">)</span>
+  <span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;user</span><span style="color:#008080">$ran</span><span style="color:#d14">&#34;</span> | passwd --stdin user<span style="color:#008080">$i</span>
+  <span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;user</span><span style="color:#008080">$i</span><span style="color:#d14">    user</span><span style="color:#008080">$ran</span><span style="color:#d14">&#34;</span> &gt;&gt; /root/user.txt
+<span style="color:#000;font-weight:bold">done</span>
+</code></pre></td></tr></table>
 </div>
+</div><ol start="9">
+<li>大于15k的文件</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000;font-weight:bold">for</span> i in <span style="color:#d14">`</span>ls -l /root/ | grep -v ^d |grep -v total | awk <span style="color:#d14">&#39;{print $NF}&#39;</span><span style="color:#d14">`</span>
+<span style="color:#000;font-weight:bold">do</span>
+<span style="color:#008080">file</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">$(</span>du -k /root/<span style="color:#008080">$i</span> | awk <span style="color:#d14">&#39;{if($1&gt;15) print $2}&#39;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#0086b3">echo</span> <span style="color:#008080">$file</span> | grep -v <span style="color:#d14">&#39;^$&#39;</span>
+<span style="color:#000;font-weight:bold">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="10">
+<li>nginx日志备份</li>
+</ol>
+<pre><code>#!/bin/bash
+set -euxo pipefail
+
+time=$(date +%Y%m%d)
+logpath=&quot;/usr/local/nginx/logs&quot;
+
+cd $logpath
+mv access.log access_$time.log
+mv error.log error_$time.log
+kill -USR1 `cat /usr/local/nginx/logs/nginx.pid`
+sleep 1
+gzip access_$time.log
+gzip error_$time.log
+</code></pre><p>11.审计统计</p>
+<pre><code>#!/bin/bash
+
+echo &quot;审计统计详情（统计时间为昨天）&quot;
+echo &quot;&quot;
+
+ip=$(ip a |grep '10\.' | awk '{print $2}')
+echo &quot;IP地址:   $ip&quot;
+
+/sbin/aureport -if /var/log/audit/audit.log -ts yesterday -te now &gt; /tmp/aureport.txt 2&gt;&amp;1
+
+account=$(grep 'Number of changes to accounts, groups, or roles' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;修改账号，组，角色次数: $account&quot;
+
+teminal=$(grep 'Number of terminals' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;终端数: $teminal&quot;
+
+logins=$(grep 'Number of logins' /tmp/aureport.txt |awk '{print $NF}')
+echo &quot;登录次数：$logins&quot; 
+
+logins_fail=$(grep 'Number of failed logins' /tmp/aureport.txt |awk '{print $NF}')
+echo &quot;登录失败次数: $logins_fail&quot;
+
+login_user=$(grep 'Number of users' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;登录用户数: $login_user&quot;
+
+auth_num=$(grep 'Number of authentications' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;认证成功次数: $auth_num&quot;
+
+auth_fail=$(grep 'Number of failed authentications' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;认证失败次数: $auth_fail&quot;
+
+anomaly=$(grep 'Number of anomaly events' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;异常事件次数: $anomaly&quot;
+
+sys_call=$(grep 'Number of failed syscalls' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;系统调用失败次数: $sys_call&quot;
+
+crypto=$(grep 'Number of crypto events' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;加密事件次数: $crypto&quot;
+
+event=$(grep 'Number of events' /tmp/aureport.txt | awk '{print $NF}')
+echo &quot;事件数: $event&quot;
+
+echo &quot;&quot;
+echo &quot;&quot;
+/sbin/aureport --login --summary -i -if /var/log/audit/audit.log &gt; /tmp/aureport.txt 2&gt;&amp;1
+echo &quot;登录用户及次数如下:&quot;
+cat /tmp/aureport.txt |grep -v audit.log
+</code></pre>
         </div>
 
         
@@ -450,11 +557,11 @@ adder <span style="color:#099">56</span> <span style="color:#099">78</span>
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/series/"></a></li>
+        <li><a href="/archives/"></a></li>
         
         <li><a href="/tags/"></a></li>
         
-        <li><a href="/archives/"></a></li>
+        <li><a href="/series/"></a></li>
         
         <li><a href="/search/">搜索</a></li>
         
@@ -573,11 +680,11 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (5)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (3)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (4)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (5)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Python/">Python (1)</a></li>
     
@@ -596,7 +703,7 @@ if (!doNotTrack) {
      
     <a href="https://www.tangjihede.fun/tags/2019/">2019年</a>(1)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2018/">2018年</a>(2)<br>
+    <a href="https://www.tangjihede.fun/tags/2018/">2018年</a>(5)<br>
      
     <a href="https://www.tangjihede.fun/tags/2017/">2017年</a>(2)<br>
      
