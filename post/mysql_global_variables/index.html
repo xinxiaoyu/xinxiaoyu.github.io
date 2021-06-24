@@ -609,6 +609,10 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">507
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">508
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">509
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">510
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">511
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">512
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">513
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/*
@@ -1118,7 +1122,11 @@ tx_isolation
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;transaction_read_only&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;unique_checks&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;updatable_views_with_limit&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;wait_timeout&#39;</span>,<span style="color:#d14">&#39;28800&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 连接超时时间，单位秒，默认8小时</span>
+<span style="color:#998;font-style:italic"># 连接被断开之后,客户端再发送请求就会收到错误：Lost connection to MySQL server during query</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;windowing_use_high_precision&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 </code></pre></td></tr></table>
 </div>
@@ -1268,15 +1276,19 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (7)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (5)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Python/">Python (1)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (1)</a></li>
     
 </ul>
     </section>
@@ -1289,13 +1301,13 @@ if (!doNotTrack) {
      
     <a href="https://www.tangjihede.fun/tags/2020/">2020年</a>(4)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2019/">2019年</a>(1)<br>
+    <a href="https://www.tangjihede.fun/tags/2019/">2019年</a>(3)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2018/">2018年</a>(5)<br>
+    <a href="https://www.tangjihede.fun/tags/2018/">2018年</a>(6)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2017/">2017年</a>(2)<br>
+    <a href="https://www.tangjihede.fun/tags/2017/">2017年</a>(3)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2016/">2016年</a>(3)<br>
+    <a href="https://www.tangjihede.fun/tags/2016/">2016年</a>(4)<br>
     
 </div>
     </section>

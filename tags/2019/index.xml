@@ -16,5 +16,23 @@
       <description>1. 指定单个ip运行（使用root用户) ansible</description>
     </item>
     
+    <item>
+      <title>半连接队列</title>
+      <link>https://www.tangjihede.fun/post/TCP/%E5%8D%8A%E8%BF%9E%E6%8E%A5%E9%98%9F%E5%88%97/</link>
+      <pubDate>Mon, 24 Jun 2019 14:06:48 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/TCP/%E5%8D%8A%E8%BF%9E%E6%8E%A5%E9%98%9F%E5%88%97/</guid>
+      <description>抓包相关 SACK_PERM=1 SACK: 选择确认，只传送缺少的数据而</description>
+    </item>
+    
+    <item>
+      <title>Iptables常用命令</title>
+      <link>https://www.tangjihede.fun/post/Linux/iptables%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 24 Jun 2019 13:41:32 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Linux/iptables%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>iptables有四张表：filter、</description>
+    </item>
+    
   </channel>
 </rss>

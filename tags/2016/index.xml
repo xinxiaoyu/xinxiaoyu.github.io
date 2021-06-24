@@ -6,7 +6,16 @@
     <description>Recent content in 2016 on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Jun 2016 09:45:39 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2016/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2016 13:37:59 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2016/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exchange2010增加会议室功能</title>
+      <link>https://www.tangjihede.fun/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Fri, 24 Jun 2016 13:37:59 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/</guid>
+      <description>需求：要求实现会议室功能，方便会议室预定</description>
+    </item>
+    
     <item>
       <title>MySQL8.0安装使用(centos8)</title>
       <link>https://www.tangjihede.fun/post/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
