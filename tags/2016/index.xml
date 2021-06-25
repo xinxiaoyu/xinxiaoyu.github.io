@@ -43,5 +43,14 @@
       <description>数组 1 2 3 4 5 arr=(str1 str2 str3) for i in ${arr[@]} do echo $i done 预定</description>
     </item>
     
+    <item>
+      <title>Mysql命令合集</title>
+      <link>https://www.tangjihede.fun/post/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
+      <pubDate>Fri, 10 Jun 2016 15:12:21 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
+    </item>
+    
   </channel>
 </rss>

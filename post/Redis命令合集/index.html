@@ -153,6 +153,15 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
@@ -203,12 +212,21 @@ redis&gt; <span style="color:#000;font-weight:bold">select</span> <span style="c
 断开主从复制, 需在slave节点执行此命令
 &gt; slaveof no one 
 
+集群信息
 cluster
 &gt; cluster nodes
 &gt; cluster info
 
 scan获取key
 &gt; scan <span style="color:#099">0</span> match test* count <span style="color:#099">1000</span>
+
+获取100个key
+127.0.0.1:6379&gt; SCAN <span style="color:#099">0</span> match * count <span style="color:#099">100</span>
+1<span style="color:#000;font-weight:bold">)</span> <span style="color:#d14">&#34;29312&#34;</span>
+2<span style="color:#000;font-weight:bold">)</span>   1<span style="color:#000;font-weight:bold">)</span> <span style="color:#d14">&#34;BASICDATA:REGION:MAP:ID:46122&#34;</span>
+
+查看key的类型
+&gt; <span style="color:#0086b3">type</span> BASICDATA:REGION:MAP:ID:46122
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -232,6 +250,8 @@ scan获取key
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/">Redis配置文件解释</a></li>
+        
         <li><a href="/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/">Exchange2010增加会议室功能</a></li>
         
         <li><a href="/post/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">MySQL8.0安装使用(centos8)</a></li>
@@ -239,8 +259,6 @@ scan获取key
         <li><a href="/post/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">Redis安装使用</a></li>
         
         <li><a href="/post/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/">Shell知识点合集</a></li>
-        
-        <li><a href="/tags/"></a></li>
         
     </ul>
 </div>
@@ -361,11 +379,11 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (7)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Python/">Python (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (4)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -378,7 +396,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/2021/">2021年</a>(8)<br>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021年</a>(9)<br>
      
     <a href="https://www.tangjihede.fun/tags/2020/">2020年</a>(4)<br>
      
@@ -386,9 +404,9 @@ if (!doNotTrack) {
      
     <a href="https://www.tangjihede.fun/tags/2018/">2018年</a>(6)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2017/">2017年</a>(3)<br>
+    <a href="https://www.tangjihede.fun/tags/2017/">2017年</a>(4)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2016/">2016年</a>(4)<br>
+    <a href="https://www.tangjihede.fun/tags/2016/">2016年</a>(5)<br>
     
 </div>
     </section>

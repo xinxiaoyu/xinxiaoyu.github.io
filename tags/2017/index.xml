@@ -34,5 +34,14 @@
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
+    <item>
+      <title>Redis配置文件解释</title>
+      <link>https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</link>
+      <pubDate>Thu, 22 Jun 2017 10:41:05 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</guid>
+      <description>protected-mode yes port 6379 tcp-backlog 511 timeout 0 tcp-keepalive 300 daemonize yes supervised no pidfile /var/run/redis_6379.pid loglevel notice logfile &amp;quot;/var/log/redis.log&amp;quot;</description>
+    </item>
+    
   </channel>
 </rss>

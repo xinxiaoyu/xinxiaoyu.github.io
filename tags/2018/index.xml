@@ -26,11 +26,11 @@
     </item>
     
     <item>
-      <title>Mysql5.7基于二进制日志的主从同步</title>
-      <link>https://www.tangjihede.fun/post/mysql5.7%E5%9F%BA%E4%BA%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97%E5%A4%8D%E5%88%B6/</link>
+      <title>Mysql5.7主从复制</title>
+      <link>https://www.tangjihede.fun/post/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
       <pubDate>Sat, 23 Jun 2018 18:02:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/mysql5.7%E5%9F%BA%E4%BA%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97%E5%A4%8D%E5%88%B6/</guid>
+      <guid>https://www.tangjihede.fun/post/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
       <description>replication with binary log file Master端： A、 在my.c</description>
     </item>
     
