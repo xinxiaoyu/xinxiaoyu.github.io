@@ -6,7 +6,16 @@
     <description>Recent content on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 25 Jun 2021 13:38:51 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Jun 2021 11:30:15 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python处理json数据</title>
+      <link>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Mon, 28 Jun 2021 11:30:15 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</guid>
+      <description>Python处理json的函数有四个：d</description>
+    </item>
+    
     <item>
       <title>腾讯云dts迁移MySQL</title>
       <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</link>
