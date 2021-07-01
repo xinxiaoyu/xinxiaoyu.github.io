@@ -162,10 +162,36 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
-<span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;511&#34;</span> &gt; /proc/sys/net/core/somaxconn
+<span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;511&#34;</span>,<span style="color:#d14">&#34;ALL&#34;</span> &gt; /proc/sys/net/core/somaxconn
 sysctl vm.overcommit_memory<span style="color:#000;font-weight:bold">=</span><span style="color:#099">1</span>
 <span style="color:#0086b3">echo</span> never &gt; /sys/kernel/mm/transparent_hugepage/enabled
 
@@ -187,7 +213,7 @@ redis&gt; <span style="color:#000;font-weight:bold">select</span> <span style="c
 2<span style="color:#000;font-weight:bold">)</span> <span style="color:#d14">&#34;&#34;</span>
 
 设置密码（重启失效）
-&gt; config <span style="color:#0086b3">set</span> requirepass <span style="color:#d14">&#34;test1234&#34;</span>
+&gt; config <span style="color:#0086b3">set</span> requirepass <span style="color:#d14">&#34;test1234&#34;</span>,<span style="color:#d14">&#34;ALL&#34;</span>
 
 返回当前数据库中键的总数
 &gt; dbsize   
@@ -222,11 +248,37 @@ scan获取key
 
 获取100个key
 127.0.0.1:6379&gt; SCAN <span style="color:#099">0</span> match * count <span style="color:#099">100</span>
-1<span style="color:#000;font-weight:bold">)</span> <span style="color:#d14">&#34;29312&#34;</span>
-2<span style="color:#000;font-weight:bold">)</span>   1<span style="color:#000;font-weight:bold">)</span> <span style="color:#d14">&#34;BASICDATA:REGION:MAP:ID:46122&#34;</span>
+1<span style="color:#000;font-weight:bold">)</span> <span style="color:#d14">&#34;29312&#34;</span>,<span style="color:#d14">&#34;ALL&#34;</span>
+2<span style="color:#000;font-weight:bold">)</span>   1<span style="color:#000;font-weight:bold">)</span> <span style="color:#d14">&#34;BASICDATA:REGION:MAP:ID:46122&#34;</span>,<span style="color:#d14">&#34;ALL&#34;</span>
 
 查看key的类型
 &gt; <span style="color:#0086b3">type</span> BASICDATA:REGION:MAP:ID:46122
+
+set类型：
+  SMEMBERS key
+  返回集合中的所有成员
+
+  SISMEMBER key member
+  判断 member 元素是否是集合 key 的成员
+
+  SREM key member1 <span style="color:#000;font-weight:bold">[</span>member2<span style="color:#000;font-weight:bold">]</span>
+  移除集合中一个或多个成员
+
+  SINTER KEY KEY1 key2
+  集合交集
+
+hash类型：
+  HDEL key field1 <span style="color:#000;font-weight:bold">[</span>field2<span style="color:#000;font-weight:bold">]</span>
+  删除一个或多个哈希表字段
+
+  HEXISTS key field
+  查看哈希表 key 中，指定的字段是否存在。
+
+  HGET key field
+  获取存储在哈希表中指定字段的值。
+
+  HGETALL key
+  获取在哈希表中指定 key 的所有字段和值
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -269,6 +321,8 @@ scan获取key
             <ul class="clearfix">
                 
                 <li><a href='/tags/2017'>2017</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
                 
             </ul>
             
@@ -375,13 +429,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (9)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (7)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (4)</a></li>
     
@@ -396,17 +450,19 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/2021/">2021年</a>(10)<br>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(35)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2020/">2020年</a>(4)<br>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(10)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2019/">2019年</a>(3)<br>
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(4)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2018/">2018年</a>(6)<br>
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(5)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2017/">2017年</a>(4)<br>
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2016/">2016年</a>(5)<br>
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(5)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(5)<br>
     
 </div>
     </section>
