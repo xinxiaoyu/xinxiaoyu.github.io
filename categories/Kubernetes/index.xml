@@ -6,7 +6,16 @@
     <description>Recent content in Kubernetes on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 21 May 2021 19:48:19 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jul 2021 14:44:58 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spinnaker_deployment_error</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</link>
+      <pubDate>Thu, 01 Jul 2021 14:44:58 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</guid>
+      <description>腾讯云coding平台部署错误 Check that the Docker image</description>
+    </item>
+    
     <item>
       <title>Docker镜像清理</title>
       <link>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>

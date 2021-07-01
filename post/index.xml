@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 28 Jun 2021 11:30:15 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jul 2021 17:40:09 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RabbitMQ常用命令</title>
+      <link>https://www.tangjihede.fun/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 01 Jul 2021 17:40:09 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>以守护进程的方式在后台运行 rabbitmq-server -detached 查看状态 rabbitmqctl</description>
+    </item>
+    
+    <item>
+      <title>Spinnaker_deployment_error</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</link>
+      <pubDate>Thu, 01 Jul 2021 14:44:58 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</guid>
+      <description>腾讯云coding平台部署错误 Check that the Docker image</description>
+    </item>
+    
     <item>
       <title>Python处理json数据</title>
       <link>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</link>

@@ -3,27 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.tangjihede.fun/tags/2021/</loc>
-    <lastmod>2021-06-28T11:30:15+08:00</lastmod>
+    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/tags/ALL/</loc>
-    <lastmod>2021-06-28T11:30:15+08:00</lastmod>
+    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/</loc>
-    <lastmod>2021-06-28T11:30:15+08:00</lastmod>
+    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/MQ/</loc>
+    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/</loc>
-    <lastmod>2021-06-28T11:30:15+08:00</lastmod>
+    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/tags/</loc>
+    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/</loc>
+    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/Kubernetes/</loc>
+    <lastmod>2021-07-01T14:44:58+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</loc>
+    <lastmod>2021-07-01T14:44:58+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/Python/</loc>
     <lastmod>2021-06-28T11:30:15+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</loc>
-    <lastmod>2021-06-28T11:30:15+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/tags/</loc>
-    <lastmod>2021-06-28T11:30:15+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/</loc>
     <lastmod>2021-06-28T11:30:15+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/MySQL/</loc>
@@ -51,9 +63,6 @@
     <lastmod>2021-05-21T20:01:36+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</loc>
-    <lastmod>2021-05-21T19:48:19+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/categories/Kubernetes/</loc>
     <lastmod>2021-05-21T19:48:19+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/Hugo/</loc>
