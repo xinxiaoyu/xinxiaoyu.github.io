@@ -18,7 +18,7 @@
         
     <meta property="article:modified_time" content='2021-07-01T17:40:09&#43;08:00'>
         
-    <meta name="Keywords" content="Devops,golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis">
     <meta name="description" content="RabbitMQ常用命令">
         
     <meta name="author" content="堂吉哈哈德">
@@ -97,30 +97,30 @@
         
         
         <div class="post-content">
-            <p>以守护进程的方式在后台运行
-<code>rabbitmq-server -detached   </code></p>
-<p>查看状态
-<code>rabbitmqctl status </code></p>
-<p>查看集群状态
-<code>rabbitmqctl cluster_status</code></p>
-<p>查看插件列表
-<code>rabbitmq-plugins list</code></p>
-<p>开启管理端口
-<code>rabbitmq-plugins enable rabbitmq_management</code></p>
+            <p>以守护进程的方式在后台运行</p>
+<p><code>rabbitmq-server -detached   </code></p>
+<p>查看状态</p>
+<p><code>rabbitmqctl status </code></p>
+<p>查看集群状态</p>
+<p><code>rabbitmqctl cluster_status</code></p>
+<p>查看插件列表</p>
+<p><code>rabbitmq-plugins list</code></p>
+<p>开启管理端口</p>
+<p><code>rabbitmq-plugins enable rabbitmq_management</code></p>
 <p>添加账号：</p>
 <pre><code>rabbitmqctl add_user &lt;username&gt; &lt;password&gt;
 例
 rabbitmqctl add_user &quot;admin&quot; &quot;admin&quot;
 </code></pre><p>赋予admin在“/”下面的全部资源的配置和读写权限。</p>
 <pre><code>rabbitmqctl set_permissions -p / admin &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;
-</code></pre><p>添加 权限tag（设置角色）
-<code>rabbitmqctl set_user_tags admin administrator</code></p>
-<p>删除用户（删除guest用户）
-<code>rabbitmqctl delete_user guest</code></p>
-<p>查看当前用户列表
-<code>rabbitmqctl  list_users</code></p>
-<p>修改用户的密码
-<code>rabbitmqctl  change_password  admin password</code></p>
+</code></pre><p>添加 权限tag（设置角色）</p>
+<p><code>rabbitmqctl set_user_tags admin administrator</code></p>
+<p>删除用户（删除guest用户）</p>
+<p><code>rabbitmqctl delete_user guest</code></p>
+<p>查看当前用户列表</p>
+<p><code>rabbitmqctl  list_users</code></p>
+<p>修改用户的密码</p>
+<p><code>rabbitmqctl  change_password  admin password</code></p>
 <p>诊断信息</p>
 <pre><code>rabbitmq-diagnostics status
 rabbitmq-diagnostics status -n rabbit@remote-host.local
@@ -138,8 +138,8 @@ rabbitmq-diagnostics erlang_cookie_sources
 确认
 [root@rabbitmq3 ~]# rabbitmqctl cluster_status 
 </code></pre><h5 id="二--剔除某个节点">二、  剔除某个节点</h5>
-<p>以剔除rabbitmq3为例
-方法1.  在rabbitmq3上操作</p>
+<p>以剔除rabbitmq3为例</p>
+<p>方法1.  在rabbitmq3上操作</p>
 <pre><code>[root@rabbitmq3 ~]# rabbitmqctl stop app
 
 [root@rabbitmq3 ~]#  rabbitmqctl reset
@@ -292,7 +292,9 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (1)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Error/">Error (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hugo/">Hugo (1)</a></li>
     
@@ -321,7 +323,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(37)<br>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(38)<br>
      
     <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(12)<br>
      
@@ -334,6 +336,8 @@ if (!doNotTrack) {
     <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(5)<br>
      
     <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(5)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(1)<br>
     
 </div>
     </section>
