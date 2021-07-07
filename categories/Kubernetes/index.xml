@@ -6,7 +6,16 @@
     <description>Recent content in Kubernetes on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 01 Jul 2021 14:44:58 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 13:39:58 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prometheus标签的增删改</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</link>
+      <pubDate>Wed, 07 Jul 2021 13:39:58 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</guid>
+      <description>像类似ELK(beat -&amp;gt; kafka -&amp;gt; logstash -&amp;gt; es -&amp;gt; ki</description>
+    </item>
+    
     <item>
       <title>Spinnaker_deployment_error</title>
       <link>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</link>

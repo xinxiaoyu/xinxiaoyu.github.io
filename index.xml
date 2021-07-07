@@ -6,7 +6,16 @@
     <description>Recent content on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 01 Jul 2021 17:40:09 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 13:39:58 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prometheus标签的增删改</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</link>
+      <pubDate>Wed, 07 Jul 2021 13:39:58 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</guid>
+      <description>像类似ELK(beat -&amp;gt; kafka -&amp;gt; logstash -&amp;gt; es -&amp;gt; ki</description>
+    </item>
+    
     <item>
       <title>RabbitMQ常用命令</title>
       <link>https://www.tangjihede.fun/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
