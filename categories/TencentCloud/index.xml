@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TencentCloud on 堂吉哈哈德的博客</title>
+    <link>https://www.tangjihede.fun/categories/TencentCloud/</link>
+    <description>Recent content in TencentCloud on 堂吉哈哈德的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 14 Jul 2021 13:41:16 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/TencentCloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>腾讯云CAM自定义策略</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Wed, 14 Jul 2021 13:41:16 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</guid>
+      <description>新建自定义策略，有四种方式，目前看主要使</description>
+    </item>
+    
+    <item>
+      <title>腾讯云dts迁移MySQL</title>
+      <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</link>
+      <pubDate>Fri, 25 Jun 2021 13:38:51 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</guid>
+      <description>数据传输服务（dts）下分多个具体功能：</description>
+    </item>
+    
+    <item>
+      <title>腾讯云Mysql物理备份恢复数据库</title>
+      <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Fri, 21 May 2021 15:35:48 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>使用物理备份恢复数据库（使用物理备份恢复</description>
+    </item>
+    
+  </channel>
+</rss>

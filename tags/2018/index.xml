@@ -27,10 +27,10 @@
     
     <item>
       <title>Mysql5.7主从复制</title>
-      <link>https://www.tangjihede.fun/post/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
       <pubDate>Sat, 23 Jun 2018 18:02:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
       <description>replication with binary log file Master端： A、 在my.c</description>
     </item>
     
@@ -54,10 +54,10 @@
     
     <item>
       <title>Redis导入rdb文件</title>
-      <link>https://www.tangjihede.fun/post/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</link>
       <pubDate>Fri, 22 Jun 2018 13:53:40 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</guid>
       <description>1. 查看运行的redis配置项dir的配置</description>
     </item>
     

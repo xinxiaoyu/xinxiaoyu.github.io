@@ -6,7 +6,16 @@
     <description>Recent content in 2021 on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Jul 2021 13:39:58 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2021/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jul 2021 13:41:16 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2021/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>腾讯云CAM自定义策略</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Wed, 14 Jul 2021 13:41:16 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</guid>
+      <description>新建自定义策略，有四种方式，目前看主要使</description>
+    </item>
+    
     <item>
       <title>Prometheus标签的增删改</title>
       <link>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</link>
@@ -54,10 +63,10 @@
     
     <item>
       <title>Mysql_global_variables(MySQL8.0)</title>
-      <link>https://www.tangjihede.fun/post/mysql_global_variables/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/mysql_global_variables/</link>
       <pubDate>Wed, 09 Jun 2021 17:43:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/mysql_global_variables/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/mysql_global_variables/</guid>
       <description>版本: MySQL 8.0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
@@ -72,10 +81,10 @@
     
     <item>
       <title>MySQL用户权限汇总</title>
-      <link>https://www.tangjihede.fun/post/mysql_privileges/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/mysql_privileges/</link>
       <pubDate>Mon, 24 May 2021 10:13:46 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/mysql_privileges/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/mysql_privileges/</guid>
       <description>一、 全局权限,作用于整个 MySQL 实例：mysq</description>
     </item>
     
@@ -108,10 +117,10 @@
     
     <item>
       <title>腾讯云Mysql物理备份恢复数据库</title>
-      <link>https://www.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Fri, 21 May 2021 15:35:48 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>使用物理备份恢复数据库（使用物理备份恢复</description>
     </item>
     

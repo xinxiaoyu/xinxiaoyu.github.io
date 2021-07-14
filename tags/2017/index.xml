@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>百年孤独开篇的几句摘抄</title>
+      <link>https://www.tangjihede.fun/post/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/</link>
+      <pubDate>Sat, 08 Jul 2017 14:15:28 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/</guid>
+      <description>多年以后，面对行刑队，奥雷里亚诺·布恩迪</description>
+    </item>
+    
+    <item>
       <title>Apache</title>
       <link>https://www.tangjihede.fun/post/LoadBalancing/apache/</link>
       <pubDate>Sat, 24 Jun 2017 13:32:13 +0800</pubDate>
@@ -36,19 +45,19 @@
     
     <item>
       <title>Redis命令合集</title>
-      <link>https://www.tangjihede.fun/post/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
       <pubDate>Thu, 22 Jun 2017 11:46:34 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
       <title>Redis配置文件解释</title>
-      <link>https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</link>
       <pubDate>Thu, 22 Jun 2017 10:41:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</guid>
       <description>protected-mode yes port 6379 tcp-backlog 511 timeout 0 tcp-keepalive 300 daemonize yes supervised no pidfile /var/run/redis_6379.pid loglevel notice logfile &amp;quot;/var/log/redis.log&amp;quot;</description>
     </item>
     

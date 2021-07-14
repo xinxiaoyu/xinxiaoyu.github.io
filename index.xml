@@ -6,7 +6,16 @@
     <description>Recent content on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Jul 2021 13:39:58 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jul 2021 13:41:16 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>腾讯云CAM自定义策略</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Wed, 14 Jul 2021 13:41:16 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</guid>
+      <description>新建自定义策略，有四种方式，目前看主要使</description>
+    </item>
+    
     <item>
       <title>Prometheus标签的增删改</title>
       <link>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</link>
@@ -54,10 +63,10 @@
     
     <item>
       <title>Mysql_global_variables(MySQL8.0)</title>
-      <link>https://www.tangjihede.fun/post/mysql_global_variables/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/mysql_global_variables/</link>
       <pubDate>Wed, 09 Jun 2021 17:43:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/mysql_global_variables/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/mysql_global_variables/</guid>
       <description>版本: MySQL 8.0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
@@ -72,10 +81,10 @@
     
     <item>
       <title>MySQL用户权限汇总</title>
-      <link>https://www.tangjihede.fun/post/mysql_privileges/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/mysql_privileges/</link>
       <pubDate>Mon, 24 May 2021 10:13:46 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/mysql_privileges/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/mysql_privileges/</guid>
       <description>一、 全局权限,作用于整个 MySQL 实例：mysq</description>
     </item>
     
@@ -126,19 +135,19 @@
     
     <item>
       <title>腾讯云Mysql物理备份恢复数据库</title>
-      <link>https://www.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Fri, 21 May 2021 15:35:48 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>使用物理备份恢复数据库（使用物理备份恢复</description>
     </item>
     
     <item>
       <title>Nginx简单介绍</title>
-      <link>https://www.tangjihede.fun/post/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 28 Dec 2020 13:40:50 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
       <description>1. Nginx介绍 准确地说，Nginx是一</description>
     </item>
     
@@ -243,10 +252,10 @@
     
     <item>
       <title>Mysql5.7主从复制</title>
-      <link>https://www.tangjihede.fun/post/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
       <pubDate>Sat, 23 Jun 2018 18:02:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
       <description>replication with binary log file Master端： A、 在my.c</description>
     </item>
     
@@ -270,10 +279,10 @@
     
     <item>
       <title>Redis导入rdb文件</title>
-      <link>https://www.tangjihede.fun/post/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</link>
       <pubDate>Fri, 22 Jun 2018 13:53:40 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</guid>
       <description>1. 查看运行的redis配置项dir的配置</description>
     </item>
     
@@ -296,6 +305,15 @@
     </item>
     
     <item>
+      <title>百年孤独开篇的几句摘抄</title>
+      <link>https://www.tangjihede.fun/post/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/</link>
+      <pubDate>Sat, 08 Jul 2017 14:15:28 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/</guid>
+      <description>多年以后，面对行刑队，奥雷里亚诺·布恩迪</description>
+    </item>
+    
+    <item>
       <title>Apache</title>
       <link>https://www.tangjihede.fun/post/LoadBalancing/apache/</link>
       <pubDate>Sat, 24 Jun 2017 13:32:13 +0800</pubDate>
@@ -306,19 +324,19 @@
     
     <item>
       <title>Redis命令合集</title>
-      <link>https://www.tangjihede.fun/post/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
       <pubDate>Thu, 22 Jun 2017 11:46:34 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
       <title>Redis配置文件解释</title>
-      <link>https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</link>
       <pubDate>Thu, 22 Jun 2017 10:41:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</guid>
       <description>protected-mode yes port 6379 tcp-backlog 511 timeout 0 tcp-keepalive 300 daemonize yes supervised no pidfile /var/run/redis_6379.pid loglevel notice logfile &amp;quot;/var/log/redis.log&amp;quot;</description>
     </item>
     
@@ -333,19 +351,19 @@
     
     <item>
       <title>MySQL8.0安装使用(centos8)</title>
-      <link>https://www.tangjihede.fun/post/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 15 Jun 2016 09:45:39 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
       <description>一、 简单介绍 MySQL（官方发音为/ma</description>
     </item>
     
     <item>
       <title>Redis安装使用</title>
-      <link>https://www.tangjihede.fun/post/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 15 Jun 2016 09:37:58 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
       <description>一、 简单介绍 Redis是一个开源（BSD</description>
     </item>
     
@@ -360,11 +378,29 @@
     
     <item>
       <title>Mysql命令合集</title>
-      <link>https://www.tangjihede.fun/post/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
+      <link>https://www.tangjihede.fun/post/MySQL/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
       <pubDate>Fri, 10 Jun 2016 15:12:21 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
+      <guid>https://www.tangjihede.fun/post/MySQL/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
+    </item>
+    
+    <item>
+      <title>金融云VPN新建用户操作步骤－管理员版本</title>
+      <link>https://www.tangjihede.fun/post/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Tue, 14 Jul 2015 14:10:24 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</guid>
+      <description>标签（空格分隔）： 金融云 vpn 1. 下载风云令 2.</description>
+    </item>
+    
+    <item>
+      <title>金融云VPN新用户申请操作步骤－普通用户版</title>
+      <link>https://www.tangjihede.fun/post/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</link>
+      <pubDate>Tue, 14 Jul 2015 14:02:51 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</guid>
+      <description>标签（空格分隔）： 金融云 vpn 1. 下载风云令,</description>
     </item>
     
     <item>
