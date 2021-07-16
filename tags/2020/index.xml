@@ -35,12 +35,30 @@
     </item>
     
     <item>
+      <title>Logstash处理Nginx日志</title>
+      <link>https://www.tangjihede.fun/post/ELK/logstash%E5%A4%84%E7%90%86Nginx%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 16 Oct 2020 13:47:34 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/ELK/logstash%E5%A4%84%E7%90%86Nginx%E6%97%A5%E5%BF%97/</guid>
+      <description>nginx log_format 1 2 3 4 5 6 log_format ops &amp;#39;$remote_addr - $remote_user [$time_local] &amp;#34;$request&amp;#34; &amp;#39; &amp;#39;$status $body_bytes_sent &amp;#34;$http_referer&amp;#34; &amp;#39;</description>
+    </item>
+    
+    <item>
       <title>LVM在线扩容分区空间</title>
       <link>https://www.tangjihede.fun/post/lvm/</link>
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/lvm/</guid>
       <description>LVM一般用于linux/unix系统在</description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ介绍</title>
+      <link>https://www.tangjihede.fun/post/RabbitMQ/RabbitMQ%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Thu, 16 Jul 2020 13:55:27 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/RabbitMQ/RabbitMQ%E4%BB%8B%E7%BB%8D/</guid>
+      <description>1 RabbitMQ简单介绍 RabbitM</description>
     </item>
     
   </channel>
