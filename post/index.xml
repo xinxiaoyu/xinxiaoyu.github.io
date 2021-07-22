@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 14 Jul 2021 13:41:16 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 13:58:42 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis命令行工具</title>
+      <link>https://www.tangjihede.fun/post/Python/redis_command_tool/</link>
+      <pubDate>Thu, 22 Jul 2021 13:58:42 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Python/redis_command_tool/</guid>
+      <description>封装了下redis的scan命令和del</description>
+    </item>
+    
+    <item>
+      <title>Redis使用iptables做端口转发</title>
+      <link>https://www.tangjihede.fun/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Fri, 16 Jul 2021 17:38:00 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</guid>
+      <description>腾讯云redis使用iptables开启</description>
+    </item>
+    
     <item>
       <title>腾讯云CAM自定义策略</title>
       <link>https://www.tangjihede.fun/post/Kubernetes/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</link>

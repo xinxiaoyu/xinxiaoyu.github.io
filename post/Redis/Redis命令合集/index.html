@@ -178,19 +178,6 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
@@ -261,30 +248,17 @@ set类型：
   SMEMBERS key
   返回集合中的所有成员
 
-  SISMEMBER key member
-  判断 member 元素是否是集合 key 的成员
-
-  SREM key member1 <span style="color:#000;font-weight:bold">[</span>member2<span style="color:#000;font-weight:bold">]</span>
-  移除集合中一个或多个成员
-
-  SINTER KEY KEY1 key2
-  集合交集
+zset：
+  ZRANGE key start stop <span style="color:#000;font-weight:bold">[</span>WITHSCORES<span style="color:#000;font-weight:bold">]</span>
+  通过索引区间返回有序集合指定区间内的成员
 
 hash类型：
   获取key
   HGETALL key
 
-  HDEL key field1 <span style="color:#000;font-weight:bold">[</span>field2<span style="color:#000;font-weight:bold">]</span>
-  删除一个或多个哈希表字段
-
-  HEXISTS key field
-  查看哈希表 key 中，指定的字段是否存在。
-
-  HGET key field
-  获取存储在哈希表中指定字段的值。
-
-  HGETALL key
-  获取在哈希表中指定 key 的所有字段和值
+list:
+  LRANGE key start stop
+  获取列表指定范围内的元素
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -441,17 +415,17 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (4)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (9)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (10)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (7)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (4)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/RabbitMQ/">RabbitMQ (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (4)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -466,11 +440,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(46)<br>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(48)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(14)<br>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(15)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(6)<br>
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(7)<br>
      
     <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(5)<br>
      

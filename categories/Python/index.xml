@@ -6,7 +6,16 @@
     <description>Recent content in Python on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 28 Jun 2021 11:30:15 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 13:58:42 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis命令行工具</title>
+      <link>https://www.tangjihede.fun/post/Python/redis_command_tool/</link>
+      <pubDate>Thu, 22 Jul 2021 13:58:42 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Python/redis_command_tool/</guid>
+      <description>封装了下redis的scan命令和del</description>
+    </item>
+    
     <item>
       <title>Python处理json数据</title>
       <link>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</link>
