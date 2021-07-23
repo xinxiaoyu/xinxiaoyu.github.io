@@ -2,17 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.tangjihede.fun/tags/2021/</loc>
-    <lastmod>2021-07-22T13:58:42+08:00</lastmod>
+    <loc>https://www.tangjihede.fun/tags/2020/</loc>
+    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/tags/ALL/</loc>
-    <lastmod>2021-07-22T13:58:42+08:00</lastmod>
+    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/</loc>
-    <lastmod>2021-07-22T13:58:42+08:00</lastmod>
+    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/</loc>
-    <lastmod>2021-07-22T13:58:42+08:00</lastmod>
+    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/RabbitMQ/python_client/</loc>
+    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/RabbitMQ/</loc>
+    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/tags/</loc>
+    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/</loc>
+    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/RabbitMQ/rabbitmq_exchange/</loc>
+    <lastmod>2021-07-23T18:36:48+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/tags/2021/</loc>
+    <lastmod>2021-07-23T13:53:37+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2021-07-23T13:53:37+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/Python/</loc>
     <lastmod>2021-07-22T13:58:42+08:00</lastmod>
@@ -22,15 +43,6 @@
   </url><url>
     <loc>https://www.tangjihede.fun/post/Python/redis_command_tool/</loc>
     <lastmod>2021-07-22T13:58:42+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/tags/</loc>
-    <lastmod>2021-07-22T13:58:42+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/</loc>
-    <lastmod>2021-07-22T13:58:42+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/tags/2020/</loc>
-    <lastmod>2021-07-16T17:38:00+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/Linux/</loc>
     <lastmod>2021-07-16T17:38:00+08:00</lastmod>
@@ -49,9 +61,6 @@
   </url><url>
     <loc>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</loc>
     <lastmod>2021-07-07T13:39:58+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/categories/RabbitMQ/</loc>
-    <lastmod>2021-07-01T17:40:09+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2021-07-01T17:40:09+08:00</lastmod>
@@ -124,6 +133,9 @@
   </url><url>
     <loc>https://www.tangjihede.fun/post/lvm/</loc>
     <lastmod>2020-08-01T12:49:14+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/errors/rabbitmq_%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2020-07-23T14:36:52+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/RabbitMQ/RabbitMQ%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2020-07-16T13:55:27+08:00</lastmod>
