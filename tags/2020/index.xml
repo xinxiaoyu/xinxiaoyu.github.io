@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <lastBuildDate>Fri, 23 Jul 2021 18:52:13 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2020/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Python_client</title>
+      <title>Python rabbitmq client</title>
       <link>https://www.tangjihede.fun/post/RabbitMQ/python_client/</link>
       <pubDate>Fri, 23 Jul 2021 18:52:13 +0800</pubDate>
       
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>Rabbitmq_exchange</title>
+      <title>Rabbitmq_exchange文档</title>
       <link>https://www.tangjihede.fun/post/RabbitMQ/rabbitmq_exchange/</link>
       <pubDate>Fri, 23 Jul 2021 18:36:48 +0800</pubDate>
       

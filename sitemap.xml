@@ -2,16 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.tangjihede.fun/tags/2020/</loc>
-    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
+    <loc>https://www.tangjihede.fun/tags/2021/</loc>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/tags/ALL/</loc>
-    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/Java/arthas/</loc>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/</loc>
-    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/debug_tool/</loc>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/Java/</loc>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/</loc>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/tags/</loc>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/</loc>
+    <lastmod>2021-08-02T17:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/tags/2020/</loc>
     <lastmod>2021-07-23T18:52:13+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/RabbitMQ/python_client/</loc>
@@ -20,17 +38,8 @@
     <loc>https://www.tangjihede.fun/categories/RabbitMQ/</loc>
     <lastmod>2021-07-23T18:52:13+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/tags/</loc>
-    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/</loc>
-    <lastmod>2021-07-23T18:52:13+08:00</lastmod>
-  </url><url>
     <loc>https://www.tangjihede.fun/post/RabbitMQ/rabbitmq_exchange/</loc>
     <lastmod>2021-07-23T18:36:48+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/tags/2021/</loc>
-    <lastmod>2021-07-23T13:53:37+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2021-07-23T13:53:37+08:00</lastmod>

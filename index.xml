@@ -6,9 +6,18 @@
     <description>Recent content on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 23 Jul 2021 18:52:13 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 17:53:31 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Python_client</title>
+      <title>Arthas tunnel server使用</title>
+      <link>https://www.tangjihede.fun/post/Java/arthas/</link>
+      <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Java/arthas/</guid>
+      <description>Arthas tunnel server是一个spring boot fat j</description>
+    </item>
+    
+    <item>
+      <title>Python rabbitmq client</title>
       <link>https://www.tangjihede.fun/post/RabbitMQ/python_client/</link>
       <pubDate>Fri, 23 Jul 2021 18:52:13 +0800</pubDate>
       
@@ -17,7 +26,7 @@
     </item>
     
     <item>
-      <title>Rabbitmq_exchange</title>
+      <title>Rabbitmq_exchange文档</title>
       <link>https://www.tangjihede.fun/post/RabbitMQ/rabbitmq_exchange/</link>
       <pubDate>Fri, 23 Jul 2021 18:36:48 +0800</pubDate>
       

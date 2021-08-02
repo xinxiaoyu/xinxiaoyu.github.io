@@ -6,7 +6,25 @@
     <description>Recent content in Categories on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 23 Jul 2021 18:52:13 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 17:53:31 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debug_tool</title>
+      <link>https://www.tangjihede.fun/categories/debug_tool/</link>
+      <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/debug_tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://www.tangjihede.fun/categories/Java/</link>
+      <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/Java/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>RabbitMQ</title>
       <link>https://www.tangjihede.fun/categories/RabbitMQ/</link>
