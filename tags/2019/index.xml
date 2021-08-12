@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>批量删除MySQL数据</title>
+      <link>https://www.tangjihede.fun/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Mon, 12 Aug 2019 14:59:13 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/</guid>
+      <description>依赖mysql connector https://pypi.org/project/mysql-connector-python/ 删除一周前的数据，加了</description>
+    </item>
+    
+    <item>
       <title>sed常用命令</title>
       <link>https://www.tangjihede.fun/post/Linux/sed%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 01 Jul 2019 14:11:49 +0800</pubDate>

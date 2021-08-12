@@ -44,6 +44,15 @@
     </item>
     
     <item>
+      <title>批量删除MySQL数据</title>
+      <link>https://www.tangjihede.fun/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Mon, 12 Aug 2019 14:59:13 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/</guid>
+      <description>依赖mysql connector https://pypi.org/project/mysql-connector-python/ 删除一周前的数据，加了</description>
+    </item>
+    
+    <item>
       <title>Mysql5.7主从复制</title>
       <link>https://www.tangjihede.fun/post/MySQL/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
       <pubDate>Sat, 23 Jun 2018 18:02:36 +0800</pubDate>

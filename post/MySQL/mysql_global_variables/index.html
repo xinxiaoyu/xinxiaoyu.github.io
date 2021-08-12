@@ -621,6 +621,15 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">519
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">520
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">521
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">522
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">523
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">524
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">525
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">526
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">527
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">528
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">529
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">530
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/*
@@ -805,7 +814,10 @@ tx_isolation
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_compression_pad_pct_max&#39;</span>,<span style="color:#d14">&#39;50&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_concurrency_tickets&#39;</span>,<span style="color:#d14">&#39;5000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_data_file_path&#39;</span>,<span style="color:#d14">&#39;ibdata1:12M:autoextend&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_deadlock_detect&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务得以继续执行</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_dedicated_server&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_default_row_format&#39;</span>,<span style="color:#d14">&#39;dynamic&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_disable_sort_file_cache&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
@@ -841,6 +853,8 @@ tx_isolation
 <span style="color:#998;font-style:italic"># https://time.geekbang.org/column/article/71806</span>
 
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_lock_wait_timeout&#39;</span>,<span style="color:#d14">&#39;50&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 锁等待超时时间，单位秒</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_buffer_size&#39;</span>,<span style="color:#d14">&#39;16777216&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_checksums&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_compressed_pages&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
@@ -1144,6 +1158,10 @@ tx_isolation
 <span style="color:#998;font-style:italic"># 连接被断开之后,客户端再发送请求就会收到错误：Lost connection to MySQL server during query</span>
 
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;windowing_use_high_precision&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+autocommit, <span style="color:#d14">&#39;ON&#39;</span>;
+<span style="color:#998;font-style:italic"># 自动提交,</span>
+<span style="color:#998;font-style:italic"># 关闭自动提交: set autocommit=0;</span>
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -1302,13 +1320,15 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (4)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Learning/">Learning (1)</a></li>
+    
     <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (10)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (4)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (5)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/RabbitMQ/">RabbitMQ (6)</a></li>
     
@@ -1329,13 +1349,13 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(53)<br>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(55)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(17)<br>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(18)<br>
      
     <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(5)<br>
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(6)<br>
      
     <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
      
