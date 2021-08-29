@@ -634,6 +634,12 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">532
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">533
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">534
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">535
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">536
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">537
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">538
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">539
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">540
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/*
@@ -719,7 +725,10 @@ tx_isolation
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_order_commits&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_rotate_encryption_master_key_at_startup&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_row_event_max_size&#39;</span>,<span style="color:#d14">&#39;8192&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_row_image&#39;</span>,<span style="color:#d14">&#39;FULL&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># binlog中是否包含所有字段的值。如果把 binlog_row_image 设置为 MINIMAL，则只会记录必要的信息，</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_row_metadata&#39;</span>,<span style="color:#d14">&#39;MINIMAL&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_row_value_options&#39;</span>,<span style="color:#d14">&#39;&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_rows_query_log_events&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
@@ -942,7 +951,10 @@ tx_isolation
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_error_services&#39;</span>,<span style="color:#d14">&#39;log_filter_internal; log_sink_internal&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_error_verbosity&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_output&#39;</span>,<span style="color:#d14">&#39;FILE&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_binlog_cache_size&#39;</span>,<span style="color:#d14">&#39;18446744073709547520&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 用于控制单个线程内 binlog cache 所占内存的大小。如果超过了这个参数规定的大小，就要暂存到磁盘。</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_binlog_size&#39;</span>,<span style="color:#d14">&#39;1073741824&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_binlog_stmt_cache_size&#39;</span>,<span style="color:#d14">&#39;18446744073709547520&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_connect_errors&#39;</span>,<span style="color:#d14">&#39;100&#39;</span><span style="color:#000;font-weight:bold">)</span>;
@@ -1332,7 +1344,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (8)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (9)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Python/">Python (5)</a></li>
     
@@ -1355,9 +1367,9 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(54)<br>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(55)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(17)<br>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(18)<br>
      
     <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
      
