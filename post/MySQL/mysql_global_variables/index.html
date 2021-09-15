@@ -640,6 +640,17 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">538
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">539
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">540
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">541
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">542
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">543
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">544
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">545
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">546
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">547
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">548
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">549
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">550
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">551
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/*
@@ -936,7 +947,10 @@ tx_isolation
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_write_io_threads&#39;</span>,<span style="color:#d14">&#39;4&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;interactive_timeout&#39;</span>,<span style="color:#d14">&#39;28800&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;internal_tmp_mem_storage_engine&#39;</span>,<span style="color:#d14">&#39;TempTable&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;join_buffer_size&#39;</span>,<span style="color:#d14">&#39;262144&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># join_buffer_size 越大，一次可以放入的行越多，分成的段数也就越少，对被驱动表的全表扫描次数就越少</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;keep_files_on_create&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;large_files_support&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;large_page_size&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
@@ -1082,7 +1096,10 @@ tx_isolation
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;rbr_exec_mode&#39;</span>,<span style="color:#d14">&#39;STRICT&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;read_buffer_size&#39;</span>,<span style="color:#d14">&#39;131072&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;read_only&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;read_rnd_buffer_size&#39;</span>,<span style="color:#d14">&#39;262144&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># read_rnd_buffer 的大小,用于MRR 优化</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;regexp_stack_limit&#39;</span>,<span style="color:#d14">&#39;8000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;regexp_time_limit&#39;</span>,<span style="color:#d14">&#39;32&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log&#39;</span>,<span style="color:#d14">&#39;DESKTOP-D4DB1RU-relay-bin&#39;</span><span style="color:#000;font-weight:bold">)</span>;
@@ -1128,7 +1145,12 @@ tx_isolation
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_max_allowed_packet&#39;</span>,<span style="color:#d14">&#39;1073741824&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_net_timeout&#39;</span>,<span style="color:#d14">&#39;60&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_parallel_type&#39;</span>,<span style="color:#d14">&#39;DATABASE&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 来控制并行复制策略：配置为 DATABASE，表示使用 MySQL 5.6 版本的按库并行策略；</span>
+<span style="color:#998;font-style:italic"># 配置为 LOGICAL_CLOCK，表示的就是类似 MariaDB 的策略。</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_parallel_workers&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># work 线程的个数，是slave用于更新relay log中的日志</span>
+
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_pending_jobs_size_max&#39;</span>,<span style="color:#d14">&#39;134217728&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_preserve_commit_order&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
 <span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_rows_search_algorithms&#39;</span>,<span style="color:#d14">&#39;INDEX_SCAN,HASH_SCAN&#39;</span><span style="color:#000;font-weight:bold">)</span>;
@@ -1236,16 +1258,6 @@ autocommit, <span style="color:#d14">&#39;ON&#39;</span>;
 
     
     
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= "xinxiaoyu/xinxiaoyu.github.io"
-            issue-term="blog_issue"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-      </script>
-    </div>
-    
 </div>
 
                     <footer id="footer">
@@ -1352,9 +1364,11 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (6)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (1)</a></li>
+    
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (4)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
     
@@ -1367,9 +1381,9 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(55)<br>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(57)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(18)<br>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(19)<br>
      
     <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
      
@@ -1379,7 +1393,7 @@ if (!doNotTrack) {
      
     <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(5)<br>
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
      
     <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
      

@@ -121,6 +121,20 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">连接
@@ -130,10 +144,15 @@ shell# mysql -h<span style="color:#008080">$ip</span> -P<span style="color:#0080
 mysql&gt; show binary logs;
 
 查看binlog内容
-mysql&gt; show binlog events in <span style="color:#d14">&#39;mysql57_binlog_mysqlbin.001852&#39;</span>;
+mysql&gt; show binlog events in <span style="color:#d14">&#39;mysql-bin.001294&#39;</span>;
 
 刷新生成新的binlog文件
 mysql&gt; flush logs;
+
+删除binlog
+&gt; PURGE MASTER LOGS TO <span style="color:#d14">&#39;MySQL-bin.010&#39;</span>;  //清除MySQL-bin.010日志
+&gt; PURGE MASTER LOGS BEFORE <span style="color:#d14">&#39;2008-06-22 13:00:00&#39;</span>;   //清除2008-06-22 13:00:00前binlog日志
+&gt; PURGE MASTER LOGS BEFORE DATE_SUB<span style="color:#000;font-weight:bold">(</span> NOW<span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">)</span>, INTERVAL <span style="color:#099">3</span> DAY<span style="color:#000;font-weight:bold">)</span>;  //清除3天前binlog日志BEFORE，变量的date自变量可以为<span style="color:#d14">&#39;YYYY-MM-DD hh:mm:ss&#39;</span>格式。
 
 查看binglo详细信息<span style="color:#000;font-weight:bold">(</span>比如binlog为row格式的<span style="color:#000;font-weight:bold">)</span>,position可以通过show binlog events确认.
 shell# mysqlbinlog -vv .<span style="color:#d14">\d</span>ata<span style="color:#d14">\b</span>inlog.000013 --start-position<span style="color:#000;font-weight:bold">=</span><span style="color:#099">2738</span> --stop-position<span style="color:#000;font-weight:bold">=</span>2973;
@@ -144,6 +163,15 @@ mysql&gt; alter table table_name add index index_name<span style="color:#000;fon
 全局锁
 mysql&gt; Flush tables with <span style="color:#0086b3">read</span> lock;
 
+
+mysql&gt; show engine innodb status
+
+mysql&gt; show variables like <span style="color:#d14">&#39;transaction_isolation&#39;</span>;
+
+
+alter table t <span style="color:#008080">engine</span> <span style="color:#000;font-weight:bold">=</span> InnoDB <span style="color:#998;font-style:italic"># 重建表</span>
+analyze table t 其实不是重建表，只是对表的索引信息做重新统计，没有修改数据，这个过程中加了 MDL 读锁；
+optimize table t 等于 recreate+analyze。
 
 </code></pre></td></tr></table>
 </div>
@@ -176,7 +204,7 @@ mysql&gt; Flush tables with <span style="color:#0086b3">read</span> lock;
         
         <li><a href="/post/Windows/word%E6%96%B0%E5%BB%BA%E6%A0%87%E9%A2%98/">Word新建标题</a></li>
         
-        <li><a href="/archives/"></a></li>
+        <li><a href="/tags/"></a></li>
         
     </ul>
 </div>
@@ -198,16 +226,6 @@ mysql&gt; Flush tables with <span style="color:#0086b3">read</span> lock;
     
 
     
-    
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= "xinxiaoyu/xinxiaoyu.github.io"
-            issue-term="blog_issue"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-      </script>
-    </div>
     
 </div>
 
@@ -315,9 +333,11 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (6)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (1)</a></li>
+    
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (4)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
     
@@ -330,9 +350,9 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(55)<br>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(57)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(18)<br>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(19)<br>
      
     <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
      
@@ -342,7 +362,7 @@ if (!doNotTrack) {
      
     <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(5)<br>
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
      
     <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
      

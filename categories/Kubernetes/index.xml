@@ -36,10 +36,10 @@
     
     <item>
       <title>Kubectl常用命令汇总</title>
-      <link>https://www.tangjihede.fun/post/kubectl_command/</link>
+      <link>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</link>
       <pubDate>Sat, 26 Dec 2020 18:03:09 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/kubectl_command/</guid>
+      <guid>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</guid>
       <description>从容器中拷贝文件 1 kubectl cp -n namespace pod_name:app/test.txt ./test.txt 查看pod</description>
     </item>
     

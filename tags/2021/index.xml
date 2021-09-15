@@ -6,7 +6,16 @@
     <description>Recent content in 2021 on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 26 Aug 2021 14:31:40 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2021/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Sep 2021 14:44:07 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2021/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>腾讯云服务器云硬盘扩容</title>
+      <link>https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</link>
+      <pubDate>Wed, 01 Sep 2021 14:44:07 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</guid>
+      <description>注意： 操作前请做快照备份 系统盘扩容： 控制</description>
+    </item>
+    
     <item>
       <title>Binlog样例</title>
       <link>https://www.tangjihede.fun/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/</link>
@@ -162,10 +171,10 @@
     
     <item>
       <title>Kubectl常用命令汇总</title>
-      <link>https://www.tangjihede.fun/post/kubectl_command/</link>
+      <link>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</link>
       <pubDate>Sat, 26 Dec 2020 18:03:09 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/kubectl_command/</guid>
+      <guid>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</guid>
       <description>从容器中拷贝文件 1 kubectl cp -n namespace pod_name:app/test.txt ./test.txt 查看pod</description>
     </item>
     

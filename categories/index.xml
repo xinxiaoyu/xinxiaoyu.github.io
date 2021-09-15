@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 26 Aug 2021 14:31:40 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Sep 2021 14:44:07 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TencentCloud</title>
+      <link>https://www.tangjihede.fun/categories/TencentCloud/</link>
+      <pubDate>Wed, 01 Sep 2021 14:44:07 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/TencentCloud/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>MySQL</title>
       <link>https://www.tangjihede.fun/categories/MySQL/</link>
@@ -71,15 +80,6 @@
     </item>
     
     <item>
-      <title>TencentCloud</title>
-      <link>https://www.tangjihede.fun/categories/TencentCloud/</link>
-      <pubDate>Wed, 14 Jul 2021 13:41:16 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/TencentCloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Kubernetes</title>
       <link>https://www.tangjihede.fun/categories/Kubernetes/</link>
       <pubDate>Wed, 07 Jul 2021 13:39:58 +0800</pubDate>
@@ -139,6 +139,15 @@
       <pubDate>Mon, 02 Oct 2017 14:26:31 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/categories/HahaWriting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SoftSetting</title>
+      <link>https://www.tangjihede.fun/categories/SoftSetting/</link>
+      <pubDate>Thu, 15 Sep 2016 15:33:45 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/SoftSetting/</guid>
       <description></description>
     </item>
     
