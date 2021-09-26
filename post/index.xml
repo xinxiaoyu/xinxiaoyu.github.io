@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 01 Sep 2021 14:44:07 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 11:45:44 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用helm chart部署skywalking</title>
+      <link>https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/</link>
+      <pubDate>Sun, 26 Sep 2021 11:45:44 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/</guid>
+      <description>简易版yaml文件(es7.yml)如下</description>
+    </item>
+    
+    <item>
+      <title>使用k8s configmap管理skywalking配置文件</title>
+      <link>https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 26 Sep 2021 11:45:44 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>依赖helm部署后的skywalking</description>
+    </item>
+    
     <item>
       <title>腾讯云服务器云硬盘扩容</title>
       <link>https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</link>
