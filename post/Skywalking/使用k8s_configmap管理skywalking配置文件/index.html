@@ -18,7 +18,7 @@
         
     <meta property="article:modified_time" content='2021-09-26T11:45:44&#43;08:00'>
         
-    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis">
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
     <meta name="description" content="使用k8s configmap管理skywalking配置文件">
         
     <meta name="author" content="堂吉哈哈德">
@@ -48,7 +48,7 @@
                         堂吉哈哈德的博客
                     </a>
                 
-                <p class="description">Devops相关技术</p>
+                <p class="description">工作内容存档记录</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -154,12 +154,12 @@ docker commit oap:tag xinxiaoyu/skywalking:8.5.2-es7
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">helm install <span style="color:#d14">&#34;</span><span style="color:#d14">${</span><span style="color:#008080">SKYWALKING_RELEASE_NAME</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span> <span style="color:#d14">${</span><span style="color:#008080">REPO</span><span style="color:#d14">}</span>/skywalking -n <span style="color:#d14">&#34;</span><span style="color:#d14">${</span><span style="color:#008080">SKYWALKING_RELEASE_NAMESPACE</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span> -f value.yml
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">helm upgrade <span style="color:#d14">&#34;</span><span style="color:#d14">${</span><span style="color:#008080">SKYWALKING_RELEASE_NAME</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span> <span style="color:#d14">${</span><span style="color:#008080">REPO</span><span style="color:#d14">}</span>/skywalking -n <span style="color:#d14">&#34;</span><span style="color:#d14">${</span><span style="color:#008080">SKYWALKING_RELEASE_NAMESPACE</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span> -f value.yml
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="4-修改configmap配置">4. 修改configmap配置</h4>
 <p>helm upgrade成功后，configmap会新增一个名为skywalking-dynamic-config且键值为空，增加相应键值即可。</p>
-<p>参考地址：</p>
+<p>键值参考地址：</p>
 <p><a href="https://github.com/apache/skywalking/blob/master/oap-server/server-configuration/configuration-k8s-configmap/src/test/resources/skywalking-dynamic-configmap.example.yaml">https://github.com/apache/skywalking/blob/master/oap-server/server-configuration/configuration-k8s-configmap/src/test/resources/skywalking-dynamic-configmap.example.yaml</a></p>
 
         </div>
@@ -212,6 +212,16 @@ docker commit oap:tag xinxiaoyu/skywalking:8.5.2-es7
     
 
     
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
     
 </div>
 
@@ -313,7 +323,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (9)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/RabbitMQ/">RabbitMQ (6)</a></li>
     
@@ -325,7 +335,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (4)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (5)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
     
@@ -338,9 +348,9 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
      
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(59)<br>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(60)<br>
      
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(21)<br>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(22)<br>
      
     <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
      

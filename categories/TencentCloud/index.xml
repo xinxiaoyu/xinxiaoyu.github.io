@@ -6,7 +6,16 @@
     <description>Recent content in TencentCloud on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 01 Sep 2021 14:44:07 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/TencentCloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 14:54:03 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/TencentCloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>腾讯云tke集群Pod内存使用率告警--Python实现</title>
+      <link>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</link>
+      <pubDate>Thu, 30 Sep 2021 14:54:03 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</guid>
+      <description>代码样例： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
+    </item>
+    
     <item>
       <title>腾讯云服务器云硬盘扩容</title>
       <link>https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</link>
