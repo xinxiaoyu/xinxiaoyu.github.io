@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.tangjihede.fun/tags/2022/</loc>
+    <lastmod>2022-01-04T16:29:08+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/tags/ALL/</loc>
+    <lastmod>2022-01-04T16:29:08+08:00</lastmod>
+  </url><url>
     <loc>https://www.tangjihede.fun/post/langtest/</loc>
     <lastmod>2022-01-04T16:29:08+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/</loc>
+    <lastmod>2022-01-04T16:29:08+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/tags/</loc>
     <lastmod>2022-01-04T16:29:08+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/</loc>
@@ -14,16 +23,10 @@
     <loc>https://www.tangjihede.fun/tags/2021/</loc>
     <lastmod>2021-09-30T14:54:03+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/tags/ALL/</loc>
-    <lastmod>2021-09-30T14:54:03+08:00</lastmod>
-  </url><url>
     <loc>https://www.tangjihede.fun/categories/</loc>
     <lastmod>2021-09-30T14:54:03+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/Python/</loc>
-    <lastmod>2021-09-30T14:54:03+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/tags/</loc>
     <lastmod>2021-09-30T14:54:03+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/TencentCloud/</loc>
