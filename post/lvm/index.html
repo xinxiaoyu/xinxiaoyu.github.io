@@ -106,7 +106,7 @@
 <p>比如我现在要扩容根分区：</p>
 <p>操作前的确认事项</p>
 <p>1、df -Th查看当前根分区的文件系统</p>
-<pre><code> [root@node1 ~]# df -Th
+<pre tabindex="0"><code> [root@node1 ~]# df -Th
 Filesystem              Type      Size  Used Avail Use% Mounted on
 devtmpfs                devtmpfs  1.7G     0  1.7G   0% /dev
 tmpfs                   tmpfs     1.7G     0  1.7G   0% /dev/shm
@@ -116,7 +116,7 @@ tmpfs                   tmpfs     1.7G     0  1.7G   0% /sys/fs/cgroup
 /dev/sda1               xfs      1014M  176M  839M  18% /boot
 tmpfs                   tmpfs     346M     0  346M   0% /run/user/0
 </code></pre><p>可知根分区的文件系统为/dev/mapper/centos-root，类型是xfs，但是不是用了LVM呢，可通过fdisk命令查看</p>
-<pre><code> [root@node1 ~]# fdisk -l
+<pre tabindex="0"><code> [root@node1 ~]# fdisk -l
 Disk /dev/sda: 8589 MB, 8589934592 bytes, 16777216 sectors
 Units = sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
@@ -134,7 +134,7 @@ Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 </code></pre><p>不难看出，/dev/sda1被分挂到了/boot分区，没有使用LVM，/dev/sda2便是根分区，使用了LVM，对应着/dev/mapper/centos-root</p>
 <p>2、使用pvdisplay命令找到/dev/sda2所属的PV</p>
-<pre><code>  [root@node1 ~]#  pvdisplay 
+<pre tabindex="0"><code>  [root@node1 ~]#  pvdisplay 
   --- Physical volume ---
   PV Name               /dev/sda2
   VG Name               centos
@@ -147,7 +147,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
   PV UUID               ZsFJj8-cCqI-tSxM-tb82-a8Jy-r8D0-VOgzIW
 </code></pre><p>由上可知所属的VG为centos（下面要用到）</p>
 <p>3、再通过lvdisplay命令找到centos下的LV Path</p>
-<pre><code> [root@node1 ~]# lvdisplay
+<pre tabindex="0"><code> [root@node1 ~]# lvdisplay
   --- Logical volume ---
   LV Path                /dev/centos/root
   LV Name                root
@@ -167,7 +167,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 </code></pre><p>确认LV path为/dev/centos/root，LV name为root</p>
 <p>知道这VG name和LV的信息，就可以走上面的4步操作了</p>
 <p>新增硬盘/dev/sdc</p>
-<pre><code>1、 pvcreate /dev/sdc
+<pre tabindex="0"><code>1、 pvcreate /dev/sdc
 2、 vgextend centos /dev/sdc #centos为扩容的VG name
 3、lvextend -L +95G /dev/centos/root  #大写的-L参数后面加具体的扩容空间
 3、lvextend -l +100%FREE /dev/centos/root #小写的-l参数后面加百名比，此处表示使用所有的空闲空间
@@ -245,7 +245,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -308,7 +308,50 @@ if (!doNotTrack) {
     </section>
     
     <section class="widget">
-        
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/langtest/" title="hugo自动化发布文章">hugo自动化发布文章</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/" title="腾讯云tke集群Pod内存使用率告警--Python实现">腾讯云tke集群Pod内存使用率告警--Python实现</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/" title="使用helm chart部署skywalking">使用helm chart部署skywalking</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="使用k8s configmap管理skywalking配置文件">使用k8s configmap管理skywalking配置文件</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/" title="腾讯云服务器云硬盘扩容">腾讯云服务器云硬盘扩容</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/" title="Binlog样例">Binlog样例</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Java/arthas/" title="Arthas tunnel server使用">Arthas tunnel server使用</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/python_client/" title="Python rabbitmq client">Python rabbitmq client</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/rabbitmq_exchange/" title="Rabbitmq_exchange文档">Rabbitmq_exchange文档</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/" title="Rabbitmq rpm安装">Rabbitmq rpm安装</a>
+    </li>
+    
+</ul>
     </section>
 
     
@@ -363,26 +406,26 @@ if (!doNotTrack) {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
-     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(60)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(22)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
+    
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>
+    
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>
     
 </div>
     </section>
@@ -406,12 +449,6 @@ if (!doNotTrack) {
             <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
         </ul>
     </section>
-    <span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-    <br>
-    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-    </span>
-
 </div>
             </div>
         </div>

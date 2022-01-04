@@ -98,7 +98,7 @@
         
         <div class="post-content">
             <h3 id="一-全局权限作用于整个-mysql-实例mysqluser表">一、 全局权限,作用于整个 MySQL 实例：mysql.user表</h3>
-<pre><code>mysql&gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user;
+<pre tabindex="0"><code>mysql&gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user;
 +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+
 | Host        | User             | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv |
 +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+
@@ -112,7 +112,7 @@
 6 rows in set (0.00 sec)
 </code></pre><h3 id="二-库级别的权限定义mysqldb表">二、 库级别的权限定义：mysql.db表</h3>
 <p>某个账号对某个库所拥有的权限，如下第一行结果表示用户&rsquo;lang&rsquo;对库&rsquo;lang_test&rsquo;所拥有的权限</p>
-<pre><code>mysql&gt; select Host, Db,User, Select_priv,Insert_priv,Update_priv,Delete_priv from mysql.db;
+<pre tabindex="0"><code>mysql&gt; select Host, Db,User, Select_priv,Insert_priv,Update_priv,Delete_priv from mysql.db;
 +-----------+--------------------+---------------+-------------+-------------+-------------+-------------+
 | Host      | Db                 | User          | Select_priv | Insert_priv | Update_priv | Delete_priv |
 +-----------+--------------------+---------------+-------------+-------------+-------------+-------------+
@@ -123,7 +123,7 @@
 3 rows in set (0.00 sec)
 </code></pre><h3 id="三-更细粒度的权限mysqltables_priv表权限mysqlcolumns_priv列权限">三、 更细粒度的权限：mysql.tables_priv（表权限）、mysql.columns_priv（列权限）</h3>
 <p>如下结果表示用户&rsquo;lang&rsquo;对t、t2表所有拥有的表权限（包括列权限）</p>
-<pre><code>mysql&gt; select Host, Db, User, Table_name,Table_priv,Column_priv from mysql.tables_priv where User='lang';
+<pre tabindex="0"><code>mysql&gt; select Host, Db, User, Table_name,Table_priv,Column_priv from mysql.tables_priv where User='lang';
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
 | Host | Db        | User | Table_name | Table_priv                                                                                         | Column_priv   |
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
@@ -133,7 +133,7 @@
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
 2 rows in set (0.00 sec)
 </code></pre><p>查看详细的列权限</p>
-<pre><code>mysql&gt; select * from mysql.columns_priv;
+<pre tabindex="0"><code>mysql&gt; select * from mysql.columns_priv;
 +------+-----------+------+------------+-------------+---------------------+---------------+
 | Host | Db        | User | Table_name | Column_name | Timestamp           | Column_priv   |
 +------+-----------+------+------------+-------------+---------------------+---------------+
@@ -143,9 +143,9 @@
 2 rows in set (0.00 sec)
 </code></pre><h3 id="四-授权操作">四、 授权操作：</h3>
 <p>1、 创建相应账号</p>
-<pre><code>create user 'username1'@'%' identified by 'passwd';
+<pre tabindex="0"><code>create user 'username1'@'%' identified by 'passwd';
 </code></pre><p>2、 赋予权限</p>
-<pre><code>所有库、表的全部权限
+<pre tabindex="0"><code>所有库、表的全部权限
 grant all privileges on *.* to 'username1'@'%' with grant option;
 
 某个库某个表的全部权限
@@ -232,7 +232,7 @@ GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO 'lang'@'%' with grant option;
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -295,7 +295,50 @@ if (!doNotTrack) {
     </section>
     
     <section class="widget">
-        
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/langtest/" title="hugo自动化发布文章">hugo自动化发布文章</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/" title="腾讯云tke集群Pod内存使用率告警--Python实现">腾讯云tke集群Pod内存使用率告警--Python实现</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/" title="使用helm chart部署skywalking">使用helm chart部署skywalking</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="使用k8s configmap管理skywalking配置文件">使用k8s configmap管理skywalking配置文件</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/" title="腾讯云服务器云硬盘扩容">腾讯云服务器云硬盘扩容</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/" title="Binlog样例">Binlog样例</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Java/arthas/" title="Arthas tunnel server使用">Arthas tunnel server使用</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/python_client/" title="Python rabbitmq client">Python rabbitmq client</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/rabbitmq_exchange/" title="Rabbitmq_exchange文档">Rabbitmq_exchange文档</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/" title="Rabbitmq rpm安装">Rabbitmq rpm安装</a>
+    </li>
+    
+</ul>
     </section>
 
     
@@ -350,26 +393,26 @@ if (!doNotTrack) {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
-     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(60)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(22)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
+    
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>
+    
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>
     
 </div>
     </section>
@@ -393,12 +436,6 @@ if (!doNotTrack) {
             <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
         </ul>
     </section>
-    <span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-    <br>
-    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-    </span>
-
 </div>
             </div>
         </div>

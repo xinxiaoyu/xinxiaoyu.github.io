@@ -98,25 +98,25 @@
         
         <div class="post-content">
             <p>远程连接后打印硬件信息</p>
-<pre><code>ipmitool -I lanplus -H ip -U user -P passwd sdr
+<pre tabindex="0"><code>ipmitool -I lanplus -H ip -U user -P passwd sdr
 </code></pre><p>查看带外地址</p>
-<pre><code>ipmitool lan print
+<pre tabindex="0"><code>ipmitool lan print
 </code></pre><p>打印传感器信息</p>
-<pre><code>ipmitool sdr
+<pre tabindex="0"><code>ipmitool sdr
 </code></pre><p>只打印电源信息</p>
-<pre><code>ipmitool sdr type “power supply”
+<pre tabindex="0"><code>ipmitool sdr type “power supply”
 PS Redundancy | 74h | ok | 7.1 | Fully Redundant
 Status | 62h | ok | 10.1 | Presence detected
 Status | 63h | ok | 10.2 | Presence detected
 检测到两个电源，并且有冗余（Redundant）
 </code></pre><p>只打印温度信息</p>
-<pre><code>ipmitool sdr type temperature
+<pre tabindex="0"><code>ipmitool sdr type temperature
 Inlet Temp | 04h | ok | 7.1 | 19 degrees C
 Exhaust Temp | 01h | ok | 7.1 | 36 degrees C
 Temp | 0Eh | ok | 3.1 | 46 degrees C #CPU
 Temp | 0Fh | ok | 3.2 | 51 degrees C #CPU
 </code></pre><p>电压</p>
-<pre><code>ipmitool sdr type voltage
+<pre tabindex="0"><code>ipmitool sdr type voltage
 VCORE PG | 23h | ok | 3.1 | State Deasserted
 VCORE PG | 24h | ok | 3.2 | State Deasserted
 3.3V PG | 19h | ok | 7.1 | State Deasserted
@@ -124,7 +124,7 @@ VCORE PG | 24h | ok | 3.2 | State Deasserted
 M23 VPP PG | 22h | ok | 3.2 | State Deasserted
 。。。。。。
 </code></pre><p>风扇</p>
-<pre><code>ipmitool sdr type fan
+<pre tabindex="0"><code>ipmitool sdr type fan
 Fan1 RPM | 30h | ok | 7.1 | 4680 RPM
 Fan2 RPM | 31h | ok | 7.1 | 4680 RPM
 Fan3 RPM | 32h | ok | 7.1 | 4680 RPM
@@ -132,7 +132,7 @@ Fan4 RPM | 33h | ok | 7.1 | 4560 RPM
 Fan5 RPM | 34h | ok | 7.1 | 4680 RPM
 Fan6 RPM | 35h | ok | 7.1 | 4680 RPM
 </code></pre><p>更详细的sensor信息</p>
-<pre><code>ipmitool sensor list
+<pre tabindex="0"><code>ipmitool sensor list
 SEL | na | discrete | na | na | na | na
 Intrusion | 0x0 | discrete | 0x0080| na | na | na
 Fan1 RPM | 4680.000 | RPM | ok | na | 360.000 | 600.000
@@ -211,7 +211,7 @@ MEM Usage | 0.000 | percent | ok | na | na | na
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -274,7 +274,50 @@ if (!doNotTrack) {
     </section>
     
     <section class="widget">
-        
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/langtest/" title="hugo自动化发布文章">hugo自动化发布文章</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/" title="腾讯云tke集群Pod内存使用率告警--Python实现">腾讯云tke集群Pod内存使用率告警--Python实现</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/" title="使用helm chart部署skywalking">使用helm chart部署skywalking</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="使用k8s configmap管理skywalking配置文件">使用k8s configmap管理skywalking配置文件</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/" title="腾讯云服务器云硬盘扩容">腾讯云服务器云硬盘扩容</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/" title="Binlog样例">Binlog样例</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/Java/arthas/" title="Arthas tunnel server使用">Arthas tunnel server使用</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/python_client/" title="Python rabbitmq client">Python rabbitmq client</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/rabbitmq_exchange/" title="Rabbitmq_exchange文档">Rabbitmq_exchange文档</a>
+    </li>
+    
+    <li>
+        <a href="https://www.tangjihede.fun/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/" title="Rabbitmq rpm安装">Rabbitmq rpm安装</a>
+    </li>
+    
+</ul>
     </section>
 
     
@@ -329,26 +372,26 @@ if (!doNotTrack) {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
-     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(60)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(22)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
-     
-    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
+    
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>
+    
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>
     
 </div>
     </section>
@@ -372,12 +415,6 @@ if (!doNotTrack) {
             <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
         </ul>
     </section>
-    <span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-    <br>
-    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-    </span>
-
 </div>
             </div>
         </div>
