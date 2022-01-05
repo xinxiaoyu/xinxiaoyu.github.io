@@ -144,10 +144,10 @@
     
     <item>
       <title>Jenkins pipeline知识点</title>
-      <link>https://www.tangjihede.fun/post/jenkins_pipeline/</link>
+      <link>https://www.tangjihede.fun/post/CICD/jenkins_pipeline/</link>
       <pubDate>Thu, 27 May 2021 10:34:50 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/jenkins_pipeline/</guid>
+      <guid>https://www.tangjihede.fun/post/CICD/jenkins_pipeline/</guid>
       <description>1. Pipeline用到的语法： Groovy 2. 全局变</description>
     </item>
     
@@ -162,28 +162,28 @@
     
     <item>
       <title>Python的selenium库使用汇总</title>
-      <link>https://www.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
+      <link>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
       <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
       <description>一、 下载对应浏览器的webdriver 如</description>
     </item>
     
     <item>
       <title>Docker镜像清理</title>
-      <link>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
+      <link>https://www.tangjihede.fun/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
       <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
+      <guid>https://www.tangjihede.fun/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
       <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos</description>
     </item>
     
     <item>
       <title>Hugo使用</title>
-      <link>https://www.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</link>
+      <link>https://www.tangjihede.fun/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://www.tangjihede.fun/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/</guid>
       <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个bl</description>
     </item>
     

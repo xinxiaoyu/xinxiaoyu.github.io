@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Linux系统安全设置 | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Linux系统安全设置 - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2018-06-23T14:14:13&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2018-06-23T14:14:13&#43;08:00'>
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="Linux系统安全设置">
+        
+    <meta name="author" content="堂吉哈哈德">
+    <meta property="og:url" content="https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.tangjihede.fun/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">工作内容存档记录</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.tangjihede.fun/">首页</a>
+                    
+                    <a  href="https://www.tangjihede.fun/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://www.tangjihede.fun/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.tangjihede.fun/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Linux系统安全设置</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年6月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Linux'>Linux</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <ol>
+<li>锁定zhangsan用户
+<code>passwd -l zhangsan</code></li>
+</ol>
+<p>或者在张三用户的密码字符串前添加“！”</p>
+<ol start="2">
+<li>将用户密码的最大有效天数限制为30天</li>
+</ol>
+<pre tabindex="0"><code>vi /etc/login.defs
+PASS_MAX_DAYS 30或者 chage -M 30 zhangsan
+</code></pre><ol start="3">
+<li>指定下次登录需更改密码
+<code>chage -d 0 zhangsan</code>或者将shadow文件中张三LAST DAY域（冒号：分割的第三列）值设为0</li>
+<li>限制用户密码的最小长度
+在linux中，主要基于cracklib模块检查用户密码的复杂性和安全性。</li>
+</ol>
+<pre tabindex="0"><code>vi /etc/pam.d/system-auth
+password required pam_cracklib.so try_first_pass retry=3 minlen=2
+</code></pre><ol start="5">
+<li>历史命令</li>
+</ol>
+<pre tabindex="0"><code>vi /etc/profile
+HISTSIZE=100
+</code></pre><ol start="6">
+<li>超时配置</li>
+</ol>
+<pre tabindex="0"><code>vi /etc/profile
+export TMOUT=600
+</code></pre><ol start="7">
+<li>编写shell脚本，检查系统中新增加的带有suid或者sgid位权限的程序文件。
+1)在系统处于干净状态时，建立合法suid/sgid文件的列表，作为是否有新增可疑suid文件的比较依据。</li>
+</ol>
+<pre tabindex="0"><code>find / -type f -perm +600 &gt; /etc/sfilelist
+chmod 600 /etc/sfilelist
+</code></pre><p>2)建立chksfile文件，与sfilelist比较，输出新增的suid/sgid属性的文件。</p>
+<pre tabindex="0"><code>vi /usr/local/chksfile
+#!/bin/bash
+OLD_LIST=/etc/sfilelist
+for i in find / type f – perm +600
+do
+grep -F “$i” $OLD_LIST &gt; /dev/null
+[ $? -ne 0 ] &amp;&amp; ls -lh $i
+done
+</code></pre><p>其中，grep命令的“-F”选项表示在查找时将一整行内容作为字符串进行匹配；find命令添加的-perm +600，表示查找设置的set-uid（权限数为4）或者set-gid（权限数为6）位的文件。
+8. grub引导菜单加密</p>
+<pre tabindex="0"><code>vi /boot/grub/grub.conf
+password 123456 
+</code></pre><p>若添加在第一个title。。。之前，则在仅需要变更grub引导参数时才需要密码；若添加在root（hd0,0）行之前，则进入该系统是否即需提供密码。
+加密
+grub-md5-crypt</p>
+<ol start="9">
+<li>通过nologin文件禁止普通用户登录系统
+<code>touch /etc/nologin</code></li>
+<li>更改系统登录提示，隐藏内核版本信息。</li>
+</ol>
+<pre tabindex="0"><code>vi /etc/issue //修改为以下内容
+Welcome to Server.
+cp -f /etc/issue /etc/issue.net
+</code></pre><ol start="11">
+<li>使用pam_access认证控制用户登录地点
+使用pam_access模块，可以按具体的用户名、登录地点进行控制，认证读取/etc/security/access.conf配置文件，该文件的配置行依次由权限、用户、来源组成，冒号分割。
+权限部分 + 、 – ，分别表示允许，拒绝。
+用户部分为用户名，若为多个用户则使用空格分开，若为一个组的用户，则使用@组名的形式。ALL表示所有用户。
+来源表示用户从哪个终端或远程主机登录，可以使用tty1、127.0.0.1、192.168.1.0、24等形式表示，多个来源地点之间使用空格分开。
+禁止除了root以外的用户从tty1终端登录</li>
+</ol>
+<pre tabindex="0"><code>vi /etc/pam.d/login
+account required pam_access.so
+vi /etc/security/access.conf
+– : ALL EXCEPT root : tty1
+</code></pre><p>禁止root用户从192.168.1.0/24、172.0.0.0/8网络中远程登录。</p>
+<pre tabindex="0"><code>vi /etc/pam.d/sshd
+account required pam_access.so
+vi /etc/security/access.conf
+– : root : 192.168.1.0/24 172.0.0.0/8
+</code></pre>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.tangjihede.fun/">堂吉哈哈德</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/">https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Awk常用命令</a></li>
+        
+        <li><a href="/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/">Redis导入rdb文件</a></li>
+        
+        <li><a href="/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/">监控linux系统的ssh登陆</a></li>
+        
+        <li><a href="/post/Hahawriting/%E4%B8%8D%E5%90%8C%E6%80%A7%E6%A0%BC%E7%9A%84%E8%A1%A8%E8%BF%B0%E6%96%B9%E5%BC%8F/">不同性格的表述方式</a></li>
+        
+        <li><a href="/post/Hahawriting/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/">百年孤独开篇的几句摘抄</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2018'>2018</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108398306-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.tangjihede.fun/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.tangjihede.fun/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.tangjihede.fun/categories/Aliyun/">Aliyun (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Error/">Error (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (10)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (9)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/debug_tool/">debug_tool (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (1)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (22)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2019/">2019 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2018/">2018 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2017/">2017 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2015/">2015 (2)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (61)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

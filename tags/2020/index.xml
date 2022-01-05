@@ -45,19 +45,19 @@
     
     <item>
       <title>Haproxy简单记录</title>
-      <link>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sat, 28 Nov 2020 13:58:28 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
       <description>1 HAProxy介绍 HAProxy同样是</description>
     </item>
     
     <item>
       <title>LVS</title>
-      <link>https://www.tangjihede.fun/post/lvs/</link>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/lvs/</link>
       <pubDate>Thu, 26 Nov 2020 19:18:54 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/lvs/</guid>
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/lvs/</guid>
       <description>1.1 初步介绍 负载均衡（Load balanc</description>
     </item>
     
@@ -72,10 +72,10 @@
     
     <item>
       <title>LVM在线扩容分区空间</title>
-      <link>https://www.tangjihede.fun/post/lvm/</link>
+      <link>https://www.tangjihede.fun/post/Linux/lvm/</link>
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/lvm/</guid>
+      <guid>https://www.tangjihede.fun/post/Linux/lvm/</guid>
       <description>LVM一般用于linux/unix系统在</description>
     </item>
     

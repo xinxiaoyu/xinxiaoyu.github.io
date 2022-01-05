@@ -102,7 +102,7 @@
 <a href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a></p>
 <h3 id="二-本地起一个debug端口">二、 本地起一个debug端口</h3>
 <p>如windows的cmd中的命令为：</p>
-<pre tabindex="0"><code>C:\abs_path\chrome.exe --remote-debugging-port=9222 --user-data-dir=&quot;C:\selenum\AutomationProfile&quot;
+<pre><code>C:\abs_path\chrome.exe --remote-debugging-port=9222 --user-data-dir=&quot;C:\selenum\AutomationProfile&quot;
 </code></pre><p>这会打开一个浏览器窗口（新标签页）</p>
 <h3 id="三-在上面打开的浏览器窗口中可以先人工做相关的登录操作从而避免认证如需要登录的问题">三、 在上面打开的浏览器窗口中可以先人工做相关的登录操作，从而避免认证（如需要登录）的问题。</h3>
 <p>这个窗口就是selenium接管的页面，selenium之后的操作都会在该页面。</p>
@@ -110,7 +110,7 @@
 <ul>
 <li>XPATH，单个的XPATH可以通过【审查元素】后copy xpath拿到。</li>
 </ul>
-<pre tabindex="0"><code>driver.find_element(By.XPATH, &quot;//span[contains(text(),'匹配字段')]/parent::*/parent::div/div[4]/h4[1]/a&quot;)
+<pre><code>driver.find_element(By.XPATH, &quot;//span[contains(text(),'匹配字段')]/parent::*/parent::div/div[4]/h4[1]/a&quot;)
 
 driver.find_element_by_xpath('/html/body/spinnaker/div/div[2]/div/react-ui-view-adapter/div/div[2]/ui-view/div/div/div[2]/div/pipeline-configurer/div/div[2]/pipeline-config-view/div/div/pipeline-config-stage/div/div/div[3]/button[2]')
 
@@ -118,11 +118,11 @@ driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div/div[3]/button
 </code></pre><ul>
 <li>find_element_by_partial_link_text，如</li>
 </ul>
-<pre tabindex="0"><code>driver.find_element_by_partial_link_text(&quot;产品负责人确认&quot;)
+<pre><code>driver.find_element_by_partial_link_text(&quot;产品负责人确认&quot;)
 </code></pre><h3 id="五-部分代码如下codingnet旧版部署控制台为例">五、 部分代码如下（coding.net旧版部署控制台为例）：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -161,7 +161,7 @@ driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div/div[3]/button
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">selenium</span> <span style="color:#000;font-weight:bold">import</span> webdriver
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">selenium</span> <span style="color:#000;font-weight:bold">import</span> webdriver
 <span style="color:#000;font-weight:bold">from</span> <span style="color:#555">selenium.webdriver.chrome.options</span> <span style="color:#000;font-weight:bold">import</span> Options
 <span style="color:#000;font-weight:bold">import</span> <span style="color:#555">time</span>
 <span style="color:#000;font-weight:bold">import</span> <span style="color:#555">sys</span>
@@ -176,27 +176,27 @@ driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div/div[3]/button
     driver<span style="color:#000;font-weight:bold">.</span>get(url)
     time<span style="color:#000;font-weight:bold">.</span>sleep(<span style="color:#099">2</span>)
     test1 <span style="color:#000;font-weight:bold">=</span> driver<span style="color:#000;font-weight:bold">.</span>find_element_by_partial_link_text(<span style="color:#d14">&#34;产品负责人确认&#34;</span>)
-    <span style="color:#0086b3">print</span>(test1)
+    <span style="color:#000;font-weight:bold">print</span>(test1)
     <span style="color:#000;font-weight:bold">if</span> test1<span style="color:#000;font-weight:bold">.</span>text <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;产品负责人确认&#39;</span>:
         test1<span style="color:#000;font-weight:bold">.</span>click()
-        <span style="color:#0086b3">print</span>(test1<span style="color:#000;font-weight:bold">.</span>text)
+        <span style="color:#000;font-weight:bold">print</span>(test1<span style="color:#000;font-weight:bold">.</span>text)
         time<span style="color:#000;font-weight:bold">.</span>sleep(<span style="color:#099">2</span>)
         json_text <span style="color:#000;font-weight:bold">=</span> driver<span style="color:#000;font-weight:bold">.</span>find_element_by_xpath(<span style="color:#d14">&#39;/html/body/spinnaker/div/div[2]/div/react-ui-view-adapter/div/div[2]/ui-view/div/div/div[2]/div/pipeline-configurer/div/div[2]/pipeline-config-view/div/div/pipeline-config-stage/div/div/div[3]/button[2]&#39;</span>)
         <span style="color:#000;font-weight:bold">if</span> json_text<span style="color:#000;font-weight:bold">.</span>text <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;编辑 JSON 配置&#39;</span>:
-            <span style="color:#0086b3">print</span>(<span style="color:#d14">&#39;编辑 JSON 配置&#39;</span>)
+            <span style="color:#000;font-weight:bold">print</span>(<span style="color:#d14">&#39;编辑 JSON 配置&#39;</span>)
             json_text<span style="color:#000;font-weight:bold">.</span>click()
             save_button <span style="color:#000;font-weight:bold">=</span> driver<span style="color:#000;font-weight:bold">.</span>find_element_by_xpath(<span style="color:#d14">&#39;/html/body/div[2]/div[2]/div/div/div/div[3]/button[2]&#39;</span>)
             <span style="color:#000;font-weight:bold">if</span> save_button<span style="color:#000;font-weight:bold">.</span>text <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;保存变更&#39;</span>:
-                <span style="color:#0086b3">print</span>(save_button<span style="color:#000;font-weight:bold">.</span>text)
+                <span style="color:#000;font-weight:bold">print</span>(save_button<span style="color:#000;font-weight:bold">.</span>text)
 
             <span style="color:#000;font-weight:bold">else</span>:
-                <span style="color:#0086b3">print</span>(<span style="color:#d14">&#34;未找到保存变更button&#34;</span>)
+                <span style="color:#000;font-weight:bold">print</span>(<span style="color:#d14">&#34;未找到保存变更button&#34;</span>)
                 sys<span style="color:#000;font-weight:bold">.</span>exit(<span style="color:#099">100</span>)
         <span style="color:#000;font-weight:bold">else</span>:
-            <span style="color:#0086b3">print</span>(<span style="color:#d14">&#34;未找到编辑JSON配置按钮&#34;</span>)
+            <span style="color:#000;font-weight:bold">print</span>(<span style="color:#d14">&#34;未找到编辑JSON配置按钮&#34;</span>)
             sys<span style="color:#000;font-weight:bold">.</span>exit(<span style="color:#099">100</span>)
     <span style="color:#000;font-weight:bold">else</span>:
-        <span style="color:#0086b3">print</span>(<span style="color:#d14">&#39;未找到产品负责人阶段&#39;</span>)
+        <span style="color:#000;font-weight:bold">print</span>(<span style="color:#d14">&#39;未找到产品负责人阶段&#39;</span>)
         sys<span style="color:#000;font-weight:bold">.</span>exit(<span style="color:#099">100</span>)
 </code></pre></td></tr></table>
 </div>
@@ -266,7 +266,7 @@ driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div/div[3]/button
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -335,14 +335,14 @@ if (!doNotTrack) {
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="https://www.tangjihede.fun/categories/Aliyun/">Aliyun (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (1)</a></li>
     
@@ -384,28 +384,26 @@ if (!doNotTrack) {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
-    
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (61)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (22)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2016/">2016 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2018/">2018 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2019/">2019 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2017/">2017 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2015/">2015 (2)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (1)</br></a>
+     
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(60)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(22)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
     
 </div>
     </section>
@@ -430,10 +428,11 @@ if (!doNotTrack) {
         </ul>
     </section>
     <span id="busuanzi_container_site_pv">
-        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-        <br>
-        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-        </span>
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+    <br>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+    </span>
+
 </div>
             </div>
         </div>

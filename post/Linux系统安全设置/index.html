@@ -105,7 +105,7 @@
 <ol start="2">
 <li>将用户密码的最大有效天数限制为30天</li>
 </ol>
-<pre tabindex="0"><code>vi /etc/login.defs
+<pre><code>vi /etc/login.defs
 PASS_MAX_DAYS 30或者 chage -M 30 zhangsan
 </code></pre><ol start="3">
 <li>指定下次登录需更改密码
@@ -113,26 +113,26 @@ PASS_MAX_DAYS 30或者 chage -M 30 zhangsan
 <li>限制用户密码的最小长度
 在linux中，主要基于cracklib模块检查用户密码的复杂性和安全性。</li>
 </ol>
-<pre tabindex="0"><code>vi /etc/pam.d/system-auth
+<pre><code>vi /etc/pam.d/system-auth
 password required pam_cracklib.so try_first_pass retry=3 minlen=2
 </code></pre><ol start="5">
 <li>历史命令</li>
 </ol>
-<pre tabindex="0"><code>vi /etc/profile
+<pre><code>vi /etc/profile
 HISTSIZE=100
 </code></pre><ol start="6">
 <li>超时配置</li>
 </ol>
-<pre tabindex="0"><code>vi /etc/profile
+<pre><code>vi /etc/profile
 export TMOUT=600
 </code></pre><ol start="7">
 <li>编写shell脚本，检查系统中新增加的带有suid或者sgid位权限的程序文件。
 1)在系统处于干净状态时，建立合法suid/sgid文件的列表，作为是否有新增可疑suid文件的比较依据。</li>
 </ol>
-<pre tabindex="0"><code>find / -type f -perm +600 &gt; /etc/sfilelist
+<pre><code>find / -type f -perm +600 &gt; /etc/sfilelist
 chmod 600 /etc/sfilelist
 </code></pre><p>2)建立chksfile文件，与sfilelist比较，输出新增的suid/sgid属性的文件。</p>
-<pre tabindex="0"><code>vi /usr/local/chksfile
+<pre><code>vi /usr/local/chksfile
 #!/bin/bash
 OLD_LIST=/etc/sfilelist
 for i in find / type f – perm +600
@@ -142,7 +142,7 @@ grep -F “$i” $OLD_LIST &gt; /dev/null
 done
 </code></pre><p>其中，grep命令的“-F”选项表示在查找时将一整行内容作为字符串进行匹配；find命令添加的-perm +600，表示查找设置的set-uid（权限数为4）或者set-gid（权限数为6）位的文件。
 8. grub引导菜单加密</p>
-<pre tabindex="0"><code>vi /boot/grub/grub.conf
+<pre><code>vi /boot/grub/grub.conf
 password 123456 
 </code></pre><p>若添加在第一个title。。。之前，则在仅需要变更grub引导参数时才需要密码；若添加在root（hd0,0）行之前，则进入该系统是否即需提供密码。
 加密
@@ -152,7 +152,7 @@ grub-md5-crypt</p>
 <code>touch /etc/nologin</code></li>
 <li>更改系统登录提示，隐藏内核版本信息。</li>
 </ol>
-<pre tabindex="0"><code>vi /etc/issue //修改为以下内容
+<pre><code>vi /etc/issue //修改为以下内容
 Welcome to Server.
 cp -f /etc/issue /etc/issue.net
 </code></pre><ol start="11">
@@ -163,12 +163,12 @@ cp -f /etc/issue /etc/issue.net
 来源表示用户从哪个终端或远程主机登录，可以使用tty1、127.0.0.1、192.168.1.0、24等形式表示，多个来源地点之间使用空格分开。
 禁止除了root以外的用户从tty1终端登录</li>
 </ol>
-<pre tabindex="0"><code>vi /etc/pam.d/login
+<pre><code>vi /etc/pam.d/login
 account required pam_access.so
 vi /etc/security/access.conf
 – : ALL EXCEPT root : tty1
 </code></pre><p>禁止root用户从192.168.1.0/24、172.0.0.0/8网络中远程登录。</p>
-<pre tabindex="0"><code>vi /etc/pam.d/sshd
+<pre><code>vi /etc/pam.d/sshd
 account required pam_access.so
 vi /etc/security/access.conf
 – : root : 192.168.1.0/24 172.0.0.0/8
@@ -238,7 +238,7 @@ vi /etc/security/access.conf
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -307,14 +307,14 @@ if (!doNotTrack) {
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="https://www.tangjihede.fun/categories/Aliyun/">Aliyun (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (1)</a></li>
     
@@ -356,28 +356,26 @@ if (!doNotTrack) {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
-    
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (61)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (22)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2018/">2018 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2019/">2019 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2017/">2017 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2016/">2016 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2015/">2015 (2)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (1)</br></a>
+     
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(60)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(22)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
     
 </div>
     </section>
@@ -402,10 +400,11 @@ if (!doNotTrack) {
         </ul>
     </section>
     <span id="busuanzi_container_site_pv">
-        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-        <br>
-        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-        </span>
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+    <br>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+    </span>
+
 </div>
             </div>
         </div>

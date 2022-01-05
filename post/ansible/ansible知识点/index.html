@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Ansible知识点 | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Ansible知识点 - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-11-13T17:52:22&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-11-13T17:52:22&#43;08:00'>
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="Ansible知识点">
+        
+    <meta name="author" content="堂吉哈哈德">
+    <meta property="og:url" content="https://www.tangjihede.fun/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.tangjihede.fun/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">工作内容存档记录</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.tangjihede.fun/">首页</a>
+                    
+                    <a  href="https://www.tangjihede.fun/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://www.tangjihede.fun/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.tangjihede.fun/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Ansible知识点</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年11月13日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Ansible'>Ansible</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h4 id="1-指定单个ip运行使用root用户">1. 指定单个ip运行（使用root用户)</h4>
+<pre tabindex="0"><code>ansible all -i 10.10.120.255, -m ping -u root  
+ #检测连接是否正常
+ 10.10.120.255 | SUCCESS =&gt; {
+    &quot;ansible_facts&quot;: {
+        &quot;discovered_interpreter_python&quot;: &quot;/usr/bin/python&quot;
+    }, 
+    &quot;changed&quot;: false, 
+    &quot;ping&quot;: &quot;pong&quot;
+}
+</code></pre><p>还有setup模块打印出的信息，在使用变量/判断的时候可以拿到很多有用的信息，比如指定操作系统平台或版本信息</p>
+<pre tabindex="0"><code>ansible-playbook all -i 10.10.1.3, test.yml
+</code></pre><p>ansible-playbook的用法</p>
+<h4 id="2-使用yum安装httpd并启动">2. 使用yum安装httpd并启动</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>install httpd<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">yum</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>httpd <span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>present<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>start httpd<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">service</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>httpd<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>start<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3-新建目录拷贝文件并给改变执行权限">3. 新建目录，拷贝文件并给（改变）执行权限</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>create zabbix directory<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">file</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">path</span>:<span style="color:#bbb"> </span>/usr/local/zabbix<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>directory<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>copy tcp_connections.sh<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">copy</span>:<span style="color:#bbb"> </span>src=../file/tcp_connections.sh dest=/etc/zabbix<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>change tcp_connections.sh <span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">file</span>:<span style="color:#bbb"> </span>dest=/etc/zabbix/tcp_connections.sh mode=a+x<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="4-条件判断只在centos7上安装zabbix">4. 条件判断，只在centos7上安装zabbix</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>centos7 install zabbix-agend<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">shell</span>:<span style="color:#bbb"> </span>rpm -ivh https://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-agent-3.4.15-1.el7.x86_64.rpm<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">when</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>ansible_distribution == &#34;CentOS&#34; and ansible_distribution_major_version == &#34;7&#34;,&#34;ALL&#34;<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="5-定义handlers并引用">5. 定义handlers并引用</h4>
+<p>在handlers/main.yml中定义一个重启的handlers</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>zabbix restart <span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#命名</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">service</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>zabbix-agent<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>restarted<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>在tasks/main.yml中引用，只要执行过程中配置文件是change状态就触发notify</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>up zabbix-agent file client<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">template</span>:<span style="color:#bbb"> </span>src=zabbix_agentd.conf.j2 dest=/usr/local/zabbix/zabbix_agentd.conf<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">notify</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">  </span>- zabbix restart<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="6-改变所在目录执行命令如出错则忽略错误信息并继续执行">6. 改变所在目录执行命令，如出错则忽略错误信息并继续执行</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>enabled service zabbix-agent<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">shell</span>:<span style="color:#bbb"> </span>./zabbix_agentd.exe -i -c ./zabbix_agentd.conf<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">args</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">chdir</span>:<span style="color:#bbb"> </span>/usr/local/zabbix<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">ignore_errors</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">True</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>roles的目录树
+
+        <img class="mx-auto" alt="ansible.png" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy81NTE3NC0xYjc1YjhlMzI4ZDM2YjdkLnBuZw?x-oss-process=image/format,png" />   
+    </p>
+<h4 id="7-命令">7. 命令</h4>
+<pre tabindex="0"><code>1. ansible all -m ping
+2. ansible all -m shell -a &quot;echo $TERM&quot;
+3. ansible web -m copy -a &quot;src=/etc/hosts dst=/etc/hosts&quot;
+4. ansible web -m file -a &quot;dest=/etc/hosts mode=600&quot;,&quot;ALL&quot;
+5. ansible web -m yum -a &quot;name=nginx state=present&quot;
+6. ansible web -m service -a &quot;name=httpd state=restart&quot;
+</code></pre>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.tangjihede.fun/">堂吉哈哈德</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/">https://www.tangjihede.fun/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/">批量删除MySQL数据</a></li>
+        
+        <li><a href="/post/Linux/sed%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">sed常用命令</a></li>
+        
+        <li><a href="/post/Linux/rpm_install_err/">Rpm_install_err</a></li>
+        
+        <li><a href="/post/TCP/%E5%8D%8A%E8%BF%9E%E6%8E%A5%E9%98%9F%E5%88%97/">半连接队列</a></li>
+        
+        <li><a href="/post/Linux/iptables%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Iptables常用命令</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2019'>2019</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108398306-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.tangjihede.fun/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.tangjihede.fun/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.tangjihede.fun/categories/Aliyun/">Aliyun (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Error/">Error (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (10)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (9)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/debug_tool/">debug_tool (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (1)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (22)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2019/">2019 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2018/">2018 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2017/">2017 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2015/">2015 (2)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (61)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

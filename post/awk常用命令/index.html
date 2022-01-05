@@ -114,7 +114,22 @@
 <ol start="4">
 <li></li>
 </ol>
-
+<pre><code>awk ‘{gsub(/^[^ \t]+[ \t]*/,””)}1’ file 去头
+$ awk ‘{ gsub(/test/, “mytest”); print }’ testfile
+$ awk ‘{ gsub(/test/, “mytest”, $1); print }’ testfile
+第一个例子在整个文档中匹配test，匹配的都被替换成mytest。
+第二个例子在整个文档的第一个域中匹配，所有匹配的都被替换成mytest
+awk ‘!a[$1]++’ file
+awk ‘{a[$1]++}END{for (j in a) print a[j],j}’ post-install | sort -rn
+文件file的每一行的格式如下：
+600001　　200712　　SH　　20080413
+希望吧格式调整为：
+600001　　2007　　12　　2008　　04　　13
+可以实用以下shell命令：
+cat file | awk ‘{print $1 “\t” substr($2,1,4) “\t” substr($2,5,2) “\t” substr($4,1,4) “\t” substr($4,5,2) “\t” substr($4,7,2)}’
+取第五行的第3个字符
+awk ‘NR==5{print substr($0,3,1)}’ filename
+</code></pre>
         </div>
 
         
@@ -180,7 +195,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -249,14 +264,14 @@ if (!doNotTrack) {
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="https://www.tangjihede.fun/categories/Aliyun/">Aliyun (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (3)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (1)</a></li>
     
@@ -298,28 +313,26 @@ if (!doNotTrack) {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
-    
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (61)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (22)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2018/">2018 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2019/">2019 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2017/">2017 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2016/">2016 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2015/">2015 (2)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (1)</br></a>
+     
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(60)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(22)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
     
 </div>
     </section>
@@ -344,10 +357,11 @@ if (!doNotTrack) {
         </ul>
     </section>
     <span id="busuanzi_container_site_pv">
-        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-        <br>
-        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-        </span>
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+    <br>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+    </span>
+
 </div>
             </div>
         </div>

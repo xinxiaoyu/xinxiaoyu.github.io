@@ -8,11 +8,11 @@
     <language>zh-CN</language><atom:link href="https://www.tangjihede.fun/categories/CI/CD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo自动化发布文章测试页面</title>
-      <link>https://www.tangjihede.fun/post/langtest/</link>
+      <link>https://www.tangjihede.fun/post/CICD/hugo%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83/</link>
       <pubDate>Tue, 04 Jan 2022 16:29:08 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/langtest/</guid>
-      <description>hugo自动化发布文章页面</description>
+      <guid>https://www.tangjihede.fun/post/CICD/hugo%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83/</guid>
+      <description>hugo自动化发布文章页面 jenkins pipeli</description>
     </item>
     
     <item>
@@ -26,10 +26,10 @@
     
     <item>
       <title>Jenkins pipeline知识点</title>
-      <link>https://www.tangjihede.fun/post/jenkins_pipeline/</link>
+      <link>https://www.tangjihede.fun/post/CICD/jenkins_pipeline/</link>
       <pubDate>Thu, 27 May 2021 10:34:50 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/jenkins_pipeline/</guid>
+      <guid>https://www.tangjihede.fun/post/CICD/jenkins_pipeline/</guid>
       <description>1. Pipeline用到的语法： Groovy 2. 全局变</description>
     </item>
     
