@@ -156,6 +156,7 @@ pipeline {
             steps {
                 dir(&quot;./xinxiaoyu.github.io/&quot;) {
                     sh 'ls'
+                    sh 'git config --global user.email &quot;1248247511@qq.com&quot;'
                     sh 'git add *'
                     sh 'git commit -m &quot;123&quot;'
                     withCredentials([usernamePassword(credentialsId: &quot;${env.GITLAB_CREDENTIAL_ID}&quot;,
