@@ -539,6 +539,15 @@
     </item>
     
     <item>
+      <title>Jenkins_library_err</title>
+      <link>https://www.tangjihede.fun/post/CICD/jenkins_library_err/</link>
+      <pubDate>Sun, 11 Jan 2015 18:55:12 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/CICD/jenkins_library_err/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 Scripts not permitted</description>
+    </item>
+    
+    <item>
       <title>Inotify_rsync_unison使用记录</title>
       <link>https://www.tangjihede.fun/post/Linux/inotify_rsync/</link>
       <pubDate>Sat, 10 Jan 2015 17:52:22 +0800</pubDate>
@@ -563,6 +572,15 @@
       
       <guid>https://www.tangjihede.fun/post/Windows/word%E6%96%B0%E5%BB%BA%E6%A0%87%E9%A2%98/</guid>
       <description>视图 &amp;ndash;&amp;gt; 导航窗格，显示标题 在标题行回车后会</description>
+    </item>
+    
+    <item>
+      <title>jenkins pipeline指定分支和tag</title>
+      <link>https://www.tangjihede.fun/post/CICD/brach_tag_library/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/CICD/brach_tag_library/</guid>
+      <description>如下pipeline可以指定github</description>
     </item>
     
   </channel>
