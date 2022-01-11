@@ -539,6 +539,15 @@
     </item>
     
     <item>
+      <title>Inotify_rsync_unison使用记录</title>
+      <link>https://www.tangjihede.fun/post/Linux/inotify_rsync/</link>
+      <pubDate>Sat, 10 Jan 2015 17:52:22 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Linux/inotify_rsync/</guid>
+      <description>inotifywait 1 /usr/bin/inotifywait -mrq --timefmt &amp;#39;%Y-%m-%d %H:%M&amp;#39; --format &amp;#39;%T %w %f %e&amp;#39; -e create,delete,modify,move --exclude &amp;#34;\.(tmp|swp|log|info)&amp;#34; $mon_file &amp;gt;&amp;gt; $log_file rsync</description>
+    </item>
+    
+    <item>
       <title>眼为天空泪成雪，苍茫北方我家乡</title>
       <link>https://www.tangjihede.fun/post/Hahawriting/%E7%9C%BC%E4%B8%BA%E5%A4%A9%E7%A9%BA%E6%B3%AA%E6%88%90%E9%9B%AA/</link>
       <pubDate>Fri, 09 Dec 2011 18:48:01 +0800</pubDate>
