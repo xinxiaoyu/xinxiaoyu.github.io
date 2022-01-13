@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/Kubernetes/</link>
+    <link>https://xinxiaoyu.github.io/categories/Kubernetes/</link>
     <description>Recent content in Kubernetes on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Jul 2021 13:39:58 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 13:39:58 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prometheus标签的增删改</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/prometheus_label/</link>
       <pubDate>Wed, 07 Jul 2021 13:39:58 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/prometheus_label/</guid>
       <description>像类似ELK(beat -&amp;gt; kafka -&amp;gt; logstash -&amp;gt; es -&amp;gt; ki</description>
     </item>
     
     <item>
       <title>Spinnaker_deployment_error</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/spinnaker_deployment_error/</link>
       <pubDate>Thu, 01 Jul 2021 14:44:58 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/spinnaker_deployment_error/</guid>
       <description>腾讯云coding平台部署错误 Check that the Docker image</description>
     </item>
     
     <item>
       <title>Docker镜像清理</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
       <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
       <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos</description>
     </item>
     
     <item>
       <title>Kubectl常用命令汇总</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/kubectl_command/</link>
       <pubDate>Sat, 26 Dec 2020 18:03:09 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/kubectl_command/</guid>
       <description>从容器中拷贝文件 1 kubectl cp -n namespace pod_name:app/test.txt ./test.txt 查看pod</description>
     </item>
     

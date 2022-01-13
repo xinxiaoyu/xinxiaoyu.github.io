@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>debug_tool on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/debug_tool/</link>
+    <link>https://xinxiaoyu.github.io/categories/debug_tool/</link>
     <description>Recent content in debug_tool on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Aug 2021 17:53:31 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/debug_tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 17:53:31 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/debug_tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arthas tunnel server使用</title>
-      <link>https://www.tangjihede.fun/post/Java/arthas/</link>
+      <link>https://xinxiaoyu.github.io/post/Java/arthas/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Java/arthas/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Java/arthas/</guid>
       <description>Arthas tunnel server是一个spring boot fat j</description>
     </item>
     
