@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Redis on 堂吉哈哈德的博客</title>
-    <link>https://xinxiaoyu.github.io/categories/Redis/</link>
+    <link>https://www.tangjihede.fun/categories/Redis/</link>
     <description>Recent content in Redis on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 22 Jul 2021 13:58:42 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 13:58:42 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis命令行工具</title>
-      <link>https://xinxiaoyu.github.io/post/Python/redis_command_tool/</link>
+      <link>https://www.tangjihede.fun/post/Python/redis_command_tool/</link>
       <pubDate>Thu, 22 Jul 2021 13:58:42 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Python/redis_command_tool/</guid>
+      <guid>https://www.tangjihede.fun/post/Python/redis_command_tool/</guid>
       <description>封装了下redis的scan命令和del</description>
     </item>
     
     <item>
       <title>Redis使用iptables做端口转发</title>
-      <link>https://xinxiaoyu.github.io/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</link>
+      <link>https://www.tangjihede.fun/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Fri, 16 Jul 2021 17:38:00 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://www.tangjihede.fun/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</guid>
       <description>腾讯云redis使用iptables开启</description>
     </item>
     
     <item>
       <title>Redis导入rdb文件</title>
-      <link>https://xinxiaoyu.github.io/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</link>
       <pubDate>Fri, 22 Jun 2018 13:53:40 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</guid>
       <description>1. 查看运行的redis配置项dir的配置</description>
     </item>
     
     <item>
       <title>Redis命令合集</title>
-      <link>https://xinxiaoyu.github.io/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
       <pubDate>Thu, 22 Jun 2017 11:46:34 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
       <title>Redis配置文件解释</title>
-      <link>https://xinxiaoyu.github.io/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</link>
       <pubDate>Thu, 22 Jun 2017 10:41:05 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</guid>
       <description>protected-mode yes port 6379 tcp-backlog 511 timeout 0 tcp-keepalive 300 daemonize yes supervised no pidfile /var/run/redis_6379.pid loglevel notice logfile &amp;quot;/var/log/redis.log&amp;quot;</description>
     </item>
     
     <item>
       <title>Redis安装使用</title>
-      <link>https://xinxiaoyu.github.io/post/Redis/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <link>https://www.tangjihede.fun/post/Redis/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 15 Jun 2016 09:37:58 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Redis/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://www.tangjihede.fun/post/Redis/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
       <description>一、 简单介绍 Redis是一个开源（BSD</description>
     </item>
     
