@@ -159,7 +159,35 @@ two:one
 </div>
 </div><p>004  将前两行搬到文件末尾</p>
 <pre tabindex="0"><code>sed -e '1,2{H;D};$G' hehe.sh  
-</code></pre>
+</code></pre><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sed -n <span style="color:#d14">&#39;1,4p&#39;</span> file
+sed -n <span style="color:#d14">&#39;1~2p&#39;</span> file
+sed -n <span style="color:#d14">&#39;2~2p&#39;</span> file
+sed <span style="color:#d14">&#39;/pipei/s/zaipipei/tihuan/&#39;</span> file
+sed <span style="color:#d14">&#39;2 a newline&#39;</span> file  <span style="color:#998;font-style:italic"># 第二行后插入新行</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>命令n: 打印模式空间
+命令x: 保持空间替换模式空间
+命令h: 将模式空间的内容复制到保持空间
+命令H: 将模式空间的内容追加到保持空间
+命令g: 将保持空间的内容复制到模式空间
+命令G: 将保持空间的内容追加到模式空间
+命令N: 读取下一行数据并追加到模式空间
+命令P: 打印多行模式中的第一行
+命令D: 删除多行模式中的第一行
+:label: 定义一个标签
+命令b label: 执行该标签后面的命令。sed会跳转到该标签，然后执行后面的命令
+命令t: 进入循环</p>
+
         </div>
 
         
@@ -325,6 +353,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (6)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Security/">Security (2)</a></li>
+    
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
@@ -333,9 +363,9 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (5)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Tools/">Tools (3)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/debug_tool/">debug_tool (1)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
     
 </ul>
     </section>
@@ -360,9 +390,11 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2015/">2015 (5)</br></a>
     
+    <a href="https://www.tangjihede.fun/tags/2014/">2014 (2)</br></a>
+    
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (64)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (66)</br></a>
     
 </div>
     </section>

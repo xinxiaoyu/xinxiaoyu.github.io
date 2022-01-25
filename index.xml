@@ -575,6 +575,24 @@
     </item>
     
     <item>
+      <title>nginx安全设置</title>
+      <link>https://www.tangjihede.fun/post/Security/nginx_security/</link>
+      <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Security/nginx_security/</guid>
+      <description>添加认证 yum install httpd-tools htpasswd -c -b /etc/nginx/passwd/kibana.passwd user auth_basic &amp;quot;Kibana Auth&amp;quot;; auth_basic_user_file /etc/nginx/passwd/kibana.passwd; 更改默</description>
+    </item>
+    
+    <item>
+      <title>安全工具</title>
+      <link>https://www.tangjihede.fun/post/Security/security_tools/</link>
+      <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Security/security_tools/</guid>
+      <description>拓扑分析工具：DNS Sweep、Nslo</description>
+    </item>
+    
+    <item>
       <title>眼为天空泪成雪，苍茫北方我家乡</title>
       <link>https://www.tangjihede.fun/post/Hahawriting/%E7%9C%BC%E4%B8%BA%E5%A4%A9%E7%A9%BA%E6%B3%AA%E6%88%90%E9%9B%AA/</link>
       <pubDate>Fri, 09 Dec 2011 18:48:01 +0800</pubDate>

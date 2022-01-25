@@ -44,20 +44,20 @@
     </item>
     
     <item>
-      <title>debug_tool</title>
-      <link>https://www.tangjihede.fun/categories/debug_tool/</link>
-      <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/debug_tool/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Java</title>
       <link>https://www.tangjihede.fun/categories/Java/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/categories/Java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://www.tangjihede.fun/categories/Tools/</link>
+      <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/Tools/</guid>
       <description></description>
     </item>
     
@@ -166,6 +166,15 @@
       <pubDate>Tue, 14 Jul 2015 14:10:24 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/categories/Aliyun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://www.tangjihede.fun/categories/Security/</link>
+      <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/Security/</guid>
       <description></description>
     </item>
     
