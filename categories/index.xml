@@ -6,16 +6,7 @@
     <description>Recent content in Categories on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 07 Feb 2022 17:13:30 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>HahaWriting</title>
-      <link>https://www.tangjihede.fun/categories/HahaWriting/</link>
-      <pubDate>Mon, 07 Feb 2022 17:13:30 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/HahaWriting/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 30 Sep 2021 14:54:03 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python</title>
       <link>https://www.tangjihede.fun/categories/Python/</link>
@@ -53,20 +44,20 @@
     </item>
     
     <item>
+      <title>debug_tool</title>
+      <link>https://www.tangjihede.fun/categories/debug_tool/</link>
+      <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/debug_tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Java</title>
       <link>https://www.tangjihede.fun/categories/Java/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/categories/Java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tools</title>
-      <link>https://www.tangjihede.fun/categories/Tools/</link>
-      <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/Tools/</guid>
       <description></description>
     </item>
     
@@ -116,11 +107,11 @@
     </item>
     
     <item>
-      <title>SoftSetting</title>
-      <link>https://www.tangjihede.fun/categories/SoftSetting/</link>
+      <title>Hugo</title>
+      <link>https://www.tangjihede.fun/categories/Hugo/</link>
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/SoftSetting/</guid>
+      <guid>https://www.tangjihede.fun/categories/Hugo/</guid>
       <description></description>
     </item>
     
@@ -152,6 +143,24 @@
     </item>
     
     <item>
+      <title>HahaWriting</title>
+      <link>https://www.tangjihede.fun/categories/HahaWriting/</link>
+      <pubDate>Mon, 02 Oct 2017 14:26:31 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/HahaWriting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SoftSetting</title>
+      <link>https://www.tangjihede.fun/categories/SoftSetting/</link>
+      <pubDate>Thu, 15 Sep 2016 15:33:45 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/categories/SoftSetting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Windows</title>
       <link>https://www.tangjihede.fun/categories/Windows/</link>
       <pubDate>Fri, 24 Jun 2016 13:37:59 +0800</pubDate>
@@ -166,15 +175,6 @@
       <pubDate>Tue, 14 Jul 2015 14:10:24 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/categories/Aliyun/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://www.tangjihede.fun/categories/Security/</link>
-      <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/Security/</guid>
       <description></description>
     </item>
     

@@ -6,43 +6,7 @@
     <description>Recent content on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 07 Feb 2022 17:13:30 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>适龄未婚闹矛盾怎么办</title>
-      <link>https://www.tangjihede.fun/post/Hahawriting/%E5%A4%A7%E9%BE%84%E6%9C%AA%E5%A9%9A/</link>
-      <pubDate>Mon, 07 Feb 2022 17:13:30 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/Hahawriting/%E5%A4%A7%E9%BE%84%E6%9C%AA%E5%A9%9A/</guid>
-      <description>男女生如果适龄未婚，那么年龄越大，和父母</description>
-    </item>
-    
-    <item>
-      <title>道歉通用文案，仅供参考</title>
-      <link>https://www.tangjihede.fun/post/Hahawriting/%E9%81%93%E6%AD%89%E8%8C%83%E6%96%87/</link>
-      <pubDate>Sun, 06 Feb 2022 17:13:30 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/Hahawriting/%E9%81%93%E6%AD%89%E8%8C%83%E6%96%87/</guid>
-      <description>爸爸，您好，我是XXX。自从上次和您吵架</description>
-    </item>
-    
-    <item>
-      <title>我的老姥姥的一个小故事</title>
-      <link>https://www.tangjihede.fun/post/Hahawriting/%E6%95%85%E4%BA%8B%E4%B8%80%E5%88%991/</link>
-      <pubDate>Sat, 05 Feb 2022 17:13:30 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/Hahawriting/%E6%95%85%E4%BA%8B%E4%B8%80%E5%88%991/</guid>
-      <description>我的老姥姥(差三代)年轻时(解放前)有回</description>
-    </item>
-    
-    <item>
-      <title>hugo自动化发布文章测试页面</title>
-      <link>https://www.tangjihede.fun/post/CICD/hugo%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83/</link>
-      <pubDate>Tue, 04 Jan 2022 16:29:08 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/CICD/hugo%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83/</guid>
-      <description>hugo自动化发布文章页面 jenkins pipeli</description>
-    </item>
-    
+    <lastBuildDate>Thu, 30 Sep 2021 14:54:03 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>腾讯云tke集群Pod内存使用率告警--Python实现</title>
       <link>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</link>
@@ -207,10 +171,10 @@
     
     <item>
       <title>Jenkins pipeline知识点</title>
-      <link>https://www.tangjihede.fun/post/CICD/jenkins_pipeline/</link>
+      <link>https://www.tangjihede.fun/post/jenkins_pipeline/</link>
       <pubDate>Thu, 27 May 2021 10:34:50 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/CICD/jenkins_pipeline/</guid>
+      <guid>https://www.tangjihede.fun/post/jenkins_pipeline/</guid>
       <description>1. Pipeline用到的语法： Groovy 2. 全局变</description>
     </item>
     
@@ -243,28 +207,28 @@
     
     <item>
       <title>Python的selenium库使用汇总</title>
-      <link>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
+      <link>https://www.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
       <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://www.tangjihede.fun/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
       <description>一、 下载对应浏览器的webdriver 如</description>
     </item>
     
     <item>
       <title>Docker镜像清理</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
+      <link>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
       <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
+      <guid>https://www.tangjihede.fun/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
       <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos</description>
     </item>
     
     <item>
       <title>Hugo使用</title>
-      <link>https://www.tangjihede.fun/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/</link>
+      <link>https://www.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://www.tangjihede.fun/post/hugo%E4%BD%BF%E7%94%A8/</guid>
       <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个bl</description>
     </item>
     
@@ -297,19 +261,19 @@
     
     <item>
       <title>Haproxy简单记录</title>
-      <link>https://www.tangjihede.fun/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
+      <link>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sat, 28 Nov 2020 13:58:28 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://www.tangjihede.fun/post/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
       <description>1 HAProxy介绍 HAProxy同样是</description>
     </item>
     
     <item>
       <title>LVS</title>
-      <link>https://www.tangjihede.fun/post/LoadBalancing/lvs/</link>
+      <link>https://www.tangjihede.fun/post/lvs/</link>
       <pubDate>Thu, 26 Nov 2020 19:18:54 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/LoadBalancing/lvs/</guid>
+      <guid>https://www.tangjihede.fun/post/lvs/</guid>
       <description>1.1 初步介绍 负载均衡（Load balanc</description>
     </item>
     
@@ -324,10 +288,10 @@
     
     <item>
       <title>LVM在线扩容分区空间</title>
-      <link>https://www.tangjihede.fun/post/Linux/lvm/</link>
+      <link>https://www.tangjihede.fun/post/lvm/</link>
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/lvm/</guid>
+      <guid>https://www.tangjihede.fun/post/lvm/</guid>
       <description>LVM一般用于linux/unix系统在</description>
     </item>
     
@@ -351,10 +315,10 @@
     
     <item>
       <title>Ansible知识点</title>
-      <link>https://www.tangjihede.fun/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <link>https://www.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
       <pubDate>Wed, 13 Nov 2019 17:52:22 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <guid>https://www.tangjihede.fun/post/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
       <description>1. 指定单个ip运行（使用root用户) ansible</description>
     </item>
     
@@ -405,19 +369,19 @@
     
     <item>
       <title>Ipmi常用命令</title>
-      <link>https://www.tangjihede.fun/post/Linux/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 28 Jun 2018 14:07:35 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://www.tangjihede.fun/post/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>远程连接后打印硬件信息 ipmitool -I lanplus -H ip -U user -P passwd</description>
     </item>
     
     <item>
       <title>显卡故障日志分析</title>
-      <link>https://www.tangjihede.fun/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link>
+      <link>https://www.tangjihede.fun/post/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link>
       <pubDate>Sat, 23 Jun 2018 18:21:41 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid>
+      <guid>https://www.tangjihede.fun/post/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid>
       <description>物理机宕机，查看有如下日志： 1 2 3 4 5 6</description>
     </item>
     
@@ -432,19 +396,19 @@
     
     <item>
       <title>Linux系统安全设置</title>
-      <link>https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://www.tangjihede.fun/post/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Sat, 23 Jun 2018 14:14:13 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://www.tangjihede.fun/post/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</guid>
       <description>锁定zhangsan用户 passwd -l zhangsan 或者在张三</description>
     </item>
     
     <item>
       <title>Awk常用命令</title>
-      <link>https://www.tangjihede.fun/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://www.tangjihede.fun/post/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Sat, 23 Jun 2018 14:05:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://www.tangjihede.fun/post/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>列出最常的十条命令： history | awk &#39;{$1=&amp;quot;&amp;quot;;print $0}&#39; | awk &#39;{a[$0]++}END{for(i in a){print</description>
     </item>
     
@@ -459,28 +423,28 @@
     
     <item>
       <title>监控linux系统的ssh登陆</title>
-      <link>https://www.tangjihede.fun/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</link>
+      <link>https://www.tangjihede.fun/post/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</link>
       <pubDate>Fri, 08 Jun 2018 16:48:12 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</guid>
+      <guid>https://www.tangjihede.fun/post/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</guid>
       <description>使用的qqwry库（ip地址定位）地址：</description>
     </item>
     
     <item>
       <title>不同性格的表述方式</title>
-      <link>https://www.tangjihede.fun/post/Hahawriting/%E4%B8%8D%E5%90%8C%E6%80%A7%E6%A0%BC%E7%9A%84%E8%A1%A8%E8%BF%B0%E6%96%B9%E5%BC%8F/</link>
+      <link>https://www.tangjihede.fun/post/%E4%B8%8D%E5%90%8C%E6%80%A7%E6%A0%BC%E7%9A%84%E8%A1%A8%E8%BF%B0%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Mon, 02 Oct 2017 14:26:31 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Hahawriting/%E4%B8%8D%E5%90%8C%E6%80%A7%E6%A0%BC%E7%9A%84%E8%A1%A8%E8%BF%B0%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://www.tangjihede.fun/post/%E4%B8%8D%E5%90%8C%E6%80%A7%E6%A0%BC%E7%9A%84%E8%A1%A8%E8%BF%B0%E6%96%B9%E5%BC%8F/</guid>
       <description>本文仅限娱乐哈 『今晚月色，令人印象深刻！</description>
     </item>
     
     <item>
       <title>百年孤独开篇的几句摘抄</title>
-      <link>https://www.tangjihede.fun/post/Hahawriting/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/</link>
+      <link>https://www.tangjihede.fun/post/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/</link>
       <pubDate>Sat, 08 Jul 2017 14:15:28 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Hahawriting/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/</guid>
+      <guid>https://www.tangjihede.fun/post/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BC%80%E7%AF%87%E7%9A%84%E5%87%A0%E5%8F%A5%E6%91%98%E6%8A%84/</guid>
       <description>多年以后，面对行刑队，奥雷里亚诺·布恩迪</description>
     </item>
     
@@ -549,10 +513,10 @@
     
     <item>
       <title>Shell知识点合集</title>
-      <link>https://www.tangjihede.fun/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</link>
+      <link>https://www.tangjihede.fun/post/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</link>
       <pubDate>Sat, 11 Jun 2016 09:58:13 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</guid>
+      <guid>https://www.tangjihede.fun/post/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</guid>
       <description>数组 1 2 3 4 5 arr=(str1 str2 str3) for i in ${arr[@]} do echo $i done 预定</description>
     </item>
     
@@ -567,56 +531,20 @@
     
     <item>
       <title>金融云VPN新建用户操作步骤－管理员版本</title>
-      <link>https://www.tangjihede.fun/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</link>
+      <link>https://www.tangjihede.fun/post/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</link>
       <pubDate>Tue, 14 Jul 2015 14:10:24 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</guid>
+      <guid>https://www.tangjihede.fun/post/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</guid>
       <description>标签（空格分隔）： 金融云 vpn 1. 下载风云令 2.</description>
     </item>
     
     <item>
       <title>金融云VPN新用户申请操作步骤－普通用户版</title>
-      <link>https://www.tangjihede.fun/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</link>
+      <link>https://www.tangjihede.fun/post/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</link>
       <pubDate>Tue, 14 Jul 2015 14:02:51 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</guid>
+      <guid>https://www.tangjihede.fun/post/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</guid>
       <description>标签（空格分隔）： 金融云 vpn 1. 下载风云令,</description>
-    </item>
-    
-    <item>
-      <title>Jenkins_library_err</title>
-      <link>https://www.tangjihede.fun/post/CICD/jenkins_library_err/</link>
-      <pubDate>Sun, 11 Jan 2015 18:55:12 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/CICD/jenkins_library_err/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 Scripts not permitted</description>
-    </item>
-    
-    <item>
-      <title>Inotify_rsync_unison使用记录</title>
-      <link>https://www.tangjihede.fun/post/Linux/inotify_rsync/</link>
-      <pubDate>Sat, 10 Jan 2015 17:52:22 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/Linux/inotify_rsync/</guid>
-      <description>inotifywait 1 /usr/bin/inotifywait -mrq --timefmt &amp;#39;%Y-%m-%d %H:%M&amp;#39; --format &amp;#39;%T %w %f %e&amp;#39; -e create,delete,modify,move --exclude &amp;#34;\.(tmp|swp|log|info)&amp;#34; $mon_file &amp;gt;&amp;gt; $log_file rsync</description>
-    </item>
-    
-    <item>
-      <title>nginx安全设置</title>
-      <link>https://www.tangjihede.fun/post/Security/nginx_security/</link>
-      <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/Security/nginx_security/</guid>
-      <description>添加认证 yum install httpd-tools htpasswd -c -b /etc/nginx/passwd/kibana.passwd user auth_basic &amp;quot;Kibana Auth&amp;quot;; auth_basic_user_file /etc/nginx/passwd/kibana.passwd; 更改默</description>
-    </item>
-    
-    <item>
-      <title>安全工具</title>
-      <link>https://www.tangjihede.fun/post/Security/security_tools/</link>
-      <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/Security/security_tools/</guid>
-      <description>拓扑分析工具：DNS Sweep、Nslo</description>
     </item>
     
     <item>
@@ -662,15 +590,6 @@
       
       <guid>https://www.tangjihede.fun/tags/</guid>
       <description>title: &amp;ldquo;标签&amp;rdquo; description: devops type: tags</description>
-    </item>
-    
-    <item>
-      <title>jenkins pipeline指定分支和tag</title>
-      <link>https://www.tangjihede.fun/post/CICD/brach_tag_library/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/CICD/brach_tag_library/</guid>
-      <description>如下pipeline可以指定github</description>
     </item>
     
     <item>

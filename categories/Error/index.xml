@@ -36,20 +36,11 @@
     
     <item>
       <title>显卡故障日志分析</title>
-      <link>https://www.tangjihede.fun/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link>
+      <link>https://www.tangjihede.fun/post/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link>
       <pubDate>Sat, 23 Jun 2018 18:21:41 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid>
+      <guid>https://www.tangjihede.fun/post/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid>
       <description>物理机宕机，查看有如下日志： 1 2 3 4 5 6</description>
-    </item>
-    
-    <item>
-      <title>Jenkins_library_err</title>
-      <link>https://www.tangjihede.fun/post/CICD/jenkins_library_err/</link>
-      <pubDate>Sun, 11 Jan 2015 18:55:12 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/post/CICD/jenkins_library_err/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 Scripts not permitted</description>
     </item>
     
   </channel>

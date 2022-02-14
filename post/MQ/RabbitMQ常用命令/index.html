@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,6 @@
 
 <body>
     <header id="header" class="clearfix">
-    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -109,11 +108,11 @@
 <p>开启管理端口</p>
 <p><code>rabbitmq-plugins enable rabbitmq_management</code></p>
 <p>添加账号：</p>
-<pre tabindex="0"><code>rabbitmqctl add_user &lt;username&gt; &lt;password&gt;
+<pre><code>rabbitmqctl add_user &lt;username&gt; &lt;password&gt;
 例
 rabbitmqctl add_user &quot;admin&quot; &quot;admin&quot;
 </code></pre><p>赋予admin在“/”下面的全部资源的配置和读写权限。</p>
-<pre tabindex="0"><code>rabbitmqctl set_permissions -p / admin &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;
+<pre><code>rabbitmqctl set_permissions -p / admin &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;
 </code></pre><p>添加 权限tag（设置角色）</p>
 <p><code>rabbitmqctl set_user_tags admin administrator</code></p>
 <p>删除用户（删除guest用户）</p>
@@ -123,14 +122,14 @@ rabbitmqctl add_user &quot;admin&quot; &quot;admin&quot;
 <p>修改用户的密码</p>
 <p><code>rabbitmqctl  change_password  admin password</code></p>
 <p>诊断信息</p>
-<pre tabindex="0"><code>rabbitmq-diagnostics status
+<pre><code>rabbitmq-diagnostics status
 rabbitmq-diagnostics status -n rabbit@remote-host.local
 erlang cookie文件
 rabbitmq-diagnostics erlang_cookie_sources
 </code></pre><h3 id="集群变更操作">集群变更操作</h3>
 <h5 id="一--将内存节点rabbitmq3改为磁盘节点">一、  将内存节点rabbitmq3改为磁盘节点</h5>
 <p>在rabbitmq3上操作</p>
-<pre tabindex="0"><code>[root@rabbitmq3 ~]# rabbitmqctl stop_app
+<pre><code>[root@rabbitmq3 ~]# rabbitmqctl stop_app
 
 [root@rabbitmq3 ~]# rabbitmqctl change cluster node type disc
 
@@ -141,15 +140,15 @@ rabbitmq-diagnostics erlang_cookie_sources
 </code></pre><h5 id="二--剔除某个节点">二、  剔除某个节点</h5>
 <p>以剔除rabbitmq3为例</p>
 <p>方法1.  在rabbitmq3上操作</p>
-<pre tabindex="0"><code>[root@rabbitmq3 ~]# rabbitmqctl stop app
+<pre><code>[root@rabbitmq3 ~]# rabbitmqctl stop app
 
 [root@rabbitmq3 ~]#  rabbitmqctl reset
 该命令将清空节点的状态 并将其恢复到空白状态。
 当reset的节点是集群中的一部分时，该命令也会和集群中的磁盘节点进行通信，告诉它们该节点正在离开集群。不然集群会认为该节点出了故障，并期望其最终能够恢复过来。
 </code></pre><p>方法2.  在rabbitmq1或者rabbitmq2上操作</p>
-<pre tabindex="0"><code>[root@rabbitmq1~]# rabbitmqctl forget cluster_node rabbit@rabbitmq3 
+<pre><code>[root@rabbitmq1~]# rabbitmqctl forget cluster_node rabbit@rabbitmq3 
 </code></pre><h5 id="三--rabbitmq4-新实例加入集群">三、  rabbitmq4 新实例加入集群</h5>
-<pre tabindex="0"><code>[root@rabbitmq4 ~]# rabbitmqctl join cluster rabbit@rabbitmq1
+<pre><code>[root@rabbitmq4 ~]# rabbitmqctl join cluster rabbit@rabbitmq1
 [root@rabbitmq4 ~]# rabbitmqctl start app 
 </code></pre>
         </div>
@@ -180,7 +179,7 @@ rabbitmq-diagnostics erlang_cookie_sources
         
         <li><a href="/post/MySQL/mysql_global_variables/">Mysql_global_variables(MySQL8.0)</a></li>
         
-        <li><a href="/post/CICD/jenkins_pipeline/">Jenkins pipeline知识点</a></li>
+        <li><a href="/post/jenkins_pipeline/">Jenkins pipeline知识点</a></li>
         
     </ul>
 </div>
@@ -217,7 +216,7 @@ rabbitmq-diagnostics erlang_cookie_sources
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -286,26 +285,28 @@ if (!doNotTrack) {
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="https://www.tangjihede.fun/categories/Aliyun/">Aliyun (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Error/">Error (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Error/">Error (4)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Hugo/">Hugo (1)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Java/">Java (1)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (4)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (11)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (10)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
     
@@ -317,48 +318,42 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (6)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Security/">Security (2)</a></li>
-    
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (1)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (5)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Tools/">Tools (3)</a></li>
-    
     <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/debug_tool/">debug_tool (1)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
 <div class="tagcloud">
-    
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (4)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (22)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2019/">2019 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2018/">2018 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2017/">2017 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2016/">2016 (6)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2015/">2015 (5)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2014/">2014 (2)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
-    
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (69)</br></a>
+     
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(60)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(22)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(10)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2015/">2015</a>(2)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
     
 </div>
     </section>
@@ -383,10 +378,11 @@ if (!doNotTrack) {
         </ul>
     </section>
     <span id="busuanzi_container_site_pv">
-        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-        <br>
-        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-        </span>
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+    <br>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+    </span>
+
 </div>
             </div>
         </div>
