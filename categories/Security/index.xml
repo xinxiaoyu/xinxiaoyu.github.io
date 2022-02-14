@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/Security/</link>
+    <link>https://xinxiaoyu.github.io/categories/Security/</link>
     <description>Recent content in Security on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 02 Aug 2014 17:53:31 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Aug 2014 17:53:31 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>nginx安全设置</title>
-      <link>https://www.tangjihede.fun/post/Security/nginx_security/</link>
+      <link>https://xinxiaoyu.github.io/post/Security/nginx_security/</link>
       <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Security/nginx_security/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Security/nginx_security/</guid>
       <description>添加认证 yum install httpd-tools htpasswd -c -b /etc/nginx/passwd/kibana.passwd user auth_basic &amp;quot;Kibana Auth&amp;quot;; auth_basic_user_file /etc/nginx/passwd/kibana.passwd; 更改默</description>
     </item>
     
     <item>
       <title>安全工具</title>
-      <link>https://www.tangjihede.fun/post/Security/security_tools/</link>
+      <link>https://xinxiaoyu.github.io/post/Security/security_tools/</link>
       <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Security/security_tools/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Security/security_tools/</guid>
       <description>拓扑分析工具：DNS Sweep、Nslo</description>
     </item>
     
