@@ -6,7 +6,16 @@
     <description>Recent content in 2022 on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 07 Feb 2022 17:13:30 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/tags/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Feb 2022 15:23:52 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/tags/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo作业通过github action自动发布到github page</title>
+      <link>https://xinxiaoyu.github.io/post/Hahawriting/test/</link>
+      <pubDate>Mon, 14 Feb 2022 15:23:52 +0800</pubDate>
+      
+      <guid>https://xinxiaoyu.github.io/post/Hahawriting/test/</guid>
+      <description>hugo作业通过github action</description>
+    </item>
+    
     <item>
       <title>适龄未婚闹矛盾怎么办</title>
       <link>https://xinxiaoyu.github.io/post/Hahawriting/%E5%A4%A7%E9%BE%84%E6%9C%AA%E5%A9%9A/</link>

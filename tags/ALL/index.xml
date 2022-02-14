@@ -6,7 +6,16 @@
     <description>Recent content in ALL on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 13 Feb 2022 10:27:43 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/tags/ALL/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Feb 2022 15:23:52 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/tags/ALL/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo作业通过github action自动发布到github page</title>
+      <link>https://xinxiaoyu.github.io/post/Hahawriting/test/</link>
+      <pubDate>Mon, 14 Feb 2022 15:23:52 +0800</pubDate>
+      
+      <guid>https://xinxiaoyu.github.io/post/Hahawriting/test/</guid>
+      <description>hugo作业通过github action</description>
+    </item>
+    
     <item>
       <title>virtualbox下的ubuntu桌面版全屏问题</title>
       <link>https://xinxiaoyu.github.io/post/Linux/ubuntu_full_screen/</link>
