@@ -140,20 +140,20 @@
         
         
         <div class="post-content">
-            <p>系统信息如下：
-Linux 4.14.104-95.84.amzn2.x86_64 #1 SMP x86_64 GNU/Linux</p>
-<p>执行 sudo /usr/local/mysql/bin/mysql -uroot -p 报出如下错误：
-mysql: error while loading shared libraries:libncurses.so.5: cannot open shared object file:No such file or directory</p>
-<p>然后很自然的安装这个库，如下命令：
-yum install libncurses.so.5</p>
+            <p>系统信息如下：</p>
+<p>Linux 4.14.104-95.84.amzn2.x86_64 #1 SMP x86_64 GNU/Linux</p>
+<p>执行 sudo /usr/local/mysql/bin/mysql -uroot -p 报出如下错误：</p>
+<p>mysql: error while loading shared libraries:libncurses.so.5: cannot open shared object file:No such file or directory</p>
+<p>然后很自然的安装这个库，如下命令：</p>
+<p>yum install libncurses.so.5</p>
 <p>安装完后依然报原来的错。</p>
 <p>然后 find / -name libncurses* 命令找了下相关的文件，是有此文件的，在/usr/lib/和/usr/lib64/目录下。
 /usr/lib下是有libncurses.so.5链接文件的，/usr/lib64下是没有，所以猜测mysql可能是去/usr/lib64下面找libncurses.so.5文件了，这样是找不到的。</p>
-<p>所以根据/usr/lib/libncurses.so.5的链接方式， 在/usr/lib64下打个软链接：
-sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5</p>
+<p>所以根据/usr/lib/libncurses.so.5的链接方式， 在/usr/lib64下打个软链接：</p>
+<p>sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5</p>
 <p>至此完毕。</p>
-<p>当然下面又报少libtinfo.so.5文件，根据上面再打链接就好了：
-sudo ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5</p>
+<p>当然下面又报少libtinfo.so.5文件，根据上面再打链接就好了：</p>
+<p>sudo ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5</p>
 
         </div>
 
@@ -300,9 +300,11 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Error/">Error (6)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Error/">Error (7)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/HahaWriting/">HahaWriting (7)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
@@ -334,6 +336,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Windows/">Windows (2)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
+    
 </ul>
     </section>
 
@@ -347,9 +351,9 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (6)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (7)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (6)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (7)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (6)</br></a>
     
@@ -361,7 +365,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (73)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (75)</br></a>
     
 </div>
     </section>
