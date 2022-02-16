@@ -215,6 +215,15 @@
     </item>
     
     <item>
+      <title>缺少LIBNCURSES.SO.5文件一例</title>
+      <link>https://xinxiaoyu.github.io/post/Error/libncurses_so/</link>
+      <pubDate>Tue, 16 Feb 2021 12:01:43 +0800</pubDate>
+      
+      <guid>https://xinxiaoyu.github.io/post/Error/libncurses_so/</guid>
+      <description>系统信息如下： Linux 4.14.104-95.84.amzn2.x86_64 #1 SMP x86_64 GNU/Linux 执行 sudo /usr/local/mysql/bin/mysql -uroot -p 报</description>
+    </item>
+    
+    <item>
       <title>Kubectl常用命令汇总</title>
       <link>https://xinxiaoyu.github.io/post/Kubernetes/kubectl_command/</link>
       <pubDate>Sat, 26 Dec 2020 18:03:09 +0800</pubDate>

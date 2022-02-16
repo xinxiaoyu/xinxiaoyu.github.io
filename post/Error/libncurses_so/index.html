@@ -29,21 +29,24 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>Ansible | 堂吉哈哈德的博客</title>
-    <meta property="og:title" content="Ansible - 堂吉哈哈德的博客">
+    <title>缺少LIBNCURSES.SO.5文件一例 | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="缺少LIBNCURSES.SO.5文件一例 - 堂吉哈哈德的博客">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2021-02-16T12:01:43&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-02-16T12:01:43&#43;08:00'>
         
     <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
-    <meta name="description" content="Ansible">
+    <meta name="description" content="缺少LIBNCURSES.SO.5文件一例">
         
     <meta name="author" content="堂吉哈哈德">
-    <meta property="og:url" content="https://xinxiaoyu.github.io/categories/Ansible/">
+    <meta property="og:url" content="https://xinxiaoyu.github.io/post/Error/libncurses_so/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml" href="https://xinxiaoyu.github.io/categories/Ansible/index.xml" title="堂吉哈哈德的博客" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -92,7 +95,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://xinxiaoyu.github.io/">首页</a>
+                    <a class="current" href="https://xinxiaoyu.github.io/">首页</a>
                     
                     <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
                     
@@ -114,44 +117,105 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        分类
-        <span class="keyword">Ansible</span>
-        中的文章
-    </h3>
-    
-
-    
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="https://xinxiaoyu.github.io/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/">Ansible知识点</a>
-            </h1>
+            <h1 class="post-title">缺少LIBNCURSES.SO.5文件一例</h1>
         </header>
         <date class="post-meta meta-date">
-            2019年11月13日
+            2021年2月16日
         </date>
         
-        <div class="post-meta meta-category">
-            |
+        <div class="post-meta">
+            <span>|</span>
             
-            <a href='/categories/Ansible'>Ansible</a>
+            <span class="meta-category"><a href='/categories/Error'>Error</a></span>
             
         </div>
         
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
         <div class="post-content">
-            1. 指定单个ip运行（使用root用户) ansible……
-            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/">阅读全文</a></p>
+            <p>系统信息如下：
+Linux 4.14.104-95.84.amzn2.x86_64 #1 SMP x86_64 GNU/Linux</p>
+<p>执行 sudo /usr/local/mysql/bin/mysql -uroot -p 报出如下错误：
+mysql: error while loading shared libraries:libncurses.so.5: cannot open shared object file:No such file or directory</p>
+<p>然后很自然的安装这个库，如下命令：
+yum install libncurses.so.5</p>
+<p>安装完后依然报原来的错。</p>
+<p>然后 find / -name libncurses* 命令找了下相关的文件，是有此文件的，在/usr/lib/和/usr/lib64/目录下。
+/usr/lib下是有libncurses.so.5链接文件的，/usr/lib64下是没有，所以猜测mysql可能是去/usr/lib64下面找libncurses.so.5文件了，这样是找不到的。</p>
+<p>所以根据/usr/lib/libncurses.so.5的链接方式， 在/usr/lib64下打个软链接：
+sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5</p>
+<p>至此完毕。</p>
+<p>当然下面又报少libtinfo.so.5文件，根据上面再打链接就好了：
+sudo ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://xinxiaoyu.github.io/">堂吉哈哈德</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://xinxiaoyu.github.io/post/Error/libncurses_so/">https://xinxiaoyu.github.io/post/Error/libncurses_so/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/Kubernetes/kubectl_command/">Kubectl常用命令汇总</a></li>
+        
+        <li><a href="/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">Nginx简单介绍</a></li>
+        
+        <li><a href="/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">Haproxy简单记录</a></li>
+        
+        <li><a href="/post/LoadBalancing/lvs/">LVS</a></li>
+        
+        <li><a href="/post/ELK/logstash%E5%A4%84%E7%90%86Nginx%E6%97%A5%E5%BF%97/">Logstash处理Nginx日志</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2021'>2021</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
         </div>
     </article>
     
-
     
 
-
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
 </div>
 
                     <footer id="footer">
@@ -174,6 +238,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
