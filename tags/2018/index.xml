@@ -62,6 +62,15 @@
     </item>
     
     <item>
+      <title>Nginx的break和last区别</title>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/Nginx_break_vs_last/</link>
+      <pubDate>Fri, 23 Feb 2018 17:38:00 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/Nginx_break_vs_last/</guid>
+      <description>NGINX的rewrite指令有四个可选</description>
+    </item>
+    
+    <item>
       <title>Bat几个用法</title>
       <link>https://www.tangjihede.fun/post/Windows/bat/</link>
       <pubDate>Sat, 17 Feb 2018 16:41:56 +0800</pubDate>

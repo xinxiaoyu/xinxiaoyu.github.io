@@ -44,6 +44,24 @@
     </item>
     
     <item>
+      <title>Nginx和Apache做文件服务器</title>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 23 Jun 2017 14:27:33 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>nginx nginx默认不允许列出文件目录，需要</description>
+    </item>
+    
+    <item>
+      <title>Nginx白名单</title>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/nginx%E7%99%BD%E5%90%8D%E5%8D%95/</link>
+      <pubDate>Fri, 23 Jun 2017 14:19:50 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/nginx%E7%99%BD%E5%90%8D%E5%8D%95/</guid>
+      <description>包含以下知识点： 1、 nginx前面有多层</description>
+    </item>
+    
+    <item>
       <title>Redis命令合集</title>
       <link>https://www.tangjihede.fun/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</link>
       <pubDate>Thu, 22 Jun 2017 11:46:34 +0800</pubDate>

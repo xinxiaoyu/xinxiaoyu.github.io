@@ -494,6 +494,15 @@
     </item>
     
     <item>
+      <title>Nginx的break和last区别</title>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/Nginx_break_vs_last/</link>
+      <pubDate>Fri, 23 Feb 2018 17:38:00 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/Nginx_break_vs_last/</guid>
+      <description>NGINX的rewrite指令有四个可选</description>
+    </item>
+    
+    <item>
       <title>Bat几个用法</title>
       <link>https://www.tangjihede.fun/post/Windows/bat/</link>
       <pubDate>Sat, 17 Feb 2018 16:41:56 +0800</pubDate>
@@ -536,6 +545,24 @@
       
       <guid>https://www.tangjihede.fun/post/LoadBalancing/apache/</guid>
       <description>以下内容基于CentOS7.3/Apac</description>
+    </item>
+    
+    <item>
+      <title>Nginx和Apache做文件服务器</title>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 23 Jun 2017 14:27:33 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>nginx nginx默认不允许列出文件目录，需要</description>
+    </item>
+    
+    <item>
+      <title>Nginx白名单</title>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/nginx%E7%99%BD%E5%90%8D%E5%8D%95/</link>
+      <pubDate>Fri, 23 Jun 2017 14:19:50 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/nginx%E7%99%BD%E5%90%8D%E5%8D%95/</guid>
+      <description>包含以下知识点： 1、 nginx前面有多层</description>
     </item>
     
     <item>

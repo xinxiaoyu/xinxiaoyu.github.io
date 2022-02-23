@@ -257,6 +257,9 @@
     <loc>https://www.tangjihede.fun/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</loc>
     <lastmod>2018-06-08T16:48:12+08:00</lastmod>
   </url><url>
+    <loc>https://www.tangjihede.fun/post/LoadBalancing/Nginx_break_vs_last/</loc>
+    <lastmod>2018-02-23T17:38:00+08:00</lastmod>
+  </url><url>
     <loc>https://www.tangjihede.fun/post/Windows/bat/</loc>
     <lastmod>2018-02-17T16:41:56+08:00</lastmod>
   </url><url>
@@ -277,6 +280,12 @@
   </url><url>
     <loc>https://www.tangjihede.fun/post/LoadBalancing/apache/</loc>
     <lastmod>2017-06-24T13:32:13+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2017-06-23T14:27:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/LoadBalancing/nginx%E7%99%BD%E5%90%8D%E5%8D%95/</loc>
+    <lastmod>2017-06-23T14:19:50+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</loc>
     <lastmod>2017-06-22T11:46:34+08:00</lastmod>
