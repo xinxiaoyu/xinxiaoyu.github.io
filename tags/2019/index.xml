@@ -70,5 +70,14 @@
       <description>iptables有四张表：filter、</description>
     </item>
     
+    <item>
+      <title>Elasticsearch集群配置</title>
+      <link>https://www.tangjihede.fun/post/ELK/es_cluster/</link>
+      <pubDate>Mon, 25 Feb 2019 16:42:02 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/ELK/es_cluster/</guid>
+      <description>设置hosts es-node-1 192.168.41.74 es-node-2 192.168.41.53 es-node-3 192.168.41.73 es-node</description>
+    </item>
+    
   </channel>
 </rss>
