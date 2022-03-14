@@ -154,7 +154,7 @@
   scheme: http
   consul_sd_configs:
   - server: cloud-eureka-server-0.eureka-headless.default.svc.cluster.local:8080
-    tag_separator: ','
+    tag_separator: &#39;,&#39;
     scheme: http
     username: test
     password: test
@@ -179,20 +179,20 @@
     labels:
       application: RABBITMQ
     annotations:
-      summary: '生产环境: rabbitmq队列消息较多, 当前值: {{ $value }}'
+      summary: &#39;生产环境: rabbitmq队列消息较多, 当前值: {{ $value }}&#39;
 </code></pre><h5 id="3-在webhook模板中过滤">3. 在webhook模板中过滤</h5>
 <p>如钉钉的webhook配置文件中，可适当过滤掉某些label</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">**</span>详情:<span style="color:#000;font-weight:bold">**</span>
-{{ <span style="color:#000;font-weight:bold">range</span> .Labels.SortedPairs }}{{ <span style="color:#000;font-weight:bold">if</span> <span style="color:#900;font-weight:bold">and</span> (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;alertname&#34;</span>) (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;job&#34;</span>) (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;exported_application&#34;</span>) }}&gt; <span style="color:#000;font-weight:bold">-</span> {{ .Name }}: {{ .Value | markdown | html }}
-{{ end }}{{ end }}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">**</span>详情:<span style="color:#000;font-weight:bold">**</span>
+</span></span><span style="display:flex;"><span>{{ <span style="color:#000;font-weight:bold">range</span> .Labels.SortedPairs }}{{ <span style="color:#000;font-weight:bold">if</span> <span style="color:#900;font-weight:bold">and</span> (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;alertname&#34;</span>) (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;job&#34;</span>) (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;exported_application&#34;</span>) }}&gt; <span style="color:#000;font-weight:bold">-</span> {{ .Name }}: {{ .Value | markdown | html }}
+</span></span><span style="display:flex;"><span>{{ end }}{{ end }}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考链接： <a href="https://www.kancloud.cn/cserli/golang/531904">https://www.kancloud.cn/cserli/golang/531904</a></p>
 
@@ -337,13 +337,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
     
@@ -379,6 +379,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
 </ul>
     </section>
 
@@ -388,7 +390,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (25)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (26)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -406,7 +408,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (81)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (82)</br></a>
     
 </div>
     </section>

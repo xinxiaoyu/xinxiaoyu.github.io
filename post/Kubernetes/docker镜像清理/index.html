@@ -141,23 +141,23 @@
         
         <div class="post-content">
             <p>运行<code>docker system df </code>命令：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000;font-weight:bold">[</span>root@VM_100_4_centos ~<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># docker system df </span>
-TYPE                TOTAL                       SIZE                RECLAIMABLE
-Images              <span style="color:#099">955</span>                         77.06GB             74.21GB <span style="color:#000;font-weight:bold">(</span>96%<span style="color:#000;font-weight:bold">)</span>
-Containers          <span style="color:#099">65</span>                          3.28MB              0B <span style="color:#000;font-weight:bold">(</span>0%<span style="color:#000;font-weight:bold">)</span>
-Local Volumes       <span style="color:#099">0</span>                           0B                  0B
-Build Cache         <span style="color:#099">0</span>                           0B                  0B
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@VM_100_4_centos ~<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># docker system df </span>
+</span></span><span style="display:flex;"><span>TYPE                TOTAL                       SIZE                RECLAIMABLE
+</span></span><span style="display:flex;"><span>Images              <span style="color:#099">955</span>                         77.06GB             74.21GB <span style="color:#000;font-weight:bold">(</span>96%<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Containers          <span style="color:#099">65</span>                          3.28MB              0B <span style="color:#000;font-weight:bold">(</span>0%<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Local Volumes       <span style="color:#099">0</span>                           0B                  0B
+</span></span><span style="display:flex;"><span>Build Cache         <span style="color:#099">0</span>                           0B                  0B
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。</p>
 <p>可以回收的镜像分为两类：dangling和其他未被container关联的镜像。
@@ -185,7 +185,7 @@ deleted: sha256:eb93a48f29bba12835ade4123e2bd1538d80b755f621369704675a9c19b18f65
 
 Total reclaimed space: 1.478GB
 </code></pre><p>如果要删除所有未被使用的镜像，包括dangling镜像，可以用<code>docker image prune -a</code>，这里可以加上时间参数，比如删除30天（720小时）前创建的所有不再使用的镜像。</p>
-<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker image prune -a --force --filter &quot;until=720h&quot;
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker image prune -a --force --filter &#34;until=720h&#34;
 Deleted Images:
 untagged: ccr.ccs.tencentyun.com/gwy-cloud/guowy-cloud-zuul:202103041715
 untagged: ccr.ccs.tencentyun.com/gwy-cloud/guowy-cloud-zuul@sha256:9e2d18d259582ca6a04b27d1609c8201a648f8feae37ff984f237dc4e907da6b
@@ -227,11 +227,11 @@ Build Cache         0                   0                   0B                  
         
         <li><a href="/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/">腾讯云Mysql物理备份恢复数据库</a></li>
         
+        <li><a href="/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a></li>
+        
         <li><a href="/post/Error/libncurses_so/">缺少LIBNCURSES.SO.5文件一例</a></li>
         
         <li><a href="/post/Kubernetes/kubectl_command/">Kubectl常用命令汇总</a></li>
-        
-        <li><a href="/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">Nginx简单介绍</a></li>
         
     </ul>
 </div>
@@ -344,13 +344,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
     
@@ -386,6 +386,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
 </ul>
     </section>
 
@@ -395,7 +397,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (25)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (26)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -413,7 +415,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (81)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (82)</br></a>
     
 </div>
     </section>

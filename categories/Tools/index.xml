@@ -22,7 +22,7 @@
       <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/Security/nginx_security/</guid>
-      <description>添加认证 yum install httpd-tools htpasswd -c -b /etc/nginx/passwd/kibana.passwd user auth_basic &amp;quot;Kibana Auth&amp;quot;; auth_basic_user_file /etc/nginx/passwd/kibana.passwd; 更改默</description>
+      <description>添加认证 yum install httpd-tools htpasswd -c -b /etc/nginx/passwd/kibana.passwd user auth_basic &amp;#34;Kibana Auth&amp;#34;; auth_basic_user_file /etc/nginx/passwd/kibana.passwd; 更改默</description>
     </item>
     
     <item>

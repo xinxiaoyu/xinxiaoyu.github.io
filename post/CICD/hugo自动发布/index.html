@@ -147,65 +147,65 @@ pipeline {
     agent any
 
     environment {
-        GITLAB_CREDENTIAL_ID = ''
-        GITLAB_URL = 'https://github.com/xinxiaoyu/blog'
-        PROJECT_NAME = 'blog'
-        web_site = 'xinxiaoyu.github.io'
-        BRANCH = 'main'
+        GITLAB_CREDENTIAL_ID = &#39;&#39;
+        GITLAB_URL = &#39;https://github.com/xinxiaoyu/blog&#39;
+        PROJECT_NAME = &#39;blog&#39;
+        web_site = &#39;xinxiaoyu.github.io&#39;
+        BRANCH = &#39;main&#39;
     }
 
     // parameters {
 
     //     // List Git Branches Parameter PlugIn
-    //     listGitBranches branchFilter: 'refs/heads/(.*)',
-    //         defaultValue: 'main',
-    //         name: 'BRANCH',
-    //         type: 'PT_BRANCH',
-    //         remoteURL: &quot;https://github.com/xinxiaoyu/blog.git&quot;,
-    //         credentialsId: '',
-    //         selectedValue: 'DEFAULT',
-    //         sortMode: 'ASCENDING',
+    //     listGitBranches branchFilter: &#39;refs/heads/(.*)&#39;,
+    //         defaultValue: &#39;main&#39;,
+    //         name: &#39;BRANCH&#39;,
+    //         type: &#39;PT_BRANCH&#39;,
+    //         remoteURL: &#34;https://github.com/xinxiaoyu/blog.git&#34;,
+    //         credentialsId: &#39;&#39;,
+    //         selectedValue: &#39;DEFAULT&#39;,
+    //         sortMode: &#39;ASCENDING&#39;,
     //         quickFilterEnabled: true
     // }
 
     stages {
-        stage ('Checkout') {
+        stage (&#39;Checkout&#39;) {
             steps {
-                git(credentialsId: &quot;${env.GITLAB_CREDENTIAL_ID}&quot;, url: &quot;${env.GITLAB_URL}.git&quot;, branch: &quot;${env.BRANCH}&quot;, changelog: true, poll: false)
+                git(credentialsId: &#34;${env.GITLAB_CREDENTIAL_ID}&#34;, url: &#34;${env.GITLAB_URL}.git&#34;, branch: &#34;${env.BRANCH}&#34;, changelog: true, poll: false)
             }
         }
 
-        stage('Build') {
+        stage(&#39;Build&#39;) {
             steps {
-                echo 'Building...'
+                echo &#39;Building...&#39;
 
-                sh &quot;chmod 777 ./${env.PROJECT_NAME}&quot;
+                sh &#34;chmod 777 ./${env.PROJECT_NAME}&#34;
 
-                dir(&quot;./${env.PROJECT_NAME}&quot;) {
-                    sh '/usr/bin/hugo'
+                dir(&#34;./${env.PROJECT_NAME}&#34;) {
+                    sh &#39;/usr/bin/hugo&#39;
                 }
             }
         }
 
-        stage('copy to web') {
+        stage(&#39;copy to web&#39;) {
             steps {
-                sh '[ -d &quot;xinxiaoyu.github.io&quot; ] &amp;&amp; rm -rf xinxiaoyu.github.io &amp;&amp; echo &quot;done&quot; || echo &quot;not done&quot;'
-                sh 'git clone https://github.com/xinxiaoyu/xinxiaoyu.github.io.git'
-                sh &quot;cp -rf ./${env.PROJECT_NAME}/public/* ./xinxiaoyu.github.io/&quot;
+                sh &#39;[ -d &#34;xinxiaoyu.github.io&#34; ] &amp;&amp; rm -rf xinxiaoyu.github.io &amp;&amp; echo &#34;done&#34; || echo &#34;not done&#34;&#39;
+                sh &#39;git clone https://github.com/xinxiaoyu/xinxiaoyu.github.io.git&#39;
+                sh &#34;cp -rf ./${env.PROJECT_NAME}/public/* ./xinxiaoyu.github.io/&#34;
             }
         }
 
-        stage('deploy') {
+        stage(&#39;deploy&#39;) {
             steps {
-                dir(&quot;./xinxiaoyu.github.io/&quot;) {
-                    sh 'ls'
-                    sh 'git config --global user.email &quot;1248247511@qq.com&quot;'
-                    sh 'git add *'
-                    sh 'git commit -m &quot;123&quot;'
-                    withCredentials([usernamePassword(credentialsId: &quot;${env.GITLAB_CREDENTIAL_ID}&quot;,
-                        usernameVariable: 'username',
-                        passwordVariable: 'password')]){
-                        sh(&quot;git push http://$username:$password@github.com/xinxiaoyu/xinxiaoyu.github.io.git&quot;)
+                dir(&#34;./xinxiaoyu.github.io/&#34;) {
+                    sh &#39;ls&#39;
+                    sh &#39;git config --global user.email &#34;1248247511@qq.com&#34;&#39;
+                    sh &#39;git add *&#39;
+                    sh &#39;git commit -m &#34;123&#34;&#39;
+                    withCredentials([usernamePassword(credentialsId: &#34;${env.GITLAB_CREDENTIAL_ID}&#34;,
+                        usernameVariable: &#39;username&#39;,
+                        passwordVariable: &#39;password&#39;)]){
+                        sh(&#34;git push http://$username:$password@github.com/xinxiaoyu/xinxiaoyu.github.io.git&#34;)
                     }
                 }
             }
@@ -213,7 +213,6 @@ pipeline {
         }
     }
 }
-
 </code></pre>
         </div>
 
@@ -356,13 +355,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
     
@@ -398,6 +397,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
 </ul>
     </section>
 
@@ -407,7 +408,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (25)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (26)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -425,7 +426,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (81)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (82)</br></a>
     
 </div>
     </section>

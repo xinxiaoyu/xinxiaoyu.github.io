@@ -140,62 +140,62 @@
 <pre tabindex="0"><code class="language-pipeline" data-lang="pipeline">pipeline {
     agent any
     parameters {
-        gitParameter name: 'BRANCH_TAG', 
-                     type: 'PT_BRANCH_TAG',
-                     branchFilter: 'origin/(.*)',
-                     defaultValue: 'main',
-                     selectedValue: 'DEFAULT',
-                     sortMode: 'DESCENDING_SMART',
-					 description: 'Select your branch or tag.'
+        gitParameter name: &#39;BRANCH_TAG&#39;, 
+                     type: &#39;PT_BRANCH_TAG&#39;,
+                     branchFilter: &#39;origin/(.*)&#39;,
+                     defaultValue: &#39;main&#39;,
+                     selectedValue: &#39;DEFAULT&#39;,
+                     sortMode: &#39;DESCENDING_SMART&#39;,
+					 description: &#39;Select your branch or tag.&#39;
     }
     stages {
-        stage('Example') {
+        stage(&#39;Example&#39;) {
             steps {
-                checkout([$class: 'GitSCM',
-                          branches: [[name: &quot;${params.BRANCH_TAG}&quot;]],
+                checkout([$class: &#39;GitSCM&#39;,
+                          branches: [[name: &#34;${params.BRANCH_TAG}&#34;]],
                           doGenerateSubmoduleConfigurations: false,
                           extensions: [],
-                          gitTool: 'Default',
+                          gitTool: &#39;Default&#39;,
                           submoduleCfg: [],
-                          userRemoteConfigs: [[url: 'https://github.com/xinxiaoyu/test_git.git', credentialsId: '',]]
+                          userRemoteConfigs: [[url: &#39;https://github.com/xinxiaoyu/test_git.git&#39;, credentialsId: &#39;&#39;,]]
                         ])
             }
         }
     }
 }
-</code></pre><p>这个时候工作是正常的，分支和tag会对应显示test_git仓库。但是如果在第一行加入共享库'@Library(&lsquo;pipeline-library&rsquo;) _&lsquo;则会显示共享库的分支tag，这显然冲突了。
+</code></pre><p>这个时候工作是正常的，分支和tag会对应显示test_git仓库。但是如果在第一行加入共享库&rsquo;@Library(&lsquo;pipeline-library&rsquo;) _&lsquo;则会显示共享库的分支tag，这显然冲突了。
 可以用list git braches parameter插件(地址 <a href="https://plugins.jenkins.io/list-git-branches-parameter/">https://plugins.jenkins.io/list-git-branches-parameter/</a> )</p>
-<pre tabindex="0"><code class="language-pipeline" data-lang="pipeline">@Library('pipeline-library') _
+<pre tabindex="0"><code class="language-pipeline" data-lang="pipeline">@Library(&#39;pipeline-library&#39;) _
 
 pipeline {
     agent any
 
     environment {
-        GITLAB_CREDENTIAL_ID = ''
-        GITLAB_URL = 'https://github.com/xinxiaoyu/test_git.git'
-        web_site = 'xinxiaoyu.github.io'
-        BRANCH = 'main'
+        GITLAB_CREDENTIAL_ID = &#39;&#39;
+        GITLAB_URL = &#39;https://github.com/xinxiaoyu/test_git.git&#39;
+        web_site = &#39;xinxiaoyu.github.io&#39;
+        BRANCH = &#39;main&#39;
     }
 
     parameters {
-       listGitBranches branchFilter: 'refs/heads/(.*)',
-            defaultValue: 'main',
-            name: 'BRANCH_TAG',
-            type: 'PT_BRANCH_TAG',  // PT_BRANCH, PT_TAG
-            remoteURL: 'https://github.com/xinxiaoyu/test_git.git',
-            credentialsId: '',
-            selectedValue: 'DEFAULT',
-            sortMode: 'ASCENDING',
+       listGitBranches branchFilter: &#39;refs/heads/(.*)&#39;,
+            defaultValue: &#39;main&#39;,
+            name: &#39;BRANCH_TAG&#39;,
+            type: &#39;PT_BRANCH_TAG&#39;,  // PT_BRANCH, PT_TAG
+            remoteURL: &#39;https://github.com/xinxiaoyu/test_git.git&#39;,
+            credentialsId: &#39;&#39;,
+            selectedValue: &#39;DEFAULT&#39;,
+            sortMode: &#39;ASCENDING&#39;,
             quickFilterEnabled: true
     }
     stages {
-        stage ('Checkout') {
+        stage (&#39;Checkout&#39;) {
             steps {
-                git(credentialsId: &quot;${env.GITLAB_CREDENTIAL_ID}&quot;, url: &quot;${env.GITLAB_URL}&quot;, branch: &quot;${env.BRANCH_TAG}&quot;, changelog: true, poll: false)
+                git(credentialsId: &#34;${env.GITLAB_CREDENTIAL_ID}&#34;, url: &#34;${env.GITLAB_URL}&#34;, branch: &#34;${env.BRANCH_TAG}&#34;, changelog: true, poll: false)
             }
         }
 
-        stage('library test') {
+        stage(&#39;library test&#39;) {
             steps {
                 getCode()
             }
@@ -345,13 +345,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
     
@@ -387,6 +387,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
 </ul>
     </section>
 
@@ -396,7 +398,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (25)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (26)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -414,7 +416,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (81)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (82)</br></a>
     
 </div>
     </section>

@@ -304,7 +304,6 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
                 | eth0:  VIP-&gt;CIP(out) |       |                   |
                 | tunl0: CIP-&gt;VIP(in)  |       |                   | 
                 |______________________|       |___________________|
-
 </code></pre><p>图-1.2-3 TUN模式</p>
 <p>数据的原始目的地址是LVS的IP，转发给Real Server时没有改变，只是新加了一层IP层，Real Server解封装后依然可以处理，这是因为tunl0网卡上绑定了VIP，并且只有本机可达。</p>
 <p>IP隧道模式的性能比NAT要好，比DR模式性能要差，但是相比DR模式，IP隧道模式可以跨网段部署。</p>
@@ -473,13 +472,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
     
@@ -515,6 +514,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
 </ul>
     </section>
 
@@ -524,7 +525,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (25)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (26)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -542,7 +543,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (81)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (82)</br></a>
     
 </div>
     </section>

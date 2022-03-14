@@ -144,24 +144,24 @@
         <div class="post-content">
             <p>zabbix端item某项出现Value should be a JSON object错误。</p>
 <p>明显数据格式错误，在zabbix server上进行get测试。</p>
-<pre tabindex="0"><code>[root@ops-zabbix-server~]# /usr/local/zabbix/bin/zabbix_get -s 192.168.2.7 -p 10050 -k &quot;ipmi.dev[discovery,cpu]&quot;
+<pre tabindex="0"><code>[root@ops-zabbix-server~]# /usr/local/zabbix/bin/zabbix_get -s 192.168.2.7 -p 10050 -k &#34;ipmi.dev[discovery,cpu]&#34;
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Get Device ID command failed
 Unable to open SDR for reading
 {
-	&quot;data&quot;:[
+	&#34;data&#34;:[
 	 ]
 }
 </code></pre><p>如上，原来是获取数据出错。但是在agent端上获取数据是没有问题的。</p>
 <pre tabindex="0"><code>[root@xenserver-gmkyokmz bin]# ./ipmi.sh discovery cpu
 {
-	&quot;data&quot;:[
+	&#34;data&#34;:[
 	 {
-			&quot;{#DEV}&quot;:&quot;CPU1&quot;},
+			&#34;{#DEV}&#34;:&#34;CPU1&#34;},
 	 {
-			&quot;{#DEV}&quot;:&quot;CPU2&quot;}
+			&#34;{#DEV}&#34;:&#34;CPU2&#34;}
 	 ]
 }
 </code></pre><p>并且相应的modprobe模块已经加载。经过多次搜索，无果。</p>
@@ -176,13 +176,13 @@ zabbix     916   912  0 10:29 ?        00:00:04 /usr/local/zabbix/sbin/zabbix_ag
 zabbix     917   912  0 10:29 ?        00:00:05 /usr/local/zabbix/sbin/zabbix_agentd: listener #3 [waiting for connection]
 zabbix     918   912  0 10:29 ?        00:00:28 /usr/local/zabbix/sbin/zabbix_agentd: active checks #1 [idle 1 sec]
 </code></pre><p>手动尝试给/dev/ipmi0增加权限777，然后测试就正常了。</p>
-<pre tabindex="0"><code>[root@xenserver-gmkyokmz bin]# /usr/local/zabbix/bin/zabbix_get -s 127.0.0.1 -p 10050 -k &quot;ipmi.dev[discovery,cpu]&quot;
+<pre tabindex="0"><code>[root@xenserver-gmkyokmz bin]# /usr/local/zabbix/bin/zabbix_get -s 127.0.0.1 -p 10050 -k &#34;ipmi.dev[discovery,cpu]&#34;
 {
-	&quot;data&quot;:[
+	&#34;data&#34;:[
 	 {
-			&quot;{#DEV}&quot;:&quot;CPU1&quot;},
+			&#34;{#DEV}&#34;:&#34;CPU1&#34;},
 	 {
-			&quot;{#DEV}&quot;:&quot;CPU2&quot;}
+			&#34;{#DEV}&#34;:&#34;CPU2&#34;}
 	 ]
 }
 </code></pre><p>这两天搞zabbix监控，又学了不少东西啊。</p>
@@ -328,13 +328,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
     
@@ -370,6 +370,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
 </ul>
     </section>
 
@@ -379,7 +381,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (25)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (26)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -397,7 +399,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (81)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (82)</br></a>
     
 </div>
     </section>

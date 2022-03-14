@@ -166,7 +166,7 @@
 3 rows in set (0.00 sec)
 </code></pre><h3 id="三-更细粒度的权限mysqltables_priv表权限mysqlcolumns_priv列权限">三、 更细粒度的权限：mysql.tables_priv（表权限）、mysql.columns_priv（列权限）</h3>
 <p>如下结果表示用户&rsquo;lang&rsquo;对t、t2表所有拥有的表权限（包括列权限）</p>
-<pre tabindex="0"><code>mysql&gt; select Host, Db, User, Table_name,Table_priv,Column_priv from mysql.tables_priv where User='lang';
+<pre tabindex="0"><code>mysql&gt; select Host, Db, User, Table_name,Table_priv,Column_priv from mysql.tables_priv where User=&#39;lang&#39;;
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
 | Host | Db        | User | Table_name | Table_priv                                                                                         | Column_priv   |
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
@@ -186,16 +186,16 @@
 2 rows in set (0.00 sec)
 </code></pre><h3 id="四-授权操作">四、 授权操作：</h3>
 <p>1、 创建相应账号</p>
-<pre tabindex="0"><code>create user 'username1'@'%' identified by 'passwd';
+<pre tabindex="0"><code>create user &#39;username1&#39;@&#39;%&#39; identified by &#39;passwd&#39;;
 </code></pre><p>2、 赋予权限</p>
 <pre tabindex="0"><code>所有库、表的全部权限
-grant all privileges on *.* to 'username1'@'%' with grant option;
+grant all privileges on *.* to &#39;username1&#39;@&#39;%&#39; with grant option;
 
 某个库某个表的全部权限
-grant all privileges on lang_test.t to 'username1'@'%' with grant option;
+grant all privileges on lang_test.t to &#39;username1&#39;@&#39;%&#39; with grant option;
 
 某个库某个表的读、插入、更新、删除权限
-grant select,insert,update,delete on lang_test.t to 'username1'@'%' with grant option;
+grant select,insert,update,delete on lang_test.t to &#39;username1&#39;@&#39;%&#39; with grant option;
 
 创建表t
 CREATE TABLE `lang_test`.`t` (
@@ -207,7 +207,7 @@ CREATE TABLE `lang_test`.`t` (
 ) ENGINE=InnoDB;
 
 某个表的某些列的权限
-GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO 'lang'@'%' with grant option;
+GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO &#39;lang&#39;@&#39;%&#39; with grant option;
 </code></pre><p>grant的具体权限官网地址：https://dev.mysql.com/doc/refman/5.7/en/grant.html</p>
 
         </div>
@@ -238,7 +238,7 @@ GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO 'lang'@'%' with grant option;
         
         <li><a href="/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/">腾讯云Mysql物理备份恢复数据库</a></li>
         
-        <li><a href="/post/Error/libncurses_so/">缺少LIBNCURSES.SO.5文件一例</a></li>
+        <li><a href="/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a></li>
         
     </ul>
 </div>
@@ -351,13 +351,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
     
@@ -393,6 +393,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
 </ul>
     </section>
 
@@ -402,7 +404,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (25)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (26)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -420,7 +422,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (81)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (82)</br></a>
     
 </div>
     </section>

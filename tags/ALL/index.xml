@@ -166,7 +166,7 @@
       <pubDate>Wed, 14 Jul 2021 14:10:24 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</guid>
-      <description>一、 阿里云oss权限自定义策略 { &amp;quot;Version&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;Statement&amp;quot;: [</description>
+      <description>一、 阿里云oss权限自定义策略 { &amp;#34;Version&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;Statement&amp;#34;: [</description>
     </item>
     
     <item>
@@ -284,6 +284,15 @@
       
       <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>使用物理备份恢复数据库（使用物理备份恢复</description>
+    </item>
+    
+    <item>
+      <title>Ingress_yaml nginx模板</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/ingress_yaml/</link>
+      <pubDate>Thu, 11 Mar 2021 17:36:44 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/ingress_yaml/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
@@ -409,7 +418,7 @@
       <pubDate>Sat, 29 Jun 2019 13:41:52 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/Linux/rpm_install_err/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61  yum instal gcc Protected multilib versions: libgomp-4.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61  yum instal gcc  Protected multilib versions: libgomp-4.</description>
     </item>
     
     <item>
@@ -589,7 +598,7 @@
       <pubDate>Thu, 22 Jun 2017 10:41:05 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</guid>
-      <description>protected-mode yes port 6379 tcp-backlog 511 timeout 0 tcp-keepalive 300 daemonize yes supervised no pidfile /var/run/redis_6379.pid loglevel notice logfile &amp;quot;/var/log/redis.log&amp;quot;</description>
+      <description>protected-mode yes port 6379 tcp-backlog 511 timeout 0 tcp-keepalive 300 daemonize yes supervised no pidfile /var/run/redis_6379.pid loglevel notice logfile &amp;#34;/var/log/redis.log&amp;#34;</description>
     </item>
     
     <item>
@@ -697,7 +706,7 @@
       <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/Security/nginx_security/</guid>
-      <description>添加认证 yum install httpd-tools htpasswd -c -b /etc/nginx/passwd/kibana.passwd user auth_basic &amp;quot;Kibana Auth&amp;quot;; auth_basic_user_file /etc/nginx/passwd/kibana.passwd; 更改默</description>
+      <description>添加认证 yum install httpd-tools htpasswd -c -b /etc/nginx/passwd/kibana.passwd user auth_basic &amp;#34;Kibana Auth&amp;#34;; auth_basic_user_file /etc/nginx/passwd/kibana.passwd; 更改默</description>
     </item>
     
     <item>

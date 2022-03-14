@@ -149,13 +149,13 @@
 <ol>
 <li>下载备份文件</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SHELL" data-lang="SHELL">wget 命令格式：wget -c <span style="color:#d14">&#39;备份文件下载地址&#39;</span> -O 自定义文件名.xb
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SHELL" data-lang="SHELL"><span style="display:flex;"><span>wget 命令格式：wget -c <span style="color:#d14">&#39;备份文件下载地址&#39;</span> -O 自定义文件名.xb
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>解包备份文件
@@ -226,8 +226,8 @@ mysqld --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data
 <p>下载相应的两个binlog文件mysql-01.bin、mysql-02.bin。</p>
 </li>
 </ol>
-<pre tabindex="0"><code>wget 'https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000088.bin' -O mysql-01.bin
-wget 'https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000089.bin' -O mysql-02.bin
+<pre tabindex="0"><code>wget &#39;https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000088.bin&#39; -O mysql-01.bin
+wget &#39;https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000089.bin&#39; -O mysql-02.bin
 </code></pre><ol start="2">
 <li>
 <p>找出mysql-01.bin的时间点为3（如2021-04-20 07:19:56）的后边的日志</p>
@@ -235,7 +235,7 @@ wget 'https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud
 <p>然后恢复出相应的sql</p>
 </li>
 </ol>
-<pre tabindex="0"><code>mysqlbinlog mysql-01.bin --start-datetime='2021-04-20 07:19:56' &gt; /root/mysql-01.sql
+<pre tabindex="0"><code>mysqlbinlog mysql-01.bin --start-datetime=&#39;2021-04-20 07:19:56&#39; &gt; /root/mysql-01.sql
 mysqlbinlog mysql-02.bin --stop-position=97355093 &gt; /root/97355093.sql
 </code></pre><pre><code>将binlog转为可读的sql的命令为
 </code></pre>
@@ -267,6 +267,8 @@ mysqlbinlog mysql-02.bin --stop-position=97355093 &gt; /root/97355093.sql
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a></li>
+        
         <li><a href="/post/Error/libncurses_so/">缺少LIBNCURSES.SO.5文件一例</a></li>
         
         <li><a href="/post/Kubernetes/kubectl_command/">Kubectl常用命令汇总</a></li>
@@ -274,8 +276,6 @@ mysqlbinlog mysql-02.bin --stop-position=97355093 &gt; /root/97355093.sql
         <li><a href="/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">Nginx简单介绍</a></li>
         
         <li><a href="/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">Haproxy简单记录</a></li>
-        
-        <li><a href="/post/LoadBalancing/lvs/">LVS</a></li>
         
     </ul>
 </div>
@@ -388,13 +388,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (5)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (8)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (6)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
     
@@ -430,6 +430,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
 </ul>
     </section>
 
@@ -439,7 +441,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (25)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (26)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -457,7 +459,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (81)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (82)</br></a>
     
 </div>
     </section>
