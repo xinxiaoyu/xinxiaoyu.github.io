@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 14 Feb 2022 15:23:52 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Mar 2022 13:01:51 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>红楼梦繁体版120回字数和词汇量统计</title>
+      <link>https://www.tangjihede.fun/post/Hahawriting/hongloumeng/</link>
+      <pubDate>Wed, 16 Mar 2022 13:01:51 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Hahawriting/hongloumeng/</guid>
+      <description>统计版本为繁体版120回，只统计文字（不</description>
+    </item>
+    
     <item>
       <title>hugo建站工具通过github action自动发布到github page</title>
       <link>https://www.tangjihede.fun/post/Hahawriting/test/</link>
