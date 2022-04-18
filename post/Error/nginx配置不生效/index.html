@@ -29,20 +29,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>Nginx和Apache做文件服务器 | 堂吉哈哈德的博客</title>
-    <meta property="og:title" content="Nginx和Apache做文件服务器 - 堂吉哈哈德的博客">
+    <title>nginx配置未生效 | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="nginx配置未生效 - 堂吉哈哈德的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2017-06-23T14:27:33&#43;08:00'>
+    <meta property="article:published_time" content='2021-12-09T18:48:01&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2017-06-23T14:27:33&#43;08:00'>
+    <meta property="article:modified_time" content='2021-12-09T18:48:01&#43;08:00'>
         
     <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
-    <meta name="description" content="Nginx和Apache做文件服务器">
+    <meta name="description" content="nginx配置未生效">
         
     <meta name="author" content="堂吉哈哈德">
-    <meta property="og:url" content="https://www.tangjihede.fun/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+    <meta property="og:url" content="https://www.tangjihede.fun/post/Error/nginx%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -119,16 +119,16 @@
     
     <article class="post">
         <header>
-            <h1 class="post-title">Nginx和Apache做文件服务器</h1>
+            <h1 class="post-title">nginx配置未生效</h1>
         </header>
         <date class="post-meta meta-date">
-            2017年6月23日
+            2021年12月9日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/LoadBalancing'>LoadBalancing</a></span>
+            <span class="meta-category"><a href='/categories/HahaWriting'>HahaWriting</a></span>
             
         </div>
         
@@ -140,35 +140,17 @@
         
         
         <div class="post-content">
-            <p>nginx</p>
-<p>nginx默认不允许列出文件目录，需要开启； 开启后只需删除掉index.html文件，因为找不到index.html才会列出当前目录文件；</p>
-<pre tabindex="0"><code>   server {
-        autoindex on;
-        autoindex_exact_size off;
-        listen       80;
-        server_name  localhost;
-        location /pub {
-            root   html;
-            index  index.html index.htm;
-        }
-    }
-</code></pre><p>apache</p>
-<p>需要在httpd.conf中增加以下设置，另外关闭selinux，iptables服务</p>
-<pre tabindex="0"><code>Alias /pub /home/ftp/pub/
-&lt;Directory “/home/ftp/pub”&gt;
-    Options Indexes FollowSymLinks
-    AllowOverride None
-    Order allow,deny
-    Allow from all
-&lt;/Directory&gt;
-</code></pre>
+            <p>我已经遇到过不止一次的愚蠢操作：</p>
+<p>新建nginx配置文件（如abc.com)，加域名等等配置好后，nginx -t再nginx -s reload,测试后域名地址打不开。。。</p>
+<p>犯过好几次，不幸的是每次都记不住。原因是新建的配置文件没有以.conf结尾，nginx是不会去读取的。害自己每次都要花至少十分钟去排错。</p>
+
         </div>
 
         
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="https://www.tangjihede.fun/">堂吉哈哈德</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">https://www.tangjihede.fun/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/Error/nginx%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88/">https://www.tangjihede.fun/post/Error/nginx%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88/</a></li>
         <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
     </ul>
 </div>
@@ -182,15 +164,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/post/LoadBalancing/nginx%E7%99%BD%E5%90%8D%E5%8D%95/">Nginx白名单</a></li>
+        <li><a href="/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/">腾讯云tke集群Pod内存使用率告警--Python实现</a></li>
         
-        <li><a href="/post/Redis/Redis%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/">Redis命令合集</a></li>
+        <li><a href="/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">使用k8s configmap管理skywalking配置文件</a></li>
         
-        <li><a href="/post/Redis/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/">Redis配置文件解释</a></li>
+        <li><a href="/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/">使用helm chart部署skywalking</a></li>
         
-        <li><a href="/post/Error/mysql_err/">MYSQL ERRS</a></li>
+        <li><a href="/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/">腾讯云服务器云硬盘扩容</a></li>
         
-        <li><a href="/post/SoftSetting/sublime/">Sublime使用记录</a></li>
+        <li><a href="/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/">Binlog样例</a></li>
         
     </ul>
 </div>
@@ -200,7 +182,7 @@
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/2017'>2017</a></li>
+                <li><a href='/tags/2021'>2021</a></li>
                 
                 <li><a href='/tags/ALL'>ALL</a></li>
                 
