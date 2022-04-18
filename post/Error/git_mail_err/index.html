@@ -29,21 +29,24 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>ALL | 堂吉哈哈德的博客</title>
-    <meta property="og:title" content="ALL - 堂吉哈哈德的博客">
+    <title>gitlab send mail err | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="gitlab send mail err - 堂吉哈哈德的博客">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2021-02-25T18:39:33&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-02-25T18:39:33&#43;08:00'>
         
     <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
-    <meta name="description" content="ALL">
+    <meta name="description" content="gitlab send mail err">
         
     <meta name="author" content="堂吉哈哈德">
-    <meta property="og:url" content="https://www.tangjihede.fun/tags/ALL/">
+    <meta property="og:url" content="https://www.tangjihede.fun/post/Error/git_mail_err/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml" href="https://www.tangjihede.fun/tags/ALL/index.xml" title="堂吉哈哈德的博客" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -92,7 +95,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://www.tangjihede.fun/">首页</a>
+                    <a class="current" href="https://www.tangjihede.fun/">首页</a>
                     
                     <a  href="https://www.tangjihede.fun/tools/" title="占位">占位</a>
                     
@@ -114,305 +117,93 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">ALL</span>
-        的文章
-    </h3>
-    
+    <article class="post">
+        <header>
+            <h1 class="post-title">gitlab send mail err</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年2月25日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Error'>Error</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <pre tabindex="0"><code>SendAsDenied; gitlib@example.com not allowed to send as gitlab@git.example.com; STOREDRV.Submission.Exception:SendAsDeniedException.MapiExceptionSendAsDenied; Failed to process message due to a permanent exception with message Cannot submit message
+</code></pre><p>遇到一个gitlab发送邮件的错误，原因是因为<code>gitlab_rails['gitlab_email_from'] = 'gitlab@example.com'</code>该参数没有设置。</p>
 
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/ELK/es_cluster/">Elasticsearch集群配置</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年2月25日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/ELK'>ELK</a>
-            
         </div>
-        
-        <div class="post-content">
-            设置hosts es-node-1 192.168.41.74 es-node-2 192.168.41.53 es-node-3 192.168.41.73 es-node……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/ELK/es_cluster/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/Linux/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Ipmi常用命令</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年6月28日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Linux'>Linux</a>
-            
-        </div>
-        
-        <div class="post-content">
-            远程连接后打印硬件信息 ipmitool -I lanplus -H ip -U user -P passwd……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/Linux/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">显卡故障日志分析</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年6月23日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Linux'>Linux</a>
-            
-            <a href='/categories/Error'>Error</a>
-            
-        </div>
-        
-        <div class="post-content">
-            物理机宕机，查看有如下日志： 1 2 3 4 5 6……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/MySQL/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/">Mysql5.7主从复制</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年6月23日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/MySQL'>MySQL</a>
-            
-        </div>
-        
-        <div class="post-content">
-            replication with binary log file Master端： A、 在my.c……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/MySQL/mysql5.7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/">Linux系统安全设置</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年6月23日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Linux'>Linux</a>
-            
-        </div>
-        
-        <div class="post-content">
-            锁定zhangsan用户 passwd -l zhangsan 或者在张三……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Awk常用命令</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年6月23日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Linux'>Linux</a>
-            
-        </div>
-        
-        <div class="post-content">
-            列出最常的十条命令： history | awk '{$1=&quot;&quot;;print $0}' | awk '{a[$0]++}END{for(i in a){print……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/">Redis导入rdb文件</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年6月22日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Redis'>Redis</a>
-            
-        </div>
-        
-        <div class="post-content">
-            1. 查看运行的redis配置项dir的配置……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/">监控linux系统的ssh登陆</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年6月8日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Python'>Python</a>
-            
-        </div>
-        
-        <div class="post-content">
-            使用的qqwry库（ip地址定位）地址：……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/LoadBalancing/Nginx_break_vs_last/">Nginx的break和last区别</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年2月23日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/LoadBalancing'>LoadBalancing</a>
-            
-        </div>
-        
-        <div class="post-content">
-            NGINX的rewrite指令有四个可选……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/LoadBalancing/Nginx_break_vs_last/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.tangjihede.fun/post/Windows/bat/">Bat几个用法</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年2月17日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/Windows'>Windows</a>
-            
-        </div>
-        
-        <div class="post-content">
-            windows上cmd的几个命令用法： 1.……
-            <p class="readmore"><a href="https://www.tangjihede.fun/post/Windows/bat/">阅读全文</a></p>
-        </div>
-    </article>
-    
 
-    
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.tangjihede.fun/">堂吉哈哈德</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/Error/git_mail_err/">https://www.tangjihede.fun/post/Error/git_mail_err/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
 
 
 
-<ol class="page-navigator">
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
+        
+        <li><a href="/post/Error/libncurses_so/">缺少LIBNCURSES.SO.5文件一例</a></li>
+        
+        <li><a href="/post/Kubernetes/kubectl_command/">Kubectl常用命令汇总</a></li>
+        
+        <li><a href="/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">Nginx简单介绍</a></li>
+        
+        <li><a href="/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">Haproxy简单记录</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2021'>2021</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
     
-    <li class="prev">
-        <a href="https://www.tangjihede.fun/tags/ALL/page/5/">上一页</a>
-    </li>
     
 
     
-    <li >
-        <a href="https://www.tangjihede.fun/tags/ALL/">1</a>
-    </li>
     
-    <li >
-        <a href="https://www.tangjihede.fun/tags/ALL/page/2/">2</a>
-    </li>
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
     
-    <li >
-        <a href="https://www.tangjihede.fun/tags/ALL/page/3/">3</a>
-    </li>
-    
-    <li >
-        <a href="https://www.tangjihede.fun/tags/ALL/page/4/">4</a>
-    </li>
-    
-    <li >
-        <a href="https://www.tangjihede.fun/tags/ALL/page/5/">5</a>
-    </li>
-    
-    <li  class="current">
-        <a href="https://www.tangjihede.fun/tags/ALL/page/6/">6</a>
-    </li>
-    
-    <li >
-        <a href="https://www.tangjihede.fun/tags/ALL/page/7/">7</a>
-    </li>
-    
-    <li >
-        <a href="https://www.tangjihede.fun/tags/ALL/page/8/">8</a>
-    </li>
-    
-    <li >
-        <a href="https://www.tangjihede.fun/tags/ALL/page/9/">9</a>
-    </li>
-    
-
-    
-    <li class="next">
-        <a href="https://www.tangjihede.fun/tags/ALL/page/7/">下一页</a>
-    </li>
-    
-</ol>
-
-
-
 </div>
 
                     <footer id="footer">
@@ -435,6 +226,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
