@@ -155,7 +155,13 @@
 </ol>
 <p><code>netstat -anpt | awk -F: '{a[$1]++}END{for(i in a){print i,a[i]}}' |grep -v 'and' | grep -v 'Address'</code></p>
 <ol start="4">
-<li>other</li>
+<li>
+<p>打印单引号
+<code>awk '{print &quot;'\''&quot;$1&quot;'\''&quot;&quot;,&quot;}'</code></p>
+</li>
+<li>
+<p>other</p>
+</li>
 </ol>
 <pre tabindex="0"><code>awk ‘{gsub(/^[^ \t]+[ \t]*/,””)}1’ file 去头
 awk ‘!a[$1]++’ file
