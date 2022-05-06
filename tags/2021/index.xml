@@ -188,6 +188,15 @@
     </item>
     
     <item>
+      <title>Pod探针</title>
+      <link>https://www.tangjihede.fun/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/</link>
+      <pubDate>Sat, 22 May 2021 19:48:19 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/</guid>
+      <description>kubernetes的POD有三种用途的</description>
+    </item>
+    
+    <item>
       <title>Python的selenium库使用汇总</title>
       <link>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
       <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
