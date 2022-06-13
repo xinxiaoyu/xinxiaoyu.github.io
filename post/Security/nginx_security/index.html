@@ -145,16 +145,16 @@
             <ol>
 <li>添加认证</li>
 </ol>
-<pre tabindex="0"><code>yum install httpd-tools
+<pre><code>yum install httpd-tools
 
 htpasswd -c -b /etc/nginx/passwd/kibana.passwd user
 
-auth_basic &#34;Kibana Auth&#34;;
+auth_basic &quot;Kibana Auth&quot;;
 auth_basic_user_file /etc/nginx/passwd/kibana.passwd;
 </code></pre><ol start="2">
 <li>更改默认超时时间</li>
 </ol>
-<pre tabindex="0"><code>client_header_timeout 20s;   #读取客户端请求头超时时间，默认60s
+<pre><code>client_header_timeout 20s;   #读取客户端请求头超时时间，默认60s
 client_body_timeout 10s;     #读取客户端body超时时间，默认60s
 send_timeout 30s;            #服务端向客户端传输数据的超时时间，默认60s
 
@@ -163,33 +163,33 @@ send_timeout 30s;            #服务端向客户端传输数据的超时时间�
 <li>黑名单功能
 location字段中增加IP黑名单</li>
 </ol>
-<pre tabindex="0"><code>if ($http_x_forwarded_for ~ 192.168.1.14|192.168.1.5|192.168.2.23) {
+<pre><code>if ($http_x_forwarded_for ~ 192.168.1.14|192.168.1.5|192.168.2.23) {
     return 403;
 }
 </code></pre><p>http指令内</p>
-<pre tabindex="0"><code>    map $http_x_forwarded_for $ip_allowed {
+<pre><code>    map $http_x_forwarded_for $ip_allowed {
         default allow;
         192.168.3.12 deny;
         192.168.21.3 deny;
     }
 </code></pre><p>server指令内</p>
-<pre tabindex="0"><code>   if ($ip_allowed = &#34;deny&#34;) {
+<pre><code>   if ($ip_allowed = &quot;deny&quot;) {
        return 444;
     }
-</code></pre><pre tabindex="0"><code>location ^~ /admin/
+</code></pre><pre><code>location ^~ /admin/
         {
         set $realip 0;
         set $flag 0;
-        if ($http_x_forwarded_for ~ &#34;^(\d+\.\d+\.\d+\.\d+)&#34;) {
+        if ($http_x_forwarded_for ~ &quot;^(\d+\.\d+\.\d+\.\d+)&quot;) {
             set $realip $1;
         }
         if ($realip !~ 116.228.89.244|222.44.226.12|222.44.226.13|222.44.226.34) {
-            set $flag &#34;${flag}1&#34;;
+            set $flag &quot;${flag}1&quot;;
         }
         if ($uri !~ (/admin/userfiles/).*) {
-            set $flag &#34;${flag}1&#34;;
+            set $flag &quot;${flag}1&quot;;
         }
-        if ($flag = &#34;011&#34;) {
+        if ($flag = &quot;011&quot;) {
             return 444;
         }
         index index.html index.jsp index.php;
@@ -203,7 +203,7 @@ location字段中增加IP黑名单</li>
 </code></pre><ol start="4">
 <li>网站图片防盗链</li>
 </ol>
-<pre tabindex="0"><code>location ~* \.(gif|jpg|png|bmp)$ {
+<pre><code>location ~* \.(gif|jpg|png|bmp)$ {
    valid_referers none blocked *.weiqijr.com *.qihailicai.com *.qihaijr.com *.weiqijr.cn *.qihaijr.cn *.qihailicai.cn \
                   server_names ~\.google\. ~\.baidu\.;
    if ($invalid_referer) {
@@ -239,7 +239,7 @@ location字段中增加IP黑名单</li>
         
         <li><a href="/post/CICD/brach_tag_library/">jenkins pipeline指定分支和tag</a></li>
         
-        <li><a href="/tags/"></a></li>
+        <li><a href="/series/"></a></li>
         
     </ul>
 </div>
@@ -382,7 +382,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -401,7 +401,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -421,7 +421,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

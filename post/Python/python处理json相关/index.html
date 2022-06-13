@@ -140,245 +140,260 @@
         
         
         <div class="post-content">
-            <p>Python处理json的函数有四个：dumps、dump、loads、load</p>
-<h3 id="dumps">dumps</h3>
-<p>源码定义如下：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+            <p>一般的场景是这样：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">dumps</span>(obj, <span style="color:#000;font-weight:bold">*</span>, skipkeys<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">False</span>, ensure_ascii<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">True</span>, check_circular<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">True</span>,
-</span></span><span style="display:flex;"><span>        allow_nan<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">True</span>, <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, indent<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, separators<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>,
-</span></span><span style="display:flex;"><span>        default<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, sort_keys<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">False</span>, <span style="color:#000;font-weight:bold">**</span>kw):
-</span></span><span style="display:flex;"><span>    <span style="color:#d14">&#34;&#34;&#34;Serialize ``obj`` to a JSON formatted ``str``.
-</span></span></span><span style="display:flex;"><span><span style="color:#d14">    ....
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a61717;background-color:#e3d2d2">标准的</span>json<span style="color:#a61717;background-color:#e3d2d2">（接口返回的）</span> <span style="color:#000;font-weight:bold">==&gt;</span><span style="color:#a61717;background-color:#e3d2d2">（需要转换成）</span> Python字典<span style="color:#a61717;background-color:#e3d2d2">，</span> <span style="color:#a61717;background-color:#e3d2d2">用</span>json<span style="color:#000;font-weight:bold">.</span>loads
+
+python字典格式  <span style="color:#000;font-weight:bold">==&gt;</span><span style="color:#a61717;background-color:#e3d2d2">（需要转换成）</span> <span style="color:#a61717;background-color:#e3d2d2">标准的</span>json<span style="color:#a61717;background-color:#e3d2d2">，</span> <span style="color:#a61717;background-color:#e3d2d2">用</span>json<span style="color:#000;font-weight:bold">.</span>dumps
+</code></pre></td></tr></table>
+</div>
+</div><p>Python处理json的函数有四个：dumps、dump、loads、load</p>
+<h3 id="dumps">dumps</h3>
+<p>源码定义如下：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">dumps</span>(obj, <span style="color:#000;font-weight:bold">*</span>, skipkeys<span style="color:#000;font-weight:bold">=</span><span style="color:#999">False</span>, ensure_ascii<span style="color:#000;font-weight:bold">=</span><span style="color:#999">True</span>, check_circular<span style="color:#000;font-weight:bold">=</span><span style="color:#999">True</span>,
+        allow_nan<span style="color:#000;font-weight:bold">=</span><span style="color:#999">True</span>, <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, indent<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, separators<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>,
+        default<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, sort_keys<span style="color:#000;font-weight:bold">=</span><span style="color:#999">False</span>, <span style="color:#000;font-weight:bold">**</span>kw):
+    <span style="color:#d14">&#34;&#34;&#34;Serialize ``obj`` to a JSON formatted ``str``.
+</span><span style="color:#d14">    ....
+</span></code></pre></td></tr></table>
 </div>
 </div><p>注释<code>Serialize ``obj`` to a JSON formatted ``str</code>说明了该函数的作用： 将obj序列化为str类型的JSON格式。</p>
 <p>dumps至少接收一个obj参数，obj是什么呢，就是dict、list、tuple、str等这些python的数据类型。</p>
 <p>比如我定义一个dict类型的obj</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>obj <span style="color:#000;font-weight:bold">=</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#d14">&#34;msgtype&#34;</span>: <span style="color:#d14">&#34;markdown&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#d14">&#34;markdown&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;title&#34;</span>: <span style="color:#d14">&#34;title&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;value&#34;</span>: <span style="color:#099">0</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;text&#34;</span>: <span style="color:#000;font-weight:bold">None</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">obj <span style="color:#000;font-weight:bold">=</span> {
+    <span style="color:#d14">&#34;msgtype&#34;</span>: <span style="color:#d14">&#34;markdown&#34;</span>,
+    <span style="color:#d14">&#34;markdown&#34;</span>: {
+        <span style="color:#d14">&#34;title&#34;</span>: <span style="color:#d14">&#34;title&#34;</span>,
+        <span style="color:#d14">&#34;value&#34;</span>: <span style="color:#099">0</span>,
+        <span style="color:#d14">&#34;text&#34;</span>: <span style="color:#999">None</span>
+    }
+}
+</code></pre></td></tr></table>
 </div>
-</div><p>注意，这是一个python的字典类型，所以只有python知道怎么处理。如果想让HTTP直接以POST方式处理，肯定是不行的（但像requests库有内置的 JSON解码器,所以可以直接帮你处理)，需要先转换成HTTP能够理解的格式，即json。</p>
+</div><p>注意，这是一个python的字典(dict)类型，所以只有python知道怎么处理。如果想让HTTP直接以POST方式处理，肯定是不行的（但像requests库有内置的 JSON解码器,所以可以直接帮你处理)，需要先转换成HTTP能够理解的格式，即json。</p>
 <p>使用json.dumps(obj)后，就会变成标准的json格式了。但是注意，json.dumps(obj)本身是str类型。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>obj_to_json <span style="color:#000;font-weight:bold">=</span> json<span style="color:#000;font-weight:bold">.</span>dumps(obj)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#0086b3">print</span>(obj_to_json)
-</span></span><span style="display:flex;"><span><span style="color:#0086b3">print</span>(<span style="color:#0086b3">type</span>(obj_to_json))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#输出</span>
-</span></span><span style="display:flex;"><span>{<span style="color:#d14">&#34;msgtype&#34;</span>: <span style="color:#d14">&#34;markdown&#34;</span>, <span style="color:#d14">&#34;markdown&#34;</span>: {<span style="color:#d14">&#34;title&#34;</span>: <span style="color:#d14">&#34;title&#34;</span>, <span style="color:#d14">&#34;value&#34;</span>: <span style="color:#099">0</span>, <span style="color:#d14">&#34;text&#34;</span>: null}}
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#000;font-weight:bold">class</span> <span style="color:#a61717;background-color:#e3d2d2">&#39;</span><span style="color:#458;font-weight:bold">str</span><span style="color:#d14">&#39;&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">obj_to_json <span style="color:#000;font-weight:bold">=</span> json<span style="color:#000;font-weight:bold">.</span>dumps(obj)
+
+<span style="color:#000;font-weight:bold">print</span>(obj_to_json)
+<span style="color:#000;font-weight:bold">print</span>(<span style="color:#0086b3">type</span>(obj_to_json))
+
+<span style="color:#998;font-style:italic">#输出</span>
+{<span style="color:#d14">&#34;msgtype&#34;</span>: <span style="color:#d14">&#34;markdown&#34;</span>, <span style="color:#d14">&#34;markdown&#34;</span>: {<span style="color:#d14">&#34;title&#34;</span>: <span style="color:#d14">&#34;title&#34;</span>, <span style="color:#d14">&#34;value&#34;</span>: <span style="color:#099">0</span>, <span style="color:#d14">&#34;text&#34;</span>: null}}
+<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#000;font-weight:bold">class</span> <span style="color:#a61717;background-color:#e3d2d2">&#39;</span><span style="color:#458;font-weight:bold">str</span><span style="color:#d14">&#39;&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>所以dumps的使用场景可以理解为当自己需要构造一个json时使用。</p>
 <h3 id="dump">dump</h3>
 <p>源码定义如下：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">dump</span>(obj, fp, <span style="color:#000;font-weight:bold">*</span>, skipkeys<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">False</span>, ensure_ascii<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">True</span>, check_circular<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">True</span>,
-</span></span><span style="display:flex;"><span>        allow_nan<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">True</span>, <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, indent<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, separators<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>,
-</span></span><span style="display:flex;"><span>        default<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, sort_keys<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">False</span>, <span style="color:#000;font-weight:bold">**</span>kw):
-</span></span><span style="display:flex;"><span>    <span style="color:#d14">&#34;&#34;&#34;Serialize ``obj`` as a JSON formatted stream to ``fp`` (a
-</span></span></span><span style="display:flex;"><span><span style="color:#d14">    ``.write()``-supporting file-like object).
-</span></span></span><span style="display:flex;"><span><span style="color:#d14">    ...
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">dump</span>(obj, fp, <span style="color:#000;font-weight:bold">*</span>, skipkeys<span style="color:#000;font-weight:bold">=</span><span style="color:#999">False</span>, ensure_ascii<span style="color:#000;font-weight:bold">=</span><span style="color:#999">True</span>, check_circular<span style="color:#000;font-weight:bold">=</span><span style="color:#999">True</span>,
+        allow_nan<span style="color:#000;font-weight:bold">=</span><span style="color:#999">True</span>, <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, indent<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, separators<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>,
+        default<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, sort_keys<span style="color:#000;font-weight:bold">=</span><span style="color:#999">False</span>, <span style="color:#000;font-weight:bold">**</span>kw):
+    <span style="color:#d14">&#34;&#34;&#34;Serialize ``obj`` as a JSON formatted stream to ``fp`` (a
+</span><span style="color:#d14">    ``.write()``-supporting file-like object).
+</span><span style="color:#d14">    ...
+</span></code></pre></td></tr></table>
 </div>
 </div><p>dump和dumps作用是一样的，只不过dump是必须要将序列化的结果保存到IO类的对象里。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 序列化并保存到文件</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;obj.txt&#39;</span>, <span style="color:#d14">&#39;w&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
-</span></span><span style="display:flex;"><span>    json<span style="color:#000;font-weight:bold">.</span>dump(obj, f)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 读取结果</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;obj.txt&#39;</span>, <span style="color:#d14">&#39;r&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
-</span></span><span style="display:flex;"><span>    <span style="color:#0086b3">print</span>(f<span style="color:#000;font-weight:bold">.</span>read())
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#输出</span>
-</span></span><span style="display:flex;"><span>{<span style="color:#d14">&#34;msgtype&#34;</span>: <span style="color:#d14">&#34;markdown&#34;</span>, <span style="color:#d14">&#34;markdown&#34;</span>: {<span style="color:#d14">&#34;title&#34;</span>: <span style="color:#d14">&#34;title&#34;</span>, <span style="color:#d14">&#34;value&#34;</span>: <span style="color:#099">0</span>, <span style="color:#d14">&#34;text&#34;</span>: null}}
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#998;font-style:italic"># 序列化并保存到文件</span>
+<span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;obj.txt&#39;</span>, <span style="color:#d14">&#39;w&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
+    json<span style="color:#000;font-weight:bold">.</span>dump(obj, f)
+
+<span style="color:#998;font-style:italic"># 读取结果</span>
+<span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;obj.txt&#39;</span>, <span style="color:#d14">&#39;r&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
+    <span style="color:#000;font-weight:bold">print</span>(f<span style="color:#000;font-weight:bold">.</span>read())
+
+<span style="color:#998;font-style:italic">#输出</span>
+{<span style="color:#d14">&#34;msgtype&#34;</span>: <span style="color:#d14">&#34;markdown&#34;</span>, <span style="color:#d14">&#34;markdown&#34;</span>: {<span style="color:#d14">&#34;title&#34;</span>: <span style="color:#d14">&#34;title&#34;</span>, <span style="color:#d14">&#34;value&#34;</span>: <span style="color:#099">0</span>, <span style="color:#d14">&#34;text&#34;</span>: null}}
+</code></pre></td></tr></table>
 </div>
 </div><p>注意obj是字典类型，所以当用load反序列化后的结果还是字典。</p>
 <h3 id="loads">loads</h3>
 <p>源码定义如下：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">loads</span>(s, <span style="color:#000;font-weight:bold">*</span>, encoding<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, object_hook<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, parse_float<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>,
-</span></span><span style="display:flex;"><span>        parse_int<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, parse_constant<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, object_pairs_hook<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, <span style="color:#000;font-weight:bold">**</span>kw):
-</span></span><span style="display:flex;"><span>    <span style="color:#d14">&#34;&#34;&#34;Deserialize ``s`` (a ``str``, ``bytes`` or ``bytearray`` instance
-</span></span></span><span style="display:flex;"><span><span style="color:#d14">    containing a JSON document) to a Python object.
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">loads</span>(s, <span style="color:#000;font-weight:bold">*</span>, encoding<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, object_hook<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, parse_float<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>,
+        parse_int<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, parse_constant<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, object_pairs_hook<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, <span style="color:#000;font-weight:bold">**</span>kw):
+    <span style="color:#d14">&#34;&#34;&#34;Deserialize ``s`` (a ``str``, ``bytes`` or ``bytearray`` instance
+</span><span style="color:#d14">    containing a JSON document) to a Python object.
+</span></code></pre></td></tr></table>
 </div>
 </div><p>当你从http地址（比如腾讯云api）请求一个地址后，对方都会返回一个response，基本都是json数据（注意是str类型，相应的SDK里会有转换的方法）。如腾讯云的安全组下的某个api返回的内容</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;SecurityGroupSet&#34;</span>:[
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;SecurityGroupId&#34;</span>:<span style="color:#d14">&#34;sg-5u9jj0ec&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;SecurityGroupName&#34;</span>:<span style="color:#d14">&#34;default&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;SecurityGroupDesc&#34;</span>:<span style="color:#d14">&#34;System created security group&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;ProjectId&#34;</span>:<span style="color:#d14">&#34;0&#34;</span>,<span style="color:#000080">&#34;ALL&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;IsDefault&#34;</span>:<span style="color:#000;font-weight:bold">true</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;CreatedTime&#34;</span>:<span style="color:#d14">&#34;2021-01-07 15:54:13&#34;</span>,<span style="color:#000080">&#34;ALL&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;TagSet&#34;</span>:[
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            ]
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    ],
-</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;TotalCount&#34;</span>:<span style="color:#099">1</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;RequestId&#34;</span>:<span style="color:#d14">&#34;284a79dd-8ef7-4d6e-936d-c9f7a5edc1b1&#34;</span>,<span style="color:#000080">&#34;ALL&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#000080">&#34;SecurityGroupSet&#34;</span>:[
+        {
+            <span style="color:#000080">&#34;SecurityGroupId&#34;</span>:<span style="color:#d14">&#34;sg-5u9jj0ec&#34;</span>,
+            <span style="color:#000080">&#34;SecurityGroupName&#34;</span>:<span style="color:#d14">&#34;default&#34;</span>,
+            <span style="color:#000080">&#34;SecurityGroupDesc&#34;</span>:<span style="color:#d14">&#34;System created security group&#34;</span>,
+            <span style="color:#000080">&#34;ProjectId&#34;</span>:<span style="color:#d14">&#34;0&#34;</span>,<span style="color:#000080">&#34;ALL&#34;</span>,
+            <span style="color:#000080">&#34;IsDefault&#34;</span>:<span style="color:#000;font-weight:bold">true</span>,
+            <span style="color:#000080">&#34;CreatedTime&#34;</span>:<span style="color:#d14">&#34;2021-01-07 15:54:13&#34;</span>,<span style="color:#000080">&#34;ALL&#34;</span>,
+            <span style="color:#000080">&#34;TagSet&#34;</span>:[
+
+            ]
+        }
+    ],
+    <span style="color:#000080">&#34;TotalCount&#34;</span>:<span style="color:#099">1</span>,
+    <span style="color:#000080">&#34;RequestId&#34;</span>:<span style="color:#d14">&#34;284a79dd-8ef7-4d6e-936d-c9f7a5edc1b1&#34;</span>,<span style="color:#000080">&#34;ALL&#34;</span>
+}
+</code></pre></td></tr></table>
 </div>
-</div><p>这是print后的结果，实际的代码是resp.to_json_string()，使用loads函数获取某个字段的值（比如&rsquo;CreatedTime&rsquo;）如下：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</div><p>这是print后的结果，实际的代码是resp.to_json_string()，使用loads函数获取某个字段的值（比如&rsquo;CreatedTime'）如下：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>resp_str <span style="color:#000;font-weight:bold">=</span> resp<span style="color:#000;font-weight:bold">.</span>to_json_string()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>resp_dict <span style="color:#000;font-weight:bold">=</span> json<span style="color:#000;font-weight:bold">.</span>loads(resp_str)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#0086b3">print</span>(resp_dict[<span style="color:#d14">&#39;SecurityGroupSet&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;CreatedTime&#39;</span>])
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">resp_str <span style="color:#000;font-weight:bold">=</span> resp<span style="color:#000;font-weight:bold">.</span>to_json_string()
+
+resp_dict <span style="color:#000;font-weight:bold">=</span> json<span style="color:#000;font-weight:bold">.</span>loads(resp_str)
+
+<span style="color:#000;font-weight:bold">print</span>(resp_dict[<span style="color:#d14">&#39;SecurityGroupSet&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;CreatedTime&#39;</span>])
+</code></pre></td></tr></table>
 </div>
-</div><p>所以总结loads的使用场景是用于处理HTTP地址返回的json数据，转换为Python更具体的对象后，Python就可以灵活处理了。</p>
+</div><p>所以总结loads的使用场景是用于处理HTTP地址返回的json数据，转换为Python更具体的对象后（一般都是dict），Python就可以灵活处理了。</p>
 <h3 id="load">load</h3>
 <p>源码定义如下：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">load</span>(fp, <span style="color:#000;font-weight:bold">*</span>, <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, object_hook<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, parse_float<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>,
-</span></span><span style="display:flex;"><span>        parse_int<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, parse_constant<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, object_pairs_hook<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">None</span>, <span style="color:#000;font-weight:bold">**</span>kw):
-</span></span><span style="display:flex;"><span>    <span style="color:#d14">&#34;&#34;&#34;Deserialize ``fp`` (a ``.read()``-supporting file-like object containing
-</span></span></span><span style="display:flex;"><span><span style="color:#d14">    a JSON document) to a Python object.
-</span></span></span><span style="display:flex;"><span><span style="color:#d14">
-</span></span></span><span style="display:flex;"><span><span style="color:#d14">    ...省略
-</span></span></span><span style="display:flex;"><span><span style="color:#d14">    &#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> loads(fp<span style="color:#000;font-weight:bold">.</span>read(),
-</span></span><span style="display:flex;"><span>        <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#999">cls</span>, object_hook<span style="color:#000;font-weight:bold">=</span>object_hook,
-</span></span><span style="display:flex;"><span>        parse_float<span style="color:#000;font-weight:bold">=</span>parse_float, parse_int<span style="color:#000;font-weight:bold">=</span>parse_int,
-</span></span><span style="display:flex;"><span>        parse_constant<span style="color:#000;font-weight:bold">=</span>parse_constant, object_pairs_hook<span style="color:#000;font-weight:bold">=</span>object_pairs_hook, <span style="color:#000;font-weight:bold">**</span>kw)
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">load</span>(fp, <span style="color:#000;font-weight:bold">*</span>, <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, object_hook<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, parse_float<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>,
+        parse_int<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, parse_constant<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, object_pairs_hook<span style="color:#000;font-weight:bold">=</span><span style="color:#999">None</span>, <span style="color:#000;font-weight:bold">**</span>kw):
+    <span style="color:#d14">&#34;&#34;&#34;Deserialize ``fp`` (a ``.read()``-supporting file-like object containing
+</span><span style="color:#d14">    a JSON document) to a Python object.
+</span><span style="color:#d14">
+</span><span style="color:#d14">    ....省略
+</span><span style="color:#d14">    &#34;&#34;&#34;</span>
+    <span style="color:#000;font-weight:bold">return</span> loads(fp<span style="color:#000;font-weight:bold">.</span>read(),
+        <span style="color:#999">cls</span><span style="color:#000;font-weight:bold">=</span><span style="color:#999">cls</span>, object_hook<span style="color:#000;font-weight:bold">=</span>object_hook,
+        parse_float<span style="color:#000;font-weight:bold">=</span>parse_float, parse_int<span style="color:#000;font-weight:bold">=</span>parse_int,
+        parse_constant<span style="color:#000;font-weight:bold">=</span>parse_constant, object_pairs_hook<span style="color:#000;font-weight:bold">=</span>object_pairs_hook, <span style="color:#000;font-weight:bold">**</span>kw)
+</code></pre></td></tr></table>
 </div>
 </div><p>读取一个文件，然后反序列化为python对象</p>
 <p>比如，反序列化上面dump的例子</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;obj.txt&#39;</span>, <span style="color:#d14">&#39;r&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
-</span></span><span style="display:flex;"><span>    <span style="color:#0086b3">print</span>(json<span style="color:#000;font-weight:bold">.</span>load(f))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;obj.txt&#39;</span>, <span style="color:#d14">&#39;r&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
-</span></span><span style="display:flex;"><span>    <span style="color:#0086b3">print</span>(<span style="color:#0086b3">type</span>(json<span style="color:#000;font-weight:bold">.</span>load(f)))
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;obj.txt&#39;</span>, <span style="color:#d14">&#39;r&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
+    <span style="color:#000;font-weight:bold">print</span>(json<span style="color:#000;font-weight:bold">.</span>load(f))
+
+<span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;obj.txt&#39;</span>, <span style="color:#d14">&#39;r&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
+    <span style="color:#000;font-weight:bold">print</span>(<span style="color:#0086b3">type</span>(json<span style="color:#000;font-weight:bold">.</span>load(f)))
+
+</code></pre></td></tr></table>
 </div>
 </div>
         </div>
@@ -552,7 +567,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -571,7 +586,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -591,7 +606,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

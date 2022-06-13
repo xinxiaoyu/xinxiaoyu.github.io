@@ -149,7 +149,7 @@
 <p>比如我现在要扩容根分区：</p>
 <p>操作前的确认事项</p>
 <p>1、df -Th查看当前根分区的文件系统</p>
-<pre tabindex="0"><code> [root@node1 ~]# df -Th
+<pre><code> [root@node1 ~]# df -Th
 Filesystem              Type      Size  Used Avail Use% Mounted on
 devtmpfs                devtmpfs  1.7G     0  1.7G   0% /dev
 tmpfs                   tmpfs     1.7G     0  1.7G   0% /dev/shm
@@ -159,7 +159,7 @@ tmpfs                   tmpfs     1.7G     0  1.7G   0% /sys/fs/cgroup
 /dev/sda1               xfs      1014M  176M  839M  18% /boot
 tmpfs                   tmpfs     346M     0  346M   0% /run/user/0
 </code></pre><p>可知根分区的文件系统为/dev/mapper/centos-root，类型是xfs，但是不是用了LVM呢，可通过fdisk命令查看</p>
-<pre tabindex="0"><code> [root@node1 ~]# fdisk -l
+<pre><code> [root@node1 ~]# fdisk -l
 Disk /dev/sda: 8589 MB, 8589934592 bytes, 16777216 sectors
 Units = sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
@@ -177,7 +177,7 @@ Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 </code></pre><p>不难看出，/dev/sda1被分挂到了/boot分区，没有使用LVM，/dev/sda2便是根分区，使用了LVM，对应着/dev/mapper/centos-root</p>
 <p>2、使用pvdisplay命令找到/dev/sda2所属的PV</p>
-<pre tabindex="0"><code>  [root@node1 ~]#  pvdisplay 
+<pre><code>  [root@node1 ~]#  pvdisplay 
   --- Physical volume ---
   PV Name               /dev/sda2
   VG Name               centos
@@ -190,7 +190,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
   PV UUID               ZsFJj8-cCqI-tSxM-tb82-a8Jy-r8D0-VOgzIW
 </code></pre><p>由上可知所属的VG为centos（下面要用到）</p>
 <p>3、再通过lvdisplay命令找到centos下的LV Path</p>
-<pre tabindex="0"><code> [root@node1 ~]# lvdisplay
+<pre><code> [root@node1 ~]# lvdisplay
   --- Logical volume ---
   LV Path                /dev/centos/root
   LV Name                root
@@ -210,7 +210,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 </code></pre><p>确认LV path为/dev/centos/root，LV name为root</p>
 <p>知道这VG name和LV的信息，就可以走上面的4步操作了</p>
 <p>新增硬盘/dev/sdc</p>
-<pre tabindex="0"><code>1、 pvcreate /dev/sdc
+<pre><code>1、 pvcreate /dev/sdc
 2、 vgextend centos /dev/sdc #centos为扩容的VG name
 3、lvextend -L +95G /dev/centos/root  #大写的-L参数后面加具体的扩容空间
 3、lvextend -l +100%FREE /dev/centos/root #小写的-l参数后面加百名比，此处表示使用所有的空闲空间
@@ -394,7 +394,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -413,7 +413,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -433,7 +433,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

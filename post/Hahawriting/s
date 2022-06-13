@@ -1,0 +1,110 @@
+@Library('pipeline-library') _
+   
+pipeline {
+    agent {
+        node {
+            label 'openjdk11'
+        }
+    }
+    
+    environment {
+        HARBOR_CREDENTIAL_ID = 'harbor-id'
+        GITLAB_CREDENTIAL_ID = 'gitlab-id'
+        DOCKERHUB_NAMESPACE = 'sino'
+        // # git仓库项目所在组
+        GITLAB_GROUP = 'merchant-center/backend'
+        GITLAB_URL = 'https://git.meetsocial.cn'
+        // 项目名称替换成相对应的
+        PROJECT_NAME = 'sino-merchant-server'
+        // app_name 跟apollo里相对应服务app_id保持一致
+        APP_NAME = 'sino-merchant-payment-service'
+        YAML_NAME = 'op/k8s_yaml'
+        WORKSPACES = 'tpg'
+        
+        // k8s yaml
+        LIMIT_CPU = "1000m"
+        LIMIT_MEMORY = "3000Mi"
+        REQUEST_CPU = "10m"
+        REQUEST_MEMORY = "100Mi"
+        HEAP_XMS = "100m"
+        HEAP_XMX = "100m"
+        // 服务端口改成相对应的
+        RUN_PORT = 7707
+        // 服务健康监测接口，java默认是/_console/_status
+        HEALTH_PATH = "/_console/_status"
+        IMAGE_PULL_SECRETS = "harbor-secret"
+        DATE = getDate()
+        // webhook地址, 如开发有提供改成开发提供的
+        WEBHOOK_URL = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=3188823b-ab2f-443a-ae53-be14fd9957fa"
+        // 代码库里实际位置(相对路径)
+        DOCKERFILE = "./sino-merchant-payment-service/Dockerfile"
+        // prometheus监控
+        ENABLE_SCRAPE = true
+        METRICS_PATH = '/actuator/prometheus'
+    }
+    
+    parameters {
+        choice(
+          name: 'RUN_ENV',
+          choices: ['test'],
+          description: '请选择发布环境',
+        )
+      listGitBranches branchFilter: 'refs/heads/(.*)',
+            defaultValue: 'master',
+            name: 'BRANCH',
+            type: 'PT_BRANCH',
+            remoteURL: 'https://git.meetsocial.cn/merchant-center/backend/sino-merchant-server.git',
+            credentialsId: 'gitlab-id',
+            selectedValue: 'DEFAULT',
+            sortMode: 'ASCENDING',
+            quickFilterEnabled: true
+    }
+    
+    stages {
+        stage("setEnv") {
+          steps {
+            // 修改为正确的业务域
+            setEnv(RUN_ENV, "foreground")
+          }
+        }
+        // 拉取代码
+        stage('codeFetch') {
+            steps {
+                codeFetch()
+                getCommitHash()
+            }
+        }
+        // # 打包并提交镜像到镜像仓库
+        stage('build && push') {
+          steps {
+              container ('openjdk11') {
+                // 打镜像
+                buildImage("openjdk11", DOCKERFILE)
+                // 提交镜像到镜像仓库
+                pushImage()
+              }
+          }
+        }
+        // # 部署
+        stage('deploy') {
+          steps {
+            // # 默认dev环境
+            deployK8s(RUN_ENV, "java")
+          }
+        }
+        
+        stage('check') {
+          steps {
+            script {
+              checkPod()
+            }
+          }
+        }
+    }
+    
+    post {
+      always {
+        wechatNotification()
+      }
+    }
+}

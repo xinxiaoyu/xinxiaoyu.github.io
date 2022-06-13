@@ -137,65 +137,65 @@
         
         <div class="post-content">
             <p>如下pipeline可以指定github仓库的分支和tag(使用git参数，插件地址 <a href="https://plugins.jenkins.io/git-parameter/">https://plugins.jenkins.io/git-parameter/</a>)</p>
-<pre tabindex="0"><code class="language-pipeline" data-lang="pipeline">pipeline {
+<pre><code class="language-pipeline" data-lang="pipeline">pipeline {
     agent any
     parameters {
-        gitParameter name: &#39;BRANCH_TAG&#39;, 
-                     type: &#39;PT_BRANCH_TAG&#39;,
-                     branchFilter: &#39;origin/(.*)&#39;,
-                     defaultValue: &#39;main&#39;,
-                     selectedValue: &#39;DEFAULT&#39;,
-                     sortMode: &#39;DESCENDING_SMART&#39;,
-					 description: &#39;Select your branch or tag.&#39;
+        gitParameter name: 'BRANCH_TAG', 
+                     type: 'PT_BRANCH_TAG',
+                     branchFilter: 'origin/(.*)',
+                     defaultValue: 'main',
+                     selectedValue: 'DEFAULT',
+                     sortMode: 'DESCENDING_SMART',
+					 description: 'Select your branch or tag.'
     }
     stages {
-        stage(&#39;Example&#39;) {
+        stage('Example') {
             steps {
-                checkout([$class: &#39;GitSCM&#39;,
-                          branches: [[name: &#34;${params.BRANCH_TAG}&#34;]],
+                checkout([$class: 'GitSCM',
+                          branches: [[name: &quot;${params.BRANCH_TAG}&quot;]],
                           doGenerateSubmoduleConfigurations: false,
                           extensions: [],
-                          gitTool: &#39;Default&#39;,
+                          gitTool: 'Default',
                           submoduleCfg: [],
-                          userRemoteConfigs: [[url: &#39;https://github.com/xinxiaoyu/test_git.git&#39;, credentialsId: &#39;&#39;,]]
+                          userRemoteConfigs: [[url: 'https://github.com/xinxiaoyu/test_git.git', credentialsId: '',]]
                         ])
             }
         }
     }
 }
-</code></pre><p>这个时候工作是正常的，分支和tag会对应显示test_git仓库。但是如果在第一行加入共享库&rsquo;@Library(&lsquo;pipeline-library&rsquo;) _&lsquo;则会显示共享库的分支tag，这显然冲突了。
+</code></pre><p>这个时候工作是正常的，分支和tag会对应显示test_git仓库。但是如果在第一行加入共享库'@Library(&lsquo;pipeline-library&rsquo;) _&lsquo;则会显示共享库的分支tag，这显然冲突了。
 可以用list git braches parameter插件(地址 <a href="https://plugins.jenkins.io/list-git-branches-parameter/">https://plugins.jenkins.io/list-git-branches-parameter/</a> )</p>
-<pre tabindex="0"><code class="language-pipeline" data-lang="pipeline">@Library(&#39;pipeline-library&#39;) _
+<pre><code class="language-pipeline" data-lang="pipeline">@Library('pipeline-library') _
 
 pipeline {
     agent any
 
     environment {
-        GITLAB_CREDENTIAL_ID = &#39;&#39;
-        GITLAB_URL = &#39;https://github.com/xinxiaoyu/test_git.git&#39;
-        web_site = &#39;xinxiaoyu.github.io&#39;
-        BRANCH = &#39;main&#39;
+        GITLAB_CREDENTIAL_ID = ''
+        GITLAB_URL = 'https://github.com/xinxiaoyu/test_git.git'
+        web_site = 'xinxiaoyu.github.io'
+        BRANCH = 'main'
     }
 
     parameters {
-       listGitBranches branchFilter: &#39;refs/heads/(.*)&#39;,
-            defaultValue: &#39;main&#39;,
-            name: &#39;BRANCH_TAG&#39;,
-            type: &#39;PT_BRANCH_TAG&#39;,  // PT_BRANCH, PT_TAG
-            remoteURL: &#39;https://github.com/xinxiaoyu/test_git.git&#39;,
-            credentialsId: &#39;&#39;,
-            selectedValue: &#39;DEFAULT&#39;,
-            sortMode: &#39;ASCENDING&#39;,
+       listGitBranches branchFilter: 'refs/heads/(.*)',
+            defaultValue: 'main',
+            name: 'BRANCH_TAG',
+            type: 'PT_BRANCH_TAG',  // PT_BRANCH, PT_TAG
+            remoteURL: 'https://github.com/xinxiaoyu/test_git.git',
+            credentialsId: '',
+            selectedValue: 'DEFAULT',
+            sortMode: 'ASCENDING',
             quickFilterEnabled: true
     }
     stages {
-        stage (&#39;Checkout&#39;) {
+        stage ('Checkout') {
             steps {
-                git(credentialsId: &#34;${env.GITLAB_CREDENTIAL_ID}&#34;, url: &#34;${env.GITLAB_URL}&#34;, branch: &#34;${env.BRANCH_TAG}&#34;, changelog: true, poll: false)
+                git(credentialsId: &quot;${env.GITLAB_CREDENTIAL_ID}&quot;, url: &quot;${env.GITLAB_URL}&quot;, branch: &quot;${env.BRANCH_TAG}&quot;, changelog: true, poll: false)
             }
         }
 
-        stage(&#39;library test&#39;) {
+        stage('library test') {
             steps {
                 getCode()
             }
@@ -232,7 +232,7 @@ pipeline {
         
         <li><a href="/post/Linux/inotify_rsync/">Inotify_rsync_unison使用记录</a></li>
         
-        <li><a href="/post/Hahawriting/%E7%96%AB%E6%83%85%E6%9C%9F%E9%97%B4%E5%B1%85%E5%AE%B6%E9%9A%94%E7%A6%BB%E7%9A%84%E7%89%A9%E8%B5%84%E8%B4%AD%E4%B9%B0%E6%8E%A5%E6%94%B6%E6%94%BF%E5%BA%9C%E5%8F%91%E7%9A%84%E8%AE%B0%E5%BD%95%E6%B8%85%E5%8D%95/">疫情期间居家隔离的物资购买（接收，政府发的）记录清单</a></li>
+        <li><a href="/post/SoftSetting/virtualbox/">本周遇到的错误问题(00)</a></li>
         
     </ul>
 </div>
@@ -375,7 +375,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -394,7 +394,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -414,7 +414,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

@@ -141,144 +141,144 @@
         
         <div class="post-content">
             <h4 id="1-指定单个ip运行使用root用户">1. 指定单个ip运行（使用root用户)</h4>
-<pre tabindex="0"><code>ansible all -i 10.10.120.255, -m ping -u root  
+<pre><code>ansible all -i 10.10.120.255, -m ping -u root  
  #检测连接是否正常
  10.10.120.255 | SUCCESS =&gt; {
-    &#34;ansible_facts&#34;: {
-        &#34;discovered_interpreter_python&#34;: &#34;/usr/bin/python&#34;
+    &quot;ansible_facts&quot;: {
+        &quot;discovered_interpreter_python&quot;: &quot;/usr/bin/python&quot;
     }, 
-    &#34;changed&#34;: false, 
-    &#34;ping&#34;: &#34;pong&#34;
+    &quot;changed&quot;: false, 
+    &quot;ping&quot;: &quot;pong&quot;
 }
 </code></pre><p>还有setup模块打印出的信息，在使用变量/判断的时候可以拿到很多有用的信息，比如指定操作系统平台或版本信息</p>
-<pre tabindex="0"><code>ansible-playbook all -i 10.10.1.3, test.yml
+<pre><code>ansible-playbook all -i 10.10.1.3, test.yml
 </code></pre><p>ansible-playbook的用法</p>
 <h4 id="2-使用yum安装httpd并启动">2. 使用yum安装httpd并启动</h4>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>install httpd<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">yum</span>:<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>httpd <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>present<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>start httpd<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">service</span>:<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>httpd<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>start<span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>install httpd<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">yum</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>httpd <span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>present<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>start httpd<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">service</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>httpd<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>start<span style="color:#bbb">
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id="3-新建目录拷贝文件并给改变执行权限">3. 新建目录，拷贝文件并给（改变）执行权限</h4>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>create zabbix directory<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">file</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">path</span>:<span style="color:#bbb"> </span>/usr/local/zabbix<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>directory<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>copy tcp_connections.sh<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">copy</span>:<span style="color:#bbb"> </span>src=../file/tcp_connections.sh dest=/etc/zabbix<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>change tcp_connections.sh <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">file</span>:<span style="color:#bbb"> </span>dest=/etc/zabbix/tcp_connections.sh mode=a+x<span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>create zabbix directory<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">file</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">path</span>:<span style="color:#bbb"> </span>/usr/local/zabbix<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>directory<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>copy tcp_connections.sh<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">copy</span>:<span style="color:#bbb"> </span>src=../file/tcp_connections.sh dest=/etc/zabbix<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>change tcp_connections.sh <span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">file</span>:<span style="color:#bbb"> </span>dest=/etc/zabbix/tcp_connections.sh mode=a+x<span style="color:#bbb">
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id="4-条件判断只在centos7上安装zabbix">4. 条件判断，只在centos7上安装zabbix</h4>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>centos7 install zabbix-agend<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">shell</span>:<span style="color:#bbb"> </span>rpm -ivh https://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-agent-3.4.15-1.el7.x86_64.rpm<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">when</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ansible_distribution == &#34;CentOS&#34; and ansible_distribution_major_version == &#34;7&#34;,&#34;ALL&#34;<span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>centos7 install zabbix-agend<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">shell</span>:<span style="color:#bbb"> </span>rpm -ivh https://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-agent-3.4.15-1.el7.x86_64.rpm<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">when</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>ansible_distribution == &#34;CentOS&#34; and ansible_distribution_major_version == &#34;7&#34;,&#34;ALL&#34;<span style="color:#bbb">
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id="5-定义handlers并引用">5. 定义handlers并引用</h4>
 <p>在handlers/main.yml中定义一个重启的handlers</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>zabbix restart <span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#命名</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">service</span>:<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>zabbix-agent<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>restarted<span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>zabbix restart <span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#命名</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">service</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>zabbix-agent<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">state</span>:<span style="color:#bbb"> </span>restarted<span style="color:#bbb">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>在tasks/main.yml中引用，只要执行过程中配置文件是change状态就触发notify</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>up zabbix-agent file client<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">template</span>:<span style="color:#bbb"> </span>src=zabbix_agentd.conf.j2 dest=/usr/local/zabbix/zabbix_agentd.conf<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">notify</span>:<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- zabbix restart<span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>up zabbix-agent file client<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">template</span>:<span style="color:#bbb"> </span>src=zabbix_agentd.conf.j2 dest=/usr/local/zabbix/zabbix_agentd.conf<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">notify</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">  </span>- zabbix restart<span style="color:#bbb">
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id="6-改变所在目录执行命令如出错则忽略错误信息并继续执行">6. 改变所在目录执行命令，如出错则忽略错误信息并继续执行</h4>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>enabled service zabbix-agent<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">shell</span>:<span style="color:#bbb"> </span>./zabbix_agentd.exe -i -c ./zabbix_agentd.conf<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">args</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">chdir</span>:<span style="color:#bbb"> </span>/usr/local/zabbix<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">ignore_errors</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">True</span><span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>enabled service zabbix-agent<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">shell</span>:<span style="color:#bbb"> </span>./zabbix_agentd.exe -i -c ./zabbix_agentd.conf<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">args</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">chdir</span>:<span style="color:#bbb"> </span>/usr/local/zabbix<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">ignore_errors</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">True</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>roles的目录树
 
         <img class="mx-auto" alt="ansible.png" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy81NTE3NC0xYjc1YjhlMzI4ZDM2YjdkLnBuZw?x-oss-process=image/format,png" />   
     </p>
 <h4 id="7-命令">7. 命令</h4>
-<pre tabindex="0"><code>1. ansible all -m ping
-2. ansible all -m shell -a &#34;echo $TERM&#34;
-3. ansible web -m copy -a &#34;src=/etc/hosts dst=/etc/hosts&#34;
-4. ansible web -m file -a &#34;dest=/etc/hosts mode=600&#34;,&#34;ALL&#34;
-5. ansible web -m yum -a &#34;name=nginx state=present&#34;
-6. ansible web -m service -a &#34;name=httpd state=restart&#34;
+<pre><code>1. ansible all -m ping
+2. ansible all -m shell -a &quot;echo $TERM&quot;
+3. ansible web -m copy -a &quot;src=/etc/hosts dst=/etc/hosts&quot;
+4. ansible web -m file -a &quot;dest=/etc/hosts mode=600&quot;,&quot;ALL&quot;
+5. ansible web -m yum -a &quot;name=nginx state=present&quot;
+6. ansible web -m service -a &quot;name=httpd state=restart&quot;
 </code></pre>
         </div>
 
@@ -451,7 +451,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -470,7 +470,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -490,7 +490,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

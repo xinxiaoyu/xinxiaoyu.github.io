@@ -142,7 +142,7 @@
         <div class="post-content">
             <p>hugo建站工具通过github action自动发布到github page.</p>
 <p>官方参考地址： <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
-<pre tabindex="0"><code>name: github pages
+<pre><code>name: github pages
 
 on:
   push:
@@ -162,7 +162,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: &#39;latest&#39;
+          hugo-version: 'latest'
           # extended: true
 
       - name: Build
@@ -173,7 +173,7 @@ jobs:
 
       - name: deploy
         working-directory: ./xinxiaoyu.github.io
-        run: git config --global user.email &#34;1248247511@qq.com&#34; &amp;&amp; git config --global user.name &#34;xinxiaoyu&#34; &amp;&amp; git add * &amp;&amp; git commit -m &#34;123&#34; &amp;&amp; git push http://xinxiaoyu:${{ secrets.ACCESS_TOKEN }}@github.com/xinxiaoyu/xinxiaoyu.github.io.git
+        run: git config --global user.email &quot;1248247511@qq.com&quot; &amp;&amp; git config --global user.name &quot;xinxiaoyu&quot; &amp;&amp; git add * &amp;&amp; git commit -m &quot;123&quot; &amp;&amp; git push http://xinxiaoyu:${{ secrets.ACCESS_TOKEN }}@github.com/xinxiaoyu/xinxiaoyu.github.io.git
 </code></pre>
         </div>
 
@@ -346,7 +346,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -365,7 +365,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -385,7 +385,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

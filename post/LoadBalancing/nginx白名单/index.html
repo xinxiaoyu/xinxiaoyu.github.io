@@ -143,7 +143,7 @@
             <p>包含以下知识点：</p>
 <p>1、 nginx前面有多层代理的情况下拿到客户端地址（实现白名单功能）</p>
 <p>2、 /admin/不允许访问，/admin/userfiles/可以访问</p>
-<pre tabindex="0"><code>location ^~ /admin/ {
+<pre><code>location ^~ /admin/ {
 
 	set $realip 0;
 	set $flag 0;
@@ -167,14 +167,14 @@
 ……..省略部分配置
 }
 </code></pre><p>黑名单</p>
-<pre tabindex="0"><code>map $http_x_forwarded_for $ip_allowed {
+<pre><code>map $http_x_forwarded_for $ip_allowed {
         default allow;
         192.168.3.12 deny;
         192.168.21.3 deny;
     }
 
 server指令内
-    if ($ip_allowed = &#34;deny&#34;) {
+    if ($ip_allowed = &quot;deny&quot;) {
         return 444;
     }
 </code></pre>
@@ -349,7 +349,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -368,7 +368,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -388,7 +388,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

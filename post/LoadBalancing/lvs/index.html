@@ -191,7 +191,7 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
 <li>Real Server收到数据包后，检查目的IP，发现可以处理后，则发送到相应端口进行处理</li>
 <li>数据返回的时候必须要经过LVS，LVS将地址再转换回来，这样才能顺利的把数据交给用户</li>
 </ol>
-<pre tabindex="0"><code>                                      ________
+<pre><code>                                      ________
                                      |        |     ## dst   ip: 192.168.1.200
                                      | client |     ## dst port: 80
                                      |________|     ## src   ip: 192.168.1.100
@@ -230,7 +230,7 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
 <li>Real Server收到转发的数据包时，发现该数据包的目的IP本机可达（loopback口上绑定的VIP），于是对请求进行处理，最后将结果直接返回给用户，不经过LVS</li>
 </ol>
 <p>DR模式由于只需要LVS修改包的二层MAC地址，并且数据返回不经过LVS，所以处理速度是三种模式中最快的，但也限制了LVS和Real Server需要在同一网段，且需要在Real Server上对网卡做ARP抑制操作，因为realserver本机需要绑定VIP，且只能本地可达。</p>
-<pre tabindex="0"><code>                                              ________
+<pre><code>                                              ________
                                              | client |
                                              |________|
                                           CIP=192.168.1.100
@@ -270,7 +270,7 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
 <li>LVS将请求的数据包再次进行封装，即在原有的IP层上添加新的IP层，新的IP包头的源地址为LVS，目的地址为realserver的IP，然后转发到所选的Real Server</li>
 <li>当Real Server的tunl0网卡（由ipip内核模块加载后创建）收到封装后的数据包后，会对数据包进行解封装，也就是去掉新加的IP层，所以能够查看到原始的IP层，然后对请求进行处理，最后根据自己的路由表将结果直接返回给用户，返回的数据不经过LVS</li>
 </ol>
-<pre tabindex="0"><code>                                      ________
+<pre><code>                                      ________
                                      | client |
                                      |________|
                                  CIP=192.168.1.100
@@ -304,19 +304,20 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
                 | eth0:  VIP-&gt;CIP(out) |       |                   |
                 | tunl0: CIP-&gt;VIP(in)  |       |                   | 
                 |______________________|       |___________________|
+
 </code></pre><p>图-1.2-3 TUN模式</p>
 <p>数据的原始目的地址是LVS的IP，转发给Real Server时没有改变，只是新加了一层IP层，Real Server解封装后依然可以处理，这是因为tunl0网卡上绑定了VIP，并且只有本机可达。</p>
 <p>IP隧道模式的性能比NAT要好，比DR模式性能要差，但是相比DR模式，IP隧道模式可以跨网段部署。</p>
 <p>1.2.4 管理LVS
 说完三种模式，下面说说LVS的管理工具。怎么使用LVS呢，LVS的管理通过ipvsadm这个工具来设置，CentOS系统可以直接使用<code>yum install ipvsadm</code>安装，Ubuntu使用<code>sudo apt install ipvsadm</code>安装。比如下面的命令，就是添加相应LVS规则。</p>
-<pre tabindex="0"><code>ipvsadm -A -t 172.26.20.10:80 -s rr
+<pre><code>ipvsadm -A -t 172.26.20.10:80 -s rr
 新增虚拟服务器172.26.20.10（通常就是VIP），端口是80，调度算法是轮询
-</code></pre><pre tabindex="0"><code>ipvsadm -a -t 172.26.20.10:80 -r 172.26.20.11:80 -g
+</code></pre><pre><code>ipvsadm -a -t 172.26.20.10:80 -r 172.26.20.11:80 -g
 新增一台Real Server，IP为172.26.20.11，端口80,-g参数表示模式为DR模式
 </code></pre><p>不过使用ipvsadm直接管理是比较不方便的，keepalived为我们提高了更好的选择。
 keepalived是一款路由软件，提供负载均衡和高可用性，可以说就是为配置LVS而生的。Keepalived根据负载均衡服务器池的健康状况，动态地、自适应地维护和管理它们，是通常情况下推荐管理LVS的方式。</p>
 <p>比如下面keepalived配置和上面ipvsadm命令管理的效果是一样的，并且对realserver增加了健康监测。</p>
-<pre tabindex="0"><code>virtual_server 172.26.20.10 80 {
+<pre><code>virtual_server 172.26.20.10 80 {
     lb_algo rr
     lb_kind DR
     nat_mask 255.255.255.255
@@ -502,7 +503,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -521,7 +522,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -541,7 +542,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

@@ -146,7 +146,7 @@
 <p>Prometheus标签可以在多个地方进行增删改</p>
 <h5 id="1-在prometheus配置文件中重写删除label">1. 在Prometheus配置文件中重写、删除label</h5>
 <p>如relabel_configs进行重写，将__meta_consul_service名字替换为application：</p>
-<pre tabindex="0"><code>- job_name: consul_eureka
+<pre><code>- job_name: consul_eureka
   honor_timestamps: true
   scrape_interval: 15s
   scrape_timeout: 10s
@@ -154,7 +154,7 @@
   scheme: http
   consul_sd_configs:
   - server: cloud-eureka-server-0.eureka-headless.default.svc.cluster.local:8080
-    tag_separator: &#39;,&#39;
+    tag_separator: ','
     scheme: http
     username: test
     password: test
@@ -170,7 +170,7 @@
 </code></pre><p>官方链接： <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config">https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config</a></p>
 <h5 id="2-在prometheus告警规则中新增label">2. 在Prometheus告警规则中新增label</h5>
 <p>告警消息中新增label：&lsquo;application: RABBITMQ&rsquo;</p>
-<pre tabindex="0"><code>groups:
+<pre><code>groups:
 - name: server-group
   rules:
   - alert: 生产环境_rabbitmq_queue_high
@@ -179,20 +179,20 @@
     labels:
       application: RABBITMQ
     annotations:
-      summary: &#39;生产环境: rabbitmq队列消息较多, 当前值: {{ $value }}&#39;
+      summary: '生产环境: rabbitmq队列消息较多, 当前值: {{ $value }}'
 </code></pre><h5 id="3-在webhook模板中过滤">3. 在webhook模板中过滤</h5>
 <p>如钉钉的webhook配置文件中，可适当过滤掉某些label</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">**</span>详情:<span style="color:#000;font-weight:bold">**</span>
-</span></span><span style="display:flex;"><span>{{ <span style="color:#000;font-weight:bold">range</span> .Labels.SortedPairs }}{{ <span style="color:#000;font-weight:bold">if</span> <span style="color:#900;font-weight:bold">and</span> (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;alertname&#34;</span>) (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;job&#34;</span>) (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;exported_application&#34;</span>) }}&gt; <span style="color:#000;font-weight:bold">-</span> {{ .Name }}: {{ .Value | markdown | html }}
-</span></span><span style="display:flex;"><span>{{ end }}{{ end }}
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">**</span>详情:<span style="color:#000;font-weight:bold">**</span>
+{{ <span style="color:#000;font-weight:bold">range</span> .Labels.SortedPairs }}{{ <span style="color:#000;font-weight:bold">if</span> <span style="color:#900;font-weight:bold">and</span> (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;alertname&#34;</span>) (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;job&#34;</span>) (<span style="color:#900;font-weight:bold">ne</span> (.Name) <span style="color:#d14">&#34;exported_application&#34;</span>) }}&gt; <span style="color:#000;font-weight:bold">-</span> {{ .Name }}: {{ .Value | markdown | html }}
+{{ end }}{{ end }}
+</code></pre></td></tr></table>
 </div>
 </div><p>参考链接： <a href="https://www.kancloud.cn/cserli/golang/531904">https://www.kancloud.cn/cserli/golang/531904</a></p>
 
@@ -367,7 +367,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -386,7 +386,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -406,7 +406,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

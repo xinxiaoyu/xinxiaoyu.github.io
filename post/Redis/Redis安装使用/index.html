@@ -147,33 +147,33 @@ Redis是一个开源（BSD授权）的基于内存键值对存储数据库，也
 <p>二、 部署
 我们从Redis官网：（ <a href="https://redis.io/">https://redis.io/</a> ）下载最新的安装包，当前最新版本为6.0.6。在此将以CentOS8操作系统为例，讲述Redis 6.0.6的安装过程。</p>
 <p>首先解压安装包：</p>
-<pre tabindex="0"><code>tar -zxvf redis-6.0.6.tar.gz -C /usr/local/src/
+<pre><code>tar -zxvf redis-6.0.6.tar.gz -C /usr/local/src/
 </code></pre><p>进入解压缩后的目录：</p>
-<pre tabindex="0"><code>cd /usr/local/src/redis-6.0.6
+<pre><code>cd /usr/local/src/redis-6.0.6
 </code></pre><p>通过当前目下的README.md文件，我们得知，编译时需要指定MALLOC=libc：</p>
-<pre tabindex="0"><code>make MALLOC=libc
+<pre><code>make MALLOC=libc
 </code></pre><p>如果使用默认的jemalloc，则需要安装jemalloc-devel：</p>
-<pre tabindex="0"><code>yum install epel-release
+<pre><code>yum install epel-release
 yum install jemalloc-devel
 </code></pre><p>然后直接执行make命令即可</p>
 <p>此命令需要安装gcc编译器。编译完成后最好执行make test进行测试，监测安装是否有问题（同样需要安装tcl工具，可执行yum install tcl -y安装）。</p>
 <p>make test执行完成后，Redis就可以使用了。Redis的配置文件一般命名为redis.conf，在源码包里有。</p>
 <p>Redis的启动命令为<code>redis-server /path/redis.conf</code>，默认为前台启动。如果需要后台启动，需要在配置文件中加入daemonize yes配置项。</p>
 <p>启动前需要修改几个系统配置：</p>
-<pre tabindex="0"><code>1.	/proc/sys/net/core/somaxconn值，默认是128，需要相应调大（大于等于511）。此项表示系统级TCP最大全连接队列。
+<pre><code>1.	/proc/sys/net/core/somaxconn值，默认是128，需要相应调大（大于等于511）。此项表示系统级TCP最大全连接队列。
 2.	vm.overcommit_memory值设为1，指定内存分配策略。可以让系统在低内存状态下保证Redis可以创建bgsave子进程，用于做数据快照。
 3.	Transparent Huge Pages (THP)，系统默认支持大内存页（2MB）分配，这会增加内存使用，加大延迟时间。可以通过执行命令’ echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled’关闭。
 </code></pre><p>三、 使用
 Redis有自带的客户端redis-cli，使用方法如下：</p>
-<pre tabindex="0"><code>redis-cli -h ip -p port
+<pre><code>redis-cli -h ip -p port
 </code></pre><p>redis的默认端口是6379，绑定的网卡是loopback，可以本地执行redis-cli进入：</p>
-<pre tabindex="0"><code>[root@localhost ~]# redis-cli 
+<pre><code>[root@localhost ~]# redis-cli 
 127.0.0.1:6379&gt; DBSIZE
 (integer) 0
-127.0.0.1:6379&gt; set hello &#39;world&#39;
+127.0.0.1:6379&gt; set hello 'world'
 OK
 127.0.0.1:6379&gt; get hello
-&#34;world&#34;
+&quot;world&quot;
 127.0.0.1:6379&gt;
 </code></pre>
         </div>
@@ -347,7 +347,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -366,7 +366,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -386,7 +386,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

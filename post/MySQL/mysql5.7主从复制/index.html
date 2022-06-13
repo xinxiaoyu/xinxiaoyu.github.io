@@ -143,27 +143,27 @@
             <p>replication with binary log file</p>
 <p>Master端：
 A、  在my.cnf中开启二进制日志、设置server-id（需要唯一），然后保存重启mysqld服务。</p>
-<pre tabindex="0"><code>log-bin=mysql-bin
+<pre><code>log-bin=mysql-bin
 server-id=1
 </code></pre><p>B、 创建主从复制所需的账号</p>
-<pre tabindex="0"><code>CREATE USER &#39;repl&#39;@&#39;%&#39; IDENTIFIED BY &#39;123qweASD!@#&#39;;
-GRANT REPLICATION SLAVE ON *.* TO &#39;repl&#39;@&#39;%&#39;;
+<pre><code>CREATE USER 'repl'@'%' IDENTIFIED BY '123qweASD!@#';
+GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
 </code></pre><p>C、 show master status查看File和Position</p>
-<pre tabindex="0"><code>show master status;
+<pre><code>show master status;
 </code></pre><p>SLAVE端：</p>
 <p>A、 在my.cnf中设置server-id，保存重启。
 <code>server_id=2</code>
 B、 设置主服务器配置。</p>
-<pre tabindex="0"><code>CHANGE MASTER TO
-    -&gt; MASTER_HOST=&#39;192.168.1.121&#39;,
-    -&gt; MASTER_USER=&#39;repl&#39;,
-    -&gt; MASTER_PASSWORD=&#39;123qweASD!@#&#39;,
-    -&gt; MASTER_LOG_FILE=&#39;master1-bin.000001&#39;,
+<pre><code>CHANGE MASTER TO
+    -&gt; MASTER_HOST='192.168.1.121',
+    -&gt; MASTER_USER='repl',
+    -&gt; MASTER_PASSWORD='123qweASD!@#',
+    -&gt; MASTER_LOG_FILE='master1-bin.000001',
     -&gt; MASTER_LOG_POS=245;
 </code></pre><p>C、 开启slave线程
 <code>start slave;</code>
 通过show slave status\G;查看同步状态。</p>
-<pre tabindex="0"><code>mysql&gt; show slave status\G;
+<pre><code>mysql&gt; show slave status\G;
 *************************** 1. row ********************
                Slave_IO_State: 
                   Master_Host: 192.168.1.115
@@ -383,7 +383,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -402,7 +402,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -422,7 +422,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

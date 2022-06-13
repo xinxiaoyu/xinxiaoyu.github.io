@@ -142,7 +142,7 @@
         <div class="post-content">
             <p>nginx</p>
 <p>nginx默认不允许列出文件目录，需要开启； 开启后只需删除掉index.html文件，因为找不到index.html才会列出当前目录文件；</p>
-<pre tabindex="0"><code>   server {
+<pre><code>   server {
         autoindex on;
         autoindex_exact_size off;
         listen       80;
@@ -154,7 +154,7 @@
     }
 </code></pre><p>apache</p>
 <p>需要在httpd.conf中增加以下设置，另外关闭selinux，iptables服务</p>
-<pre tabindex="0"><code>Alias /pub /home/ftp/pub/
+<pre><code>Alias /pub /home/ftp/pub/
 &lt;Directory “/home/ftp/pub”&gt;
     Options Indexes FollowSymLinks
     AllowOverride None
@@ -333,7 +333,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -352,7 +352,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -372,7 +372,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>

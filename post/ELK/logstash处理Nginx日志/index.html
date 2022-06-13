@@ -141,74 +141,75 @@
         
         <div class="post-content">
             <p>nginx log_format</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">log_format</span>  <span style="color:#d14">ops</span> <span style="color:#d14">&#39;</span><span style="color:#008080">$remote_addr</span> <span style="color:#d14">-</span> <span style="color:#008080">$remote_user</span> <span style="color:#d14">[</span><span style="color:#008080">$time_local]</span> <span style="color:#d14">&#34;</span><span style="color:#008080">$request&#34;</span> <span style="color:#d14">&#39;</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#d14">&#39;</span><span style="color:#008080">$status</span> <span style="color:#008080">$body_bytes_sent</span> <span style="color:#d14">&#34;</span><span style="color:#008080">$http_referer&#34;</span> <span style="color:#d14">&#39;</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#d14">&#39;&#34;</span><span style="color:#008080">$http_user_agent&#34;</span> <span style="color:#008080">$http_x_forwarded_for</span> <span style="color:#008080">$request_time</span> <span style="color:#d14">&#39;</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#d14">&#39;</span><span style="color:#008080">$upstream_addr</span> <span style="color:#008080">$upstream_response_time</span> <span style="color:#d14">&#39;</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#d14">&#39;&#34;</span><span style="color:#008080">$content_type&#34;</span> <span style="color:#d14">&#39;</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#d14">&#39;</span><span style="color:#008080">$host&#39;</span>;
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#000;font-weight:bold">log_format</span>  <span style="color:#d14">ops</span> <span style="color:#d14">&#39;</span><span style="color:#008080">$remote_addr</span> <span style="color:#d14">-</span> <span style="color:#008080">$remote_user</span> <span style="color:#d14">[</span><span style="color:#008080">$time_local]</span> <span style="color:#d14">&#34;</span><span style="color:#008080">$request&#34;</span> <span style="color:#d14">&#39;</span>
+                <span style="color:#d14">&#39;</span><span style="color:#008080">$status</span> <span style="color:#008080">$body_bytes_sent</span> <span style="color:#d14">&#34;</span><span style="color:#008080">$http_referer&#34;</span> <span style="color:#d14">&#39;</span>
+                <span style="color:#d14">&#39;&#34;</span><span style="color:#008080">$http_user_agent&#34;</span> <span style="color:#008080">$http_x_forwarded_for</span> <span style="color:#008080">$request_time</span> <span style="color:#d14">&#39;</span>
+                <span style="color:#d14">&#39;</span><span style="color:#008080">$upstream_addr</span> <span style="color:#008080">$upstream_response_time</span> <span style="color:#d14">&#39;</span>
+                <span style="color:#d14">&#39;&#34;</span><span style="color:#008080">$content_type&#34;</span> <span style="color:#d14">&#39;</span>
+                <span style="color:#d14">&#39;</span><span style="color:#008080">$host&#39;</span>;
+</code></pre></td></tr></table>
 </div>
 </div><p>日志用例</p>
-<pre tabindex="0"><code>123.150.174.174 - - [15/Jul/2020:18:44:31 +0800] &#34;POST /tencent&amp;contenttype=json HTTP/1.1&#34; 200 50 &#34;-&#34; &#34;-&#34; - 0.005 10.203.151.216:10042 0.005 &#34;application/json&#34; www.baidu.com
+<pre><code>123.150.174.174 - - [15/Jul/2020:18:44:31 +0800] &quot;POST /tencent&amp;contenttype=json HTTP/1.1&quot; 200 50 &quot;-&quot; &quot;-&quot; - 0.005 10.203.151.216:10042 0.005 &quot;application/json&quot; www.baidu.com
 </code></pre><p>logstash配置</p>
-<pre tabindex="0"><code>input {
+<pre><code>input {
   kafka {
-    bootstrap_servers =&gt; &#34;kafka_ip:9092&#34;
-    topics =&gt; [&#34;topic_name&#34;]
+    bootstrap_servers =&gt; &quot;kafka_ip:9092&quot;
+    topics =&gt; [&quot;topic_name&quot;]
     consumer_threads =&gt; 8
-    type =&gt; &#34;nginx_log&#34;
+    type =&gt; &quot;nginx_log&quot;
   }
 }
 
 filter {
-  if [type] == &#34;nginx_log&#34; {
+  if [type] == &quot;nginx_log&quot; {
     json {
-      source =&gt; &#34;message&#34;
+      source =&gt; &quot;message&quot;
     }
 
     mutate {
-      remove_field =&gt; [ &#34;input&#34;, &#34;host&#34;, &#34;input.type&#34;, &#34;offset&#34;, &#34;prospector&#34; ]
+      remove_field =&gt; [ &quot;input&quot;, &quot;host&quot;, &quot;input.type&quot;, &quot;offset&quot;, &quot;prospector&quot; ]
     }
 
     grok {
       match =&gt; [
-        &#34;message&#34;, &#34;%{IPORHOST:client} (%{USER:ident}|-) (%{USER:auth}|-) \[%{HTTPDATE:accept_date}\] \&#34;(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:http_version})?|-)\&#34; %{NUMBER:response} %{NUMBER:bytes:int} (%{QS:referrer}|-) %{QS:agent} (%{QS:x_forword}|-) %{NUMBER:request_time:float} (%{NOTSPACE:upstream_addr}|-) %{NUMBER:upstream_response_time:float} \&#34;(%{NOTSPACE:content-type}|-)\&#34; (%{NOTSPACE:host}|-)&#34;
+        &quot;message&quot;, &quot;%{IPORHOST:client} (%{USER:ident}|-) (%{USER:auth}|-) \[%{HTTPDATE:accept_date}\] \&quot;(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:http_version})?|-)\&quot; %{NUMBER:response} %{NUMBER:bytes:int} (%{QS:referrer}|-) %{QS:agent} (%{QS:x_forword}|-) %{NUMBER:request_time:float} (%{NOTSPACE:upstream_addr}|-) %{NUMBER:upstream_response_time:float} \&quot;(%{NOTSPACE:content-type}|-)\&quot; (%{NOTSPACE:host}|-)&quot;
       ]
     }
 	
     date {
-      match =&gt; [&#34;accept_date&#34;,&#34;dd/MMM/yyy:HH:mm:ss&#34;]
+      match =&gt; [&quot;accept_date&quot;,&quot;dd/MMM/yyy:HH:mm:ss&quot;]
     }	
 	
     ruby {
-      code =&gt; &#34;
-        event.set(&#39;locate_index&#39;,event.get(&#39;@timestamp&#39;).time.localtime.strftime(&#39;%Y.%m.%d&#39;))
-      &#34;
+      code =&gt; &quot;
+        event.set('locate_index',event.get('@timestamp').time.localtime.strftime('%Y.%m.%d'))
+      &quot;
     }    
   }
 }
 
 
 output {
-  if [type] == &#34;nginx_log&#34; {
+  if [type] == &quot;nginx_log&quot; {
     elasticsearch {
-      hosts =&gt; [&#34;es_ip&#34;]
-        index =&gt; &#34;nginx_log-%{locate_index}&#34;
+      hosts =&gt; [&quot;es_ip&quot;]
+        index =&gt; &quot;nginx_log-%{locate_index}&quot;
         retry_initial_interval =&gt; 60
       }
   }
 } 
+
 </code></pre>
         </div>
 
@@ -381,7 +382,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
     
@@ -400,7 +401,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (5)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
     
@@ -420,7 +421,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (86)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
     
 </div>
     </section>
