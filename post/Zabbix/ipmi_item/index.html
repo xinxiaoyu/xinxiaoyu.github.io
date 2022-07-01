@@ -116,7 +116,100 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">zabbix监控ipmi的一个报错</h1>
@@ -144,31 +237,31 @@
         <div class="post-content">
             <p>zabbix端item某项出现Value should be a JSON object错误。</p>
 <p>明显数据格式错误，在zabbix server上进行get测试。</p>
-<pre><code>[root@ops-zabbix-server~]# /usr/local/zabbix/bin/zabbix_get -s 192.168.2.7 -p 10050 -k &quot;ipmi.dev[discovery,cpu]&quot;
+<pre tabindex="0"><code>[root@ops-zabbix-server~]# /usr/local/zabbix/bin/zabbix_get -s 192.168.2.7 -p 10050 -k &#34;ipmi.dev[discovery,cpu]&#34;
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Get Device ID command failed
 Unable to open SDR for reading
 {
-	&quot;data&quot;:[
+	&#34;data&#34;:[
 	 ]
 }
 </code></pre><p>如上，原来是获取数据出错。但是在agent端上获取数据是没有问题的。</p>
-<pre><code>[root@xenserver-gmkyokmz bin]# ./ipmi.sh discovery cpu
+<pre tabindex="0"><code>[root@xenserver-gmkyokmz bin]# ./ipmi.sh discovery cpu
 {
-	&quot;data&quot;:[
+	&#34;data&#34;:[
 	 {
-			&quot;{#DEV}&quot;:&quot;CPU1&quot;},
+			&#34;{#DEV}&#34;:&#34;CPU1&#34;},
 	 {
-			&quot;{#DEV}&quot;:&quot;CPU2&quot;}
+			&#34;{#DEV}&#34;:&#34;CPU2&#34;}
 	 ]
 }
 </code></pre><p>并且相应的modprobe模块已经加载。经过多次搜索，无果。</p>
 <p>后来仔细查看错误，发现Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory这个可能是权限问题导致的。查看此文件权限为
 crw&mdash;&mdash;- 1 root root 245, 0 Feb 14  2019 /dev/ipmi0
 明显权限root所有，再查看zabbix运行用户</p>
-<pre><code>[root@xenserver-adgvucvt ~]# ps -ef|grep zabbix
+<pre tabindex="0"><code>[root@xenserver-adgvucvt ~]# ps -ef|grep zabbix
 zabbix     912     1  0 10:29 ?        00:00:00 /usr/local/zabbix/sbin/zabbix_agentd
 zabbix     914   912  0 10:29 ?        00:00:43 /usr/local/zabbix/sbin/zabbix_agentd: collector [idle 1 sec]
 zabbix     915   912  0 10:29 ?        00:00:05 /usr/local/zabbix/sbin/zabbix_agentd: listener #1 [waiting for connection]
@@ -176,13 +269,13 @@ zabbix     916   912  0 10:29 ?        00:00:04 /usr/local/zabbix/sbin/zabbix_ag
 zabbix     917   912  0 10:29 ?        00:00:05 /usr/local/zabbix/sbin/zabbix_agentd: listener #3 [waiting for connection]
 zabbix     918   912  0 10:29 ?        00:00:28 /usr/local/zabbix/sbin/zabbix_agentd: active checks #1 [idle 1 sec]
 </code></pre><p>手动尝试给/dev/ipmi0增加权限777，然后测试就正常了。</p>
-<pre><code>[root@xenserver-gmkyokmz bin]# /usr/local/zabbix/bin/zabbix_get -s 127.0.0.1 -p 10050 -k &quot;ipmi.dev[discovery,cpu]&quot;
+<pre tabindex="0"><code>[root@xenserver-gmkyokmz bin]# /usr/local/zabbix/bin/zabbix_get -s 127.0.0.1 -p 10050 -k &#34;ipmi.dev[discovery,cpu]&#34;
 {
-	&quot;data&quot;:[
+	&#34;data&#34;:[
 	 {
-			&quot;{#DEV}&quot;:&quot;CPU1&quot;},
+			&#34;{#DEV}&#34;:&#34;CPU1&#34;},
 	 {
-			&quot;{#DEV}&quot;:&quot;CPU2&quot;}
+			&#34;{#DEV}&#34;:&#34;CPU2&#34;}
 	 ]
 }
 </code></pre><p>这两天搞zabbix监控，又学了不少东西啊。</p>

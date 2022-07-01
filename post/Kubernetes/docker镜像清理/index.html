@@ -116,7 +116,100 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">Docker镜像清理</h1>
@@ -141,28 +234,28 @@
         
         <div class="post-content">
             <p>运行<code>docker system df </code>命令：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000;font-weight:bold">[</span>root@VM_100_4_centos ~<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># docker system df </span>
-TYPE                TOTAL                       SIZE                RECLAIMABLE
-Images              <span style="color:#099">955</span>                         77.06GB             74.21GB <span style="color:#000;font-weight:bold">(</span>96%<span style="color:#000;font-weight:bold">)</span>
-Containers          <span style="color:#099">65</span>                          3.28MB              0B <span style="color:#000;font-weight:bold">(</span>0%<span style="color:#000;font-weight:bold">)</span>
-Local Volumes       <span style="color:#099">0</span>                           0B                  0B
-Build Cache         <span style="color:#099">0</span>                           0B                  0B
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@VM_100_4_centos ~<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># docker system df </span>
+</span></span><span style="display:flex;"><span>TYPE                TOTAL                       SIZE                RECLAIMABLE
+</span></span><span style="display:flex;"><span>Images              <span style="color:#099">955</span>                         77.06GB             74.21GB <span style="color:#000;font-weight:bold">(</span>96%<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Containers          <span style="color:#099">65</span>                          3.28MB              0B <span style="color:#000;font-weight:bold">(</span>0%<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Local Volumes       <span style="color:#099">0</span>                           0B                  0B
+</span></span><span style="display:flex;"><span>Build Cache         <span style="color:#099">0</span>                           0B                  0B
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。</p>
 <p>可以回收的镜像分为两类：dangling和其他未被container关联的镜像。
 dangling可以理解为TAG空的某些镜像，使用命令<code>docker images -f dangling=true</code>可以找出来，如下是在某节点上：</p>
-<pre><code>[root@VM_100_4_centos ~]# docker images -f dangling=true
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker images -f dangling=true
 REPOSITORY                                                    TAG                 IMAGE ID            CREATED             SIZE
 ccr.ccs.tencentyun.com/middleware/skywalking-agent        &lt;none&gt;              1054bfb1c79a        3 weeks ago         689MB
 ccr.ccs.tencentyun.com/middleware/logstash-logs           &lt;none&gt;              a0e0f37728bf        2 months ago        805MB
@@ -170,7 +263,7 @@ ccr.ccs.tencentyun.com/middleware/log-clean               &lt;none&gt;          
 ago        747MB
 ccr.ccs.tencentyun.com/middleware/clean-job               &lt;none&gt;              53aac26b0560        3 months ago        747MB
 </code></pre><p>要删除上面这些dangling镜像，执行命令<code>docker image prune</code>即可。</p>
-<pre><code>[root@VM_100_4_centos ~]# docker image prune
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker image prune
 WARNING! This will remove all dangling images.
 Are you sure you want to continue? [y/N] y
 Deleted Images:
@@ -185,7 +278,7 @@ deleted: sha256:eb93a48f29bba12835ade4123e2bd1538d80b755f621369704675a9c19b18f65
 
 Total reclaimed space: 1.478GB
 </code></pre><p>如果要删除所有未被使用的镜像，包括dangling镜像，可以用<code>docker image prune -a</code>，这里可以加上时间参数，比如删除30天（720小时）前创建的所有不再使用的镜像。</p>
-<pre><code>[root@VM_100_4_centos ~]# docker image prune -a --force --filter &quot;until=720h&quot;
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker image prune -a --force --filter &#34;until=720h&#34;
 Deleted Images:
 untagged: ccr.ccs.tencentyun.com/gwy-cloud/guowy-cloud-zuul:202103041715
 untagged: ccr.ccs.tencentyun.com/gwy-cloud/guowy-cloud-zuul@sha256:9e2d18d259582ca6a04b27d1609c8201a648f8feae37ff984f237dc4e907da6b
@@ -194,7 +287,7 @@ deleted: sha256:68d9605658fa91174c1867a5f91d6b6cc063f3ace1fbb061c72abbc84ea5de5b
 
 Total reclaimed space: 63.23GB
 </code></pre><p>对比<code>docker system df</code>可以看到效果，释放了60多GB的空间。该节点的磁盘空间使用率也从原来的83%的降到了18%。</p>
-<pre><code>[root@VM_100_4_centos ~]# docker system df
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker system df
 TYPE                TOTAL               ACTIVE              SIZE                RECLAIMABLE
 Images              131                 33                  12.36GB             8.979GB (72%)
 Containers          65                  59                  3.287MB             0B (0%)
@@ -229,9 +322,9 @@ Build Cache         0                   0                   0B                  
         
         <li><a href="/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a></li>
         
-        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
-        
         <li><a href="/post/Error/git_mail_err/">gitlab send mail err</a></li>
+        
+        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
         
     </ul>
 </div>

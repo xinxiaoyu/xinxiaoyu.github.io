@@ -116,7 +116,100 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">Linux系统安全设置</h1>
@@ -148,7 +241,7 @@
 <ol start="2">
 <li>将用户密码的最大有效天数限制为30天</li>
 </ol>
-<pre><code>vi /etc/login.defs
+<pre tabindex="0"><code>vi /etc/login.defs
 PASS_MAX_DAYS 30或者 chage -M 30 zhangsan
 </code></pre><ol start="3">
 <li>指定下次登录需更改密码
@@ -156,26 +249,26 @@ PASS_MAX_DAYS 30或者 chage -M 30 zhangsan
 <li>限制用户密码的最小长度
 在linux中，主要基于cracklib模块检查用户密码的复杂性和安全性。</li>
 </ol>
-<pre><code>vi /etc/pam.d/system-auth
+<pre tabindex="0"><code>vi /etc/pam.d/system-auth
 password required pam_cracklib.so try_first_pass retry=3 minlen=2
 </code></pre><ol start="5">
 <li>历史命令</li>
 </ol>
-<pre><code>vi /etc/profile
+<pre tabindex="0"><code>vi /etc/profile
 HISTSIZE=100
 </code></pre><ol start="6">
 <li>超时配置</li>
 </ol>
-<pre><code>vi /etc/profile
+<pre tabindex="0"><code>vi /etc/profile
 export TMOUT=600
 </code></pre><ol start="7">
 <li>编写shell脚本，检查系统中新增加的带有suid或者sgid位权限的程序文件。
 1)在系统处于干净状态时，建立合法suid/sgid文件的列表，作为是否有新增可疑suid文件的比较依据。</li>
 </ol>
-<pre><code>find / -type f -perm +600 &gt; /etc/sfilelist
+<pre tabindex="0"><code>find / -type f -perm +600 &gt; /etc/sfilelist
 chmod 600 /etc/sfilelist
 </code></pre><p>2)建立chksfile文件，与sfilelist比较，输出新增的suid/sgid属性的文件。</p>
-<pre><code>vi /usr/local/chksfile
+<pre tabindex="0"><code>vi /usr/local/chksfile
 #!/bin/bash
 OLD_LIST=/etc/sfilelist
 for i in find / type f – perm +600
@@ -185,7 +278,7 @@ grep -F “$i” $OLD_LIST &gt; /dev/null
 done
 </code></pre><p>其中，grep命令的“-F”选项表示在查找时将一整行内容作为字符串进行匹配；find命令添加的-perm +600，表示查找设置的set-uid（权限数为4）或者set-gid（权限数为6）位的文件。
 8. grub引导菜单加密</p>
-<pre><code>vi /boot/grub/grub.conf
+<pre tabindex="0"><code>vi /boot/grub/grub.conf
 password 123456 
 </code></pre><p>若添加在第一个title。。。之前，则在仅需要变更grub引导参数时才需要密码；若添加在root（hd0,0）行之前，则进入该系统是否即需提供密码。
 加密
@@ -195,7 +288,7 @@ grub-md5-crypt</p>
 <code>touch /etc/nologin</code></li>
 <li>更改系统登录提示，隐藏内核版本信息。</li>
 </ol>
-<pre><code>vi /etc/issue //修改为以下内容
+<pre tabindex="0"><code>vi /etc/issue //修改为以下内容
 Welcome to Server.
 cp -f /etc/issue /etc/issue.net
 </code></pre><ol start="11">
@@ -206,12 +299,12 @@ cp -f /etc/issue /etc/issue.net
 来源表示用户从哪个终端或远程主机登录，可以使用tty1、127.0.0.1、192.168.1.0、24等形式表示，多个来源地点之间使用空格分开。
 禁止除了root以外的用户从tty1终端登录</li>
 </ol>
-<pre><code>vi /etc/pam.d/login
+<pre tabindex="0"><code>vi /etc/pam.d/login
 account required pam_access.so
 vi /etc/security/access.conf
 – : ALL EXCEPT root : tty1
 </code></pre><p>禁止root用户从192.168.1.0/24、172.0.0.0/8网络中远程登录。</p>
-<pre><code>vi /etc/pam.d/sshd
+<pre tabindex="0"><code>vi /etc/pam.d/sshd
 account required pam_access.so
 vi /etc/security/access.conf
 – : root : 192.168.1.0/24 172.0.0.0/8

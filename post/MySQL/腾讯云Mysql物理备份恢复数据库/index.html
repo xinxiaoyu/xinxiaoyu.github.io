@@ -116,7 +116,110 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#percona-xtrabackup机器上操作">Percona XtraBackup机器上操作：</a></li>
+        <li><a href="#mysql-server上的操作">MySQL server上的操作：</a></li>
+        <li><a href="#此时物理备份全量备份恢复完成下面为binlog的恢复过程同样在mysql-server上操作">此时物理备份（全量备份）恢复完成，下面为binlog的恢复过程，同样在MySQL server上操作。</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">腾讯云Mysql物理备份恢复数据库</h1>
@@ -149,25 +252,25 @@
 <ol>
 <li>下载备份文件</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SHELL" data-lang="SHELL">wget 命令格式：wget -c <span style="color:#d14">&#39;备份文件下载地址&#39;</span> -O 自定义文件名.xb
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SHELL" data-lang="SHELL"><span style="display:flex;"><span>wget 命令格式：wget -c <span style="color:#d14">&#39;备份文件下载地址&#39;</span> -O 自定义文件名.xb
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>解包备份文件
 使用 xbstream 命令将备份文件解包到目标目录。</li>
 </ol>
-<pre><code>mkdir /data
+<pre tabindex="0"><code>mkdir /data
 xbstream -x -C /data &lt; /data/test.xb
 </code></pre><ol start="3">
 <li>解压备份文件
 通过如下命令下载 qpress 工具。</li>
 </ol>
-<pre><code>wget http://www.quicklz.com/qpress-11-linux-x64.tar
+<pre tabindex="0"><code>wget http://www.quicklz.com/qpress-11-linux-x64.tar
 
 说明：
 若 wget 下载提示错误，您可至 quicklz 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 通过 SCP 上传文件到 Linux 云服务器。
@@ -185,7 +288,7 @@ xtrabackup --decompress --target-dir=/data
 </code></pre><ol start="4">
 <li>修改配置文件,执行如下命令打开backup-my.cnf文件。</li>
 </ol>
-<pre><code>vi /data/backup-my.cnf
+<pre tabindex="0"><code>vi /data/backup-my.cnf
 说明：
 本文以目标目录/data为例，您可以根据实际情况将其替换成实际路径。
 
@@ -206,17 +309,17 @@ redo_log_version
 修改文件属性，并检查文件所属为 mysql 用户。</p>
 </li>
 </ol>
-<pre><code>chown -R mysql:mysql /data  
+<pre tabindex="0"><code>chown -R mysql:mysql /data  
 </code></pre><ol start="3">
 <li>启动 mysqld 进程。</li>
 </ol>
-<pre><code>mysqld_safe --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data &amp;
+<pre tabindex="0"><code>mysqld_safe --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data &amp;
 或者
 mysqld --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data
 </code></pre><ol start="4">
 <li>客户端登录 mysql 验证。</li>
 </ol>
-<pre><code>mysql  -uroot
+<pre tabindex="0"><code>mysql  -uroot
 </code></pre><h3 id="此时物理备份全量备份恢复完成下面为binlog的恢复过程同样在mysql-server上操作">此时物理备份（全量备份）恢复完成，下面为binlog的恢复过程，同样在MySQL server上操作。</h3>
 <p>注意：本机的当前时间必须对的。</p>
 <ol>
@@ -226,8 +329,8 @@ mysqld --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data
 <p>下载相应的两个binlog文件mysql-01.bin、mysql-02.bin。</p>
 </li>
 </ol>
-<pre><code>wget 'https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000088.bin' -O mysql-01.bin
-wget 'https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000089.bin' -O mysql-02.bin
+<pre tabindex="0"><code>wget &#39;https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000088.bin&#39; -O mysql-01.bin
+wget &#39;https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000089.bin&#39; -O mysql-02.bin
 </code></pre><ol start="2">
 <li>
 <p>找出mysql-01.bin的时间点为3（如2021-04-20 07:19:56）的后边的日志</p>
@@ -235,15 +338,15 @@ wget 'https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud
 <p>然后恢复出相应的sql</p>
 </li>
 </ol>
-<pre><code>mysqlbinlog mysql-01.bin --start-datetime='2021-04-20 07:19:56' &gt; /root/mysql-01.sql
+<pre tabindex="0"><code>mysqlbinlog mysql-01.bin --start-datetime=&#39;2021-04-20 07:19:56&#39; &gt; /root/mysql-01.sql
 mysqlbinlog mysql-02.bin --stop-position=97355093 &gt; /root/97355093.sql
 </code></pre><pre><code>将binlog转为可读的sql的命令为
 </code></pre>
-<pre><code>mysqlbinlog --base64-output=DECODE-ROWS -v mysql-01.bin &gt; mysql-01-bin.sql
+<pre tabindex="0"><code>mysqlbinlog --base64-output=DECODE-ROWS -v mysql-01.bin &gt; mysql-01-bin.sql
 </code></pre><ol start="3">
 <li>登陆数据库恢复</li>
 </ol>
-<pre><code>mysql -uroot
+<pre tabindex="0"><code>mysql -uroot
 &gt; source /root/mysql-01.sql
 &gt; source /root/97355093.sql
 </code></pre>
@@ -269,9 +372,9 @@ mysqlbinlog mysql-02.bin --stop-position=97355093 &gt; /root/97355093.sql
         
         <li><a href="/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a></li>
         
-        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
-        
         <li><a href="/post/Error/git_mail_err/">gitlab send mail err</a></li>
+        
+        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
         
         <li><a href="/post/Error/libncurses_so/">缺少LIBNCURSES.SO.5文件一例</a></li>
         

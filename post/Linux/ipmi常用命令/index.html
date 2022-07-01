@@ -116,7 +116,100 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">Ipmi常用命令</h1>
@@ -141,25 +234,25 @@
         
         <div class="post-content">
             <p>远程连接后打印硬件信息</p>
-<pre><code>ipmitool -I lanplus -H ip -U user -P passwd sdr
+<pre tabindex="0"><code>ipmitool -I lanplus -H ip -U user -P passwd sdr
 </code></pre><p>查看带外地址</p>
-<pre><code>ipmitool lan print
+<pre tabindex="0"><code>ipmitool lan print
 </code></pre><p>打印传感器信息</p>
-<pre><code>ipmitool sdr
+<pre tabindex="0"><code>ipmitool sdr
 </code></pre><p>只打印电源信息</p>
-<pre><code>ipmitool sdr type “power supply”
+<pre tabindex="0"><code>ipmitool sdr type “power supply”
 PS Redundancy | 74h | ok | 7.1 | Fully Redundant
 Status | 62h | ok | 10.1 | Presence detected
 Status | 63h | ok | 10.2 | Presence detected
 检测到两个电源，并且有冗余（Redundant）
 </code></pre><p>只打印温度信息</p>
-<pre><code>ipmitool sdr type temperature
+<pre tabindex="0"><code>ipmitool sdr type temperature
 Inlet Temp | 04h | ok | 7.1 | 19 degrees C
 Exhaust Temp | 01h | ok | 7.1 | 36 degrees C
 Temp | 0Eh | ok | 3.1 | 46 degrees C #CPU
 Temp | 0Fh | ok | 3.2 | 51 degrees C #CPU
 </code></pre><p>电压</p>
-<pre><code>ipmitool sdr type voltage
+<pre tabindex="0"><code>ipmitool sdr type voltage
 VCORE PG | 23h | ok | 3.1 | State Deasserted
 VCORE PG | 24h | ok | 3.2 | State Deasserted
 3.3V PG | 19h | ok | 7.1 | State Deasserted
@@ -167,7 +260,7 @@ VCORE PG | 24h | ok | 3.2 | State Deasserted
 M23 VPP PG | 22h | ok | 3.2 | State Deasserted
 。。。。。。
 </code></pre><p>风扇</p>
-<pre><code>ipmitool sdr type fan
+<pre tabindex="0"><code>ipmitool sdr type fan
 Fan1 RPM | 30h | ok | 7.1 | 4680 RPM
 Fan2 RPM | 31h | ok | 7.1 | 4680 RPM
 Fan3 RPM | 32h | ok | 7.1 | 4680 RPM
@@ -175,7 +268,7 @@ Fan4 RPM | 33h | ok | 7.1 | 4560 RPM
 Fan5 RPM | 34h | ok | 7.1 | 4680 RPM
 Fan6 RPM | 35h | ok | 7.1 | 4680 RPM
 </code></pre><p>更详细的sensor信息</p>
-<pre><code>ipmitool sensor list
+<pre tabindex="0"><code>ipmitool sensor list
 SEL | na | discrete | na | na | na | na
 Intrusion | 0x0 | discrete | 0x0080| na | na | na
 Fan1 RPM | 4680.000 | RPM | ok | na | 360.000 | 600.000

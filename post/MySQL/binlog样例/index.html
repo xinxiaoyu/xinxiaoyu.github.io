@@ -116,7 +116,108 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#binlog_row_image-full">binlog_row_image: FULL</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">Binlog样例</h1>
@@ -142,171 +243,171 @@
         <div class="post-content">
             <h3 id="binlog_row_image-full">binlog_row_image: FULL</h3>
 <h5 id="1-update">1. update</h5>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">BEGIN</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">5273</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">03</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87904</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">5346</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x1a0ec140<span style="color:#bbb">     </span>Table_map:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>xxl_job<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>xxl_job_registry<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb"> </span>mapped<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">to</span><span style="color:#bbb"> </span><span style="color:#0086b3">number</span><span style="color:#bbb"> </span><span style="color:#099">725</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">5346</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">03</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87904</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">5526</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>xaf71ae85<span style="color:#bbb">     </span>Update_rows:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">table</span><span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">725</span><span style="color:#bbb"> </span>flags:<span style="color:#bbb"> </span>STMT_END_F<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>xxl_job<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>xxl_job_registry<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">WHERE</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1374</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;EXECUTOR&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">3</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;webapp&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">4</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;http://10.0.0.87:9999/&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">5</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;2021-07-28 00:52:34&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">SET</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1374</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;EXECUTOR&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">3</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;webapp&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">4</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;http://10.0.0.87:9999/&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">5</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;2021-07-28 00:53:04&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">5526</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">03</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">5557</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>xbfb76016<span style="color:#bbb">     </span>Xid<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">=</span><span style="color:#bbb"> </span><span style="color:#099">657481860</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">COMMIT</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">5273</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">03</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87904</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">5346</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x1a0ec140<span style="color:#bbb">     </span>Table_map:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>xxl_job<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>xxl_job_registry<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb"> </span>mapped<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">to</span><span style="color:#bbb"> </span><span style="color:#0086b3">number</span><span style="color:#bbb"> </span><span style="color:#099">725</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">5346</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">03</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87904</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">5526</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>xaf71ae85<span style="color:#bbb">     </span>Update_rows:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">table</span><span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">725</span><span style="color:#bbb"> </span>flags:<span style="color:#bbb"> </span>STMT_END_F<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>xxl_job<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>xxl_job_registry<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">WHERE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1374</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;EXECUTOR&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">3</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;webapp&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">4</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;http://10.0.0.87:9999/&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">5</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;2021-07-28 00:52:34&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">SET</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1374</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;EXECUTOR&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">3</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;webapp&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">4</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;http://10.0.0.87:9999/&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">5</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;2021-07-28 00:53:04&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">5526</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">03</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">5557</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>xbfb76016<span style="color:#bbb">     </span>Xid<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">=</span><span style="color:#bbb"> </span><span style="color:#099">657481860</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">COMMIT</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>包含如下信息：
 server id、CRC32、表名、update操作、update的前后的字段值</p>
 <h5 id="2-insert">2. insert</h5>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">BEGIN</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">1060</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">02</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">1144</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x486c5a15<span style="color:#bbb">     </span>Table_map:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>xxl_job<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>xxl_job_log<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb"> </span>mapped<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">to</span><span style="color:#bbb"> </span><span style="color:#0086b3">number</span><span style="color:#bbb"> </span><span style="color:#099">722</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">1144</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">02</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">1216</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x7efa9618<span style="color:#bbb">     </span>Write_rows:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">table</span><span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">722</span><span style="color:#bbb"> </span>flags:<span style="color:#bbb"> </span>STMT_END_F<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">INTO</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>xxl_job<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>xxl_job_log<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">SET</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">22839500</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">8</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">3</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">11</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">4</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">5</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">6</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">7</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">8</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">9</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;2021-07-28 00:53:02&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">10</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">11</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">12</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">13</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">14</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">15</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">1216</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">02</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">1247</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>xcb4903c2<span style="color:#bbb">     </span>Xid<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">=</span><span style="color:#bbb"> </span><span style="color:#099">657481800</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">COMMIT</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">1060</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">02</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">1144</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x486c5a15<span style="color:#bbb">     </span>Table_map:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>xxl_job<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>xxl_job_log<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb"> </span>mapped<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">to</span><span style="color:#bbb"> </span><span style="color:#0086b3">number</span><span style="color:#bbb"> </span><span style="color:#099">722</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">1144</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">02</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">1216</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x7efa9618<span style="color:#bbb">     </span>Write_rows:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">table</span><span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">722</span><span style="color:#bbb"> </span>flags:<span style="color:#bbb"> </span>STMT_END_F<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">INTO</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>xxl_job<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>xxl_job_log<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">SET</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">22839500</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">8</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">3</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">11</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">4</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">5</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">6</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">7</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">8</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">9</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;2021-07-28 00:53:02&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">10</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">11</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">12</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">13</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">14</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">NULL</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">15</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">1216</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">0</span>:<span style="color:#099">53</span>:<span style="color:#099">02</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">1247</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>xcb4903c2<span style="color:#bbb">     </span>Xid<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">=</span><span style="color:#bbb"> </span><span style="color:#099">657481800</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">COMMIT</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="3-delete">3. delete</h5>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219344</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219409</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>xaf35096e<span style="color:#bbb">        </span>GTID<span style="color:#bbb">    </span>last_committed<span style="color:#000;font-weight:bold">=</span><span style="color:#099">199604</span><span style="color:#bbb">   </span>sequence_number<span style="color:#000;font-weight:bold">=</span><span style="color:#099">199605</span><span style="color:#bbb">  </span>rbr_only<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">no</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">SET</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">@@</span><span style="color:#000;font-weight:bold">SESSION</span>.GTID_NEXT<span style="color:#000;font-weight:bold">=</span><span style="color:#bbb"> </span><span style="color:#d14">&#39;8755ecf7-94df-11eb-b6c1-0c42a131f7ee:55181048&#39;</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219409</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219491</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x9440a612<span style="color:#bbb">        </span>Query<span style="color:#bbb">   </span>thread_id<span style="color:#000;font-weight:bold">=</span><span style="color:#099">15027222</span><span style="color:#bbb">      </span>exec_time<span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">     </span>error_code<span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">SET</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">TIMESTAMP</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1627434609</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">BEGIN</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219491</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219573</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x5eaa05c4<span style="color:#bbb">        </span>Table_map:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>user_sys<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>member_account<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb"> </span>mapped<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">to</span><span style="color:#bbb"> </span><span style="color:#0086b3">number</span><span style="color:#bbb"> </span><span style="color:#099">550</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219573</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219670</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x87692945<span style="color:#bbb">        </span>Delete_rows:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">table</span><span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">550</span><span style="color:#bbb"> </span>flags:<span style="color:#bbb"> </span>STMT_END_F<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>user_sys<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>member_account<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">WHERE</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1053</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">108</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">3</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;测试&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">4</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1627434609794</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">5</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">261</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">6</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">127</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">7</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">2</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219670</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219701</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x846311dd<span style="color:#bbb">        </span>Xid<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">=</span><span style="color:#bbb"> </span><span style="color:#099">659607697</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">COMMIT</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219344</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219409</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>xaf35096e<span style="color:#bbb">        </span>GTID<span style="color:#bbb">    </span>last_committed<span style="color:#000;font-weight:bold">=</span><span style="color:#099">199604</span><span style="color:#bbb">   </span>sequence_number<span style="color:#000;font-weight:bold">=</span><span style="color:#099">199605</span><span style="color:#bbb">  </span>rbr_only<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">no</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">SET</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">@@</span><span style="color:#000;font-weight:bold">SESSION</span>.GTID_NEXT<span style="color:#000;font-weight:bold">=</span><span style="color:#bbb"> </span><span style="color:#d14">&#39;8755ecf7-94df-11eb-b6c1-0c42a131f7ee:55181048&#39;</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219409</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219491</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x9440a612<span style="color:#bbb">        </span>Query<span style="color:#bbb">   </span>thread_id<span style="color:#000;font-weight:bold">=</span><span style="color:#099">15027222</span><span style="color:#bbb">      </span>exec_time<span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">     </span>error_code<span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">SET</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">TIMESTAMP</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1627434609</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219491</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219573</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x5eaa05c4<span style="color:#bbb">        </span>Table_map:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>user_sys<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>member_account<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb"> </span>mapped<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">to</span><span style="color:#bbb"> </span><span style="color:#0086b3">number</span><span style="color:#bbb"> </span><span style="color:#099">550</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219573</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219670</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x87692945<span style="color:#bbb">        </span>Delete_rows:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">table</span><span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">550</span><span style="color:#bbb"> </span>flags:<span style="color:#bbb"> </span>STMT_END_F<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>user_sys<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">`</span>member_account<span style="color:#000;font-weight:bold">`</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">WHERE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1053</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">108</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">3</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;测试&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">4</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">1627434609794</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">5</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">261</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">6</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">127</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">###</span><span style="color:#bbb">   </span><span style="color:#000;font-weight:bold">@</span><span style="color:#099">7</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">2</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">at</span><span style="color:#bbb"> </span><span style="color:#099">161219670</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">#</span><span style="color:#099">210728</span><span style="color:#bbb">  </span><span style="color:#099">9</span>:<span style="color:#099">10</span>:<span style="color:#099">09</span><span style="color:#bbb"> </span>server<span style="color:#bbb"> </span>id<span style="color:#bbb"> </span><span style="color:#099">87903</span><span style="color:#bbb">  </span>end_log_pos<span style="color:#bbb"> </span><span style="color:#099">161219701</span><span style="color:#bbb"> </span>CRC32<span style="color:#bbb"> </span><span style="color:#099">0</span>x846311dd<span style="color:#bbb">        </span>Xid<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">=</span><span style="color:#bbb"> </span><span style="color:#099">659607697</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">COMMIT</span><span style="color:#998;font-style:italic">/*!*/</span>;<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
         </div>

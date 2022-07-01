@@ -116,7 +116,100 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">nginx安全设置</h1>
@@ -145,16 +238,16 @@
             <ol>
 <li>添加认证</li>
 </ol>
-<pre><code>yum install httpd-tools
+<pre tabindex="0"><code>yum install httpd-tools
 
 htpasswd -c -b /etc/nginx/passwd/kibana.passwd user
 
-auth_basic &quot;Kibana Auth&quot;;
+auth_basic &#34;Kibana Auth&#34;;
 auth_basic_user_file /etc/nginx/passwd/kibana.passwd;
 </code></pre><ol start="2">
 <li>更改默认超时时间</li>
 </ol>
-<pre><code>client_header_timeout 20s;   #读取客户端请求头超时时间，默认60s
+<pre tabindex="0"><code>client_header_timeout 20s;   #读取客户端请求头超时时间，默认60s
 client_body_timeout 10s;     #读取客户端body超时时间，默认60s
 send_timeout 30s;            #服务端向客户端传输数据的超时时间，默认60s
 
@@ -163,33 +256,33 @@ send_timeout 30s;            #服务端向客户端传输数据的超时时间�
 <li>黑名单功能
 location字段中增加IP黑名单</li>
 </ol>
-<pre><code>if ($http_x_forwarded_for ~ 192.168.1.14|192.168.1.5|192.168.2.23) {
+<pre tabindex="0"><code>if ($http_x_forwarded_for ~ 192.168.1.14|192.168.1.5|192.168.2.23) {
     return 403;
 }
 </code></pre><p>http指令内</p>
-<pre><code>    map $http_x_forwarded_for $ip_allowed {
+<pre tabindex="0"><code>    map $http_x_forwarded_for $ip_allowed {
         default allow;
         192.168.3.12 deny;
         192.168.21.3 deny;
     }
 </code></pre><p>server指令内</p>
-<pre><code>   if ($ip_allowed = &quot;deny&quot;) {
+<pre tabindex="0"><code>   if ($ip_allowed = &#34;deny&#34;) {
        return 444;
     }
-</code></pre><pre><code>location ^~ /admin/
+</code></pre><pre tabindex="0"><code>location ^~ /admin/
         {
         set $realip 0;
         set $flag 0;
-        if ($http_x_forwarded_for ~ &quot;^(\d+\.\d+\.\d+\.\d+)&quot;) {
+        if ($http_x_forwarded_for ~ &#34;^(\d+\.\d+\.\d+\.\d+)&#34;) {
             set $realip $1;
         }
         if ($realip !~ 116.228.89.244|222.44.226.12|222.44.226.13|222.44.226.34) {
-            set $flag &quot;${flag}1&quot;;
+            set $flag &#34;${flag}1&#34;;
         }
         if ($uri !~ (/admin/userfiles/).*) {
-            set $flag &quot;${flag}1&quot;;
+            set $flag &#34;${flag}1&#34;;
         }
-        if ($flag = &quot;011&quot;) {
+        if ($flag = &#34;011&#34;) {
             return 444;
         }
         index index.html index.jsp index.php;
@@ -203,7 +296,7 @@ location字段中增加IP黑名单</li>
 </code></pre><ol start="4">
 <li>网站图片防盗链</li>
 </ol>
-<pre><code>location ~* \.(gif|jpg|png|bmp)$ {
+<pre tabindex="0"><code>location ~* \.(gif|jpg|png|bmp)$ {
    valid_referers none blocked *.weiqijr.com *.qihailicai.com *.qihaijr.com *.weiqijr.cn *.qihaijr.cn *.qihailicai.cn \
                   server_names ~\.google\. ~\.baidu\.;
    if ($invalid_referer) {
@@ -239,7 +332,7 @@ location字段中增加IP黑名单</li>
         
         <li><a href="/post/CICD/brach_tag_library/">jenkins pipeline指定分支和tag</a></li>
         
-        <li><a href="/series/"></a></li>
+        <li><a href="/archives/"></a></li>
         
     </ul>
 </div>

@@ -116,7 +116,100 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">Mysql5.7主从复制</h1>
@@ -143,27 +236,27 @@
             <p>replication with binary log file</p>
 <p>Master端：
 A、  在my.cnf中开启二进制日志、设置server-id（需要唯一），然后保存重启mysqld服务。</p>
-<pre><code>log-bin=mysql-bin
+<pre tabindex="0"><code>log-bin=mysql-bin
 server-id=1
 </code></pre><p>B、 创建主从复制所需的账号</p>
-<pre><code>CREATE USER 'repl'@'%' IDENTIFIED BY '123qweASD!@#';
-GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
+<pre tabindex="0"><code>CREATE USER &#39;repl&#39;@&#39;%&#39; IDENTIFIED BY &#39;123qweASD!@#&#39;;
+GRANT REPLICATION SLAVE ON *.* TO &#39;repl&#39;@&#39;%&#39;;
 </code></pre><p>C、 show master status查看File和Position</p>
-<pre><code>show master status;
+<pre tabindex="0"><code>show master status;
 </code></pre><p>SLAVE端：</p>
 <p>A、 在my.cnf中设置server-id，保存重启。
 <code>server_id=2</code>
 B、 设置主服务器配置。</p>
-<pre><code>CHANGE MASTER TO
-    -&gt; MASTER_HOST='192.168.1.121',
-    -&gt; MASTER_USER='repl',
-    -&gt; MASTER_PASSWORD='123qweASD!@#',
-    -&gt; MASTER_LOG_FILE='master1-bin.000001',
+<pre tabindex="0"><code>CHANGE MASTER TO
+    -&gt; MASTER_HOST=&#39;192.168.1.121&#39;,
+    -&gt; MASTER_USER=&#39;repl&#39;,
+    -&gt; MASTER_PASSWORD=&#39;123qweASD!@#&#39;,
+    -&gt; MASTER_LOG_FILE=&#39;master1-bin.000001&#39;,
     -&gt; MASTER_LOG_POS=245;
 </code></pre><p>C、 开启slave线程
 <code>start slave;</code>
 通过show slave status\G;查看同步状态。</p>
-<pre><code>mysql&gt; show slave status\G;
+<pre tabindex="0"><code>mysql&gt; show slave status\G;
 *************************** 1. row ********************
                Slave_IO_State: 
                   Master_Host: 192.168.1.115

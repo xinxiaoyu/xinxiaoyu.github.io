@@ -116,7 +116,100 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">Rpm_install_err</h1>
@@ -142,133 +235,133 @@
         
         
         <div class="post-content">
-            <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+            <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum instal gcc
-
-Protected multilib versions: libgomp-4.8.5-28.el7.i686 !<span style="color:#000;font-weight:bold">=</span> libgomp-4.8.5-28.el7_5.1.x86_64
-
-<span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-02 memcached-1.5.12<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># rpm --erase --nodeps libgomp</span>
-<span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-02 memcached-1.5.12<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># yum install libgomp</span>
-<span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-02 memcached-1.5.12<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># yum install gcc</span>
-
-Error: Package: libstdc++-devel-4.8.5-28.el7.x86_64 <span style="color:#000;font-weight:bold">(</span>c7-media<span style="color:#000;font-weight:bold">)</span>
-           Requires: libstdc++<span style="color:#000;font-weight:bold">(</span>x86-64<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7
-           Installed: libstdc++-4.8.5-28.el7_5.1.x86_64 <span style="color:#000;font-weight:bold">(</span>@updates<span style="color:#000;font-weight:bold">)</span>
-               libstdc++<span style="color:#000;font-weight:bold">(</span>x86-64<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7_5.1
-           Available: libstdc++-4.8.5-28.el7.x86_64 <span style="color:#000;font-weight:bold">(</span>c7-media<span style="color:#000;font-weight:bold">)</span>
-               libstdc++<span style="color:#000;font-weight:bold">(</span>x86-64<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7
-Error: Package: gcc-c++-4.8.5-28.el7.x86_64 <span style="color:#000;font-weight:bold">(</span>c7-media<span style="color:#000;font-weight:bold">)</span>
-           Requires: libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7
-           Installed: libstdc++-4.8.5-28.el7_5.1.i686 <span style="color:#000;font-weight:bold">(</span>@updates<span style="color:#000;font-weight:bold">)</span>
-               libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.2-16.el7_5
-               libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7_5.1
-           Available: libstdc++-4.8.5-28.el7.i686 <span style="color:#000;font-weight:bold">(</span>c7-media<span style="color:#000;font-weight:bold">)</span>
-               libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7
-               libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.2-16.el7
- You could try using --skip-broken to work around the problem
- You could try running: rpm -Va --nofiles --nodigest
-
- <span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-03 nginx-1.10.3<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># rpm -e --nodeps libstdc++-4.8.5-28.el7_5.1.x86_64</span>
-<span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-03 nginx-1.10.3<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># yum install gcc-c++</span>
-
-Error:  Multilib version problems found. This often means that the root
-       cause is something <span style="color:#000;font-weight:bold">else</span> and multilib version checking is just
-       pointing out that there is a problem. Eg.:
-       
-         1. You have an upgrade <span style="color:#000;font-weight:bold">for</span> libstdc++ which is missing some
-            dependency that another package requires. Yum is trying to
-            solve this by installing an older version of libstdc++ of the
-            different architecture. If you exclude the bad architecture
-            yum will tell you what the root cause is <span style="color:#000;font-weight:bold">(</span>which package
-            requires what<span style="color:#000;font-weight:bold">)</span>. You can try redoing the upgrade with
-            --exclude libstdc++.otherarch ... this should give you an error
-            message showing the root cause of the problem.
-       
-         2. You have multiple architectures of libstdc++ installed, but
-            yum can only see an upgrade <span style="color:#000;font-weight:bold">for</span> one of those architectures.
-            If you don<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>t want/need both architectures anymore <span style="color:#000;font-weight:bold">then</span> you
-            can remove the one with the missing update and everything
-            will work.
-       
-         3. You have duplicate versions of libstdc++ installed already.
-            You can use <span style="color:#d14">&#34;yum check&#34;</span> to get yum show these errors.
-       
-       ...you can also use --setopt<span style="color:#000;font-weight:bold">=</span><span style="color:#008080">protected_multilib</span><span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">false</span> to remove
-       this checking, however this is almost never the correct thing to
-       <span style="color:#000;font-weight:bold">do</span> as something <span style="color:#000;font-weight:bold">else</span> is very likely to go wrong <span style="color:#000;font-weight:bold">(</span>often causing
-       much more problems<span style="color:#000;font-weight:bold">)</span>.
-       
-       Protected multilib versions: libstdc++-4.8.5-28.el7.x86_64 !<span style="color:#000;font-weight:bold">=</span> libstdc++-4.8.5-28.el7_5.1.i686
-<span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-03 nginx-1.10.3<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># rpm -e --nodeps libstdc++</span>
-                                         yum install libstdc++.so.6
-<span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-03 nginx-1.10.3<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># yum install gcc-c++</span>
-
-rpm -e --nodeps libcom_err
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum instal gcc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Protected multilib versions: libgomp-4.8.5-28.el7.i686 !<span style="color:#000;font-weight:bold">=</span> libgomp-4.8.5-28.el7_5.1.x86_64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-02 memcached-1.5.12<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># rpm --erase --nodeps libgomp</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-02 memcached-1.5.12<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># yum install libgomp</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-02 memcached-1.5.12<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># yum install gcc</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Error: Package: libstdc++-devel-4.8.5-28.el7.x86_64 <span style="color:#000;font-weight:bold">(</span>c7-media<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>           Requires: libstdc++<span style="color:#000;font-weight:bold">(</span>x86-64<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7
+</span></span><span style="display:flex;"><span>           Installed: libstdc++-4.8.5-28.el7_5.1.x86_64 <span style="color:#000;font-weight:bold">(</span>@updates<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>               libstdc++<span style="color:#000;font-weight:bold">(</span>x86-64<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7_5.1
+</span></span><span style="display:flex;"><span>           Available: libstdc++-4.8.5-28.el7.x86_64 <span style="color:#000;font-weight:bold">(</span>c7-media<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>               libstdc++<span style="color:#000;font-weight:bold">(</span>x86-64<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7
+</span></span><span style="display:flex;"><span>Error: Package: gcc-c++-4.8.5-28.el7.x86_64 <span style="color:#000;font-weight:bold">(</span>c7-media<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>           Requires: libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7
+</span></span><span style="display:flex;"><span>           Installed: libstdc++-4.8.5-28.el7_5.1.i686 <span style="color:#000;font-weight:bold">(</span>@updates<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>               libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.2-16.el7_5
+</span></span><span style="display:flex;"><span>               libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7_5.1
+</span></span><span style="display:flex;"><span>           Available: libstdc++-4.8.5-28.el7.i686 <span style="color:#000;font-weight:bold">(</span>c7-media<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>               libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.5-28.el7
+</span></span><span style="display:flex;"><span>               libstdc++ <span style="color:#000;font-weight:bold">=</span> 4.8.2-16.el7
+</span></span><span style="display:flex;"><span> You could try using --skip-broken to work around the problem
+</span></span><span style="display:flex;"><span> You could try running: rpm -Va --nofiles --nodigest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-03 nginx-1.10.3<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># rpm -e --nodeps libstdc++-4.8.5-28.el7_5.1.x86_64</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-03 nginx-1.10.3<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># yum install gcc-c++</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Error:  Multilib version problems found. This often means that the root
+</span></span><span style="display:flex;"><span>       cause is something <span style="color:#000;font-weight:bold">else</span> and multilib version checking is just
+</span></span><span style="display:flex;"><span>       pointing out that there is a problem. Eg.:
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>         1. You have an upgrade <span style="color:#000;font-weight:bold">for</span> libstdc++ which is missing some
+</span></span><span style="display:flex;"><span>            dependency that another package requires. Yum is trying to
+</span></span><span style="display:flex;"><span>            solve this by installing an older version of libstdc++ of the
+</span></span><span style="display:flex;"><span>            different architecture. If you exclude the bad architecture
+</span></span><span style="display:flex;"><span>            yum will tell you what the root cause is <span style="color:#000;font-weight:bold">(</span>which package
+</span></span><span style="display:flex;"><span>            requires what<span style="color:#000;font-weight:bold">)</span>. You can try redoing the upgrade with
+</span></span><span style="display:flex;"><span>            --exclude libstdc++.otherarch ... this should give you an error
+</span></span><span style="display:flex;"><span>            message showing the root cause of the problem.
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>         2. You have multiple architectures of libstdc++ installed, but
+</span></span><span style="display:flex;"><span>            yum can only see an upgrade <span style="color:#000;font-weight:bold">for</span> one of those architectures.
+</span></span><span style="display:flex;"><span>            If you don<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>t want/need both architectures anymore <span style="color:#000;font-weight:bold">then</span> you
+</span></span><span style="display:flex;"><span>            can remove the one with the missing update and everything
+</span></span><span style="display:flex;"><span>            will work.
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>         3. You have duplicate versions of libstdc++ installed already.
+</span></span><span style="display:flex;"><span>            You can use <span style="color:#d14">&#34;yum check&#34;</span> to get yum show these errors.
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>       ...you can also use --setopt<span style="color:#000;font-weight:bold">=</span><span style="color:#008080">protected_multilib</span><span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">false</span> to remove
+</span></span><span style="display:flex;"><span>       this checking, however this is almost never the correct thing to
+</span></span><span style="display:flex;"><span>       <span style="color:#000;font-weight:bold">do</span> as something <span style="color:#000;font-weight:bold">else</span> is very likely to go wrong <span style="color:#000;font-weight:bold">(</span>often causing
+</span></span><span style="display:flex;"><span>       much more problems<span style="color:#000;font-weight:bold">)</span>.
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>       Protected multilib versions: libstdc++-4.8.5-28.el7.x86_64 !<span style="color:#000;font-weight:bold">=</span> libstdc++-4.8.5-28.el7_5.1.i686
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-03 nginx-1.10.3<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># rpm -e --nodeps libstdc++</span>
+</span></span><span style="display:flex;"><span>                                         yum install libstdc++.so.6
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@v-ct-dsjpaas-app-03 nginx-1.10.3<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># yum install gcc-c++</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rpm -e --nodeps libcom_err
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
         </div>

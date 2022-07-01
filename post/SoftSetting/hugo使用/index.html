@@ -116,7 +116,112 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#零-下载地址">零、 下载地址</a></li>
+        <li><a href="#一-主题使用地址">一、 主题使用，地址</a></li>
+        <li><a href="#二-添加文章分类">二、 添加文章分类</a></li>
+        <li><a href="#三-本地调试好后即可生成静态文件执行命令hugo即可">三、 本地调试好后即可生成静态文件，执行命令<code>hugo</code>即可</a></li>
+        <li><a href="#四-下面就是github相关的配置了">四、 下面就是Github相关的配置了。</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">Hugo使用</h1>
@@ -141,30 +246,30 @@
         
         <div class="post-content">
             <h3 id="零-下载地址">零、 下载地址</h3>
-<pre><code>https://github.com/gohugoio/hugo/releases
+<pre tabindex="0"><code>https://github.com/gohugoio/hugo/releases
 </code></pre><p>可直接运行，如创建一个blog的项目为：</p>
-<pre><code>hugo new site blog
+<pre tabindex="0"><code>hugo new site blog
 ## hugo为下载的hugo执行文件，如windows平台的应该为\path\hugo.exe
 </code></pre><p>然后我们一般会直接进入到blog目录中操作。</p>
-<pre><code>cd blog
+<pre tabindex="0"><code>cd blog
 </code></pre><h3 id="一-主题使用地址">一、 主题使用，地址</h3>
-<pre><code>https://github.com/flysnow-org/maupassant-hugo
+<pre tabindex="0"><code>https://github.com/flysnow-org/maupassant-hugo
 </code></pre><p>该页面有使用的文档。</p>
 <p>注意创建文章的命令为<code>hugo new post/filename.md</code>,不是posts。</p>
 <p>filename.md创建好后就可以直接编辑了。</p>
 <p>此处可以执行命令<code>hugo server</code>开启一个本地的调试server，地址为<code>http://localhost:1313/</code></p>
 <h3 id="二-添加文章分类">二、 添加文章分类</h3>
 <p>在config.toml中增加以下配置</p>
-<pre><code>[taxonomies]
-  ## tag = &quot;tags&quot;
-  category = &quot;categories&quot;
-  series = &quot;series&quot;
+<pre tabindex="0"><code>[taxonomies]
+  ## tag = &#34;tags&#34;
+  category = &#34;categories&#34;
+  series = &#34;series&#34;
 </code></pre><p>在每一篇的文章中添加具体分类,如</p>
-<pre><code>---
-title: &quot;Hugo使用&quot;
+<pre tabindex="0"><code>---
+title: &#34;Hugo使用&#34;
 date: 2021-05-21T17:09:05+08:00
 toc: true
-categories: [ &quot;hugo&quot; ]
+categories: [ &#34;hugo&#34; ]
 draft: false
 ---
 </code></pre><h3 id="三-本地调试好后即可生成静态文件执行命令hugo即可">三、 本地调试好后即可生成静态文件，执行命令<code>hugo</code>即可</h3>
@@ -200,9 +305,9 @@ draft: false
         
         <li><a href="/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a></li>
         
-        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
-        
         <li><a href="/post/Error/git_mail_err/">gitlab send mail err</a></li>
+        
+        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
         
         <li><a href="/post/Error/libncurses_so/">缺少LIBNCURSES.SO.5文件一例</a></li>
         

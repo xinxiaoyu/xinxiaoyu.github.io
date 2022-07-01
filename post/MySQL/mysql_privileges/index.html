@@ -116,7 +116,111 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一-全局权限作用于整个-mysql-实例mysqluser表">一、 全局权限,作用于整个 MySQL 实例：mysql.user表</a></li>
+        <li><a href="#二-库级别的权限定义mysqldb表">二、 库级别的权限定义：mysql.db表</a></li>
+        <li><a href="#三-更细粒度的权限mysqltables_priv表权限mysqlcolumns_priv列权限">三、 更细粒度的权限：mysql.tables_priv（表权限）、mysql.columns_priv（列权限）</a></li>
+        <li><a href="#四-授权操作">四、 授权操作：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">MySQL用户权限汇总</h1>
@@ -141,7 +245,7 @@
         
         <div class="post-content">
             <h3 id="一-全局权限作用于整个-mysql-实例mysqluser表">一、 全局权限,作用于整个 MySQL 实例：mysql.user表</h3>
-<pre><code>mysql&gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user;
+<pre tabindex="0"><code>mysql&gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user;
 +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+
 | Host        | User             | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv |
 +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+
@@ -155,7 +259,7 @@
 6 rows in set (0.00 sec)
 </code></pre><h3 id="二-库级别的权限定义mysqldb表">二、 库级别的权限定义：mysql.db表</h3>
 <p>某个账号对某个库所拥有的权限，如下第一行结果表示用户&rsquo;lang&rsquo;对库&rsquo;lang_test&rsquo;所拥有的权限</p>
-<pre><code>mysql&gt; select Host, Db,User, Select_priv,Insert_priv,Update_priv,Delete_priv from mysql.db;
+<pre tabindex="0"><code>mysql&gt; select Host, Db,User, Select_priv,Insert_priv,Update_priv,Delete_priv from mysql.db;
 +-----------+--------------------+---------------+-------------+-------------+-------------+-------------+
 | Host      | Db                 | User          | Select_priv | Insert_priv | Update_priv | Delete_priv |
 +-----------+--------------------+---------------+-------------+-------------+-------------+-------------+
@@ -166,7 +270,7 @@
 3 rows in set (0.00 sec)
 </code></pre><h3 id="三-更细粒度的权限mysqltables_priv表权限mysqlcolumns_priv列权限">三、 更细粒度的权限：mysql.tables_priv（表权限）、mysql.columns_priv（列权限）</h3>
 <p>如下结果表示用户&rsquo;lang&rsquo;对t、t2表所有拥有的表权限（包括列权限）</p>
-<pre><code>mysql&gt; select Host, Db, User, Table_name,Table_priv,Column_priv from mysql.tables_priv where User='lang';
+<pre tabindex="0"><code>mysql&gt; select Host, Db, User, Table_name,Table_priv,Column_priv from mysql.tables_priv where User=&#39;lang&#39;;
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
 | Host | Db        | User | Table_name | Table_priv                                                                                         | Column_priv   |
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
@@ -176,7 +280,7 @@
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
 2 rows in set (0.00 sec)
 </code></pre><p>查看详细的列权限</p>
-<pre><code>mysql&gt; select * from mysql.columns_priv;
+<pre tabindex="0"><code>mysql&gt; select * from mysql.columns_priv;
 +------+-----------+------+------------+-------------+---------------------+---------------+
 | Host | Db        | User | Table_name | Column_name | Timestamp           | Column_priv   |
 +------+-----------+------+------------+-------------+---------------------+---------------+
@@ -186,16 +290,16 @@
 2 rows in set (0.00 sec)
 </code></pre><h3 id="四-授权操作">四、 授权操作：</h3>
 <p>1、 创建相应账号</p>
-<pre><code>create user 'username1'@'%' identified by 'passwd';
+<pre tabindex="0"><code>create user &#39;username1&#39;@&#39;%&#39; identified by &#39;passwd&#39;;
 </code></pre><p>2、 赋予权限</p>
-<pre><code>所有库、表的全部权限
-grant all privileges on *.* to 'username1'@'%' with grant option;
+<pre tabindex="0"><code>所有库、表的全部权限
+grant all privileges on *.* to &#39;username1&#39;@&#39;%&#39; with grant option;
 
 某个库某个表的全部权限
-grant all privileges on lang_test.t to 'username1'@'%' with grant option;
+grant all privileges on lang_test.t to &#39;username1&#39;@&#39;%&#39; with grant option;
 
 某个库某个表的读、插入、更新、删除权限
-grant select,insert,update,delete on lang_test.t to 'username1'@'%' with grant option;
+grant select,insert,update,delete on lang_test.t to &#39;username1&#39;@&#39;%&#39; with grant option;
 
 创建表t
 CREATE TABLE `lang_test`.`t` (
@@ -207,7 +311,7 @@ CREATE TABLE `lang_test`.`t` (
 ) ENGINE=InnoDB;
 
 某个表的某些列的权限
-GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO 'lang'@'%' with grant option;
+GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO &#39;lang&#39;@&#39;%&#39; with grant option;
 </code></pre><p>grant的具体权限官网地址：https://dev.mysql.com/doc/refman/5.7/en/grant.html</p>
 
         </div>

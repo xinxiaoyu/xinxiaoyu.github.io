@@ -116,7 +116,119 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数据迁移--从公网迁移到云数据库操作步骤">数据迁移&ndash;从公网迁移到云数据库操作步骤：</a>
+      <ul>
+        <li><a href="#一-新的目标腾讯云mysql实例">一、 新的（目标）腾讯云MySQL实例</a></li>
+        <li><a href="#二-源数据库实例开启公网地址">二、 源数据库实例开启公网地址</a></li>
+        <li><a href="#三-新建数据迁移任务">三、 新建数据迁移任务</a></li>
+        <li><a href="#四-迁移完成后">四、 迁移完成后</a></li>
+        <li><a href="#五-如果源数据库实例再出现增量数据">五、 如果源数据库实例再出现增量数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据同步操作">数据同步操作</a>
+      <ul>
+        <li><a href="#一-源库增加权限">一、 源库增加权限</a></li>
+        <li><a href="#二-购买数据同步服务">二、 购买数据同步服务</a></li>
+        <li><a href="#三-进入同步任务配置页面进行配置">三、 进入同步任务配置页面进行配置</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
             <h1 class="post-title">腾讯云dts迁移MySQL</h1>
@@ -162,21 +274,21 @@
 <p>初始化字符集，需要和源数据库实例一致</p>
 <h3 id="二-源数据库实例开启公网地址">二、 源数据库实例开启公网地址</h3>
 <p>迁移前最好刷新生成新的binlog文件，以便操作以后的增量数据的同步</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic">#查看binlog文件</span>
-mysql&gt; show binary logs;
-
-<span style="color:#998;font-style:italic">#刷新生成新的binlog文件</span>
-mysql&gt; flush logs;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#查看binlog文件</span>
+</span></span><span style="display:flex;"><span>mysql&gt; show binary logs;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#刷新生成新的binlog文件</span>
+</span></span><span style="display:flex;"><span>mysql&gt; flush logs;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="三-新建数据迁移任务">三、 新建数据迁移任务</h3>
 <p>地址： <a href="https://console.cloud.tencent.com/dts/migration?rid=4&amp;page=1&amp;pagesize=20">https://console.cloud.tencent.com/dts/migration?rid=4&amp;page=1&amp;pagesize=20</a>
@@ -201,22 +313,22 @@ mysql&gt; flush logs;
 <p>1、 根据要恢复到的时间点，确认需要同步的binlog文件并下载到有mysql相关工具的机器上；</p>
 <pre><code>   如名为： mysql57_binlog_mysqlbin.001852
 </code></pre>
-<p>2、  根据迁移完成后的时间点（如'2021-06-17 12:01:00')，可以使用此时间点作为binlog文件的start-datetime，恢复操作如下</p>
+<p>2、  根据迁移完成后的时间点（如'2021-06-17 12:01:00&rsquo;)，可以使用此时间点作为binlog文件的start-datetime，恢复操作如下</p>
 <pre><code>    mysqlbinlog mysql57_binlog_mysqlbin.001852 --start-datetime='2021-06-17 12:01:00' | mysql -uroot -h hostname -P port -p
 </code></pre>
 <h2 id="数据同步操作">数据同步操作</h2>
 <h3 id="一-源库增加权限">一、 源库增加权限</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#000;font-weight:bold">GRANT</span><span style="color:#bbb"> </span>RELOAD,<span style="color:#000;font-weight:bold">LOCK</span><span style="color:#bbb"> </span>TABLES,REPLICATION<span style="color:#bbb"> </span>CLIENT,REPLICATION<span style="color:#bbb"> </span>SLAVE,<span style="color:#000;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">*</span>.<span style="color:#000;font-weight:bold">*</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">TO</span><span style="color:#bbb"> </span><span style="color:#d14">&#39;迁移帐号&#39;</span><span style="color:#000;font-weight:bold">@</span><span style="color:#d14">&#39;%&#39;</span><span style="color:#bbb"> </span>IDENTIFIED<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">BY</span><span style="color:#bbb"> </span><span style="color:#d14">&#39;迁移密码&#39;</span>;<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">GRANT</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">ALL</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">PRIVILEGES</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>__tencentdb__<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">*</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">TO</span><span style="color:#bbb"> </span><span style="color:#d14">&#39;迁移帐号&#39;</span><span style="color:#000;font-weight:bold">@</span><span style="color:#d14">&#39;%&#39;</span>;<span style="color:#bbb">
-</span><span style="color:#bbb"></span>FLUSH<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">PRIVILEGES</span>;<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">GRANT</span><span style="color:#bbb"> </span>RELOAD,<span style="color:#000;font-weight:bold">LOCK</span><span style="color:#bbb"> </span>TABLES,REPLICATION<span style="color:#bbb"> </span>CLIENT,REPLICATION<span style="color:#bbb"> </span>SLAVE,<span style="color:#000;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">*</span>.<span style="color:#000;font-weight:bold">*</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">TO</span><span style="color:#bbb"> </span><span style="color:#d14">&#39;迁移帐号&#39;</span><span style="color:#000;font-weight:bold">@</span><span style="color:#d14">&#39;%&#39;</span><span style="color:#bbb"> </span>IDENTIFIED<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">BY</span><span style="color:#bbb"> </span><span style="color:#d14">&#39;迁移密码&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000;font-weight:bold">GRANT</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">ALL</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">PRIVILEGES</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">`</span>__tencentdb__<span style="color:#000;font-weight:bold">`</span>.<span style="color:#000;font-weight:bold">*</span><span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">TO</span><span style="color:#bbb"> </span><span style="color:#d14">&#39;迁移帐号&#39;</span><span style="color:#000;font-weight:bold">@</span><span style="color:#d14">&#39;%&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>FLUSH<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">PRIVILEGES</span>;<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="二-购买数据同步服务">二、 购买数据同步服务</h3>
 <p>购买页面： <a href="https://buy.cloud.tencent.com/dts">https://buy.cloud.tencent.com/dts</a></p>
