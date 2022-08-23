@@ -234,132 +234,64 @@
         
         <div class="post-content">
             <p>安装（centos7）</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum remove docker <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    docker-client <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    docker-client-latest <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    docker-common <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    docker-latest <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    docker-latest-logrotate <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    docker-logrotate <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    docker-engine
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>yum install -y yum-utils
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>yum-config-manager <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    --add-repo <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    https://download.docker.com/linux/centos/docker-ce.repo
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 查看具体版本</span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># yum list docker-ce --showduplicates | sort -r</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>systemctl start docker
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>curl -sL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
-</span></span><span style="display:flex;"><span>chmod +x /usr/bin/docker-compose
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>常用命令，以<code>jenkins/jenkins:2.359-jdk11</code>镜像为例</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 拉取镜像</span>
-</span></span><span style="display:flex;"><span>docker pull jenkins/jenkins:2.359-jdk11
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 运行, --add-host表示增加hosts, -d 表示后台运行， -v挂载目录，-p映射端口，--restart=on-failure表示失败自动重启，</span>
-</span></span><span style="display:flex;"><span>docker run --name jenkins_2.359-jdk11 --add-host test.cn:1.1.1.1 <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>       -d -v /localhost/path:/var/jenkins_home -p 8080:8080 -p 50000:50000 <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>       --restart<span style="color:#000;font-weight:bold">=</span>on-failure jenkins/jenkins:2.359-jdk11
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 查看运行</span>
-</span></span><span style="display:flex;"><span>docker ps -a
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 制作新镜像</span>
-</span></span><span style="display:flex;"><span>docker commit jenkins:2.359-jdk11_container_id jenkins:2.359-jdk11-new-version
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 为新镜像打tag</span>
-</span></span><span style="display:flex;"><span>docker tag jenkins:2.359-jdk11-new-version  my-image-repo.com/jenkins:2.359-jdk11-new-version
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 提交新镜像到镜像仓库</span>
-</span></span><span style="display:flex;"><span>docker push my-image-repo.com/jenkins:2.359-jdk11-new-version
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 进入容器内部操作</span>
-</span></span><span style="display:flex;"><span>docker <span style="color:#0086b3">exec</span> -it jenkins_container_id /bin/bash
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 停止容器</span>
-</span></span><span style="display:flex;"><span>docker container stop jenkins_container_id
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 查看日志, 等于tail -f100 file</span>
-</span></span><span style="display:flex;"><span>docker logs -f -n <span style="color:#099">100</span> jenkins_container_id
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 查看容器IP</span>
-</span></span><span style="display:flex;"><span>docker inspect -f <span style="color:#d14">&#39;{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> jenkins_container_id
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其他</p>
+<pre tabindex="0"><code>yum remove docker \
+    docker-client \
+    docker-client-latest \
+    docker-common \
+    docker-latest \
+    docker-latest-logrotate \
+    docker-logrotate \
+    docker-engine
+
+yum install -y yum-utils
+
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+# 查看具体版本
+# yum list docker-ce --showduplicates | sort -r
+
+yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+systemctl start docker
+
+curl -sL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
+chmod +x /usr/bin/docker-compose
+</code></pre><p>常用命令，以<code>jenkins/jenkins:2.359-jdk11</code>镜像为例</p>
+<pre tabindex="0"><code>
+# 拉取镜像
+docker pull jenkins/jenkins:2.359-jdk11
+
+# 运行, --add-host表示增加hosts, -d 表示后台运行， -v挂载目录，-p映射端口，--restart=on-failure表示失败自动重启，
+docker run --name jenkins_2.359-jdk11 --add-host test.cn:1.1.1.1 \
+       -d -v /localhost/path:/var/jenkins_home -p 8080:8080 -p 50000:50000 \
+       --restart=on-failure jenkins/jenkins:2.359-jdk11
+
+# 查看运行
+docker ps -a
+
+# 制作新镜像
+docker commit jenkins:2.359-jdk11_container_id jenkins:2.359-jdk11-new-version
+
+# 为新镜像打tag
+docker tag jenkins:2.359-jdk11-new-version  my-image-repo.com/jenkins:2.359-jdk11-new-version
+
+# 提交新镜像到镜像仓库
+docker push my-image-repo.com/jenkins:2.359-jdk11-new-version
+
+# 进入容器内部操作
+docker exec -it jenkins_container_id /bin/bash
+
+# 停止容器
+docker container stop jenkins_container_id
+
+# 查看日志, 等于tail -f100 file
+docker logs -f -n 100 jenkins_container_id
+
+# 查看容器IP
+docker inspect -f &#39;{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; jenkins_container_id
+</code></pre><p>其他</p>
 <pre tabindex="0"><code># 增加资源限制和参数
 docker run --name tomcat --cpus 0.1 -m 512M -e JAVA_OPTS=&#39;-Xmx512m -Xms512m&#39; -p 8080:8080 -itd feisky/tomcat:8
 
@@ -538,7 +470,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (12)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (10)</a></li>
     
@@ -571,7 +503,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (7)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (31)</br></a>
     
@@ -591,7 +523,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (88)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (89)</br></a>
     
 </div>
     </section>

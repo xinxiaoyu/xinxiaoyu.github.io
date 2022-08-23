@@ -430,7 +430,11 @@ kubectl rollout undo deployment/grafana --to-revision=1 -n kubesphere-monitoring
 </span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>--kubeconfig<span style="color:#000;font-weight:bold">=</span>.<span style="color:#d14">\.</span>kube<span style="color:#d14">\k</span>ubeconfig
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><ol start="11">
+<li>创建镜像仓库连接认证</li>
+</ol>
+<pre tabindex="0"><code>kubectl create secret docker-registry harbor --docker-server=harbor.abc.com --docker-username=grafana --docker-password=abc123 --docker-email=abc@abc.com -n kubesphere-monitoring-system
+</code></pre>
         </div>
 
         
@@ -590,7 +594,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (12)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (7)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (10)</a></li>
     
@@ -623,7 +627,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (7)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (31)</br></a>
     
@@ -643,7 +647,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (88)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (89)</br></a>
     
 </div>
     </section>

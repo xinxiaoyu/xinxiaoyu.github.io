@@ -6,7 +6,16 @@
     <description>Recent content in LoadBalancing on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 28 Dec 2020 13:40:50 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/LoadBalancing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Jun 2022 14:32:37 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/LoadBalancing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>跨域问题</title>
+      <link>https://www.tangjihede.fun/post/LoadBalancing/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 23 Jun 2022 14:32:37 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/LoadBalancing/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</guid>
+      <description>跨域设置涉及的几个header如下： Access-Control-Allow-Origin: Access-Control-Expose-Headers:</description>
+    </item>
+    
     <item>
       <title>Nginx简单介绍</title>
       <link>https://www.tangjihede.fun/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>

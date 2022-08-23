@@ -94,7 +94,7 @@
       <pubDate>Fri, 10 Jun 2016 15:12:21 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/MySQL/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
+      <description># 连接 shell# mysql -h$ip -P$port -u$user -p #查看binlog文件</description>
     </item>
     
   </channel>
