@@ -418,22 +418,38 @@ kubectl rollout undo deployment/grafana --to-revision=1 -n kubesphere-monitoring
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="10">
-<li>创建tls证书</li>
+<li>secret</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl create secret generic tls-pfx --from-file<span style="color:#000;font-weight:bold">=</span>private-rsa.pfx<span style="color:#000;font-weight:bold">=</span>.<span style="color:#d14">\p</span>rivate-rsa.pfx -n foreground  <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>--kubeconfig<span style="color:#000;font-weight:bold">=</span>.<span style="color:#d14">\.</span>kube<span style="color:#d14">\k</span>ubeconfig
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="11">
-<li>创建镜像仓库连接认证</li>
-</ol>
-<pre tabindex="0"><code>kubectl create secret docker-registry harbor --docker-server=harbor.abc.com --docker-username=grafana --docker-password=abc123 --docker-email=abc@abc.com -n kubesphere-monitoring-system
+<pre tabindex="0"><code># 创建tls证书
+kubectl create secret tls my-tls-secret --cert=path/to/cert/file --key=path/to/key/file -n foreground --kubeconfig=.\.kube\kubeconfig
+
+# 加密证书Opaque
+kubectl create secret generic mycerts --from-file=private-rsa.pfx=.\private-rsa.pfx -n foreground  \
+--kubeconfig=.\.kube\kubeconfig
+
+然后yaml引用
+```yaml
+spec:
+  volumes:
+    - name: mycerts
+      secret:
+        secretName: mycerts
+        defaultMode: 420
+  ...
+  containers:
+    volumeMounts:
+      - name: mycerts
+        readOnly: true
+        mountPath: /data/cer/
+</code></pre><h1 id="创建镜像仓库连接认证">创建镜像仓库连接认证</h1>
+<p>kubectl create secret docker-registry secret-tiger-docker <br>
+&ndash;<a href="mailto:docker-email=tiger@acme.example">docker-email=tiger@acme.example</a> <br>
+&ndash;docker-username=tiger <br>
+&ndash;docker-password=pass1234 <br>
+&ndash;docker-server=my-registry.example:5000</p>
+<pre tabindex="0"><code>
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 </code></pre>
         </div>
 
@@ -590,7 +606,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (6)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (7)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (12)</a></li>
     
@@ -629,7 +645,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (7)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (31)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (32)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -647,7 +663,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (89)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (90)</br></a>
     
 </div>
     </section>

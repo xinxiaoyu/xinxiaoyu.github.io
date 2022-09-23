@@ -350,10 +350,16 @@ RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
 </code></pre><ol start="6">
 <li></li>
 </ol>
-<p>LoadModule rewrite_module mods-enabled/mod_rewrite.so</p>
-<p>LoadModule socache_shmcb_module /usr/lib/apache2/modules/mod_socache_shmcb.so</p>
-<p>SSLSessionCache &ldquo;shmcb:logs/ssl_scache(512000)&rdquo;</p>
-<pre tabindex="0"><code></code></pre>
+<pre tabindex="0"><code>LoadModule ssl_module mods-enabled/mod_ssl.so
+
+LoadModule rewrite_module mods-enabled/mod_rewrite.so
+
+LoadModule socache_shmcb_module /usr/lib/apache2/modules/mod_socache_shmcb.so
+
+
+
+SSLSessionCache &#34;shmcb:logs/ssl_scache(512000)&#34;
+</code></pre>
         </div>
 
         
@@ -509,7 +515,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (6)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (7)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (12)</a></li>
     
@@ -548,7 +554,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (7)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (31)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (32)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
@@ -566,7 +572,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (89)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (90)</br></a>
     
 </div>
     </section>
