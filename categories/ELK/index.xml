@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Elasticsearch迁移工具</title>
+      <link>https://www.tangjihede.fun/post/ELK/es%E8%BF%81%E7%A7%BB%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 26 Feb 2019 16:42:02 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/ELK/es%E8%BF%81%E7%A7%BB%E5%B7%A5%E5%85%B7/</guid>
+      <description>迁移工具地址： https://github.com/medcl/esm 迁移脚本 #!/bin/bash filter_time=`date +%Y-%m-%d -d &amp;#34;-8 days&amp;#34;` index_arr=(es_collect es_keyword</description>
+    </item>
+    
+    <item>
       <title>Elasticsearch集群配置</title>
       <link>https://www.tangjihede.fun/post/ELK/es_cluster/</link>
       <pubDate>Mon, 25 Feb 2019 16:42:02 +0800</pubDate>

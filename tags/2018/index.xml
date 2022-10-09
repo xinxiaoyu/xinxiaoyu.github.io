@@ -53,6 +53,15 @@
     </item>
     
     <item>
+      <title>curl命令手册</title>
+      <link>https://www.tangjihede.fun/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Sat, 23 Jun 2018 14:05:36 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</guid>
+      <description>curl --location --request GET &amp;#39;https://test.abc.com/v1/health&amp;#39; --header &amp;#39;Authorization: Apikey 20220602&amp;#39; -H &amp;#34;Content-Type: application/json&amp;#34; -d &amp;#34;{ \&amp;#34;claimStatus\&amp;#34;: 0, \&amp;#34;lastBillMonth\&amp;#34;: 202208, \&amp;#34;occurDateTime\&amp;#34;: \&amp;#34;2022-09-01</description>
+    </item>
+    
+    <item>
       <title>Redis导入rdb文件</title>
       <link>https://www.tangjihede.fun/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/</link>
       <pubDate>Fri, 22 Jun 2018 13:53:40 +0800</pubDate>

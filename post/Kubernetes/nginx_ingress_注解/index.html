@@ -269,6 +269,17 @@
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># http 跳转https</span><span style="color:#bbb">
@@ -287,6 +298,17 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#d14">         </span><span style="color:#bbb">         </span>rewrite ^/v4/(.*)/card/query http://foo.bar.com/v5/#!/card/query permanent;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">     </span><span style="color:#000080">nginx.ingress.kubernetes.io/configuration-snippet</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
 </span></span></span><span style="display:flex;"><span><span style="color:#d14">         </span><span style="color:#bbb">         </span>rewrite ^/v6/(.*)/card/query http://foo.bar.com/v7/#!/card/query permanent;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#998;font-style:italic"># 支持websocket协议</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">nginx.ingress.kubernetes.io/server-snippets</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">      proxy_set_header Upgrade $http_upgrade;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">      proxy_http_version 1.1;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">      proxy_set_header X-Forwarded-Host $http_host;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">      proxy_set_header X-Forwarded-Proto $scheme;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">      proxy_set_header X-Forwarded-For $remote_addr;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">      proxy_set_header Host $host;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">      proxy_set_header Connection &#34;upgrade&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">      proxy_cache_bypass $http_upgrade;</span><span style="color:#bbb">      
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#998;font-style:italic"># 腾讯云 https://cloud.tencent.com/document/product/457/45693</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">kubernetes.io/ingress.rule-mix</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;true&#34;</span><span style="color:#bbb">
@@ -332,9 +354,9 @@
         
         <li><a href="/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a></li>
         
-        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
-        
         <li><a href="/post/Error/git_mail_err/">gitlab send mail err</a></li>
+        
+        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
         
         <li><a href="/post/Error/libncurses_so/">缺少LIBNCURSES.SO.5文件一例</a></li>
         
@@ -453,9 +475,9 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Docker/">Docker (1)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Docker/">Docker (2)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/Error/">Error (10)</a></li>
     
@@ -467,7 +489,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (7)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (12)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (13)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -504,13 +526,13 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2022/">2022 (7)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2021/">2021 (32)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (33)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2019/">2019 (8)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2019/">2019 (9)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/2018/">2018 (9)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2018/">2018 (10)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2017/">2017 (9)</br></a>
     
@@ -522,7 +544,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (90)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (93)</br></a>
     
 </div>
     </section>

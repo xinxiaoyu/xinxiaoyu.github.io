@@ -80,6 +80,15 @@
     </item>
     
     <item>
+      <title>golang程序镜像Dockerfile</title>
+      <link>https://www.tangjihede.fun/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Sat, 21 Aug 2021 19:48:19 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</guid>
+      <description>FROM centos:centos7 RUN yum install -y epel-release --nogpgcheck RUN yum install -y golang git --nogpgcheck RUN go env -w GO111MODULE=off</description>
+    </item>
+    
+    <item>
       <title>Arthas tunnel server使用</title>
       <link>https://www.tangjihede.fun/post/Java/arthas/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
