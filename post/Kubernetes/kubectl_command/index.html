@@ -238,13 +238,17 @@
 </ol>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl cp -n namespace pod_name:app/test.txt ./test.txt --kubeconfig<span style="color:#000;font-weight:bold">=</span>./.kube/mykubeconfig
@@ -252,6 +256,10 @@
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 上面是linux，如果是windows的话，如下</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>kubectl cp -n namespace pod_name:app/test.txt .<span style="color:#d14">\t</span>est.txt --kubeconfig<span style="color:#000;font-weight:bold">=</span>.<span style="color:#d14">\.</span>kube<span style="color:#d14">\m</span>ykubeconfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 从本地拷贝到容器里</span>
+</span></span><span style="display:flex;"><span>kubectl cp -n kubesphere-controls-system .<span style="color:#d14">\c</span>url kubectl-6f7f88ff9b-27lcq:tmp/curl --kubeconfig<span style="color:#000;font-weight:bold">=</span>.<span style="color:#d14">\.</span>kube<span style="color:#d14">\l</span>ocal
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>docker cp container_name:file_path file_save_path
 </span></span></code></pre></td></tr></table>
@@ -516,7 +524,7 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2023 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -594,7 +602,9 @@ if (!doNotTrack) {
     
     <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
     
-    <li><a href="https://www.tangjihede.fun/categories/Docker/">Docker (2)</a></li>
+    <li><a href="https://www.tangjihede.fun/categories/ClickHouse/">ClickHouse (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (3)</a></li>
     
@@ -643,7 +653,7 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.tangjihede.fun/tags/2022/">2022 (7)</br></a>
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (8)</br></a>
     
     <a href="https://www.tangjihede.fun/tags/2021/">2021 (33)</br></a>
     
@@ -663,7 +673,7 @@ if (!doNotTrack) {
     
     <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (93)</br></a>
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (94)</br></a>
     
 </div>
     </section>

@@ -9,24 +9,33 @@
     <lastmod>2022-05-06T12:13:30+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/tags/2022/</loc>
-    <lastmod>2022-06-23T14:32:37+08:00</lastmod>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/tags/ALL/</loc>
-    <lastmod>2022-06-23T14:32:37+08:00</lastmod>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/categories/</loc>
-    <lastmod>2022-06-23T14:32:37+08:00</lastmod>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
   </url><url>
-    <loc>https://www.tangjihede.fun/categories/LoadBalancing/</loc>
-    <lastmod>2022-06-23T14:32:37+08:00</lastmod>
+    <loc>https://www.tangjihede.fun/categories/ClickHouse/</loc>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/Docker/</loc>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/</loc>
-    <lastmod>2022-06-23T14:32:37+08:00</lastmod>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/tags/</loc>
-    <lastmod>2022-06-23T14:32:37+08:00</lastmod>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/</loc>
+    <lastmod>2022-12-09T19:48:19+08:00</lastmod>
+  </url><url>
+    <loc>https://www.tangjihede.fun/categories/LoadBalancing/</loc>
     <lastmod>2022-06-23T14:32:37+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/LoadBalancing/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</loc>
@@ -88,9 +97,6 @@
   </url><url>
     <loc>https://www.tangjihede.fun/categories/MySQL/</loc>
     <lastmod>2021-08-26T14:31:40+08:00</lastmod>
-  </url><url>
-    <loc>https://www.tangjihede.fun/categories/Docker/</loc>
-    <lastmod>2021-08-21T19:48:19+08:00</lastmod>
   </url><url>
     <loc>https://www.tangjihede.fun/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</loc>
     <lastmod>2021-08-21T19:48:19+08:00</lastmod>

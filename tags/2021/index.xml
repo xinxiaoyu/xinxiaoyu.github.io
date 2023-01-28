@@ -301,7 +301,7 @@
       <pubDate>Sat, 26 Dec 2020 18:03:09 +0800</pubDate>
       
       <guid>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</guid>
-      <description>从容器中拷贝文件 1 2 3 4 5 6 7 kubectl cp -n namespace pod_name:app/test.txt</description>
+      <description>从容器中拷贝文件 1 2 3 4 5 6 7 8 9 10 11 kubectl</description>
     </item>
     
   </channel>
