@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hardware on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/Hardware/</link>
+    <link>https://xinxiaoyu.github.io/categories/Hardware/</link>
     <description>Recent content in Hardware on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Feb 2018 13:54:34 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Hardware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Feb 2018 13:54:34 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Hardware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dell r720 bios 设置</title>
-      <link>https://www.tangjihede.fun/post/Hardware/dell_r720_bios/</link>
+      <link>https://xinxiaoyu.github.io/post/Hardware/dell_r720_bios/</link>
       <pubDate>Fri, 16 Feb 2018 13:54:34 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Hardware/dell_r720_bios/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Hardware/dell_r720_bios/</guid>
       <description>开机F2进入SYSTEM SETU 关闭节能模式 System</description>
     </item>
     

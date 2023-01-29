@@ -2,305 +2,305 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2021 on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/tags/2021/</link>
+    <link>https://xinxiaoyu.github.io/tags/2021/</link>
     <description>Recent content in 2021 on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 13 Feb 2022 10:27:43 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2021/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 10:27:43 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/tags/2021/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>virtualbox下的ubuntu桌面版全屏问题</title>
-      <link>https://www.tangjihede.fun/post/Linux/ubuntu_full_screen/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/ubuntu_full_screen/</link>
       <pubDate>Sun, 13 Feb 2022 10:27:43 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/ubuntu_full_screen/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/ubuntu_full_screen/</guid>
       <description>virtualbox版本 6.1.30 r148432 (Qt5.6.2) ubunt</description>
     </item>
     
     <item>
       <title>nginx配置未生效</title>
-      <link>https://www.tangjihede.fun/post/Error/nginx%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88/</link>
+      <link>https://xinxiaoyu.github.io/post/Error/nginx%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88/</link>
       <pubDate>Thu, 09 Dec 2021 18:48:01 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Error/nginx%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Error/nginx%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88/</guid>
       <description>我已经遇到过不止一次的愚蠢操作： 新建ng</description>
     </item>
     
     <item>
       <title>腾讯云tke集群Pod内存使用率告警--Python实现</title>
-      <link>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</link>
+      <link>https://xinxiaoyu.github.io/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Thu, 30 Sep 2021 14:54:03 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</guid>
       <description>代码样例： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
       <title>使用helm chart部署skywalking</title>
-      <link>https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/</link>
+      <link>https://xinxiaoyu.github.io/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/</link>
       <pubDate>Sun, 26 Sep 2021 11:45:44 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/</guid>
       <description>简易版yaml文件(es7.yml)如下</description>
     </item>
     
     <item>
       <title>使用k8s configmap管理skywalking配置文件</title>
-      <link>https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>https://xinxiaoyu.github.io/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Sun, 26 Sep 2021 11:45:44 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>依赖helm部署后的skywalking</description>
     </item>
     
     <item>
       <title>腾讯云服务器云硬盘扩容</title>
-      <link>https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</link>
+      <link>https://xinxiaoyu.github.io/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</link>
       <pubDate>Wed, 01 Sep 2021 14:44:07 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</guid>
+      <guid>https://xinxiaoyu.github.io/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</guid>
       <description>注意： 操作前请做快照备份 系统盘扩容： 控制</description>
     </item>
     
     <item>
       <title>Binlog样例</title>
-      <link>https://www.tangjihede.fun/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/</link>
+      <link>https://xinxiaoyu.github.io/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/</link>
       <pubDate>Thu, 26 Aug 2021 14:31:40 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/</guid>
+      <guid>https://xinxiaoyu.github.io/post/MySQL/binlog%E6%A0%B7%E4%BE%8B/</guid>
       <description>binlog_row_image: FULL 1. update 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</description>
     </item>
     
     <item>
       <title>Docker使用记录</title>
-      <link>https://www.tangjihede.fun/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
+      <link>https://xinxiaoyu.github.io/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
       <pubDate>Sat, 21 Aug 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
+      <guid>https://xinxiaoyu.github.io/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
       <description>安装（centos7） yum remove docker \ docker-client \ docker-client-latest \ docker-common</description>
     </item>
     
     <item>
       <title>golang程序镜像Dockerfile</title>
-      <link>https://www.tangjihede.fun/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</link>
+      <link>https://xinxiaoyu.github.io/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</link>
       <pubDate>Sat, 21 Aug 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</guid>
+      <guid>https://xinxiaoyu.github.io/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</guid>
       <description>FROM centos:centos7 RUN yum install -y epel-release --nogpgcheck RUN yum install -y golang git --nogpgcheck RUN go env -w GO111MODULE=off</description>
     </item>
     
     <item>
       <title>Arthas tunnel server使用</title>
-      <link>https://www.tangjihede.fun/post/Java/arthas/</link>
+      <link>https://xinxiaoyu.github.io/post/Java/arthas/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Java/arthas/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Java/arthas/</guid>
       <description>Arthas tunnel server是一个spring boot fat j</description>
     </item>
     
     <item>
       <title>Rabbitmq rpm安装</title>
-      <link>https://www.tangjihede.fun/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/</link>
+      <link>https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/</link>
       <pubDate>Fri, 23 Jul 2021 13:53:37 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/</guid>
       <description>centos安装命令： 1 2 3 4 5 6 7 8 9</description>
     </item>
     
     <item>
       <title>Redis命令行工具</title>
-      <link>https://www.tangjihede.fun/post/Python/redis_command_tool/</link>
+      <link>https://xinxiaoyu.github.io/post/Python/redis_command_tool/</link>
       <pubDate>Thu, 22 Jul 2021 13:58:42 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Python/redis_command_tool/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Python/redis_command_tool/</guid>
       <description>封装了下redis的scan命令和del</description>
     </item>
     
     <item>
       <title>阿里云cam授权案例</title>
-      <link>https://www.tangjihede.fun/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</link>
+      <link>https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</link>
       <pubDate>Wed, 14 Jul 2021 14:10:24 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</guid>
       <description>一、 阿里云oss权限自定义策略 { &amp;#34;Version&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;Statement&amp;#34;: [</description>
     </item>
     
     <item>
       <title>腾讯云CAM自定义策略</title>
-      <link>https://www.tangjihede.fun/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</link>
+      <link>https://xinxiaoyu.github.io/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</link>
       <pubDate>Wed, 14 Jul 2021 13:41:16 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</guid>
+      <guid>https://xinxiaoyu.github.io/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</guid>
       <description>新建自定义策略，有四种方式，目前看主要使</description>
     </item>
     
     <item>
       <title>Prometheus标签的增删改</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/prometheus_label/</link>
       <pubDate>Wed, 07 Jul 2021 13:39:58 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/prometheus_label/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/prometheus_label/</guid>
       <description>像类似ELK(beat -&amp;gt; kafka -&amp;gt; logstash -&amp;gt; es -&amp;gt; ki</description>
     </item>
     
     <item>
       <title>RabbitMQ常用命令</title>
-      <link>https://www.tangjihede.fun/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://xinxiaoyu.github.io/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 01 Jul 2021 17:40:09 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://xinxiaoyu.github.io/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>以守护进程的方式在后台运行 rabbitmq-server -detached 查看状态 rabbitmqctl</description>
     </item>
     
     <item>
       <title>Spinnaker_deployment_error</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/spinnaker_deployment_error/</link>
       <pubDate>Thu, 01 Jul 2021 14:44:58 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/spinnaker_deployment_error/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/spinnaker_deployment_error/</guid>
       <description>腾讯云coding平台部署错误 Check that the Docker image</description>
     </item>
     
     <item>
       <title>Python处理json数据</title>
-      <link>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</link>
+      <link>https://xinxiaoyu.github.io/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Mon, 28 Jun 2021 11:30:15 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</guid>
       <description>一般的场景是这样： 标准的json（接口返</description>
     </item>
     
     <item>
       <title>腾讯云dts迁移MySQL</title>
-      <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</link>
+      <link>https://xinxiaoyu.github.io/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</link>
       <pubDate>Fri, 25 Jun 2021 13:38:51 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</guid>
+      <guid>https://xinxiaoyu.github.io/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</guid>
       <description>数据传输服务（dts）下分多个具体功能：</description>
     </item>
     
     <item>
       <title>Mysql_global_variables(MySQL8.0)</title>
-      <link>https://www.tangjihede.fun/post/MySQL/mysql_global_variables/</link>
+      <link>https://xinxiaoyu.github.io/post/MySQL/mysql_global_variables/</link>
       <pubDate>Wed, 09 Jun 2021 17:43:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MySQL/mysql_global_variables/</guid>
+      <guid>https://xinxiaoyu.github.io/post/MySQL/mysql_global_variables/</guid>
       <description>版本: MySQL 8.0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
       <title>Jenkins pipeline知识点</title>
-      <link>https://www.tangjihede.fun/post/CICD/jenkins_pipeline/</link>
+      <link>https://xinxiaoyu.github.io/post/CICD/jenkins_pipeline/</link>
       <pubDate>Thu, 27 May 2021 10:34:50 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/CICD/jenkins_pipeline/</guid>
+      <guid>https://xinxiaoyu.github.io/post/CICD/jenkins_pipeline/</guid>
       <description>1. Pipeline用到的语法： Groovy 2. 全局变</description>
     </item>
     
     <item>
       <title>MySQL用户权限汇总</title>
-      <link>https://www.tangjihede.fun/post/MySQL/mysql_privileges/</link>
+      <link>https://xinxiaoyu.github.io/post/MySQL/mysql_privileges/</link>
       <pubDate>Mon, 24 May 2021 10:13:46 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MySQL/mysql_privileges/</guid>
+      <guid>https://xinxiaoyu.github.io/post/MySQL/mysql_privileges/</guid>
       <description>一、 全局权限,作用于整个 MySQL 实例：mysq</description>
     </item>
     
     <item>
       <title>Pod探针</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/</link>
       <pubDate>Sat, 22 May 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/</guid>
       <description>kubernetes的POD有三种用途的</description>
     </item>
     
     <item>
       <title>Python的selenium库使用汇总</title>
-      <link>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
+      <link>https://xinxiaoyu.github.io/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
       <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
       <description>一、 下载对应浏览器的webdriver 如</description>
     </item>
     
     <item>
       <title>Docker镜像清理</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</link>
       <pubDate>Fri, 21 May 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</guid>
       <description>运行docker system df 命令： 1 2 3 4 5 6 [root@VM_100_4_centos</description>
     </item>
     
     <item>
       <title>Hugo使用</title>
-      <link>https://www.tangjihede.fun/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/</link>
+      <link>https://xinxiaoyu.github.io/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 21 May 2021 17:09:05 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://xinxiaoyu.github.io/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/</guid>
       <description>零、 下载地址 https://github.com/gohugoio/hugo/releases 可直接运行，如创建一个bl</description>
     </item>
     
     <item>
       <title>腾讯云Mysql物理备份恢复数据库</title>
-      <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>https://xinxiaoyu.github.io/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Fri, 21 May 2021 15:35:48 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>https://xinxiaoyu.github.io/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>使用物理备份恢复数据库（使用物理备份恢复</description>
     </item>
     
     <item>
       <title>Ingress_yaml nginx模板</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/ingress_yaml/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/ingress_yaml/</link>
       <pubDate>Thu, 11 Mar 2021 17:36:44 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/ingress_yaml/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/ingress_yaml/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
       <title>nginx ingress 注解大全</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/nginx_ingress_%E6%B3%A8%E8%A7%A3/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/nginx_ingress_%E6%B3%A8%E8%A7%A3/</link>
       <pubDate>Thu, 11 Mar 2021 17:36:44 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/nginx_ingress_%E6%B3%A8%E8%A7%A3/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/nginx_ingress_%E6%B3%A8%E8%A7%A3/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
       <title>github push error</title>
-      <link>https://www.tangjihede.fun/post/Error/git_push_err1/</link>
+      <link>https://xinxiaoyu.github.io/post/Error/git_push_err1/</link>
       <pubDate>Thu, 25 Feb 2021 18:39:33 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Error/git_push_err1/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Error/git_push_err1/</guid>
       <description>git push origin master后出错 error: src refspec master does not match any</description>
     </item>
     
     <item>
       <title>gitlab send mail err</title>
-      <link>https://www.tangjihede.fun/post/Error/git_mail_err/</link>
+      <link>https://xinxiaoyu.github.io/post/Error/git_mail_err/</link>
       <pubDate>Thu, 25 Feb 2021 18:39:33 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Error/git_mail_err/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Error/git_mail_err/</guid>
       <description>SendAsDenied; gitlib@example.com not allowed to send as gitlab@git.example.com; STOREDRV.Submission.Exception:SendAsDeniedException.MapiExceptionSendAsDenied; Failed to process message due to a permanent exception with message</description>
     </item>
     
     <item>
       <title>缺少LIBNCURSES.SO.5文件一例</title>
-      <link>https://www.tangjihede.fun/post/Error/libncurses_so/</link>
+      <link>https://xinxiaoyu.github.io/post/Error/libncurses_so/</link>
       <pubDate>Tue, 16 Feb 2021 12:01:43 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Error/libncurses_so/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Error/libncurses_so/</guid>
       <description>系统信息如下： Linux 4.14.104-95.84.amzn2.x86_64 #1 SMP x86_64 GNU/Linux 执行 sudo /usr/local/mysql/bin/mysql -uroot -p 报</description>
     </item>
     
     <item>
       <title>Kubectl常用命令汇总</title>
-      <link>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</link>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/kubectl_command/</link>
       <pubDate>Sat, 26 Dec 2020 18:03:09 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Kubernetes/kubectl_command/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/kubectl_command/</guid>
       <description>从容器中拷贝文件 1 2 3 4 5 6 7 8 9 10 11 kubectl</description>
     </item>
     

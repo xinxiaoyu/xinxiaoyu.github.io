@@ -2,125 +2,125 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/Linux/</link>
+    <link>https://xinxiaoyu.github.io/categories/Linux/</link>
     <description>Recent content in Linux on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 13 Feb 2022 10:27:43 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 10:27:43 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>virtualbox下的ubuntu桌面版全屏问题</title>
-      <link>https://www.tangjihede.fun/post/Linux/ubuntu_full_screen/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/ubuntu_full_screen/</link>
       <pubDate>Sun, 13 Feb 2022 10:27:43 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/ubuntu_full_screen/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/ubuntu_full_screen/</guid>
       <description>virtualbox版本 6.1.30 r148432 (Qt5.6.2) ubunt</description>
     </item>
     
     <item>
       <title>Redis使用iptables做端口转发</title>
-      <link>https://www.tangjihede.fun/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</link>
+      <link>https://xinxiaoyu.github.io/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Fri, 16 Jul 2021 17:38:00 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Python/redis_scan%E8%84%9A%E6%9C%AC/</guid>
       <description>腾讯云redis使用iptables开启</description>
     </item>
     
     <item>
       <title>LVM在线扩容分区空间</title>
-      <link>https://www.tangjihede.fun/post/Linux/lvm/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/lvm/</link>
       <pubDate>Sat, 01 Aug 2020 12:49:14 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/lvm/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/lvm/</guid>
       <description>LVM一般用于linux/unix系统在</description>
     </item>
     
     <item>
       <title>sed常用命令</title>
-      <link>https://www.tangjihede.fun/post/Linux/sed%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/sed%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 01 Jul 2019 14:11:49 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/sed%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/sed%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>001 删除1-10行 1 sed &amp;#39;1,10d&amp;#39; file 002 删除换行 1 2 3</description>
     </item>
     
     <item>
       <title>Rpm_install_err</title>
-      <link>https://www.tangjihede.fun/post/Linux/rpm_install_err/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/rpm_install_err/</link>
       <pubDate>Sat, 29 Jun 2019 13:41:52 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/rpm_install_err/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/rpm_install_err/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 yum instal gcc Protected multilib versions: libgomp-4.</description>
     </item>
     
     <item>
       <title>Iptables常用命令</title>
-      <link>https://www.tangjihede.fun/post/Linux/iptables%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/iptables%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 24 Jun 2019 13:41:32 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/iptables%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/iptables%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>iptables有四张表：filter、</description>
     </item>
     
     <item>
       <title>Ipmi常用命令</title>
-      <link>https://www.tangjihede.fun/post/Linux/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 28 Jun 2018 14:07:35 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/ipmi%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>远程连接后打印硬件信息 ipmitool -I lanplus -H ip -U user -P passwd</description>
     </item>
     
     <item>
       <title>显卡故障日志分析</title>
-      <link>https://www.tangjihede.fun/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link>
       <pubDate>Sat, 23 Jun 2018 18:21:41 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/%E6%98%BE%E5%8D%A1%E6%95%85%E9%9A%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid>
       <description>物理机宕机，查看有如下日志： 1 2 3 4 5 6</description>
     </item>
     
     <item>
       <title>Linux系统安全设置</title>
-      <link>https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Sat, 23 Jun 2018 14:14:13 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/</guid>
       <description>锁定zhangsan用户 passwd -l zhangsan 或者在张三</description>
     </item>
     
     <item>
       <title>Awk常用命令</title>
-      <link>https://www.tangjihede.fun/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Sat, 23 Jun 2018 14:05:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>列出最常的十条命令： history | awk &#39;{$1=&amp;quot;&amp;quot;;print $0}&#39; | awk &#39;{a[$0]++}END{for(i in a){print</description>
     </item>
     
     <item>
       <title>curl命令手册</title>
-      <link>https://www.tangjihede.fun/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</link>
       <pubDate>Sat, 23 Jun 2018 14:05:36 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</guid>
       <description>curl --location --request GET &amp;#39;https://test.abc.com/v1/health&amp;#39; --header &amp;#39;Authorization: Apikey 20220602&amp;#39; -H &amp;#34;Content-Type: application/json&amp;#34; -d &amp;#34;{ \&amp;#34;claimStatus\&amp;#34;: 0, \&amp;#34;lastBillMonth\&amp;#34;: 202208, \&amp;#34;occurDateTime\&amp;#34;: \&amp;#34;2022-09-01</description>
     </item>
     
     <item>
       <title>Shell知识点合集</title>
-      <link>https://www.tangjihede.fun/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</link>
       <pubDate>Sat, 11 Jun 2016 09:58:13 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</guid>
       <description>数组 1 2 3 4 5 arr=(str1 str2 str3) for i in ${arr[@]} do echo $i done 预定</description>
     </item>
     
     <item>
       <title>Inotify_rsync_unison使用记录</title>
-      <link>https://www.tangjihede.fun/post/Linux/inotify_rsync/</link>
+      <link>https://xinxiaoyu.github.io/post/Linux/inotify_rsync/</link>
       <pubDate>Sat, 10 Jan 2015 17:52:22 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Linux/inotify_rsync/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Linux/inotify_rsync/</guid>
       <description>inotifywait 1 /usr/bin/inotifywait -mrq --timefmt &amp;#39;%Y-%m-%d %H:%M&amp;#39; --format &amp;#39;%T %w %f %e&amp;#39; -e create,delete,modify,move --exclude &amp;#34;\.(tmp|swp|log|info)&amp;#34; $mon_file &amp;gt;&amp;gt; $log_file rsync</description>
     </item>
     
