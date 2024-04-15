@@ -258,47 +258,47 @@
 <a href="https://hub.docker.com/repository/docker/xinxiaoyu/arthas-tunnel-server">https://hub.docker.com/repository/docker/xinxiaoyu/arthas-tunnel-server</a></p>
 <p>或者自己build镜像</p>
 <p>Dockerfile</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">FROM</span><span style="color:#d14"> openjdk:8-jdk</span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">COPY</span> ./arthas-tunnel-server-3.5.0-fatjar.jar /opt<span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">EXPOSE</span><span style="color:#d14"> 8080 7777</span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">CMD</span> [<span style="color:#d14">&#34;java&#34;</span>, <span style="color:#d14">&#34;-jar&#34;</span>, <span style="color:#d14">&#34;/opt/arthas-tunnel-server-3.5.0-fatjar.jar&#34;</span>]<span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#000;font-weight:bold">FROM</span><span style="color:#d14"> openjdk:8-jdk</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">COPY</span> ./arthas-tunnel-server-3.5.0-fatjar.jar /opt<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">EXPOSE</span><span style="color:#d14"> 8080 7777</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">CMD</span> [<span style="color:#d14">&#34;java&#34;</span>, <span style="color:#d14">&#34;-jar&#34;</span>, <span style="color:#d14">&#34;/opt/arthas-tunnel-server-3.5.0-fatjar.jar&#34;</span>]<span style="color:#a61717;background-color:#e3d2d2">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>将文件copy至当前目录下即可。</p>
 <p>build命令</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build -t arthas-tunnel-server:3.5.0 .
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build -t arthas-tunnel-server:3.5.0 .
+</code></pre></td></tr></table>
 </div>
 </div><h5 id="2-开放80807777端口">2. 开放8080、7777端口</h5>
 <p>如果需要从公网外诊断，需要开放将这两个端口做相应代理。</p>
 <h5 id="3-客户端启动时指定tunnel-server地址">3. 客户端启动时指定tunnel server地址</h5>
 <p>客户端安装jdk并且下载arthas-boot.jar，然后启动</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>/apply//jdk1.8.0_241/bin/java -jar /apply//arthas-boot.jar --tunnel-server <span style="color:#d14">&#39;ws://ip或者域名地址:7777/ws&#39;</span>
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/apply//jdk1.8.0_241/bin/java -jar /apply//arthas-boot.jar --tunnel-server <span style="color:#d14">&#39;ws://ip或者域名地址:7777/ws&#39;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>上面的命令会打印出一个AgentId，浏览器访问 相应的7777端口填入即可连接。</p>
 
@@ -367,7 +367,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -447,6 +447,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -457,11 +459,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -489,6 +493,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -496,9 +502,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -516,7 +524,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

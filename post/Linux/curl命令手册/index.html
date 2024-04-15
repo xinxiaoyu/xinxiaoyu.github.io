@@ -233,15 +233,15 @@
         
         
         <div class="post-content">
-            <pre tabindex="0"><code>curl --location --request GET &#39;https://test.abc.com/v1/health&#39; --header &#39;Authorization: Apikey 20220602&#39;
+            <pre><code>curl --location --request GET 'https://test.abc.com/v1/health' --header 'Authorization: Apikey 20220602'
 
--H &#34;Content-Type: application/json&#34;
+-H &quot;Content-Type: application/json&quot;
 
--d &#34;{ \&#34;claimStatus\&#34;: 0, \&#34;lastBillMonth\&#34;: 202208, \&#34;occurDateTime\&#34;: \&#34;2022-09-01 00:00:00\&#34;}&#34;
+-d &quot;{ \&quot;claimStatus\&quot;: 0, \&quot;lastBillMonth\&quot;: 202208, \&quot;occurDateTime\&quot;: \&quot;2022-09-01 00:00:00\&quot;}&quot;
 
-curl -k --resolve foo.bar:443:127.0.0.1 &#39;https://foo.bar/foobar&#39; -v -so /dev/null -w &#39;%{size_download}&#39; 
+curl -k --resolve foo.bar:443:127.0.0.1 'https://foo.bar/foobar' -v -so /dev/null -w '%{size_download}' 
 
-curl -H &#39;Host: web-host&#39; http://192.168.1.100
+curl -H 'Host: web-host' http://192.168.1.100
 
 curl $KUBE_API/apis/apps/v1/deployments \
   --cacert ~/.minikube/ca.crt \
@@ -251,19 +251,20 @@ curl $KUBE_API/apis/apps/v1/deployments \
 
 for i in `cat url.txt`
 do
-    code=`curl -o /dev/null -s -w &#34;%{http_code}&#34; $i`
+    code=`curl -o /dev/null -s -w &quot;%{http_code}&quot; $i`
     if [ $code != 200 ];then
-        curl -H &#34;Content-Type: application/json;charset=utf-8&#34; \
-             -d &#34;{&#39;msgtype&#39;: &#39;text&#39;,&#39;text&#39;: {&#39;content&#39;: $i, &#39;预发环境: 地址异常&#39;}}&#34; \
+        curl -H &quot;Content-Type: application/json;charset=utf-8&quot; \
+             -d &quot;{'msgtype': 'text','text': {'content': $i, '预发环境: 地址异常'}}&quot; \
              https://oapi.dingtalk.com/robot/send?access_token=15026b8e5b68ec
     fi
 done
 
-curl --insecure https://www.example.com -H &#39;X-Forwarded-For: 1.1.1.1&#39;
+curl --insecure https://www.example.com -H 'X-Forwarded-For: 1.1.1.1'
 
-curl --user &#34;gwy:Q1&#34; guowy-cloud-eureka-server-0.eureka-headless.default.svc.cluster.local:8080
+curl --user &quot;gwy:Q1&quot; guowy-cloud-eureka-server-0.eureka-headless.default.svc.cluster.local:8080
 curl -u guowy: -X POST http://pre-prometheus..com/-/reload
-</code></pre>
+</code></pre><p>curl -L -w &ldquo;namelookup: %{time_namelookup}\nconnect: %{time_connect}\nappconnect: %{time_appconnect}\npretransfer: %{time_pretransfer}\nstarttransfer: %{time_starttransfer}\ntotal: %{time_total}\n&rdquo; <a href="https://example.com/">https://example.com/</a></p>
+
         </div>
 
         
@@ -329,7 +330,7 @@ curl -u guowy: -X POST http://pre-prometheus..com/-/reload
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -409,6 +410,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -419,11 +422,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -451,6 +456,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -458,9 +465,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -478,7 +487,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

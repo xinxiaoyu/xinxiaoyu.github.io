@@ -245,7 +245,7 @@
         
         <div class="post-content">
             <h3 id="一-全局权限作用于整个-mysql-实例mysqluser表">一、 全局权限,作用于整个 MySQL 实例：mysql.user表</h3>
-<pre tabindex="0"><code>mysql&gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user;
+<pre><code>mysql&gt; select Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv , Drop_priv from mysql.user;
 +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+
 | Host        | User             | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv |
 +-------------+------------------+-------------+-------------+-------------+-------------+-------------+-----------+
@@ -259,7 +259,7 @@
 6 rows in set (0.00 sec)
 </code></pre><h3 id="二-库级别的权限定义mysqldb表">二、 库级别的权限定义：mysql.db表</h3>
 <p>某个账号对某个库所拥有的权限，如下第一行结果表示用户&rsquo;lang&rsquo;对库&rsquo;lang_test&rsquo;所拥有的权限</p>
-<pre tabindex="0"><code>mysql&gt; select Host, Db,User, Select_priv,Insert_priv,Update_priv,Delete_priv from mysql.db;
+<pre><code>mysql&gt; select Host, Db,User, Select_priv,Insert_priv,Update_priv,Delete_priv from mysql.db;
 +-----------+--------------------+---------------+-------------+-------------+-------------+-------------+
 | Host      | Db                 | User          | Select_priv | Insert_priv | Update_priv | Delete_priv |
 +-----------+--------------------+---------------+-------------+-------------+-------------+-------------+
@@ -270,7 +270,7 @@
 3 rows in set (0.00 sec)
 </code></pre><h3 id="三-更细粒度的权限mysqltables_priv表权限mysqlcolumns_priv列权限">三、 更细粒度的权限：mysql.tables_priv（表权限）、mysql.columns_priv（列权限）</h3>
 <p>如下结果表示用户&rsquo;lang&rsquo;对t、t2表所有拥有的表权限（包括列权限）</p>
-<pre tabindex="0"><code>mysql&gt; select Host, Db, User, Table_name,Table_priv,Column_priv from mysql.tables_priv where User=&#39;lang&#39;;
+<pre><code>mysql&gt; select Host, Db, User, Table_name,Table_priv,Column_priv from mysql.tables_priv where User='lang';
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
 | Host | Db        | User | Table_name | Table_priv                                                                                         | Column_priv   |
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
@@ -280,7 +280,7 @@
 +------+-----------+------+------------+----------------------------------------------------------------------------------------------------+---------------+
 2 rows in set (0.00 sec)
 </code></pre><p>查看详细的列权限</p>
-<pre tabindex="0"><code>mysql&gt; select * from mysql.columns_priv;
+<pre><code>mysql&gt; select * from mysql.columns_priv;
 +------+-----------+------+------------+-------------+---------------------+---------------+
 | Host | Db        | User | Table_name | Column_name | Timestamp           | Column_priv   |
 +------+-----------+------+------------+-------------+---------------------+---------------+
@@ -290,16 +290,16 @@
 2 rows in set (0.00 sec)
 </code></pre><h3 id="四-授权操作">四、 授权操作：</h3>
 <p>1、 创建相应账号</p>
-<pre tabindex="0"><code>create user &#39;username1&#39;@&#39;%&#39; identified by &#39;passwd&#39;;
+<pre><code>create user 'username1'@'%' identified by 'passwd';
 </code></pre><p>2、 赋予权限</p>
-<pre tabindex="0"><code>所有库、表的全部权限
-grant all privileges on *.* to &#39;username1&#39;@&#39;%&#39; with grant option;
+<pre><code>所有库、表的全部权限
+grant all privileges on *.* to 'username1'@'%' with grant option;
 
 某个库某个表的全部权限
-grant all privileges on lang_test.t to &#39;username1&#39;@&#39;%&#39; with grant option;
+grant all privileges on lang_test.t to 'username1'@'%' with grant option;
 
 某个库某个表的读、插入、更新、删除权限
-grant select,insert,update,delete on lang_test.t to &#39;username1&#39;@&#39;%&#39; with grant option;
+grant select,insert,update,delete on lang_test.t to 'username1'@'%' with grant option;
 
 创建表t
 CREATE TABLE `lang_test`.`t` (
@@ -311,7 +311,7 @@ CREATE TABLE `lang_test`.`t` (
 ) ENGINE=InnoDB;
 
 某个表的某些列的权限
-GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO &#39;lang&#39;@&#39;%&#39; with grant option;
+GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO 'lang'@'%' with grant option;
 </code></pre><p>grant的具体权限官网地址：https://dev.mysql.com/doc/refman/5.7/en/grant.html</p>
 
         </div>
@@ -334,6 +334,8 @@ GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO &#39;lang&#39;@&#39;%&#39; with
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/Kubernetes/podtemplate/">Deployment yaml模板</a></li>
+        
         <li><a href="/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/">Pod探针</a></li>
         
         <li><a href="/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/">Python的selenium库使用汇总</a></li>
@@ -341,8 +343,6 @@ GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO &#39;lang&#39;@&#39;%&#39; with
         <li><a href="/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/">Docker镜像清理</a></li>
         
         <li><a href="/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/">Hugo使用</a></li>
-        
-        <li><a href="/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/">腾讯云Mysql物理备份恢复数据库</a></li>
         
     </ul>
 </div>
@@ -379,7 +379,7 @@ GRANT SELECT(id), INSERT(id,c) ON lang_test.t TO &#39;lang&#39;@&#39;%&#39; with
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -459,6 +459,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -469,11 +471,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -501,6 +505,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -508,9 +514,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -528,7 +536,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

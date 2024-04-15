@@ -237,31 +237,31 @@
         <div class="post-content">
             <p>zabbix端item某项出现Value should be a JSON object错误。</p>
 <p>明显数据格式错误，在zabbix server上进行get测试。</p>
-<pre tabindex="0"><code>[root@ops-zabbix-server~]# /usr/local/zabbix/bin/zabbix_get -s 192.168.2.7 -p 10050 -k &#34;ipmi.dev[discovery,cpu]&#34;
+<pre><code>[root@ops-zabbix-server~]# /usr/local/zabbix/bin/zabbix_get -s 192.168.2.7 -p 10050 -k &quot;ipmi.dev[discovery,cpu]&quot;
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
 Get Device ID command failed
 Unable to open SDR for reading
 {
-	&#34;data&#34;:[
+	&quot;data&quot;:[
 	 ]
 }
 </code></pre><p>如上，原来是获取数据出错。但是在agent端上获取数据是没有问题的。</p>
-<pre tabindex="0"><code>[root@xenserver-gmkyokmz bin]# ./ipmi.sh discovery cpu
+<pre><code>[root@xenserver-gmkyokmz bin]# ./ipmi.sh discovery cpu
 {
-	&#34;data&#34;:[
+	&quot;data&quot;:[
 	 {
-			&#34;{#DEV}&#34;:&#34;CPU1&#34;},
+			&quot;{#DEV}&quot;:&quot;CPU1&quot;},
 	 {
-			&#34;{#DEV}&#34;:&#34;CPU2&#34;}
+			&quot;{#DEV}&quot;:&quot;CPU2&quot;}
 	 ]
 }
 </code></pre><p>并且相应的modprobe模块已经加载。经过多次搜索，无果。</p>
 <p>后来仔细查看错误，发现Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory这个可能是权限问题导致的。查看此文件权限为
 crw&mdash;&mdash;- 1 root root 245, 0 Feb 14  2019 /dev/ipmi0
 明显权限root所有，再查看zabbix运行用户</p>
-<pre tabindex="0"><code>[root@xenserver-adgvucvt ~]# ps -ef|grep zabbix
+<pre><code>[root@xenserver-adgvucvt ~]# ps -ef|grep zabbix
 zabbix     912     1  0 10:29 ?        00:00:00 /usr/local/zabbix/sbin/zabbix_agentd
 zabbix     914   912  0 10:29 ?        00:00:43 /usr/local/zabbix/sbin/zabbix_agentd: collector [idle 1 sec]
 zabbix     915   912  0 10:29 ?        00:00:05 /usr/local/zabbix/sbin/zabbix_agentd: listener #1 [waiting for connection]
@@ -269,13 +269,13 @@ zabbix     916   912  0 10:29 ?        00:00:04 /usr/local/zabbix/sbin/zabbix_ag
 zabbix     917   912  0 10:29 ?        00:00:05 /usr/local/zabbix/sbin/zabbix_agentd: listener #3 [waiting for connection]
 zabbix     918   912  0 10:29 ?        00:00:28 /usr/local/zabbix/sbin/zabbix_agentd: active checks #1 [idle 1 sec]
 </code></pre><p>手动尝试给/dev/ipmi0增加权限777，然后测试就正常了。</p>
-<pre tabindex="0"><code>[root@xenserver-gmkyokmz bin]# /usr/local/zabbix/bin/zabbix_get -s 127.0.0.1 -p 10050 -k &#34;ipmi.dev[discovery,cpu]&#34;
+<pre><code>[root@xenserver-gmkyokmz bin]# /usr/local/zabbix/bin/zabbix_get -s 127.0.0.1 -p 10050 -k &quot;ipmi.dev[discovery,cpu]&quot;
 {
-	&#34;data&#34;:[
+	&quot;data&quot;:[
 	 {
-			&#34;{#DEV}&#34;:&#34;CPU1&#34;},
+			&quot;{#DEV}&quot;:&quot;CPU1&quot;},
 	 {
-			&#34;{#DEV}&#34;:&#34;CPU2&#34;}
+			&quot;{#DEV}&quot;:&quot;CPU2&quot;}
 	 ]
 }
 </code></pre><p>这两天搞zabbix监控，又学了不少东西啊。</p>
@@ -345,7 +345,7 @@ zabbix     918   912  0 10:29 ?        00:00:28 /usr/local/zabbix/sbin/zabbix_ag
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -425,6 +425,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -435,11 +437,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -467,6 +471,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -474,9 +480,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -494,7 +502,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

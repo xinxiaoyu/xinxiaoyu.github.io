@@ -236,27 +236,27 @@
             <p>replication with binary log file</p>
 <p>Master端：
 A、  在my.cnf中开启二进制日志、设置server-id（需要唯一），然后保存重启mysqld服务。</p>
-<pre tabindex="0"><code>log-bin=mysql-bin
+<pre><code>log-bin=mysql-bin
 server-id=1
 </code></pre><p>B、 创建主从复制所需的账号</p>
-<pre tabindex="0"><code>CREATE USER &#39;repl&#39;@&#39;%&#39; IDENTIFIED BY &#39;123qweASD!@#&#39;;
-GRANT REPLICATION SLAVE ON *.* TO &#39;repl&#39;@&#39;%&#39;;
+<pre><code>CREATE USER 'repl'@'%' IDENTIFIED BY '123qweASD!@#';
+GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
 </code></pre><p>C、 show master status查看File和Position</p>
-<pre tabindex="0"><code>show master status;
+<pre><code>show master status;
 </code></pre><p>SLAVE端：</p>
 <p>A、 在my.cnf中设置server-id，保存重启。
 <code>server_id=2</code>
 B、 设置主服务器配置。</p>
-<pre tabindex="0"><code>CHANGE MASTER TO
-    -&gt; MASTER_HOST=&#39;192.168.1.121&#39;,
-    -&gt; MASTER_USER=&#39;repl&#39;,
-    -&gt; MASTER_PASSWORD=&#39;123qweASD!@#&#39;,
-    -&gt; MASTER_LOG_FILE=&#39;master1-bin.000001&#39;,
+<pre><code>CHANGE MASTER TO
+    -&gt; MASTER_HOST='192.168.1.121',
+    -&gt; MASTER_USER='repl',
+    -&gt; MASTER_PASSWORD='123qweASD!@#',
+    -&gt; MASTER_LOG_FILE='master1-bin.000001',
     -&gt; MASTER_LOG_POS=245;
 </code></pre><p>C、 开启slave线程
 <code>start slave;</code>
 通过show slave status\G;查看同步状态。</p>
-<pre tabindex="0"><code>mysql&gt; show slave status\G;
+<pre><code>mysql&gt; show slave status\G;
 *************************** 1. row ********************
                Slave_IO_State: 
                   Master_Host: 192.168.1.115
@@ -327,9 +327,9 @@ Master_SSL_Verify_Server_Cert: No
         
         <li><a href="/post/Linux/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/">Linux系统安全设置</a></li>
         
-        <li><a href="/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/">curl命令手册</a></li>
-        
         <li><a href="/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Awk常用命令</a></li>
+        
+        <li><a href="/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/">curl命令手册</a></li>
         
         <li><a href="/post/Redis/Redis%E5%AF%BC%E5%85%A5rdb%E6%96%87%E4%BB%B6/">Redis导入rdb文件</a></li>
         
@@ -370,7 +370,7 @@ Master_SSL_Verify_Server_Cert: No
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -450,6 +450,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -460,11 +462,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -492,6 +496,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -499,9 +505,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -519,7 +527,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

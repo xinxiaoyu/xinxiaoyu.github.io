@@ -235,7 +235,7 @@
         <div class="post-content">
             <p>hugo建站工具通过github action自动发布到github page.</p>
 <p>官方参考地址： <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
-<pre tabindex="0"><code>name: github pages
+<pre><code>name: github pages
 
 on:
   push:
@@ -255,7 +255,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: &#39;latest&#39;
+          hugo-version: 'latest'
           # extended: true
 
       - name: Build
@@ -266,7 +266,7 @@ jobs:
 
       - name: deploy
         working-directory: ./xinxiaoyu.github.io
-        run: git config --global user.email &#34;denifears@gmail.com&#34; &amp;&amp; git config --global user.name &#34;xinxiaoyu&#34; &amp;&amp; git add * &amp;&amp; git commit -m &#34;123&#34; &amp;&amp; git remote set-url origin https://xinxiaoyu:${{ secrets.ACCESS_TOKEN }}@github.com/xinxiaoyu/xinxiaoyu.github.io.git &amp;&amp; git push
+        run: git config --global user.email &quot;denifears@gmail.com&quot; &amp;&amp; git config --global user.name &quot;xinxiaoyu&quot; &amp;&amp; git add * &amp;&amp; git commit -m &quot;123&quot; &amp;&amp; git remote set-url origin https://xinxiaoyu:${{ secrets.ACCESS_TOKEN }}@github.com/xinxiaoyu/xinxiaoyu.github.io.git &amp;&amp; git push
 </code></pre>
         </div>
 
@@ -333,7 +333,7 @@ jobs:
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -413,6 +413,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -423,11 +425,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -455,6 +459,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -462,9 +468,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -482,7 +490,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

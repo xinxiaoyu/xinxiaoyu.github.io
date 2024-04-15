@@ -121,7 +121,7 @@
       <pubDate>Wed, 14 Jul 2021 14:10:24 +0800</pubDate>
       
       <guid>https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</guid>
-      <description>一、 阿里云oss权限自定义策略 { &amp;#34;Version&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;Statement&amp;#34;: [</description>
+      <description>一、 阿里云oss权限自定义策略 { &amp;quot;Version&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;Statement&amp;quot;: [</description>
     </item>
     
     <item>
@@ -203,6 +203,15 @@
       
       <guid>https://xinxiaoyu.github.io/post/MySQL/mysql_privileges/</guid>
       <description>一、 全局权限,作用于整个 MySQL 实例：mysq</description>
+    </item>
+    
+    <item>
+      <title>Deployment yaml模板</title>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/podtemplate/</link>
+      <pubDate>Sat, 22 May 2021 19:48:19 +0800</pubDate>
+      
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/podtemplate/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>

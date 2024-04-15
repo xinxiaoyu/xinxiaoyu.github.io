@@ -230,65 +230,65 @@
         
         <div class="post-content">
             <p>如下pipeline可以指定github仓库的分支和tag(使用git参数，插件地址 <a href="https://plugins.jenkins.io/git-parameter/">https://plugins.jenkins.io/git-parameter/</a>)</p>
-<pre tabindex="0"><code class="language-pipeline" data-lang="pipeline">pipeline {
+<pre><code class="language-pipeline" data-lang="pipeline">pipeline {
     agent any
     parameters {
-        gitParameter name: &#39;BRANCH_TAG&#39;, 
-                     type: &#39;PT_BRANCH_TAG&#39;,
-                     branchFilter: &#39;origin/(.*)&#39;,
-                     defaultValue: &#39;main&#39;,
-                     selectedValue: &#39;DEFAULT&#39;,
-                     sortMode: &#39;DESCENDING_SMART&#39;,
-					 description: &#39;Select your branch or tag.&#39;
+        gitParameter name: 'BRANCH_TAG', 
+                     type: 'PT_BRANCH_TAG',
+                     branchFilter: 'origin/(.*)',
+                     defaultValue: 'main',
+                     selectedValue: 'DEFAULT',
+                     sortMode: 'DESCENDING_SMART',
+					 description: 'Select your branch or tag.'
     }
     stages {
-        stage(&#39;Example&#39;) {
+        stage('Example') {
             steps {
-                checkout([$class: &#39;GitSCM&#39;,
-                          branches: [[name: &#34;${params.BRANCH_TAG}&#34;]],
+                checkout([$class: 'GitSCM',
+                          branches: [[name: &quot;${params.BRANCH_TAG}&quot;]],
                           doGenerateSubmoduleConfigurations: false,
                           extensions: [],
-                          gitTool: &#39;Default&#39;,
+                          gitTool: 'Default',
                           submoduleCfg: [],
-                          userRemoteConfigs: [[url: &#39;https://github.com/xinxiaoyu/test_git.git&#39;, credentialsId: &#39;&#39;,]]
+                          userRemoteConfigs: [[url: 'https://github.com/xinxiaoyu/test_git.git', credentialsId: '',]]
                         ])
             }
         }
     }
 }
-</code></pre><p>这个时候工作是正常的，分支和tag会对应显示test_git仓库。但是如果在第一行加入共享库&rsquo;@Library(&lsquo;pipeline-library&rsquo;) _&lsquo;则会显示共享库的分支tag，这显然冲突了。
+</code></pre><p>这个时候工作是正常的，分支和tag会对应显示test_git仓库。但是如果在第一行加入共享库'@Library(&lsquo;pipeline-library&rsquo;) _&lsquo;则会显示共享库的分支tag，这显然冲突了。
 可以用list git braches parameter插件(地址 <a href="https://plugins.jenkins.io/list-git-branches-parameter/">https://plugins.jenkins.io/list-git-branches-parameter/</a> )</p>
-<pre tabindex="0"><code class="language-pipeline" data-lang="pipeline">@Library(&#39;pipeline-library&#39;) _
+<pre><code class="language-pipeline" data-lang="pipeline">@Library('pipeline-library') _
 
 pipeline {
     agent any
 
     environment {
-        GITLAB_CREDENTIAL_ID = &#39;&#39;
-        GITLAB_URL = &#39;https://github.com/xinxiaoyu/test_git.git&#39;
-        web_site = &#39;xinxiaoyu.github.io&#39;
-        BRANCH = &#39;main&#39;
+        GITLAB_CREDENTIAL_ID = ''
+        GITLAB_URL = 'https://github.com/xinxiaoyu/test_git.git'
+        web_site = 'xinxiaoyu.github.io'
+        BRANCH = 'main'
     }
 
     parameters {
-       listGitBranches branchFilter: &#39;refs/heads/(.*)&#39;,
-            defaultValue: &#39;main&#39;,
-            name: &#39;BRANCH_TAG&#39;,
-            type: &#39;PT_BRANCH_TAG&#39;,  // PT_BRANCH, PT_TAG
-            remoteURL: &#39;https://github.com/xinxiaoyu/test_git.git&#39;,
-            credentialsId: &#39;&#39;,
-            selectedValue: &#39;DEFAULT&#39;,
-            sortMode: &#39;ASCENDING&#39;,
+       listGitBranches branchFilter: 'refs/heads/(.*)',
+            defaultValue: 'main',
+            name: 'BRANCH_TAG',
+            type: 'PT_BRANCH_TAG',  // PT_BRANCH, PT_TAG
+            remoteURL: 'https://github.com/xinxiaoyu/test_git.git',
+            credentialsId: '',
+            selectedValue: 'DEFAULT',
+            sortMode: 'ASCENDING',
             quickFilterEnabled: true
     }
     stages {
-        stage (&#39;Checkout&#39;) {
+        stage ('Checkout') {
             steps {
-                git(credentialsId: &#34;${env.GITLAB_CREDENTIAL_ID}&#34;, url: &#34;${env.GITLAB_URL}&#34;, branch: &#34;${env.BRANCH_TAG}&#34;, changelog: true, poll: false)
+                git(credentialsId: &quot;${env.GITLAB_CREDENTIAL_ID}&quot;, url: &quot;${env.GITLAB_URL}&quot;, branch: &quot;${env.BRANCH_TAG}&quot;, changelog: true, poll: false)
             }
         }
 
-        stage(&#39;library test&#39;) {
+        stage('library test') {
             steps {
                 getCode()
             }
@@ -325,7 +325,7 @@ pipeline {
         
         <li><a href="/post/Linux/inotify_rsync/">Inotify_rsync_unison使用记录</a></li>
         
-        <li><a href="/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/">clickhouse容器部署</a></li>
+        <li><a href="/post/InterviewQuestions/%E8%BF%90%E7%BB%B4%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/">运维常见的一些技术问题</a></li>
         
     </ul>
 </div>
@@ -362,7 +362,7 @@ pipeline {
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -442,6 +442,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -452,11 +454,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -484,6 +488,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -491,9 +497,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -511,7 +519,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

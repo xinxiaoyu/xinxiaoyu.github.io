@@ -252,25 +252,25 @@
 <ol>
 <li>下载备份文件</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SHELL" data-lang="SHELL"><span style="display:flex;"><span>wget 命令格式：wget -c <span style="color:#d14">&#39;备份文件下载地址&#39;</span> -O 自定义文件名.xb
-</span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SHELL" data-lang="SHELL">wget 命令格式：wget -c <span style="color:#d14">&#39;备份文件下载地址&#39;</span> -O 自定义文件名.xb
+</code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>解包备份文件
 使用 xbstream 命令将备份文件解包到目标目录。</li>
 </ol>
-<pre tabindex="0"><code>mkdir /data
+<pre><code>mkdir /data
 xbstream -x -C /data &lt; /data/test.xb
 </code></pre><ol start="3">
 <li>解压备份文件
 通过如下命令下载 qpress 工具。</li>
 </ol>
-<pre tabindex="0"><code>wget http://www.quicklz.com/qpress-11-linux-x64.tar
+<pre><code>wget http://www.quicklz.com/qpress-11-linux-x64.tar
 
 说明：
 若 wget 下载提示错误，您可至 quicklz 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 通过 SCP 上传文件到 Linux 云服务器。
@@ -288,7 +288,7 @@ xtrabackup --decompress --target-dir=/data
 </code></pre><ol start="4">
 <li>修改配置文件,执行如下命令打开backup-my.cnf文件。</li>
 </ol>
-<pre tabindex="0"><code>vi /data/backup-my.cnf
+<pre><code>vi /data/backup-my.cnf
 说明：
 本文以目标目录/data为例，您可以根据实际情况将其替换成实际路径。
 
@@ -309,17 +309,17 @@ redo_log_version
 修改文件属性，并检查文件所属为 mysql 用户。</p>
 </li>
 </ol>
-<pre tabindex="0"><code>chown -R mysql:mysql /data  
+<pre><code>chown -R mysql:mysql /data  
 </code></pre><ol start="3">
 <li>启动 mysqld 进程。</li>
 </ol>
-<pre tabindex="0"><code>mysqld_safe --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data &amp;
+<pre><code>mysqld_safe --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data &amp;
 或者
 mysqld --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data
 </code></pre><ol start="4">
 <li>客户端登录 mysql 验证。</li>
 </ol>
-<pre tabindex="0"><code>mysql  -uroot
+<pre><code>mysql  -uroot
 </code></pre><h3 id="此时物理备份全量备份恢复完成下面为binlog的恢复过程同样在mysql-server上操作">此时物理备份（全量备份）恢复完成，下面为binlog的恢复过程，同样在MySQL server上操作。</h3>
 <p>注意：本机的当前时间必须对的。</p>
 <ol>
@@ -329,8 +329,8 @@ mysqld --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data
 <p>下载相应的两个binlog文件mysql-01.bin、mysql-02.bin。</p>
 </li>
 </ol>
-<pre tabindex="0"><code>wget &#39;https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000088.bin&#39; -O mysql-01.bin
-wget &#39;https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000089.bin&#39; -O mysql-02.bin
+<pre><code>wget 'https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000088.bin' -O mysql-01.bin
+wget 'https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqcloud.com/mysql-0000089.bin' -O mysql-02.bin
 </code></pre><ol start="2">
 <li>
 <p>找出mysql-01.bin的时间点为3（如2021-04-20 07:19:56）的后边的日志</p>
@@ -338,15 +338,15 @@ wget &#39;https://mysql-database-backup-sh-local-1256569818.cos.ap-shanghai.myqc
 <p>然后恢复出相应的sql</p>
 </li>
 </ol>
-<pre tabindex="0"><code>mysqlbinlog mysql-01.bin --start-datetime=&#39;2021-04-20 07:19:56&#39; &gt; /root/mysql-01.sql
+<pre><code>mysqlbinlog mysql-01.bin --start-datetime='2021-04-20 07:19:56' &gt; /root/mysql-01.sql
 mysqlbinlog mysql-02.bin --stop-position=97355093 &gt; /root/97355093.sql
 </code></pre><pre><code>将binlog转为可读的sql的命令为
 </code></pre>
-<pre tabindex="0"><code>mysqlbinlog --base64-output=DECODE-ROWS -v mysql-01.bin &gt; mysql-01-bin.sql
+<pre><code>mysqlbinlog --base64-output=DECODE-ROWS -v mysql-01.bin &gt; mysql-01-bin.sql
 </code></pre><ol start="3">
 <li>登陆数据库恢复</li>
 </ol>
-<pre tabindex="0"><code>mysql -uroot
+<pre><code>mysql -uroot
 &gt; source /root/mysql-01.sql
 &gt; source /root/97355093.sql
 </code></pre>
@@ -415,7 +415,7 @@ mysqlbinlog mysql-02.bin --stop-position=97355093 &gt; /root/97355093.sql
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -495,6 +495,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -505,11 +507,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -537,6 +541,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -544,9 +550,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -564,7 +572,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

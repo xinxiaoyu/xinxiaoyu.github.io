@@ -6,7 +6,16 @@
     <description>Recent content in Kubernetes on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Jul 2021 13:39:58 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Apr 2024 14:06:48 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>k8s中yaml一些常用的字段写法</title>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/k8s%E4%B8%ADyaml%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E6%AE%B5/</link>
+      <pubDate>Sun, 07 Apr 2024 14:06:48 +0800</pubDate>
+      
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/k8s%E4%B8%ADyaml%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E6%AE%B5/</guid>
+      <description>1、 HostAliases：定义了 Pod 的 hosts</description>
+    </item>
+    
     <item>
       <title>Prometheus标签的增删改</title>
       <link>https://xinxiaoyu.github.io/post/Kubernetes/prometheus_label/</link>
@@ -23,6 +32,15 @@
       
       <guid>https://xinxiaoyu.github.io/post/Kubernetes/spinnaker_deployment_error/</guid>
       <description>腾讯云coding平台部署错误 Check that the Docker image</description>
+    </item>
+    
+    <item>
+      <title>Deployment yaml模板</title>
+      <link>https://xinxiaoyu.github.io/post/Kubernetes/podtemplate/</link>
+      <pubDate>Sat, 22 May 2021 19:48:19 +0800</pubDate>
+      
+      <guid>https://xinxiaoyu.github.io/post/Kubernetes/podtemplate/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>

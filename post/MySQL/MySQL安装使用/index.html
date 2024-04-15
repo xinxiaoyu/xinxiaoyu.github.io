@@ -251,23 +251,23 @@
 <h5 id="下载">下载</h5>
 <p>我们进入官方下载页面https://dev.mysql.com/downloads/mysql/，选择MySQL版本和操作系统版本，下载相应的RPM包或者TAR包。因为CentOS是Red Hat的免费衍生版，所以此处可以直接选择Red Hat8的安装包。</p>
 <p>RPM方式安装需要下载如下包文件：</p>
-<pre tabindex="0"><code>mysql-community-server-8.0.21-1.el8.x86_64.rpm
+<pre><code>mysql-community-server-8.0.21-1.el8.x86_64.rpm
 mysql-community-client-8.0.21-1.el8.x86_64.rpm
 mysql-community-common-8.0.21-1.el8.x86_64.rpm
 mysql-community-libs-8.0.21-1.el8.x86_64.rpm
 </code></pre><p>然后使用rpm命令安装（注意依赖关系）：</p>
-<pre tabindex="0"><code>rpm -ivh mysql-community-libs-8.0.21-1.el8.x86_64.rpm \
+<pre><code>rpm -ivh mysql-community-libs-8.0.21-1.el8.x86_64.rpm \
 &gt; mysql-community-common-8.0.21-1.el8.x86_64.rpm \
 &gt; mysql-community-client-8.0.21-1.el8.x86_64.rpm \
 &gt; mysql-community-server-8.0.21-1.el8.x86_64.rpm
 </code></pre><p>这样就安装完成了。然后我们可以执行<code>systemctl start mysqld</code>命令启动服务，通过<code>systemctl status mysqld</code>命令查看服务是否处于运行状态。</p>
 <p>mysql默认使用/etc/my.cnf配置文件，使用TCP3306端口。</p>
 <h5 id="修改密码">修改密码</h5>
-<p>在服务器的初始化启动时，会创建超级用户账户&rsquo;root&rsquo;@&rsquo;localhost&rsquo;。超级用户的密码被设置并存储在日志文件中。要显示它，可以使用以下命令：</p>
-<pre tabindex="0"><code>grep &#39;temporary password&#39; /var/log/mysqld.log
+<p>在服务器的初始化启动时，会创建超级用户账户&rsquo;root'@&lsquo;localhost&rsquo;。超级用户的密码被设置并存储在日志文件中。要显示它，可以使用以下命令：</p>
+<pre><code>grep 'temporary password' /var/log/mysqld.log
 </code></pre><p>然后使用此密码登陆并更改密码：</p>
-<pre tabindex="0"><code>mysql -uroot -p
-ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;MyNewPass4!&#39;;
+<pre><code>mysql -uroot -p
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
 </code></pre><p>注意密码复杂度，要求是大小写字母、数字、特殊符号、至少8位长度。</p>
 <h5 id="客户端工具">客户端工具</h5>
 <p>MySQL的一个客户端是命令行mysql，就是上面的安装包mysql-community-client-8.0.21-1.el8.x86_64.rpm，通过终端shell使用，比如执行<code>mysql -uroot -p</code>命令等。</p>
@@ -348,7 +348,7 @@ ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;MyNewPass4!&#39
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -428,6 +428,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -438,11 +440,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -470,6 +474,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -477,9 +483,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -497,7 +505,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

@@ -237,7 +237,7 @@
 <ol>
 <li>Apache支持SSL证书的话需要mod_ssl模块，可以使用yum安装：</li>
 </ol>
-<pre tabindex="0"><code>
+<pre><code>
 yum install -y mod_ssl
 
 Apache配置文件加载模块指令：
@@ -250,7 +250,7 @@ LoadModule php5_module modules/libphp5.so
 </code></pre><ol start="2">
 <li>Apache加载证书配置</li>
 </ol>
-<pre tabindex="0"><code>###cat /etc/apache2/ports.conf 
+<pre><code>###cat /etc/apache2/ports.conf 
 
 # If you just change the port or add more ports here, you will likely also
 
@@ -299,14 +299,16 @@ Listen 80
     Listen 443
 
 &lt;/IfModule&gt;
+
 </code></pre><ol start="3">
 <li>http强制跳转https</li>
 </ol>
-<pre tabindex="0"><code>RewriteEngine On
+<pre><code>RewriteEngine On
 
 RewriteCond %{HTTPS} off
 
 RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+
 </code></pre><ol start="4">
 <li>重启apache前检测配置文件是否有语法错误</li>
 </ol>
@@ -314,7 +316,7 @@ RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
 <ol start="5">
 <li>开启debug</li>
 </ol>
-<pre tabindex="0"><code>LogLevel debug
+<pre><code>LogLevel debug
 
 
 
@@ -324,7 +326,7 @@ RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
 
 [Mon Oct 28 10:30:39.193539 2019] [mpm_prefork:info] [pid 17193] AH00164: Server built: 2016-07-14T12:32:26
 
-[Mon Oct 28 10:30:39.193550 2019] [core:notice] [pid 17193] AH00094: Command line: &#39;/usr/sbin/apache2&#39;
+[Mon Oct 28 10:30:39.193550 2019] [core:notice] [pid 17193] AH00094: Command line: '/usr/sbin/apache2'
 
 [Mon Oct 28 10:30:39.193555 2019] [core:debug] [pid 17193] log.c(1546): AH02639: Using SO_REUSEPORT: yes (1)
 
@@ -342,15 +344,15 @@ RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
 
 [Mon Oct 28 10:31:07.465114 2019] [ssl:debug] [pid 17274] ssl_engine_init.c(392): AH01893: Configuring TLS extension handling
 
-[Mon Oct 28 10:31:07.465370 2019] [ssl:debug] [pid 17274] ssl_util_ssl.c(443): AH02412: [o.com:443] Cert does not match for name &#39;i.com&#39; [subject: CN=*.benlaiguofang.com,O=\\E4\\B8\\8A\\E6\\B5\\B7\\E6\\9C\\AC\\E6\\9D\\A5\\E6\\9E\\9C\\E5\\9D\\8A\\E7\\A7\\91\\E6\\8A\\80\\E6\\9C\\89\\E9\\99\\90\\E5\\85\\AC\\E5\\8F\\B8,OU=\\E8\\BF\\90\\E7\\BB\\B4\\E9\\83\\A8,L=\\E4\\B8\\8A\\E6\\B5\\B7,ST=\\E4\\B8\\8A\\E6\\B5\\B7,C=CN / issuer: CN=GlobalSign Organization Validation CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE / serial: 0B41D8E98BA927C34F34ED07 / notbefore: Jan  7 07:16:19 2019 GMT / notafter: Mar  2 10:16:01 2021 GMT]
+[Mon Oct 28 10:31:07.465370 2019] [ssl:debug] [pid 17274] ssl_util_ssl.c(443): AH02412: [o.com:443] Cert does not match for name 'i.com' [subject: CN=*.benlaiguofang.com,O=\\E4\\B8\\8A\\E6\\B5\\B7\\E6\\9C\\AC\\E6\\9D\\A5\\E6\\9E\\9C\\E5\\9D\\8A\\E7\\A7\\91\\E6\\8A\\80\\E6\\9C\\89\\E9\\99\\90\\E5\\85\\AC\\E5\\8F\\B8,OU=\\E8\\BF\\90\\E7\\BB\\B4\\E9\\83\\A8,L=\\E4\\B8\\8A\\E6\\B5\\B7,ST=\\E4\\B8\\8A\\E6\\B5\\B7,C=CN / issuer: CN=GlobalSign Organization Validation CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE / serial: 0B41D8E98BA927C34F34ED07 / notbefore: Jan  7 07:16:19 2019 GMT / notafter: Mar  2 10:16:01 2021 GMT]
 
 [Mon Oct 28 10:31:07.465401 2019] [ssl:warn] [pid 17274] AH01909: openplatform.benlai.com:443:0 server certificate does NOT include an ID which matches the server name
 
 [Mon Oct 28 10:31:07.465407 2019] [ssl:info] [pid 17274] AH02568: Certificate and private key openplatform..com:443:0 configured from /etc/ssl/certs/benlai.crt and /etc/ssl/certs/server.key
-</code></pre><ol start="6">
-<li></li>
-</ol>
-<pre tabindex="0"><code>LoadModule ssl_module mods-enabled/mod_ssl.so
+
+
+</code></pre><p>6.</p>
+<pre><code>LoadModule ssl_module mods-enabled/mod_ssl.so
 
 LoadModule rewrite_module mods-enabled/mod_rewrite.so
 
@@ -358,7 +360,7 @@ LoadModule socache_shmcb_module /usr/lib/apache2/modules/mod_socache_shmcb.so
 
 
 
-SSLSessionCache &#34;shmcb:logs/ssl_scache(512000)&#34;
+SSLSessionCache &quot;shmcb:logs/ssl_scache(512000)&quot;
 </code></pre>
         </div>
 
@@ -425,7 +427,7 @@ SSLSessionCache &#34;shmcb:logs/ssl_scache(512000)&#34;
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -505,6 +507,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -515,11 +519,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -547,6 +553,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -554,9 +562,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -574,7 +584,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

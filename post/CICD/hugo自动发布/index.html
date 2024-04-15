@@ -235,71 +235,71 @@
         <div class="post-content">
             <p>hugo自动化发布文章页面</p>
 <p>jenkins pipeline如下:</p>
-<pre tabindex="0"><code class="language-pipeline" data-lang="pipeline">pipeline {
+<pre><code class="language-pipeline" data-lang="pipeline">pipeline {
     agent any
 
     environment {
-        GITLAB_CREDENTIAL_ID = &#39;3581665b-ddfc-4d20-96bd-da85de7809dc&#39;
-        GITLAB_URL = &#39;https://github.com/xinxiaoyu/blog-hugo&#39;
-        CredentialId= &#39;3581665b-ddfc-4d20-96bd-da85de7809dc&#39;
-        PROJECT_NAME = &#39;blog&#39;
-        web_site = &#39;xinxiaoyu.github.io&#39;
-        BRANCH = &#39;main&#39;
+        GITLAB_CREDENTIAL_ID = '3581665b-ddfc-4d20-96bd-da85de7809dc'
+        GITLAB_URL = 'https://github.com/xinxiaoyu/blog-hugo'
+        CredentialId= '3581665b-ddfc-4d20-96bd-da85de7809dc'
+        PROJECT_NAME = 'blog'
+        web_site = 'xinxiaoyu.github.io'
+        BRANCH = 'main'
     }
 
     parameters {
 
         // List Git Branches Parameter PlugIn
-        listGitBranches branchFilter: &#39;refs/heads/(.*)&#39;,
-            defaultValue: &#39;main&#39;,
-            name: &#39;BRANCH&#39;,
-            type: &#39;PT_BRANCH&#39;,
-            remoteURL: &#34;https://github.com/xinxiaoyu/blog-hugo.git&#34;,
-            credentialsId: &#39;3581665b-ddfc-4d20-96bd-da85de7809dc&#39;,
-            selectedValue: &#39;DEFAULT&#39;,
-            sortMode: &#39;ASCENDING&#39;,
+        listGitBranches branchFilter: 'refs/heads/(.*)',
+            defaultValue: 'main',
+            name: 'BRANCH',
+            type: 'PT_BRANCH',
+            remoteURL: &quot;https://github.com/xinxiaoyu/blog-hugo.git&quot;,
+            credentialsId: '3581665b-ddfc-4d20-96bd-da85de7809dc',
+            selectedValue: 'DEFAULT',
+            sortMode: 'ASCENDING',
             quickFilterEnabled: true
     }
 
     stages {
-        stage (&#39;Checkout&#39;) {
+        stage ('Checkout') {
             steps {
-                git(credentialsId: &#34;${env.CredentialId}&#34;, url: &#34;${env.GITLAB_URL}.git&#34;, branch: &#34;${env.BRANCH}&#34;, changelog: true, poll: false)
+                git(credentialsId: &quot;${env.CredentialId}&quot;, url: &quot;${env.GITLAB_URL}.git&quot;, branch: &quot;${env.BRANCH}&quot;, changelog: true, poll: false)
             }
         }
 
-        stage(&#39;Build&#39;) {
+        stage('Build') {
             steps {
-                echo &#39;Building...&#39;
+                echo 'Building...'
 
-                sh &#34;chmod 777 ./${env.PROJECT_NAME}&#34;
+                sh &quot;chmod 777 ./${env.PROJECT_NAME}&quot;
 
-                dir(&#34;./${env.PROJECT_NAME}&#34;) {
-                    sh &#39;/usr/bin/hugo&#39;
+                dir(&quot;./${env.PROJECT_NAME}&quot;) {
+                    sh '/usr/bin/hugo'
                 }
             }
         }
 
-        stage(&#39;copy to web&#39;) {
+        stage('copy to web') {
             steps {
-                sh &#39;[ -d &#34;xinxiaoyu.github.io&#34; ] &amp;&amp; rm -rf xinxiaoyu.github.io &amp;&amp; echo &#34;done&#34; || echo &#34;not done&#34;&#39;
-                sh &#39;git clone https://github.com/xinxiaoyu/xinxiaoyu.github.io.git&#39;
-                sh &#34;cp -rf ./${env.PROJECT_NAME}/public/* ./xinxiaoyu.github.io/&#34;
+                sh '[ -d &quot;xinxiaoyu.github.io&quot; ] &amp;&amp; rm -rf xinxiaoyu.github.io &amp;&amp; echo &quot;done&quot; || echo &quot;not done&quot;'
+                sh 'git clone https://github.com/xinxiaoyu/xinxiaoyu.github.io.git'
+                sh &quot;cp -rf ./${env.PROJECT_NAME}/public/* ./xinxiaoyu.github.io/&quot;
             }
         }
 
-        stage(&#39;deploy&#39;) {
+        stage('deploy') {
             steps {
-                dir(&#34;./xinxiaoyu.github.io/&#34;) {
-                    sh &#39;ls&#39;
-                    sh &#39;git config --global user.email &#34;1248247511@qq.com&#34;&#39;
-                    sh &#39;git config --global user.name &#34;xinxiaoyu&#34;&#39;
-                    sh &#39;git add *&#39;
-                    sh &#39;git commit -m &#34;123&#34;&#39;
-                    withCredentials([usernamePassword(credentialsId: &#34;${env.CredentialId}&#34;,
-                        usernameVariable: &#39;username&#39;,
-                        passwordVariable: &#39;password&#39;)]){
-                        sh(&#34;git push https://$username:$password@github.com/xinxiaoyu/xinxiaoyu.github.io.git&#34;)
+                dir(&quot;./xinxiaoyu.github.io/&quot;) {
+                    sh 'ls'
+                    sh 'git config --global user.email &quot;1248247511@qq.com&quot;'
+                    sh 'git config --global user.name &quot;xinxiaoyu&quot;'
+                    sh 'git add *'
+                    sh 'git commit -m &quot;123&quot;'
+                    withCredentials([usernamePassword(credentialsId: &quot;${env.CredentialId}&quot;,
+                        usernameVariable: 'username',
+                        passwordVariable: 'password')]){
+                        sh(&quot;git push https://$username:$password@github.com/xinxiaoyu/xinxiaoyu.github.io.git&quot;)
                     }
                 }
             }
@@ -307,6 +307,7 @@
         }
     }
 }
+
 </code></pre>
         </div>
 
@@ -373,7 +374,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -453,6 +454,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -463,11 +466,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -495,6 +500,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -502,9 +509,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -522,7 +531,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

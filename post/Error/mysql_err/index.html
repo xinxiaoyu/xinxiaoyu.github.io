@@ -247,26 +247,26 @@
         
         <div class="post-content">
             <h3 id="001">001</h3>
-<pre tabindex="0"><code>cripts/mysql_install_db –no-defaults –datadir=/mysql/my_cluster/mysqld_data/
+<pre><code>cripts/mysql_install_db –no-defaults –datadir=/mysql/my_cluster/mysqld_data/
 FATAL ERROR: please install the following Perl modules before executing scripts/mysql_install_db:
 Data::Dumper
 
 yum install perl-Data-Dumper.x86_64
 </code></pre><h3 id="002">002</h3>
-<pre tabindex="0"><code>ERROR 2006 (HY000): MySQL server has gone away
+<pre><code>ERROR 2006 (HY000): MySQL server has gone away
 No connection. Trying to reconnect…
 
 set global max_allowed_packet=100M
 将此值设置大些
 </code></pre><h3 id="003">003</h3>
-<pre tabindex="0"><code>[root@localhost ~]# rpm -ivh mysql-community-server-5.7.21-1.el6.x86_64.rpm
+<pre><code>[root@localhost ~]# rpm -ivh mysql-community-server-5.7.21-1.el6.x86_64.rpm
 warning: mysql-community-server-5.7.21-1.el6.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
 error: Failed dependencies:
 libsasl2.so.2()(64bit) is needed by mysql-community-server-5.7.21-1.el6.x86_64
 
 rpm -ivh https://rpmfind.net/linux/Mandriva/devel/cooker/x86_64/media/main/release/lib64sasl2-2.1.25-4-mdv2012.0.x86_64.rpm
 </code></pre><h3 id="004">004</h3>
-<pre tabindex="0"><code>[root@iZm5e3vnh3gtu6fzpvc2ooZ ~]# systemctl restart mysql
+<pre><code>[root@iZm5e3vnh3gtu6fzpvc2ooZ ~]# systemctl restart mysql
 
 Job for mysql.service failed because the control process exited with error code. See “systemctl status mysql.service” and “journalctl -xe” for details.
 [root@iZm5e3vnh3gtu6fzpvc2ooZ ~]# more /var/lib/mysql/iZm5e3vnh3gtu6fzpvc2ooZ.err
@@ -356,7 +356,7 @@ chown mysql.mysql -R /var/lib/mysql
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -436,6 +436,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -446,11 +448,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -478,6 +482,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -485,9 +491,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -505,7 +513,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

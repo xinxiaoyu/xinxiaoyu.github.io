@@ -234,15 +234,15 @@
         
         <div class="post-content">
             <p>一、 阿里云oss权限自定义策略</p>
-<pre tabindex="0"><code>{
-    &#34;Version&#34;: &#34;1&#34;,
-    &#34;Statement&#34;: [
+<pre><code>{
+    &quot;Version&quot;: &quot;1&quot;,
+    &quot;Statement&quot;: [
         {
-            &#34;Effect&#34;: &#34;Allow&#34;,
-            &#34;Action&#34;: &#34;oss:*&#34;,
-            &#34;Resource&#34;: [
-                &#34;acs:oss:*:*:dc-odsopr&#34;,
-                &#34;acs:oss:*:*:dc-odsopr/*&#34;
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: &quot;oss:*&quot;,
+            &quot;Resource&quot;: [
+                &quot;acs:oss:*:*:dc-odsopr&quot;,
+                &quot;acs:oss:*:*:dc-odsopr/*&quot;
             ]
         }
     ]
@@ -250,188 +250,190 @@
 </code></pre><p>二、  dataworks授权文档地址</p>
 <p><a href="https://help.aliyun.com/document_detail/74302.html">https://help.aliyun.com/document_detail/74302.html</a></p>
 <p>三、 日志</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">&#34;Version&#34;: </span><span style="color:#d14">&#34;1&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">&#34;Statement&#34;: </span>[<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#000080">&#34;Effect&#34;: </span><span style="color:#d14">&#34;Allow&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#000080">&#34;Action&#34;: </span>[<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ConsumerGroupHeartBeat&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetAppliedConfigs&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetAppliedMachineGroups&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetChart&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetConfig&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetConsumerGroupCheckPoint&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetCursorOrData&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetDashboard&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetEtlJob&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetEtlMeta&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetExternalStore&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetIndex&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetJob&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetJobSchedule&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogging&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogStore&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogStoreContextLogs&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogStoreHistogram&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogStoreLogs&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetMachineGroup&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetProject&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetSavedSearch&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetShipperConfig&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetShipperStatus&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetShipperTasks&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListConfig&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListConsumerGroup&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListDashboard&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListDomains&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListEtlJob&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListEtlMetaName&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListExternalStore&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListJobs&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListJobSchedules&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListLogStores&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListMachineGroup&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListMachines&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListProject&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListReport&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListSavedSearch&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListShards&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListShipper&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>],<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#000080">&#34;Resource&#34;: </span>[<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#d14">&#34;acs:log:cn-shenzhen:12345:project/k8s/*&#34;</span>,<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>]<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>]<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">&#34;Version&#34;: </span><span style="color:#d14">&#34;1&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">&#34;Statement&#34;: </span>[<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#000080">&#34;Effect&#34;: </span><span style="color:#d14">&#34;Allow&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#000080">&#34;Action&#34;: </span>[<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ConsumerGroupHeartBeat&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetAppliedConfigs&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetAppliedMachineGroups&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetChart&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetConfig&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetConsumerGroupCheckPoint&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetCursorOrData&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetDashboard&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetEtlJob&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetEtlMeta&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetExternalStore&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetIndex&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetJob&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetJobSchedule&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogging&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogStore&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogStoreContextLogs&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogStoreHistogram&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetLogStoreLogs&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetMachineGroup&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetProject&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetSavedSearch&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetShipperConfig&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetShipperStatus&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:GetShipperTasks&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListConfig&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListConsumerGroup&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListDashboard&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListDomains&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListEtlJob&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListEtlMetaName&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListExternalStore&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListJobs&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListJobSchedules&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListLogStores&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListMachineGroup&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListMachines&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListProject&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListReport&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListSavedSearch&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListShards&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;log:ListShipper&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">            </span>],<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#000080">&#34;Resource&#34;: </span>[<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#d14">&#34;acs:log:cn-shenzhen:12345:project/k8s/*&#34;</span>,<span style="color:#bbb">
+</span><span style="color:#bbb">            </span>]<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>]<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>四、 alikafka授权</p>
 <p><a href="https://help.aliyun.com/document_detail/185815.html?spm=a2c6h.12873639.article-detail.7.6df53e6eirsUeA#title-5ku-6sb-npp">https://help.aliyun.com/document_detail/185815.html?spm=a2c6h.12873639.article-detail.7.6df53e6eirsUeA#title-5ku-6sb-npp</a></p>
-<pre tabindex="0"><code>{
-    &#34;Version&#34;: &#34;1&#34;,
-    &#34;Statement&#34;: [
+<pre><code>{
+    &quot;Version&quot;: &quot;1&quot;,
+    &quot;Statement&quot;: [
         {
-            &#34;Action&#34;: [
-              &#34;alikafka:ListInstance&#34;,
-              &#34;alikafka:ListTopic&#34;,
-              &#34;alikafka:CreateTopic&#34;,
-              &#34;alikafka:CreateTopic&#34;,
-              &#34;alikafka:UpdateTopic&#34;,
-              &#34;alikafka:SendMessage&#34;,
-              &#34;alikafka:CreateTopic&#34;,
-              &#34;alikafka:CreateTopic&#34;,
-              &#34;alikafka:CreateTopic&#34;,
-              &#34;alikafka:ListGroup&#34;,
-              &#34;alikafka:QueryMessage&#34;,
-              &#34;alikafka:DownloadMessage&#34;
-              &#34;alikafka:endMessage&#34;,
-              &#34;alikafka:ownloadMessage&#34;,
-              &#34;alikafka:reateMessageSearch&#34;,
-              &#34;alikafka:perateMessageSearch&#34;,
-              &#34;alikafka:istMessageSearch&#34;,
-              &#34;alikafka:eleteMessageSearch&#34;,
-              &#34;alikafka:reateDeployment&#34;,
-              &#34;alikafka:eleteDeployment&#34;,
-              &#34;alikafka:istDeployments&#34;,
-              &#34;alikafka:pdateDeploymentRemark&#34;,
-              &#34;alikafka:etDeploymentLog&#34;,
-              &#34;alikafka:perateDeployment&#34;,
-              &#34;alikafka:reateOtsSinkDeployment&#34;,
-              &#34;alikafka:perateOtsSinkDeployment&#34;,
-              &#34;alikafka:eleteOtsSinkDeployment&#34;,
-              &#34;alikafka:reateAdbSinkDeployment&#34;,
-              &#34;alikafka:perateAdbSinkDeployment&#34;,
-              &#34;alikafka:eleteAdbSinkDeployment&#34;,
-              &#34;alikafka:nableAcl&#34;,
-              &#34;alikafka:reateAcl&#34;,
-              &#34;alikafka:eleteAcl&#34;,
-              &#34;alikafka:istAcl&#34;,
-              &#34;alikafka:reateSaslUser&#34;,
-              &#34;alikafka:eleteSaslUser&#34;,
-              &#34;alikafka:istSaslUser&#34;,
-              &#34;alikafka:reateETLTask&#34;,
-              &#34;alikafka:istETLTask&#34;,
-              &#34;alikafka:eleteETLTask&#34;,
+            &quot;Action&quot;: [
+              &quot;alikafka:ListInstance&quot;,
+              &quot;alikafka:ListTopic&quot;,
+              &quot;alikafka:CreateTopic&quot;,
+              &quot;alikafka:CreateTopic&quot;,
+              &quot;alikafka:UpdateTopic&quot;,
+              &quot;alikafka:SendMessage&quot;,
+              &quot;alikafka:CreateTopic&quot;,
+              &quot;alikafka:CreateTopic&quot;,
+              &quot;alikafka:CreateTopic&quot;,
+              &quot;alikafka:ListGroup&quot;,
+              &quot;alikafka:QueryMessage&quot;,
+              &quot;alikafka:DownloadMessage&quot;
+              &quot;alikafka:endMessage&quot;,
+              &quot;alikafka:ownloadMessage&quot;,
+              &quot;alikafka:reateMessageSearch&quot;,
+              &quot;alikafka:perateMessageSearch&quot;,
+              &quot;alikafka:istMessageSearch&quot;,
+              &quot;alikafka:eleteMessageSearch&quot;,
+              &quot;alikafka:reateDeployment&quot;,
+              &quot;alikafka:eleteDeployment&quot;,
+              &quot;alikafka:istDeployments&quot;,
+              &quot;alikafka:pdateDeploymentRemark&quot;,
+              &quot;alikafka:etDeploymentLog&quot;,
+              &quot;alikafka:perateDeployment&quot;,
+              &quot;alikafka:reateOtsSinkDeployment&quot;,
+              &quot;alikafka:perateOtsSinkDeployment&quot;,
+              &quot;alikafka:eleteOtsSinkDeployment&quot;,
+              &quot;alikafka:reateAdbSinkDeployment&quot;,
+              &quot;alikafka:perateAdbSinkDeployment&quot;,
+              &quot;alikafka:eleteAdbSinkDeployment&quot;,
+              &quot;alikafka:nableAcl&quot;,
+              &quot;alikafka:reateAcl&quot;,
+              &quot;alikafka:eleteAcl&quot;,
+              &quot;alikafka:istAcl&quot;,
+              &quot;alikafka:reateSaslUser&quot;,
+              &quot;alikafka:eleteSaslUser&quot;,
+              &quot;alikafka:istSaslUser&quot;,
+              &quot;alikafka:reateETLTask&quot;,
+              &quot;alikafka:istETLTask&quot;,
+              &quot;alikafka:eleteETLTask&quot;,
                        ],
-            &#34;Resource&#34;: &#34;acs:alikafka:*:*:alikafka_pre-cn-123456&#34;,
-            &#34;Effect&#34;: &#34;Allow&#34;
+            &quot;Resource&quot;: &quot;acs:alikafka:*:*:alikafka_pre-cn-123456&quot;,
+            &quot;Effect&quot;: &quot;Allow&quot;
         }
     ]
 }
+
 </code></pre><p>五、 OSS</p>
-<pre tabindex="0"><code>{
-    &#34;Version&#34;: &#34;1&#34;,
-    &#34;Statement&#34;: [
+<pre><code>{
+    &quot;Version&quot;: &quot;1&quot;,
+    &quot;Statement&quot;: [
         {
-            &#34;Effect&#34;: &#34;Allow&#34;,
-            &#34;Action&#34;: &#34;oss:PutObject&#34;,
-            &#34;Resource&#34;: [
-                &#34;acs:oss:*:*:sz-creative-system-test-public&#34;
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: &quot;oss:PutObject&quot;,
+            &quot;Resource&quot;: [
+                &quot;acs:oss:*:*:sz-creative-system-test-public&quot;
             ]
         }
     ]
 }
+
 </code></pre>
         </div>
 
@@ -498,7 +500,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -578,6 +580,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -588,11 +592,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -620,6 +626,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -627,9 +635,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -647,7 +657,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

@@ -234,7 +234,7 @@
         
         <div class="post-content">
             <p>跨域设置涉及的几个header如下：</p>
-<pre tabindex="0"><code>Access-Control-Allow-Origin:
+<pre><code>Access-Control-Allow-Origin:
 Access-Control-Expose-Headers:
 Access-Control-Max-Age:
 Access-Control-Allow-Credentials: true
@@ -250,22 +250,22 @@ nginx.ingress.kubernetes.io/cors-allow-origin:
 nginx.ingress.kubernetes.io/cors-allow-credentials:
 nginx.ingress.kubernetes.io/cors-max-age:
 </code></pre><p>控制台里一般会打印出跨域的错误信息，如果其中有preflight关键字，一般都是option预检请求</p>
-<pre tabindex="0"><code>login:1 Access to XMLHttpRequest at &#39;https://foo.cn/passport/usersv2/getimagecode&#39; from origin &#39;https://bar.cn&#39; has been blocked by CORS policy: Response to preflight request doesn&#39;t pass access control check: No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource.
+<pre><code>login:1 Access to XMLHttpRequest at 'https://foo.cn/passport/usersv2/getimagecode' from origin 'https://bar.cn' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 </code></pre><p>那么nginx的conf文件配置一般如下：</p>
-<pre tabindex="0"><code>add_header Access-Control-Max-Age 2592000;
+<pre><code>add_header Access-Control-Max-Age 2592000;
 add_header Access-Control-Allow-Origin *;
-add_header Access-Control-Allow-Methods &#39;GET, POST, PUT, HEAD, OPTIONS&#39;;
-add_header Access-Control-Allow-Headers &#39;*&#39;;
+add_header Access-Control-Allow-Methods 'GET, POST, PUT, HEAD, OPTIONS';
+add_header Access-Control-Allow-Headers '*';
 </code></pre><p>nginx ingress注解如下：</p>
-<pre tabindex="0"><code>nginx.ingress.kubernetes.io/cors-allow-methods: &#34;GET, PUT, POST, DELETE, PATCH, OPTIONS&#34;
-nginx.ingress.kubernetes.io/cors-allow-headers: &#34;DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization&#34;
-nginx.ingress.kubernetes.io/cors-expose-headers: &#34;*, X-CustomResponseHeader&#34;
-nginx.ingress.kubernetes.io/cors-allow-origin: &#34;https://origin-site.com:4443, http://origin-site.com, https://example.org:1199&#34;
-nginx.ingress.kubernetes.io/cors-allow-origin: &#34;https://*.origin-site.com:4443, http://*.origin-site.com, https://example.org:1199&#34;
-nginx.ingress.kubernetes.io/cors-allow-credentials: &#34;false&#34;
+<pre><code>nginx.ingress.kubernetes.io/cors-allow-methods: &quot;GET, PUT, POST, DELETE, PATCH, OPTIONS&quot;
+nginx.ingress.kubernetes.io/cors-allow-headers: &quot;DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization&quot;
+nginx.ingress.kubernetes.io/cors-expose-headers: &quot;*, X-CustomResponseHeader&quot;
+nginx.ingress.kubernetes.io/cors-allow-origin: &quot;https://origin-site.com:4443, http://origin-site.com, https://example.org:1199&quot;
+nginx.ingress.kubernetes.io/cors-allow-origin: &quot;https://*.origin-site.com:4443, http://*.origin-site.com, https://example.org:1199&quot;
+nginx.ingress.kubernetes.io/cors-allow-credentials: &quot;false&quot;
 nginx.ingress.kubernetes.io/cors-max-age: 1728000
 </code></pre><p>如果preflight请求中有http cookie，则需要打开credentials开关</p>
-<pre tabindex="0"><code>nginx.ingress.kubernetes.io/enable-cors: &#34;true&#34;
+<pre><code>nginx.ingress.kubernetes.io/enable-cors: &quot;true&quot;
 
 Access-Control-Allow-Credentials: true
 </code></pre><p>跨域相关文档地址：</p>
@@ -337,7 +337,7 @@ Access-Control-Allow-Credentials: true
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -417,6 +417,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -427,11 +429,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -459,6 +463,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -466,9 +472,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -486,7 +494,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>

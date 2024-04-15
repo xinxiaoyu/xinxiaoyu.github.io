@@ -238,19 +238,19 @@ nat较为常用。</p>
 <ol>
 <li>查看服务状态</li>
 </ol>
-<pre tabindex="0"><code>centos6: /etc/init.d/iptables stauts
+<pre><code>centos6: /etc/init.d/iptables stauts
 centos7: systemctl status iptables
 </code></pre><ol start="2">
 <li>列出当前规则</li>
 </ol>
-<pre tabindex="0"><code>iptables -t filter/nat -L -n --line-number（此–line-number会打印出规则序号，便于删除等操作）
+<pre><code>iptables -t filter/nat -L -n --line-number（此–line-number会打印出规则序号，便于删除等操作）
 Chain INPUT (policy DROP)
 num target prot opt source destination
 1 ACCEPT all — 116.228.89.2 0.0.0.0/0
 </code></pre><ol start="3">
 <li>清除filter当前规则，并设置默认规则（先设置默认策略为允许，防止把自己的ssh登录给锁外边）</li>
 </ol>
-<pre tabindex="0"><code>iptables -P INPUT ACCEPT
+<pre><code>iptables -P INPUT ACCEPT
 iptables -F
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
@@ -259,23 +259,25 @@ iptables -P INPUT DROP
 </code></pre><ol start="4">
 <li>给1.1.1.1开放访问80端口和22端口</li>
 </ol>
-<pre tabindex="0"><code>iptables -A INPUT -p tcp --dport 80 -s 1.1.1.1 -j ACCEPT
+<pre><code>iptables -A INPUT -p tcp --dport 80 -s 1.1.1.1 -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -s 1.1.1.1 -j ACCEPT
 </code></pre><ol start="5">
 <li>删除1.1.1.1的访问22端口权限</li>
 </ol>
-<pre tabindex="0"><code>通过iptables -L -n --line-number拿到此条策略的num
+<pre><code>通过iptables -L -n --line-number拿到此条策略的num
 iptables -D INPUT num
 </code></pre><ol start="6">
 <li>通过nat做源地址转换</li>
 </ol>
-<pre tabindex="0"><code>iptables -t nat -A POSTROUTING -s 0.0.0.0 -j SNAT --to-source 103.47.137.73
+<pre><code>iptables -t nat -A POSTROUTING -s 0.0.0.0 -j SNAT --to-source 103.47.137.73
 </code></pre><ol start="7">
 <li>保存规则</li>
 </ol>
-<pre tabindex="0"><code>centos6: /etc/init.d/iptables save
+<pre><code>centos6: /etc/init.d/iptables save
 centos7: iptables-save
-</code></pre>
+</code></pre><p>iptables -t mangle -A PREROUTING -p icmp &ndash;icmp-type echo-reply -m ttl &ndash;ttl-eq 1 -j TTL &ndash;ttl-set 64
+iptables -t mangle -A PREROUTING -m ttl &ndash;ttl-eq 1 -j TTL &ndash;ttl-set 64</p>
+
         </div>
 
         
@@ -341,7 +343,7 @@ centos7: iptables-save
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        &copy; 2024 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
         
     </div>
     <br />
@@ -421,6 +423,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (3)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
@@ -431,11 +435,13 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/InterviewQeustions/">InterviewQeustions (1)</a></li>
+    
     <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (7)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
     
-    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
     
     <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
     
@@ -463,6 +469,8 @@ if (!doNotTrack) {
     
     <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
     
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (1)</a></li>
+    
 </ul>
     </section>
 
@@ -470,9 +478,11 @@ if (!doNotTrack) {
         <h3 class="widget-title"><a href='/tags/'>time</a></h3>
 <div class="tagcloud">
     
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
     <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (33)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
     
     <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
     
@@ -490,7 +500,7 @@ if (!doNotTrack) {
     
     <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (94)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
     
 </div>
     </section>
