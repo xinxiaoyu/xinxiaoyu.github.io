@@ -263,8 +263,10 @@ curl --insecure https://www.example.com -H 'X-Forwarded-For: 1.1.1.1'
 
 curl --user &quot;gwy:Q1&quot; guowy-cloud-eureka-server-0.eureka-headless.default.svc.cluster.local:8080
 curl -u guowy: -X POST http://pre-prometheus..com/-/reload
-</code></pre><p>curl -L -w &ldquo;namelookup: %{time_namelookup}\nconnect: %{time_connect}\nappconnect: %{time_appconnect}\npretransfer: %{time_pretransfer}\nstarttransfer: %{time_starttransfer}\ntotal: %{time_total}\n&rdquo; <a href="https://example.com/">https://example.com/</a></p>
 
+curl -L -w &quot;namelookup: %{time_namelookup}\nconnect: %{time_connect}\nappconnect: %{time_appconnect}\npretransfer: %{time_pretransfer}\nstarttransfer: %{time_starttransfer}\ntotal: %{time_total}\n&quot; https://example.com/
+
+</code></pre>
         </div>
 
         
