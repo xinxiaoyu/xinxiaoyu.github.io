@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TencentCloud on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/TencentCloud/</link>
+    <link>https://xinxiaoyu.github.io/categories/TencentCloud/</link>
     <description>Recent content in TencentCloud on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 30 Sep 2021 14:54:03 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/TencentCloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 14:54:03 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/TencentCloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>腾讯云tke集群Pod内存使用率告警--Python实现</title>
-      <link>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</link>
+      <link>https://xinxiaoyu.github.io/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Thu, 30 Sep 2021 14:54:03 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</guid>
       <description>代码样例： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
       <title>腾讯云服务器云硬盘扩容</title>
-      <link>https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</link>
+      <link>https://xinxiaoyu.github.io/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</link>
       <pubDate>Wed, 01 Sep 2021 14:44:07 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</guid>
+      <guid>https://xinxiaoyu.github.io/post/TencentCloud/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</guid>
       <description>注意： 操作前请做快照备份 系统盘扩容： 控制</description>
     </item>
     
     <item>
       <title>腾讯云CAM自定义策略</title>
-      <link>https://www.tangjihede.fun/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</link>
+      <link>https://xinxiaoyu.github.io/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</link>
       <pubDate>Wed, 14 Jul 2021 13:41:16 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</guid>
+      <guid>https://xinxiaoyu.github.io/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/</guid>
       <description>新建自定义策略，有四种方式，目前看主要使</description>
     </item>
     
     <item>
       <title>腾讯云dts迁移MySQL</title>
-      <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</link>
+      <link>https://xinxiaoyu.github.io/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</link>
       <pubDate>Fri, 25 Jun 2021 13:38:51 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</guid>
+      <guid>https://xinxiaoyu.github.io/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91dts/</guid>
       <description>数据传输服务（dts）下分多个具体功能：</description>
     </item>
     
     <item>
       <title>腾讯云Mysql物理备份恢复数据库</title>
-      <link>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>https://xinxiaoyu.github.io/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Fri, 21 May 2021 15:35:48 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>https://xinxiaoyu.github.io/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>使用物理备份恢复数据库（使用物理备份恢复</description>
     </item>
     

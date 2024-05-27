@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zabbix on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/Zabbix/</link>
+    <link>https://xinxiaoyu.github.io/categories/Zabbix/</link>
     <description>Recent content in Zabbix on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 16 Oct 2019 13:47:51 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Zabbix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Oct 2019 13:47:51 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Zabbix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>zabbix监控ipmi的一个报错</title>
-      <link>https://www.tangjihede.fun/post/Zabbix/ipmi_item/</link>
+      <link>https://xinxiaoyu.github.io/post/Zabbix/ipmi_item/</link>
       <pubDate>Wed, 16 Oct 2019 13:47:51 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Zabbix/ipmi_item/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Zabbix/ipmi_item/</guid>
       <description>zabbix端item某项出现Value</description>
     </item>
     

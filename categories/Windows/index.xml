@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/Windows/</link>
+    <link>https://xinxiaoyu.github.io/categories/Windows/</link>
     <description>Recent content in Windows on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 17 Feb 2018 16:41:56 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Feb 2018 16:41:56 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bat几个用法</title>
-      <link>https://www.tangjihede.fun/post/Windows/bat/</link>
+      <link>https://xinxiaoyu.github.io/post/Windows/bat/</link>
       <pubDate>Sat, 17 Feb 2018 16:41:56 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Windows/bat/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Windows/bat/</guid>
       <description>windows上cmd的几个命令用法： 1.</description>
     </item>
     
     <item>
       <title>Exchange2010增加会议室功能</title>
-      <link>https://www.tangjihede.fun/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/</link>
+      <link>https://xinxiaoyu.github.io/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Fri, 24 Jun 2016 13:37:59 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/</guid>
       <description>需求：要求实现会议室功能，方便会议室预定</description>
     </item>
     
     <item>
       <title>Word新建标题</title>
-      <link>https://www.tangjihede.fun/post/Windows/word%E6%96%B0%E5%BB%BA%E6%A0%87%E9%A2%98/</link>
+      <link>https://xinxiaoyu.github.io/post/Windows/word%E6%96%B0%E5%BB%BA%E6%A0%87%E9%A2%98/</link>
       <pubDate>Tue, 05 Jul 2011 13:04:41 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/post/Windows/word%E6%96%B0%E5%BB%BA%E6%A0%87%E9%A2%98/</guid>
+      <guid>https://xinxiaoyu.github.io/post/Windows/word%E6%96%B0%E5%BB%BA%E6%A0%87%E9%A2%98/</guid>
       <description>视图 &amp;ndash;&amp;gt; 导航窗格，显示标题 在标题行回车后会</description>
     </item>
     

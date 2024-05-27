@@ -1,0 +1,46 @@
+---
+title: "bootstrap常见用法记录"
+date: 2024-01-11T18:00:57+08:00
+categories: [ "Bootstrap" ]
+tags: [ "2024","ALL" ]  
+draft: false
+---
+
+### 1.  flex 可以让多个不同input/button在同一行
+
+链接： https://getbootstrap.com/docs/4.0/utilities/flex/
+
+部分代码展示
+
+```bootstrap
+<div class="d-flex">
+  <div class="mr-auto p-2">Flex item</div>
+  <div class="p-2">Flex item</div>
+  <div class="p-2">Flex item</div>
+</div>
+
+
+<div class="d-flex">
+  <div class="mr-auto p-2">Flex item</div>
+  <div class="p-2">Flex item</div>
+  <div class="p-2">Flex item</div>
+</div>
+
+
+<div class="d-flex">
+    <div class="mr-auto p-2">
+      <a class="btn btn-light" href="{% url 'home:userinfo_add' %}" role="button"><i class="fa-solid fa-plus"></i>新增</a>
+    </div>
+  
+
+
+    <div class="ml-auto p-2">
+      <form class="d-flex justify-content-end method="GET" action="{% url 'home:search_userinfo' %}">
+        <input class="form-control me-2 type=search"
+                 placeholder="Search" aria-label="Search" name="searched" value="{{ request.GET.searched }}">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+      </form>
+    </div>
+</div>
+```
+

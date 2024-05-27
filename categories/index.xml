@@ -2,41 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 堂吉哈哈德的博客</title>
-    <link>https://www.tangjihede.fun/categories/</link>
+    <link>https://xinxiaoyu.github.io/categories/</link>
     <description>Recent content in Categories on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-<<<<<<< HEAD
-    <lastBuildDate>Sun, 07 Apr 2024 14:06:48 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Apr 2024 14:10:24 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InterviewQeustions</title>
+      <link>https://xinxiaoyu.github.io/categories/InterviewQeustions/</link>
+      <pubDate>Sun, 07 Apr 2024 14:10:24 +0800</pubDate>
+      
+      <guid>https://xinxiaoyu.github.io/categories/InterviewQeustions/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Diagnostic</title>
       <link>https://xinxiaoyu.github.io/categories/Diagnostic/</link>
       <pubDate>Sun, 07 Apr 2024 14:06:48 +0800</pubDate>
       
       <guid>https://xinxiaoyu.github.io/categories/Diagnostic/</guid>
-=======
-    <lastBuildDate>Fri, 09 Dec 2022 19:48:19 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ClickHouse</title>
-      <link>https://www.tangjihede.fun/categories/ClickHouse/</link>
-      <pubDate>Fri, 09 Dec 2022 19:48:19 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/ClickHouse/</guid>
->>>>>>> parent of a06396c0 (123)
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-<<<<<<< HEAD
       <link>https://xinxiaoyu.github.io/categories/Docker/</link>
       <pubDate>Sun, 07 Apr 2024 14:06:48 +0800</pubDate>
-=======
-      <link>https://www.tangjihede.fun/categories/Docker/</link>
-      <pubDate>Fri, 09 Dec 2022 19:48:19 +0800</pubDate>
->>>>>>> parent of a06396c0 (123)
       
-      <guid>https://www.tangjihede.fun/categories/Docker/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Docker/</guid>
       <description></description>
     </item>
     
@@ -69,214 +63,190 @@
     
     <item>
       <title>LoadBalancing</title>
-      <link>https://www.tangjihede.fun/categories/LoadBalancing/</link>
+      <link>https://xinxiaoyu.github.io/categories/LoadBalancing/</link>
       <pubDate>Thu, 23 Jun 2022 14:32:37 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/LoadBalancing/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/LoadBalancing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SoftSetting</title>
-      <link>https://www.tangjihede.fun/categories/SoftSetting/</link>
+      <link>https://xinxiaoyu.github.io/categories/SoftSetting/</link>
       <pubDate>Wed, 08 Jun 2022 15:54:07 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/SoftSetting/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/SoftSetting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HahaWriting</title>
-      <link>https://www.tangjihede.fun/categories/HahaWriting/</link>
+      <link>https://xinxiaoyu.github.io/categories/HahaWriting/</link>
       <pubDate>Fri, 06 May 2022 12:13:30 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/HahaWriting/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/HahaWriting/</guid>
       <description></description>
     </item>
     
     <item>
-<<<<<<< HEAD
-=======
-      <title>Linux</title>
-      <link>https://www.tangjihede.fun/categories/Linux/</link>
-      <pubDate>Sun, 13 Feb 2022 10:27:43 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/Linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
->>>>>>> parent of a06396c0 (123)
       <title>Python</title>
-      <link>https://www.tangjihede.fun/categories/Python/</link>
+      <link>https://xinxiaoyu.github.io/categories/Python/</link>
       <pubDate>Thu, 30 Sep 2021 14:54:03 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Python/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TencentCloud</title>
-      <link>https://www.tangjihede.fun/categories/TencentCloud/</link>
+      <link>https://xinxiaoyu.github.io/categories/TencentCloud/</link>
       <pubDate>Thu, 30 Sep 2021 14:54:03 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/TencentCloud/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/TencentCloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Skywalking</title>
-      <link>https://www.tangjihede.fun/categories/Skywalking/</link>
+      <link>https://xinxiaoyu.github.io/categories/Skywalking/</link>
       <pubDate>Sun, 26 Sep 2021 11:45:44 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Skywalking/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Skywalking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>https://www.tangjihede.fun/categories/MySQL/</link>
+      <link>https://xinxiaoyu.github.io/categories/MySQL/</link>
       <pubDate>Thu, 26 Aug 2021 14:31:40 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/MySQL/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/MySQL/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://www.tangjihede.fun/categories/Java/</link>
+      <link>https://xinxiaoyu.github.io/categories/Java/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Java/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>https://www.tangjihede.fun/categories/Tools/</link>
+      <link>https://xinxiaoyu.github.io/categories/Tools/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Tools/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RabbitMQ</title>
-      <link>https://www.tangjihede.fun/categories/RabbitMQ/</link>
+      <link>https://xinxiaoyu.github.io/categories/RabbitMQ/</link>
       <pubDate>Fri, 23 Jul 2021 18:52:13 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/RabbitMQ/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/RabbitMQ/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Redis</title>
-      <link>https://www.tangjihede.fun/categories/Redis/</link>
+      <link>https://xinxiaoyu.github.io/categories/Redis/</link>
       <pubDate>Thu, 22 Jul 2021 13:58:42 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Redis/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Redis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Aliyun</title>
-      <link>https://www.tangjihede.fun/categories/Aliyun/</link>
+      <link>https://xinxiaoyu.github.io/categories/Aliyun/</link>
       <pubDate>Wed, 14 Jul 2021 14:10:24 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Aliyun/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Aliyun/</guid>
       <description></description>
     </item>
     
     <item>
-<<<<<<< HEAD
-=======
-      <title>Kubernetes</title>
-      <link>https://www.tangjihede.fun/categories/Kubernetes/</link>
-      <pubDate>Wed, 07 Jul 2021 13:39:58 +0800</pubDate>
-      
-      <guid>https://www.tangjihede.fun/categories/Kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
->>>>>>> parent of a06396c0 (123)
       <title>Error</title>
-      <link>https://www.tangjihede.fun/categories/Error/</link>
+      <link>https://xinxiaoyu.github.io/categories/Error/</link>
       <pubDate>Thu, 01 Jul 2021 14:44:58 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Error/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Error/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ELK</title>
-      <link>https://www.tangjihede.fun/categories/ELK/</link>
+      <link>https://xinxiaoyu.github.io/categories/ELK/</link>
       <pubDate>Fri, 16 Oct 2020 13:47:34 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/ELK/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/ELK/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ansible</title>
-      <link>https://www.tangjihede.fun/categories/Ansible/</link>
+      <link>https://xinxiaoyu.github.io/categories/Ansible/</link>
       <pubDate>Wed, 13 Nov 2019 17:52:22 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Ansible/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Ansible/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Zabbix</title>
-      <link>https://www.tangjihede.fun/categories/Zabbix/</link>
+      <link>https://xinxiaoyu.github.io/categories/Zabbix/</link>
       <pubDate>Wed, 16 Oct 2019 13:47:51 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Zabbix/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Zabbix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>https://www.tangjihede.fun/categories/Windows/</link>
+      <link>https://xinxiaoyu.github.io/categories/Windows/</link>
       <pubDate>Sat, 17 Feb 2018 16:41:56 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Windows/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hardware</title>
-      <link>https://www.tangjihede.fun/categories/Hardware/</link>
+      <link>https://xinxiaoyu.github.io/categories/Hardware/</link>
       <pubDate>Fri, 16 Feb 2018 13:54:34 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Hardware/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Hardware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Security</title>
-      <link>https://www.tangjihede.fun/categories/Security/</link>
+      <link>https://xinxiaoyu.github.io/categories/Security/</link>
       <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/Security/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/Security/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CI/CD</title>
-      <link>https://www.tangjihede.fun/categories/CI/CD/</link>
+      <link>https://xinxiaoyu.github.io/categories/CI/CD/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/CI/CD/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/CI/CD/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TCP/IP</title>
-      <link>https://www.tangjihede.fun/categories/TCP/IP/</link>
+      <link>https://xinxiaoyu.github.io/categories/TCP/IP/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.tangjihede.fun/categories/TCP/IP/</guid>
+      <guid>https://xinxiaoyu.github.io/categories/TCP/IP/</guid>
       <description></description>
     </item>
     
