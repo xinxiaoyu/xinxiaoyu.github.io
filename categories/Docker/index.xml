@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on 堂吉哈哈德的博客</title>
-    <link>https://xinxiaoyu.github.io/categories/Docker/</link>
+    <link>https://www.tangjihede.fun/categories/Docker/</link>
     <description>Recent content in Docker on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+<<<<<<< HEAD
     <lastBuildDate>Sun, 07 Apr 2024 14:06:48 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker代理设置</title>
@@ -16,30 +17,33 @@
       <description>找到一篇docker设置代理的方法，三个</description>
     </item>
     
+=======
+    <lastBuildDate>Fri, 09 Dec 2022 19:48:19 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Docker/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> parent of a06396c0 (123)
     <item>
       <title>clickhouse容器部署</title>
-      <link>https://xinxiaoyu.github.io/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/</link>
+      <link>https://www.tangjihede.fun/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Fri, 09 Dec 2022 19:48:19 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/</guid>
-      <description>直接docker启动 docker run -d \ -p 8123:8123 -p 9000:9000 \ -v</description>
+      <guid>https://www.tangjihede.fun/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/</guid>
+      <description>直接docker启动 1 2 3 4 5 6 7 8 9 docker</description>
     </item>
     
     <item>
       <title>Docker使用记录</title>
-      <link>https://xinxiaoyu.github.io/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
+      <link>https://www.tangjihede.fun/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
       <pubDate>Sat, 21 Aug 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
+      <guid>https://www.tangjihede.fun/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
       <description>安装（centos7） yum remove docker \ docker-client \ docker-client-latest \ docker-common</description>
     </item>
     
     <item>
       <title>golang程序镜像Dockerfile</title>
-      <link>https://xinxiaoyu.github.io/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</link>
+      <link>https://www.tangjihede.fun/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</link>
       <pubDate>Sat, 21 Aug 2021 19:48:19 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</guid>
+      <guid>https://www.tangjihede.fun/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</guid>
       <description>FROM centos:centos7 RUN yum install -y epel-release --nogpgcheck RUN yum install -y golang git --nogpgcheck RUN go env -w GO111MODULE=off</description>
     </item>
     

@@ -2,35 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aliyun on 堂吉哈哈德的博客</title>
-    <link>https://xinxiaoyu.github.io/categories/Aliyun/</link>
+    <link>https://www.tangjihede.fun/categories/Aliyun/</link>
     <description>Recent content in Aliyun on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 14 Jul 2021 14:10:24 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Aliyun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jul 2021 14:10:24 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Aliyun/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>阿里云cam授权案例</title>
-      <link>https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</link>
+      <link>https://www.tangjihede.fun/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</link>
       <pubDate>Wed, 14 Jul 2021 14:10:24 +0800</pubDate>
       
+<<<<<<< HEAD
       <guid>https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</guid>
       <description>一、 阿里云oss权限自定义策略 { &amp;quot;Version&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;Statement&amp;quot;: [</description>
+=======
+      <guid>https://www.tangjihede.fun/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</guid>
+      <description>一、 阿里云oss权限自定义策略 { &amp;#34;Version&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;Statement&amp;#34;: [</description>
+>>>>>>> parent of a06396c0 (123)
     </item>
     
     <item>
       <title>金融云VPN新建用户操作步骤－管理员版本</title>
-      <link>https://xinxiaoyu.github.io/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</link>
+      <link>https://www.tangjihede.fun/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</link>
       <pubDate>Tue, 14 Jul 2015 14:10:24 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</guid>
+      <guid>https://www.tangjihede.fun/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</guid>
       <description>标签（空格分隔）： 金融云 vpn 1. 下载风云令 2.</description>
     </item>
     
     <item>
       <title>金融云VPN新用户申请操作步骤－普通用户版</title>
-      <link>https://xinxiaoyu.github.io/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</link>
+      <link>https://www.tangjihede.fun/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</link>
       <pubDate>Tue, 14 Jul 2015 14:02:51 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</guid>
+      <guid>https://www.tangjihede.fun/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</guid>
       <description>标签（空格分隔）： 金融云 vpn 1. 下载风云令,</description>
     </item>
     

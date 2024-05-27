@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on 堂吉哈哈德的博客</title>
-    <link>https://xinxiaoyu.github.io/categories/Python/</link>
+    <link>https://www.tangjihede.fun/categories/Python/</link>
     <description>Recent content in Python on 堂吉哈哈德的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 30 Sep 2021 14:54:03 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 14:54:03 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/categories/Python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>腾讯云tke集群Pod内存使用率告警--Python实现</title>
-      <link>https://xinxiaoyu.github.io/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</link>
+      <link>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Thu, 30 Sep 2021 14:54:03 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</guid>
+      <guid>https://www.tangjihede.fun/post/Python/%E8%85%BE%E8%AE%AF%E4%BA%91tke%E9%9B%86%E7%BE%A4Pod%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87%E5%91%8A%E8%AD%A6/</guid>
       <description>代码样例： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
       <title>Redis命令行工具</title>
-      <link>https://xinxiaoyu.github.io/post/Python/redis_command_tool/</link>
+      <link>https://www.tangjihede.fun/post/Python/redis_command_tool/</link>
       <pubDate>Thu, 22 Jul 2021 13:58:42 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Python/redis_command_tool/</guid>
+      <guid>https://www.tangjihede.fun/post/Python/redis_command_tool/</guid>
       <description>封装了下redis的scan命令和del</description>
     </item>
     
     <item>
       <title>Python处理json数据</title>
-      <link>https://xinxiaoyu.github.io/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</link>
+      <link>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Mon, 28 Jun 2021 11:30:15 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://www.tangjihede.fun/post/Python/python%E5%A4%84%E7%90%86json%E7%9B%B8%E5%85%B3/</guid>
       <description>一般的场景是这样： 标准的json（接口返</description>
     </item>
     
     <item>
       <title>Python的selenium库使用汇总</title>
-      <link>https://xinxiaoyu.github.io/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
+      <link>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</link>
       <pubDate>Fri, 21 May 2021 20:01:36 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://www.tangjihede.fun/post/Python/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</guid>
       <description>一、 下载对应浏览器的webdriver 如</description>
     </item>
     
     <item>
       <title>批量删除MySQL数据</title>
-      <link>https://xinxiaoyu.github.io/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/</link>
+      <link>https://www.tangjihede.fun/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Mon, 12 Aug 2019 14:59:13 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://www.tangjihede.fun/post/Python/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4MySQL%E6%95%B0%E6%8D%AE/</guid>
       <description>依赖mysql connector https://pypi.org/project/mysql-connector-python/ 删除一周前的数据，加了</description>
     </item>
     
     <item>
       <title>监控linux系统的ssh登陆</title>
-      <link>https://xinxiaoyu.github.io/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</link>
+      <link>https://www.tangjihede.fun/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</link>
       <pubDate>Fri, 08 Jun 2018 16:48:12 +0800</pubDate>
       
-      <guid>https://xinxiaoyu.github.io/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</guid>
+      <guid>https://www.tangjihede.fun/post/Linux/%E7%9B%91%E6%8E%A7linux%E7%B3%BB%E7%BB%9F%E7%9A%84ssh%E7%99%BB%E9%99%86/</guid>
       <description>使用的qqwry库（ip地址定位）地址：</description>
     </item>
     
