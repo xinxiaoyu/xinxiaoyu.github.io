@@ -4,17 +4,16 @@
     <title>Hardware on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/Hardware/</link>
     <description>Recent content in Hardware on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Feb 2018 13:54:34 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Hardware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Feb 2018 13:54:34 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/Hardware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dell r720 bios 设置</title>
       <link>https://xinxiaoyu.github.io/post/Hardware/dell_r720_bios/</link>
       <pubDate>Fri, 16 Feb 2018 13:54:34 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Hardware/dell_r720_bios/</guid>
-      <description>开机F2进入SYSTEM SETU 关闭节能模式 System</description>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;开机F2进入SYSTEM SETU&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;p&gt;关闭节能模式&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;System BIOS Settings --&amp;gt; System Profile Settings&#xD;&#xA;Energy Efficient Policy&#xD;&#xA;使用Performance选项&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;p&gt;NUMA&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

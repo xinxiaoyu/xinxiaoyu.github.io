@@ -1,28 +1,8 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
+
     <meta charset="utf-8">
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-108398306-1');
-</script>
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -43,7 +23,10 @@
         
     <meta name="author" content="堂吉哈哈德">
     <meta property="og:url" content="https://xinxiaoyu.github.io/post/LoadBalancing/lvs/">
-    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <link rel="icon" href='/favicon.png' type="image/png">
+    <link rel="alternate icon" href='/favicon.png' type="image/svg+xml">
+    
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
@@ -60,29 +43,6 @@
 
 <body>
     <header id="header" class="clearfix">
-    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
-        
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-108398306-1');
-</script>
-
-    
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -95,7 +55,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://xinxiaoyu.github.io/">首页</a>
+                    <a class="current" href="https://xinxiaoyu.github.io/"></a>
                     
                     <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
                     
@@ -178,7 +138,7 @@
     }
 </style>
 <div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title"></h2>
     <div class="post-toc-content">
         <nav id="TableOfContents"></nav>
     </div>
@@ -188,8 +148,8 @@
         var postToc = $(".post-toc");
         if (postToc.length) {
             var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
             }
 
             var t = postToc.offset().top - 20,
@@ -207,6 +167,10 @@
                 var e = $(window).scrollTop();
                 e < t ? postToc.css(a.start) : postToc.css(a.process)
             })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
         }
     })
 </script>
@@ -284,7 +248,7 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
 <li>Real Server收到数据包后，检查目的IP，发现可以处理后，则发送到相应端口进行处理</li>
 <li>数据返回的时候必须要经过LVS，LVS将地址再转换回来，这样才能顺利的把数据交给用户</li>
 </ol>
-<pre><code>                                      ________
+<pre tabindex="0"><code>                                      ________
                                      |        |     ## dst   ip: 192.168.1.200
                                      | client |     ## dst port: 80
                                      |________|     ## src   ip: 192.168.1.100
@@ -323,7 +287,7 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
 <li>Real Server收到转发的数据包时，发现该数据包的目的IP本机可达（loopback口上绑定的VIP），于是对请求进行处理，最后将结果直接返回给用户，不经过LVS</li>
 </ol>
 <p>DR模式由于只需要LVS修改包的二层MAC地址，并且数据返回不经过LVS，所以处理速度是三种模式中最快的，但也限制了LVS和Real Server需要在同一网段，且需要在Real Server上对网卡做ARP抑制操作，因为realserver本机需要绑定VIP，且只能本地可达。</p>
-<pre><code>                                              ________
+<pre tabindex="0"><code>                                              ________
                                              | client |
                                              |________|
                                           CIP=192.168.1.100
@@ -363,7 +327,7 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
 <li>LVS将请求的数据包再次进行封装，即在原有的IP层上添加新的IP层，新的IP包头的源地址为LVS，目的地址为realserver的IP，然后转发到所选的Real Server</li>
 <li>当Real Server的tunl0网卡（由ipip内核模块加载后创建）收到封装后的数据包后，会对数据包进行解封装，也就是去掉新加的IP层，所以能够查看到原始的IP层，然后对请求进行处理，最后根据自己的路由表将结果直接返回给用户，返回的数据不经过LVS</li>
 </ol>
-<pre><code>                                      ________
+<pre tabindex="0"><code>                                      ________
                                      | client |
                                      |________|
                                  CIP=192.168.1.100
@@ -397,20 +361,19 @@ LVS工作于传输层，所以属于四层负载均衡器。由于工作在四�
                 | eth0:  VIP-&gt;CIP(out) |       |                   |
                 | tunl0: CIP-&gt;VIP(in)  |       |                   | 
                 |______________________|       |___________________|
-
 </code></pre><p>图-1.2-3 TUN模式</p>
 <p>数据的原始目的地址是LVS的IP，转发给Real Server时没有改变，只是新加了一层IP层，Real Server解封装后依然可以处理，这是因为tunl0网卡上绑定了VIP，并且只有本机可达。</p>
 <p>IP隧道模式的性能比NAT要好，比DR模式性能要差，但是相比DR模式，IP隧道模式可以跨网段部署。</p>
 <p>1.2.4 管理LVS
 说完三种模式，下面说说LVS的管理工具。怎么使用LVS呢，LVS的管理通过ipvsadm这个工具来设置，CentOS系统可以直接使用<code>yum install ipvsadm</code>安装，Ubuntu使用<code>sudo apt install ipvsadm</code>安装。比如下面的命令，就是添加相应LVS规则。</p>
-<pre><code>ipvsadm -A -t 172.26.20.10:80 -s rr
+<pre tabindex="0"><code>ipvsadm -A -t 172.26.20.10:80 -s rr
 新增虚拟服务器172.26.20.10（通常就是VIP），端口是80，调度算法是轮询
-</code></pre><pre><code>ipvsadm -a -t 172.26.20.10:80 -r 172.26.20.11:80 -g
+</code></pre><pre tabindex="0"><code>ipvsadm -a -t 172.26.20.10:80 -r 172.26.20.11:80 -g
 新增一台Real Server，IP为172.26.20.11，端口80,-g参数表示模式为DR模式
 </code></pre><p>不过使用ipvsadm直接管理是比较不方便的，keepalived为我们提高了更好的选择。
 keepalived是一款路由软件，提供负载均衡和高可用性，可以说就是为配置LVS而生的。Keepalived根据负载均衡服务器池的健康状况，动态地、自适应地维护和管理它们，是通常情况下推荐管理LVS的方式。</p>
 <p>比如下面keepalived配置和上面ipvsadm命令管理的效果是一样的，并且对realserver增加了健康监测。</p>
-<pre><code>virtual_server 172.26.20.10 80 {
+<pre tabindex="0"><code>virtual_server 172.26.20.10 80 {
     lb_algo rr
     lb_kind DR
     nat_mask 255.255.255.255
@@ -430,9 +393,9 @@ keepalived是一款路由软件，提供负载均衡和高可用性，可以说�
         
 <div class="post-archive">
     <ul class="post-copyright">
-        <li><strong>原文作者：</strong><a rel="author" href="https://xinxiaoyu.github.io/">堂吉哈哈德</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://xinxiaoyu.github.io/post/LoadBalancing/lvs/">https://xinxiaoyu.github.io/post/LoadBalancing/lvs/</a></li>
-        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+        <li><strong></strong><a rel="author" href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客</a></li>
+        <li style="word-break:break-all"><strong></strong><a href="https://xinxiaoyu.github.io/post/LoadBalancing/lvs/">https://xinxiaoyu.github.io/post/LoadBalancing/lvs/</a></li>
+        <li><strong></strong><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. </li>
     </ul>
 </div>
 <br/>
@@ -442,7 +405,7 @@ keepalived是一款路由软件，提供负载均衡和高可用性，可以说�
         
 
 <div class="post-archive">
-    <h2>See Also</h2>
+    <h2></h2>
     <ul class="listing">
         
         <li><a href="/post/ELK/logstash%E5%A4%84%E7%90%86Nginx%E6%97%A5%E5%BF%97/">Logstash处理Nginx日志</a></li>
@@ -486,6 +449,9 @@ keepalived是一款路由软件，提供负载均衡和高可用性，可以说�
       </script>
     </div>
     
+    
+    
+
 </div>
 
                     <footer id="footer">
@@ -509,6 +475,7 @@ keepalived是一款路由软件，提供负载均衡和高可用性，可以说�
 
 
     
+    
     <script type="text/javascript">
         window.MathJax = {
             tex2jax: {
@@ -517,22 +484,102 @@ keepalived是一款路由软件，提供负载均衡和高可用性，可以说�
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-108398306-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLB4K7SNHM"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LLB4K7SNHM');
+        }
+      </script>
+
+
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 
 
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
@@ -544,22 +591,65 @@ if (!doNotTrack) {
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='https://xinxiaoyu.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='https://xinxiaoyu.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="https://xinxiaoyu.github.io/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        
+        <h3 class="widget-title"></h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Hahawriting/hongloumeng/" title="红楼梦繁体版120回字数和词汇量统计" target="_blank">红楼梦繁体版120回字数和词汇量统计</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Hahawriting/%E7%96%AB%E6%83%85%E6%9C%9F%E9%97%B4%E5%B1%85%E5%AE%B6%E9%9A%94%E7%A6%BB%E7%9A%84%E7%89%A9%E8%B5%84%E8%B4%AD%E4%B9%B0%E6%8E%A5%E6%94%B6%E6%94%BF%E5%BA%9C%E5%8F%91%E7%9A%84%E8%AE%B0%E5%BD%95%E6%B8%85%E5%8D%95/" title="疫情期间居家隔离的物资购买（接收，政府发的）记录清单" target="_blank">疫情期间居家隔离的物资购买（接收，政府发的）记录清单</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Django/Django%E5%85%A5%E9%97%A8%E5%88%86%E4%BA%AB/" title="Django入门分享" target="_blank">Django入门分享</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/docker/docker%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="docker代理设置" target="_blank">docker代理设置</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Kubernetes/k8s%E4%B8%ADyaml%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E6%AE%B5/" title="k8s中yaml一些常用的字段写法" target="_blank">k8s中yaml一些常用的字段写法</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/tcpdumpWireshark/wireshark/" title="wireshark记录" target="_blank">wireshark记录</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Linux/%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="代理设置" target="_blank">代理设置</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/" title="clickhouse容器部署" target="_blank">clickhouse容器部署</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/LoadBalancing/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" title="跨域问题" target="_blank">跨域问题</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/SoftSetting/%E6%9C%AC%E5%91%A8%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%9800/" title="本周遇到的错误问题(00)" target="_blank">本周遇到的错误问题(00)</a>
+    </li>
+    
+</ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'></a></h3>
 <ul class="widget-list">
     
     <li><a href="https://xinxiaoyu.github.io/categories/Aliyun/">Aliyun (3)</a></li>
@@ -620,39 +710,39 @@ if (!doNotTrack) {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+        <h3 class="widget-title"><a href='/tags/'></a></h3>
 <div class="tagcloud">
     
-    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2011/">2011</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2014/">2014</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2015/">2015</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2016/">2016</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (9)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2017/">2017</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (10)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (9)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2016/">2016 (6)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2020/">2020</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2015/">2015 (5)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2014/">2014 (2)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2022/">2022</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL</a>
     
 </div>
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title"></h3>
     <ul class="widget-list">
         
         <li>
@@ -664,16 +754,11 @@ if (!doNotTrack) {
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title"></h3>
         <ul class="widget-list">
-            <li><a href="https://xinxiaoyu.github.io/index.xml">文章 RSS</a></li>
+            <li><a href="https://xinxiaoyu.github.io/index.xml"></a></li>
         </ul>
     </section>
-    <span id="busuanzi_container_site_pv">
-        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-        <br>
-        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-        </span>
 </div>
             </div>
         </div>

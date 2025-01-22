@@ -4,17 +4,16 @@
     <title>Diagnostic on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/Diagnostic/</link>
     <description>Recent content in Diagnostic on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 07 Apr 2024 14:06:48 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Diagnostic/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Apr 2024 14:06:48 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/Diagnostic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>wireshark记录</title>
       <link>https://xinxiaoyu.github.io/post/tcpdumpWireshark/wireshark/</link>
       <pubDate>Sun, 07 Apr 2024 14:06:48 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/tcpdumpWireshark/wireshark/</guid>
-      <description>解析TLS数据包 https://www.ilikejobs.com/posts/wireshark/ Using the (Pre)-Master-Secret The master secret enables TLS decryption in Wireshark</description>
+      <description>&lt;p&gt;解析TLS数据包&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://www.ilikejobs.com/posts/wireshark/&#xD;&#xA;&#xD;&#xA;Using the (Pre)-Master-Secret&#xD;&#xA;The master secret enables TLS decryption in Wireshark and can be supplied via the Key Log File. The pre-master secret is the result from the key exchange and can be converted to a master secret by Wireshark. This pre-master secret can be obtained when a RSA private key is provided and a RSA key exchange is in use.&#xD;&#xA;&#xD;&#xA;Step-by-step instructions to decrypt TLS traffic from Chrome or Firefox in Wireshark:&#xD;&#xA;&#xD;&#xA;Close the browser completely (check your task manager just to be sure).&#xD;&#xA;Set environment variable SSLKEYLOGFILE to the absolute path of a writable file.&#xD;&#xA;&#xD;&#xA;Start the browser.&#xD;&#xA;Verify that the location from step 2 is created.&#xD;&#xA;In Wireshark, go to Preferences -&amp;gt; Protocols -&amp;gt; TLS, and change the (Pre)-Master-Secret log filename preference to the path from step 2.&#xD;&#xA;&#xD;&#xA;Start the Wireshark capture.&#xD;&#xA;Open a website, for example https://www.wireshark.org/&#xD;&#xA;&#xD;&#xA;Check that the decrypted data is visible. For example, using the tls and (http or http2) filter.&#xD;&#xA;&#xD;&#xA;For Windows, an environment variable can be set globally as described in this walkthrough, but this is not recommended since it is easy to forget about and may be a security issue since it allows decryption of all your TLS traffic. A better way to set the environment variable is via a batch file. Create a file start-fx.cmd with:&#xD;&#xA;&#xD;&#xA;@echo off&#xD;&#xA;set SSLKEYLOGFILE=%USERPROFILE%\Desktop\keylogfile.txt&#xD;&#xA;open firefox&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;http.host == &amp;ldquo;openapi.bei.com&amp;rdquo; and http.request.uri.query.parameter == &amp;ldquo;product_ids=%5B%271300028%27%5D&amp;rdquo;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

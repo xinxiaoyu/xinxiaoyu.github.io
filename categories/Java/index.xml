@@ -4,17 +4,16 @@
     <title>Java on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/Java/</link>
     <description>Recent content in Java on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Aug 2021 17:53:31 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 17:53:31 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/Java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arthas tunnel server使用</title>
       <link>https://xinxiaoyu.github.io/post/Java/arthas/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Java/arthas/</guid>
-      <description>Arthas tunnel server是一个spring boot fat j</description>
+      <description>&lt;p&gt;Arthas tunnel server是一个spring boot fat jar应用，可以让用户通过浏览器诊断java进程。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

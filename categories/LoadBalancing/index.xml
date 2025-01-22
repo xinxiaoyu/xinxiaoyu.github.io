@@ -4,80 +4,65 @@
     <title>LoadBalancing on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/LoadBalancing/</link>
     <description>Recent content in LoadBalancing on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 Jun 2022 14:32:37 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/LoadBalancing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Jun 2022 14:32:37 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/LoadBalancing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>跨域问题</title>
       <link>https://xinxiaoyu.github.io/post/LoadBalancing/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 23 Jun 2022 14:32:37 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/LoadBalancing/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</guid>
-      <description>跨域设置涉及的几个header如下： Access-Control-Allow-Origin: Access-Control-Expose-Headers:</description>
+      <description>&lt;p&gt;跨域设置涉及的几个header如下：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Access-Control-Allow-Origin:&#xD;&#xA;Access-Control-Expose-Headers:&#xD;&#xA;Access-Control-Max-Age:&#xD;&#xA;Access-Control-Allow-Credentials: true&#xD;&#xA;Access-Control-Allow-Methods:&#xD;&#xA;Access-Control-Allow-Headers: &#xD;&#xA;&#xD;&#xA;# ingress&#xD;&#xA;nginx.ingress.kubernetes.io/enable-cors: &#xD;&#xA;nginx.ingress.kubernetes.io/cors-allow-methods:&#xD;&#xA;nginx.ingress.kubernetes.io/cors-allow-headers: &#xD;&#xA;nginx.ingress.kubernetes.io/cors-expose-headers: &#xD;&#xA;nginx.ingress.kubernetes.io/cors-allow-origin: &#xD;&#xA;nginx.ingress.kubernetes.io/cors-allow-credentials:&#xD;&#xA;nginx.ingress.kubernetes.io/cors-max-age:&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;控制台里一般会打印出跨域的错误信息，如果其中有preflight关键字，一般都是option预检请求&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Nginx简单介绍</title>
       <link>https://xinxiaoyu.github.io/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 28 Dec 2020 13:40:50 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/LoadBalancing/nginx%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
-      <description>1. Nginx介绍 准确地说，Nginx是一</description>
+      <description>&lt;h4 id=&#34;1-nginx介绍&#34;&gt;1. Nginx介绍&lt;/h4&gt;&#xA;&lt;p&gt;准确地说，Nginx是一个HTTP服务器和反向代理服务器，可代理通用的TCP/UDP、HTTP以及Mail等服务，最初由俄罗斯人Igor Sysoev编写，也是一款开源软件。Nginx凭借着自身强大的产品功能，已被业界广泛采用。淘宝的Tengine都是基于Nginx的。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Haproxy简单记录</title>
       <link>https://xinxiaoyu.github.io/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sat, 28 Nov 2020 13:58:28 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/LoadBalancing/haproxy%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid>
-      <description>1 HAProxy介绍 HAProxy同样是</description>
+      <description>&lt;h4 id=&#34;1--haproxy介绍&#34;&gt;1  HAProxy介绍&lt;/h4&gt;&#xA;&lt;p&gt;HAProxy同样是一个知名的开源负载均衡器，号称提供高可用性，负载均衡和TCP、HTTP代理，使用也非常广泛。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>LVS</title>
       <link>https://xinxiaoyu.github.io/post/LoadBalancing/lvs/</link>
       <pubDate>Thu, 26 Nov 2020 19:18:54 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/LoadBalancing/lvs/</guid>
-      <description>1.1 初步介绍 负载均衡（Load balanc</description>
+      <description>&lt;p&gt;1.1 初步介绍&lt;/p&gt;&#xA;&lt;p&gt;负载均衡（Load balancing）是运维工程师必须要掌握的一项技术，因为其应用广泛且往往位于业务的核心位置。广义上的负载均衡是指将一组任务分配到一组资源（计算单元）上的过程。在运维领域里，则基本上是和WEB类型的业务打交道，即主要处理TCP、HTTP、HTTPS等协议。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Nginx的break和last区别</title>
       <link>https://xinxiaoyu.github.io/post/LoadBalancing/Nginx_break_vs_last/</link>
       <pubDate>Fri, 23 Feb 2018 17:38:00 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/LoadBalancing/Nginx_break_vs_last/</guid>
-      <description>NGINX的rewrite指令有四个可选</description>
+      <description>&lt;p&gt;NGINX的rewrite指令有四个可选参数： break、last、redirect、permanent。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Apache</title>
       <link>https://xinxiaoyu.github.io/post/LoadBalancing/apache/</link>
       <pubDate>Sat, 24 Jun 2017 13:32:13 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/LoadBalancing/apache/</guid>
-      <description>以下内容基于CentOS7.3/Apac</description>
+      <description>&lt;p&gt;以下内容基于CentOS7.3/Apache2.4&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Nginx和Apache做文件服务器</title>
       <link>https://xinxiaoyu.github.io/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Fri, 23 Jun 2017 14:27:33 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/LoadBalancing/nginx%E5%92%8Capache%E5%81%9A%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
-      <description>nginx nginx默认不允许列出文件目录，需要</description>
+      <description>&lt;p&gt;nginx&lt;/p&gt;&#xA;&lt;p&gt;nginx默认不允许列出文件目录，需要开启； 开启后只需删除掉index.html文件，因为找不到index.html才会列出当前目录文件；&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Nginx白名单</title>
       <link>https://xinxiaoyu.github.io/post/LoadBalancing/nginx%E7%99%BD%E5%90%8D%E5%8D%95/</link>
       <pubDate>Fri, 23 Jun 2017 14:19:50 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/LoadBalancing/nginx%E7%99%BD%E5%90%8D%E5%8D%95/</guid>
-      <description>包含以下知识点： 1、 nginx前面有多层</description>
+      <description>&lt;p&gt;包含以下知识点：&lt;/p&gt;&#xA;&lt;p&gt;1、 nginx前面有多层代理的情况下拿到客户端地址（实现白名单功能）&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

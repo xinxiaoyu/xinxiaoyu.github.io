@@ -4,44 +4,37 @@
     <title>Docker on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/Docker/</link>
     <description>Recent content in Docker on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 07 Apr 2024 14:06:48 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Apr 2024 14:06:48 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/Docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker代理设置</title>
       <link>https://xinxiaoyu.github.io/post/docker/docker%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Sun, 07 Apr 2024 14:06:48 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/docker/docker%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</guid>
-      <description>找到一篇docker设置代理的方法，三个</description>
+      <description>&lt;p&gt;找到一篇docker设置代理的方法，三个不同阶段有不同的代理方式，链接如下。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>clickhouse容器部署</title>
       <link>https://xinxiaoyu.github.io/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Fri, 09 Dec 2022 19:48:19 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/</guid>
-      <description>直接docker启动 docker run -d \ -p 8123:8123 -p 9000:9000 \ -v</description>
+      <description>&lt;p&gt;直接docker启动&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -d \&#xD;&#xA;  -p 8123:8123 -p 9000:9000 \&#xD;&#xA;  -v /home/clickhouse/lib/:/var/lib/clickhouse/ \&#xD;&#xA;  -v /home/clickhouse/log/:/var/log/clickhouse-server/ \&#xD;&#xA;  --ulimit nofile=262144:262144 \&#xD;&#xA;  --cpus 2 -m 4096M \&#xD;&#xA;  -e CLICKHOUSE_DB=user1 -e CLICKHOUSE_USER=vking -e CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=0 -e CLICKHOUSE_PASSWORD=123 \&#xD;&#xA;  --name clickhouse-server \&#xD;&#xA;  clickhouse/clickhouse-server&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;docker-compose部署&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Docker使用记录</title>
       <link>https://xinxiaoyu.github.io/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
       <pubDate>Sat, 21 Aug 2021 19:48:19 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
-      <description>安装（centos7） yum remove docker \ docker-client \ docker-client-latest \ docker-common</description>
+      <description>&lt;p&gt;安装（centos7）&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;yum remove docker \&#xD;&#xA;    docker-client \&#xD;&#xA;    docker-client-latest \&#xD;&#xA;    docker-common \&#xD;&#xA;    docker-latest \&#xD;&#xA;    docker-latest-logrotate \&#xD;&#xA;    docker-logrotate \&#xD;&#xA;    docker-engine&#xD;&#xA;&#xD;&#xA;yum install -y yum-utils&#xD;&#xA;&#xD;&#xA;yum-config-manager \&#xD;&#xA;    --add-repo \&#xD;&#xA;    https://download.docker.com/linux/centos/docker-ce.repo&#xD;&#xA;&#xD;&#xA;# 查看具体版本&#xD;&#xA;# yum list docker-ce --showduplicates | sort -r&#xD;&#xA;&#xD;&#xA;yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin&#xD;&#xA;&#xD;&#xA;systemctl start docker&#xD;&#xA;&#xD;&#xA;curl -sL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/bin/docker-compose&#xD;&#xA;chmod +x /usr/bin/docker-compose&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;常用命令，以&lt;code&gt;jenkins/jenkins:2.359-jdk11&lt;/code&gt;镜像为例&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>golang程序镜像Dockerfile</title>
       <link>https://xinxiaoyu.github.io/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</link>
       <pubDate>Sat, 21 Aug 2021 19:48:19 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/</guid>
-      <description>FROM centos:centos7 RUN yum install -y epel-release --nogpgcheck RUN yum install -y golang git --nogpgcheck RUN go env -w GO111MODULE=off</description>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;FROM centos:centos7&#xD;&#xA;RUN yum install -y epel-release --nogpgcheck&#xD;&#xA;RUN yum install -y golang git --nogpgcheck&#xD;&#xA;RUN go env -w GO111MODULE=off&#xD;&#xA;RUN mkdir /dumper&#xD;&#xA;RUN mkdir /app&#xD;&#xA;COPY main.go /app&#xD;&#xA;COPY src /app&#xD;&#xA;COPY pkg /app&#xD;&#xA;WORKDIR /app&#xD;&#xA;RUN go get github.com/tencentyun/cos-go-sdk-v5&#xD;&#xA;RUN go get github.com/fsnotify/fsnotify&#xD;&#xA;RUN go build -tags netgo main.go&#xD;&#xA;CMD [&amp;#34;/app/main&amp;#34;]&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
   </channel>
 </rss>

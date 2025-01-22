@@ -4,35 +4,30 @@
     <title>Windows on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/Windows/</link>
     <description>Recent content in Windows on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 17 Feb 2018 16:41:56 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Feb 2018 16:41:56 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/Windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bat几个用法</title>
       <link>https://xinxiaoyu.github.io/post/Windows/bat/</link>
       <pubDate>Sat, 17 Feb 2018 16:41:56 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Windows/bat/</guid>
-      <description>windows上cmd的几个命令用法： 1.</description>
+      <description>&lt;p&gt;windows上cmd的几个命令用法：&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-将memcached服务放进后台启动这样会继续执行后边的命令如果有&#34;&gt;1. 将memcached服务放进后台启动，这样会继续执行后边的命令(如果有)&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;start /b D:\memcached\memcached.exe&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-暂停5秒相当于linux的sleep&#34;&gt;2. 暂停5秒，相当于linux的sleep&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;timeout 5&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;3-打印时间戳&#34;&gt;3. 打印时间戳&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;set d=%date:~0,10%&#xD;&#xA;&#xD;&#xA;set t=%time:~0,8%&#xD;&#xA;&#xD;&#xA;echo “curl_time: %d% %t%” &amp;gt;&amp;gt; C:\website_log.txt&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;4-循环&#34;&gt;4. 循环&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;:loop&#xD;&#xA;执行的command&#xD;&#xA;goto:loop&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;5-还有手动刷新dns缓存&#34;&gt;5. 还有手动刷新dns缓存&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ipconfig/flushdns&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title>Exchange2010增加会议室功能</title>
       <link>https://xinxiaoyu.github.io/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Fri, 24 Jun 2016 13:37:59 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/</guid>
-      <description>需求：要求实现会议室功能，方便会议室预定</description>
+      <description>&lt;p&gt;需求：要求实现会议室功能，方便会议室预定&lt;/p&gt;&#xA;&lt;p&gt;平台：Exchange2010 &amp;amp;&amp;amp; windows server 2008&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Word新建标题</title>
       <link>https://xinxiaoyu.github.io/post/Windows/word%E6%96%B0%E5%BB%BA%E6%A0%87%E9%A2%98/</link>
       <pubDate>Tue, 05 Jul 2011 13:04:41 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Windows/word%E6%96%B0%E5%BB%BA%E6%A0%87%E9%A2%98/</guid>
-      <description>视图 &amp;ndash;&amp;gt; 导航窗格，显示标题 在标题行回车后会</description>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;视图 &amp;ndash;&amp;gt; 导航窗格，显示标题&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;在标题行回车后会出现什么(如2.2 test，调整大纲级别为2级后)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

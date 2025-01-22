@@ -4,17 +4,16 @@
     <title>Ansible on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/Ansible/</link>
     <description>Recent content in Ansible on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Nov 2019 17:52:22 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Ansible/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Nov 2019 17:52:22 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/Ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible知识点</title>
       <link>https://xinxiaoyu.github.io/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
       <pubDate>Wed, 13 Nov 2019 17:52:22 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/ansible/ansible%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
-      <description>1. 指定单个ip运行（使用root用户) ansible</description>
+      <description>&lt;h4 id=&#34;1-指定单个ip运行使用root用户&#34;&gt;1. 指定单个ip运行（使用root用户)&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ansible all -i 10.10.120.255, -m ping -u root  &#xD;&#xA; #检测连接是否正常&#xD;&#xA; 10.10.120.255 | SUCCESS =&amp;gt; {&#xD;&#xA;    &amp;#34;ansible_facts&amp;#34;: {&#xD;&#xA;        &amp;#34;discovered_interpreter_python&amp;#34;: &amp;#34;/usr/bin/python&amp;#34;&#xD;&#xA;    }, &#xD;&#xA;    &amp;#34;changed&amp;#34;: false, &#xD;&#xA;    &amp;#34;ping&amp;#34;: &amp;#34;pong&amp;#34;&#xD;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;还有setup模块打印出的信息，在使用变量/判断的时候可以拿到很多有用的信息，比如指定操作系统平台或版本信息&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

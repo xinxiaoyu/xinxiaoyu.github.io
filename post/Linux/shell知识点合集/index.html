@@ -1,28 +1,8 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
+
     <meta charset="utf-8">
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-108398306-1');
-</script>
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -43,7 +23,10 @@
         
     <meta name="author" content="堂吉哈哈德">
     <meta property="og:url" content="https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/">
-    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <link rel="icon" href='/favicon.png' type="image/png">
+    <link rel="alternate icon" href='/favicon.png' type="image/svg+xml">
+    
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
@@ -60,29 +43,6 @@
 
 <body>
     <header id="header" class="clearfix">
-    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
-        
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-108398306-1');
-</script>
-
-    
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -95,7 +55,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://xinxiaoyu.github.io/">首页</a>
+                    <a class="current" href="https://xinxiaoyu.github.io/"></a>
                     
                     <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
                     
@@ -178,7 +138,7 @@
     }
 </style>
 <div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title"></h2>
     <div class="post-toc-content">
         <nav id="TableOfContents"></nav>
     </div>
@@ -188,8 +148,8 @@
         var postToc = $(".post-toc");
         if (postToc.length) {
             var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
             }
 
             var t = postToc.offset().top - 20,
@@ -207,6 +167,10 @@
                 var e = $(window).scrollTop();
                 e < t ? postToc.css(a.start) : postToc.css(a.process)
             })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
         }
     })
 </script>
@@ -236,385 +200,385 @@
             <ol>
 <li>数组</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#008080">arr</span><span style="color:#000;font-weight:bold">=(</span>str1 str2 str3<span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">for</span> i in <span style="color:#d14">${</span><span style="color:#008080">arr</span>[@]<span style="color:#d14">}</span>
-<span style="color:#000;font-weight:bold">do</span>
-<span style="color:#0086b3">echo</span> <span style="color:#008080">$i</span>
-<span style="color:#000;font-weight:bold">done</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#953800">arr</span><span style="color:#0550ae">=(</span>str1 str2 str3<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> i in <span style="color:#0a3069">${</span><span style="color:#953800">arr</span><span style="color:#1f2328">[@]</span><span style="color:#0a3069">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">do</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#953800">$i</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">done</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>预定义变量</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#008080">$#</span> 表示命令中位置参数的数量
-<span style="color:#008080">$*</span> 表示所有的位置参数的内容
-<span style="color:#008080">$?</span> 表示命令执行后的返回的状态，用于检查上一个命令的执行是否正确。在linux中，命令退出状态为0表示命令执行正确，任何非0值的表示命令执行错误。
-<span style="color:#008080">$$</span> 表示当前进程的进程号
-<span style="color:#008080">$!</span> 表示后台运行的最后一个进程的进程号
-<span style="color:#008080">$0</span> 所有参数
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#953800">$#</span> 表示命令中位置参数的数量
+</span></span><span style="display:flex;"><span><span style="color:#953800">$*</span> 表示所有的位置参数的内容
+</span></span><span style="display:flex;"><span><span style="color:#953800">$?</span> 表示命令执行后的返回的状态，用于检查上一个命令的执行是否正确。在linux中，命令退出状态为0表示命令执行正确，任何非0值的表示命令执行错误。
+</span></span><span style="display:flex;"><span><span style="color:#953800">$$</span> 表示当前进程的进程号
+</span></span><span style="display:flex;"><span><span style="color:#953800">$!</span> 表示后台运行的最后一个进程的进程号
+</span></span><span style="display:flex;"><span><span style="color:#953800">$0</span> 所有参数
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>测试语句</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">-eq Equal <span style="color:#008080">to</span> <span style="color:#000;font-weight:bold">=</span> Equal to   
--ne Not equal to !<span style="color:#000;font-weight:bold">=</span> Not equal to
--lt Less than <span style="color:#d14">\&lt;</span> Less than <span style="color:#000;font-weight:bold">(</span>ASCII<span style="color:#000;font-weight:bold">)</span> *
--le Less than or equal to
--gt Greater than &gt; Greater than <span style="color:#000;font-weight:bold">(</span>ASCII<span style="color:#000;font-weight:bold">)</span> *
--ge Greater than or equal to
-re-directs output of one file to another.
--a file
-True <span style="color:#000;font-weight:bold">if</span> file exists.
--b file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is a block special file.
--c file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is a character special file.
--d file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is a directory.
--e file
-True <span style="color:#000;font-weight:bold">if</span> file exists.
--f file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is a regular file.
--g file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is set-group-id.
--h file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is a symbolic link.
--k file
-True <span style="color:#000;font-weight:bold">if</span> file exists and its <span style="color:#d14">``</span>sticky<span style="color:#d14">&#39;&#39;</span> bit is set.
--p file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is a named pipe <span style="color:#000;font-weight:bold">(</span>FIFO<span style="color:#000;font-weight:bold">)</span>.
--r file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is readable.
--s file
-True <span style="color:#000;font-weight:bold">if</span> file exists and has a size greater than zero.
--t fd True <span style="color:#000;font-weight:bold">if</span> file descriptor fd is open and refers to a terminal.
--u file
-True <span style="color:#000;font-weight:bold">if</span> file exists and its set-user-id bit is set.
--w file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is writable.
--x file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is executable.
--G file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is owned by the effective group id.
--L file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is a symbolic link.
--N file
-True <span style="color:#000;font-weight:bold">if</span> file exists and has been modified since it was last read.
--O file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is owned by the effective user id.
--S file
-True <span style="color:#000;font-weight:bold">if</span> file exists and is a socket.
-file1 -ef file2
-True <span style="color:#000;font-weight:bold">if</span> file1 and file2 refer to the same device and inode numbers.
-file1 -nt file2
-True <span style="color:#000;font-weight:bold">if</span> file1 is newer <span style="color:#000;font-weight:bold">(</span>according to modification date<span style="color:#000;font-weight:bold">)</span> than file2, or <span style="color:#000;font-weight:bold">if</span> file1 exists and file2 does not.
-file1 -ot file2
-True <span style="color:#000;font-weight:bold">if</span> file1 is older than file2, or <span style="color:#000;font-weight:bold">if</span> file2 exists and file1 does not.
--o optname
-True <span style="color:#000;font-weight:bold">if</span> the shell option optname is enabled. See the list of options under the description of the -o option to the <span style="color:#0086b3">set</span> <span style="color:#0086b3">builtin</span> below.
--v varname
-True <span style="color:#000;font-weight:bold">if</span> the shell variable varname is <span style="color:#0086b3">set</span> <span style="color:#000;font-weight:bold">(</span>has been assigned a value<span style="color:#000;font-weight:bold">)</span>.
--z string
-True <span style="color:#000;font-weight:bold">if</span> the length of string is zero.
-string
--n string
-True <span style="color:#000;font-weight:bold">if</span> the length of string is non-zero.
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-eq Equal <span style="color:#953800">to</span> <span style="color:#0550ae">=</span> Equal to   
+</span></span><span style="display:flex;"><span>-ne Not equal to !<span style="color:#0550ae">=</span> Not equal to
+</span></span><span style="display:flex;"><span>-lt Less than <span style="color:#0a3069">\&lt;</span> Less than <span style="color:#0550ae">(</span>ASCII<span style="color:#0550ae">)</span> *
+</span></span><span style="display:flex;"><span>-le Less than or equal to
+</span></span><span style="display:flex;"><span>-gt Greater than &gt; Greater than <span style="color:#0550ae">(</span>ASCII<span style="color:#0550ae">)</span> *
+</span></span><span style="display:flex;"><span>-ge Greater than or equal to
+</span></span><span style="display:flex;"><span>re-directs output of one file to another.
+</span></span><span style="display:flex;"><span>-a file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists.
+</span></span><span style="display:flex;"><span>-b file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a block special file.
+</span></span><span style="display:flex;"><span>-c file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a character special file.
+</span></span><span style="display:flex;"><span>-d file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a directory.
+</span></span><span style="display:flex;"><span>-e file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists.
+</span></span><span style="display:flex;"><span>-f file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a regular file.
+</span></span><span style="display:flex;"><span>-g file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is set-group-id.
+</span></span><span style="display:flex;"><span>-h file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a symbolic link.
+</span></span><span style="display:flex;"><span>-k file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and its <span style="color:#0a3069">``</span>sticky<span style="color:#0a3069">&#39;&#39;</span> bit is set.
+</span></span><span style="display:flex;"><span>-p file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a named pipe <span style="color:#0550ae">(</span>FIFO<span style="color:#0550ae">)</span>.
+</span></span><span style="display:flex;"><span>-r file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is readable.
+</span></span><span style="display:flex;"><span>-s file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and has a size greater than zero.
+</span></span><span style="display:flex;"><span>-t fd True <span style="color:#cf222e">if</span> file descriptor fd is open and refers to a terminal.
+</span></span><span style="display:flex;"><span>-u file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and its set-user-id bit is set.
+</span></span><span style="display:flex;"><span>-w file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is writable.
+</span></span><span style="display:flex;"><span>-x file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is executable.
+</span></span><span style="display:flex;"><span>-G file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is owned by the effective group id.
+</span></span><span style="display:flex;"><span>-L file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a symbolic link.
+</span></span><span style="display:flex;"><span>-N file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and has been modified since it was last read.
+</span></span><span style="display:flex;"><span>-O file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is owned by the effective user id.
+</span></span><span style="display:flex;"><span>-S file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a socket.
+</span></span><span style="display:flex;"><span>file1 -ef file2
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file1 and file2 refer to the same device and inode numbers.
+</span></span><span style="display:flex;"><span>file1 -nt file2
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file1 is newer <span style="color:#0550ae">(</span>according to modification date<span style="color:#0550ae">)</span> than file2, or <span style="color:#cf222e">if</span> file1 exists and file2 does not.
+</span></span><span style="display:flex;"><span>file1 -ot file2
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file1 is older than file2, or <span style="color:#cf222e">if</span> file2 exists and file1 does not.
+</span></span><span style="display:flex;"><span>-o optname
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> the shell option optname is enabled. See the list of options under the description of the -o option to the <span style="color:#6639ba">set</span> <span style="color:#6639ba">builtin</span> below.
+</span></span><span style="display:flex;"><span>-v varname
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> the shell variable varname is <span style="color:#6639ba">set</span> <span style="color:#0550ae">(</span>has been assigned a value<span style="color:#0550ae">)</span>.
+</span></span><span style="display:flex;"><span>-z string
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> the length of string is zero.
+</span></span><span style="display:flex;"><span>string
+</span></span><span style="display:flex;"><span>-n string
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> the length of string is non-zero.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>发送邮件</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;content&#34;</span> | mail -s title 1248247511@qq.com
-<span style="color:#998;font-style:italic">#mail 命令依赖 yum install mailx</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;content&#34;</span> <span style="color:#1f2328">|</span> mail -s title 1248247511@qq.com
+</span></span><span style="display:flex;"><span><span style="color:#57606a">#mail 命令依赖 yum install mailx</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="5">
 <li>计算</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">echo</span> <span style="color:#d14">`</span>expr <span style="color:#099">1</span> + 1<span style="color:#d14">`</span>
-<span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;1+3&#34;</span>,<span style="color:#d14">&#34;ALL&#34;</span> | bc
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">`</span>expr <span style="color:#0550ae">1</span> + 1<span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;1+3&#34;</span>,<span style="color:#0a3069">&#34;ALL&#34;</span> <span style="color:#1f2328">|</span> bc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="6">
 <li>函数</li>
 </ol>
 <p>函数的定义和调用</p>
 <p>在使用一个shell函数之前，要求必须先进行定义，定义函数的语句格式如下。</p>
-<pre><code>function 函数名｛
+<pre tabindex="0"><code>function 函数名｛
   操作命令
 ｝
 </code></pre><p>或者也可以简化掉function，但必须在函数名称后加小括号。</p>
-<pre><code>函数名（）｛
+<pre tabindex="0"><code>函数名（）｛
   操作命令
 ｝
 </code></pre><p>调用函数时，直接使用函数名称即可（不需要加小括号）</p>
 <p>例 在脚本中定义一个help函数，当用户输入的脚本参数不是start或stop时，加载该函数并给出关于命令用法的帮助信息，否则给出对应的提示信息。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi help.sh
-<span style="color:#998;font-style:italic">#!/bin/bash</span>
-
-help<span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;Usage: &#34;</span><span style="color:#008080">$0</span><span style="color:#d14">&#34;,&#34;</span>ALL<span style="color:#d14">&#34; start|stop&#34;</span>           //<span style="color:#008080">$0</span>变量用于表示脚本文件名称
-<span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">case</span> <span style="color:#d14">&#34;</span><span style="color:#008080">$1</span><span style="color:#d14">&#34;</span>,<span style="color:#d14">&#34;ALL&#34;</span> in
-  start<span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;starting...&#34;</span>
-    ;;
-  stop<span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;shutdown...&#34;</span>
-    ;;
-  *<span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#0086b3">help</span>   //调用前面定义的help（）函数并执行其中的语句
-<span style="color:#000;font-weight:bold">esac</span>
-
-chmod a+x help.sh
-./help.sh start
-./help.sh restart  //参数不符合要求，输出执行帮助信息
-Usage: ./help.sh start|stop
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vi help.sh
+</span></span><span style="display:flex;"><span><span style="color:#57606a">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>help<span style="color:#0550ae">()</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Usage: &#34;</span><span style="color:#953800">$0</span><span style="color:#0a3069">&#34;,&#34;</span>ALL<span style="color:#0a3069">&#34; start|stop&#34;</span>           //<span style="color:#953800">$0</span>变量用于表示脚本文件名称
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">case</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">$1</span><span style="color:#0a3069">&#34;</span>,<span style="color:#0a3069">&#34;ALL&#34;</span> in
+</span></span><span style="display:flex;"><span>  start<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;starting...&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">;;</span>
+</span></span><span style="display:flex;"><span>  stop<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;shutdown...&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">;;</span>
+</span></span><span style="display:flex;"><span>  *<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">help</span>   //调用前面定义的help（）函数并执行其中的语句
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">esac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod a+x help.sh
+</span></span><span style="display:flex;"><span>./help.sh start
+</span></span><span style="display:flex;"><span>./help.sh restart  //参数不符合要求，输出执行帮助信息
+</span></span><span style="display:flex;"><span>Usage: ./help.sh start<span style="color:#1f2328">|</span>stop
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>函数的参数传递
 在shell脚本中，已经定义的函数就相当于脚本内部设置的命令一样，也可以使用位置参数。如果函数中的命令序列能够处理这些函数，则使用参数传递功能可以实现更加灵活的应用。
 例 在脚本中定义一个加法函数，用于计算两个数的和，并调用该函数分别计算12+34、56+78的和。
 vi adderfun.sh</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#999;font-weight:bold;font-style:italic">#!/bin/bash
-</span><span style="color:#999;font-weight:bold;font-style:italic"></span>
-adder<span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#0086b3">echo</span> <span style="color:#d14">`</span>expr <span style="color:#008080">$1</span> + <span style="color:#008080">$2</span><span style="color:#d14">`</span>
-<span style="color:#000;font-weight:bold">}</span>
-
-adder <span style="color:#099">12</span> <span style="color:#099">34</span>            //将12、34作为adder函数的位置变量<span style="color:#008080">$1</span>、<span style="color:#008080">$2</span>
-adder <span style="color:#099">56</span> <span style="color:#099">78</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#57606a">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span>
+</span></span><span style="display:flex;"><span>adder<span style="color:#0550ae">()</span> <span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">`</span>expr <span style="color:#953800">$1</span> + <span style="color:#953800">$2</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>adder <span style="color:#0550ae">12</span> <span style="color:#0550ae">34</span>            //将12、34作为adder函数的位置变量<span style="color:#953800">$1</span>、<span style="color:#953800">$2</span>
+</span></span><span style="display:flex;"><span>adder <span style="color:#0550ae">56</span> <span style="color:#0550ae">78</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="7">
 <li>当系统load较高时，打印当前系统的一些信息，便于排查问题。</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#999;font-weight:bold;font-style:italic">#!/bin/bash
-</span><span style="color:#999;font-weight:bold;font-style:italic"></span>
-<span style="color:#000;font-weight:bold">while</span> true;<span style="color:#000;font-weight:bold">do</span>
-  
-  <span style="color:#998;font-style:italic"># shell不支持浮点类型，这里只能取整数</span>
-  <span style="color:#008080">res</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">$(</span>uptime  | awk -F<span style="color:#d14">&#39;average:&#39;</span> <span style="color:#d14">&#39;{print $2}&#39;</span> | awk -F<span style="color:#d14">&#39;,&#39;</span> <span style="color:#d14">&#39;{print $1}&#39;</span> | awk -F<span style="color:#d14">&#39;.&#39;</span> <span style="color:#d14">&#39;{print $1}&#39;</span><span style="color:#000;font-weight:bold">)</span>
-  
-  <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">[[</span> <span style="color:#008080">$res</span> -gt <span style="color:#099">5</span> <span style="color:#000;font-weight:bold">]]</span>;<span style="color:#000;font-weight:bold">then</span>
-    top -d <span style="color:#099">1</span> -n <span style="color:#099">2</span> &gt;&gt; /tmp/log
-    mpstat <span style="color:#099">1</span> <span style="color:#099">2</span> &gt;&gt; /tmp/log
-  <span style="color:#000;font-weight:bold">else</span>
-    :
-  <span style="color:#000;font-weight:bold">fi</span>
-
-  sleep <span style="color:#099">1</span>
-
-<span style="color:#000;font-weight:bold">done</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#57606a">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">while</span> true<span style="color:#1f2328">;</span><span style="color:#cf222e">do</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#57606a"># shell不支持浮点类型，这里只能取整数</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#953800">res</span><span style="color:#0550ae">=</span><span style="color:#cf222e">$(</span>uptime  <span style="color:#1f2328">|</span> awk -F<span style="color:#0a3069">&#39;average:&#39;</span> <span style="color:#0a3069">&#39;{print $2}&#39;</span> <span style="color:#1f2328">|</span> awk -F<span style="color:#0a3069">&#39;,&#39;</span> <span style="color:#0a3069">&#39;{print $1}&#39;</span> <span style="color:#1f2328">|</span> awk -F<span style="color:#0a3069">&#39;.&#39;</span> <span style="color:#0a3069">&#39;{print $1}&#39;</span><span style="color:#cf222e">)</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[[</span> <span style="color:#953800">$res</span> -gt <span style="color:#0550ae">5</span> <span style="color:#0550ae">]]</span><span style="color:#1f2328">;</span><span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    top -d <span style="color:#0550ae">1</span> -n <span style="color:#0550ae">2</span> &gt;&gt; /tmp/log
+</span></span><span style="display:flex;"><span>    mpstat <span style="color:#0550ae">1</span> <span style="color:#0550ae">2</span> &gt;&gt; /tmp/log
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>    :
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  sleep <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">done</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="8">
 <li>批量创建用户</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000;font-weight:bold">for</span><span style="color:#000;font-weight:bold">((</span><span style="color:#008080">i</span><span style="color:#000;font-weight:bold">=</span>1;i&lt;<span style="color:#000;font-weight:bold">=</span>20;i++<span style="color:#000;font-weight:bold">))</span>
-<span style="color:#000;font-weight:bold">do</span>
-  useradd user<span style="color:#008080">$i</span>
-  <span style="color:#008080">ran</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">$(</span><span style="color:#0086b3">echo</span> <span style="color:#008080">$RANDOM</span> | md5sum | head -c 5<span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;user</span><span style="color:#008080">$ran</span><span style="color:#d14">&#34;</span> | passwd --stdin user<span style="color:#008080">$i</span>
-  <span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;user</span><span style="color:#008080">$i</span><span style="color:#d14">    user</span><span style="color:#008080">$ran</span><span style="color:#d14">&#34;</span> &gt;&gt; /root/user.txt
-<span style="color:#000;font-weight:bold">done</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#cf222e">for</span><span style="color:#0550ae">((</span><span style="color:#953800">i</span><span style="color:#0550ae">=</span>1<span style="color:#1f2328">;</span>i&lt;<span style="color:#0550ae">=</span>20<span style="color:#1f2328">;</span>i++<span style="color:#0550ae">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">do</span>
+</span></span><span style="display:flex;"><span>  useradd user<span style="color:#953800">$i</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#953800">ran</span><span style="color:#0550ae">=</span><span style="color:#cf222e">$(</span><span style="color:#6639ba">echo</span> <span style="color:#953800">$RANDOM</span> <span style="color:#1f2328">|</span> md5sum <span style="color:#1f2328">|</span> head -c 5<span style="color:#cf222e">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;user</span><span style="color:#953800">$ran</span><span style="color:#0a3069">&#34;</span> <span style="color:#1f2328">|</span> passwd --stdin user<span style="color:#953800">$i</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;user</span><span style="color:#953800">$i</span><span style="color:#0a3069">    user</span><span style="color:#953800">$ran</span><span style="color:#0a3069">&#34;</span> &gt;&gt; /root/user.txt
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">done</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="9">
 <li>大于15k的文件</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000;font-weight:bold">for</span> i in <span style="color:#d14">`</span>ls -l /root/ | grep -v ^d |grep -v total | awk <span style="color:#d14">&#39;{print $NF}&#39;</span><span style="color:#d14">`</span>
-<span style="color:#000;font-weight:bold">do</span>
-<span style="color:#008080">file</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">$(</span>du -k /root/<span style="color:#008080">$i</span> | awk <span style="color:#d14">&#39;{if($1&gt;15) print $2}&#39;</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#0086b3">echo</span> <span style="color:#008080">$file</span> | grep -v <span style="color:#d14">&#39;^$&#39;</span>
-<span style="color:#000;font-weight:bold">done</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#cf222e">for</span> i in <span style="color:#0a3069">`</span>ls -l /root/ <span style="color:#1f2328">|</span> grep -v ^d <span style="color:#1f2328">|</span>grep -v total <span style="color:#1f2328">|</span> awk <span style="color:#0a3069">&#39;{print $NF}&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">do</span>
+</span></span><span style="display:flex;"><span><span style="color:#953800">file</span><span style="color:#0550ae">=</span><span style="color:#cf222e">$(</span>du -k /root/<span style="color:#953800">$i</span> <span style="color:#1f2328">|</span> awk <span style="color:#0a3069">&#39;{if($1&gt;15) print $2}&#39;</span><span style="color:#cf222e">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#953800">$file</span> <span style="color:#1f2328">|</span> grep -v <span style="color:#0a3069">&#39;^$&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">done</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="10">
 <li>nginx日志备份</li>
 </ol>
-<pre><code>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 set -euxo pipefail
 
 time=$(date +%Y%m%d)
-logpath=&quot;/usr/local/nginx/logs&quot;
+logpath=&#34;/usr/local/nginx/logs&#34;
 
 cd $logpath
 mv access.log access_$time.log
@@ -624,53 +588,53 @@ sleep 1
 gzip access_$time.log
 gzip error_$time.log
 </code></pre><p>11.审计统计</p>
-<pre><code>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 
-echo &quot;审计统计详情（统计时间为昨天）&quot;
-echo &quot;&quot;
+echo &#34;审计统计详情（统计时间为昨天）&#34;
+echo &#34;&#34;
 
-ip=$(ip a |grep '10\.' | awk '{print $2}')
-echo &quot;IP地址:   $ip&quot;
+ip=$(ip a |grep &#39;10\.&#39; | awk &#39;{print $2}&#39;)
+echo &#34;IP地址:   $ip&#34;
 
 /sbin/aureport -if /var/log/audit/audit.log -ts yesterday -te now &gt; /tmp/aureport.txt 2&gt;&amp;1
 
-account=$(grep 'Number of changes to accounts, groups, or roles' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;修改账号，组，角色次数: $account&quot;
+account=$(grep &#39;Number of changes to accounts, groups, or roles&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;修改账号，组，角色次数: $account&#34;
 
-teminal=$(grep 'Number of terminals' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;终端数: $teminal&quot;
+teminal=$(grep &#39;Number of terminals&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;终端数: $teminal&#34;
 
-logins=$(grep 'Number of logins' /tmp/aureport.txt |awk '{print $NF}')
-echo &quot;登录次数：$logins&quot; 
+logins=$(grep &#39;Number of logins&#39; /tmp/aureport.txt |awk &#39;{print $NF}&#39;)
+echo &#34;登录次数：$logins&#34; 
 
-logins_fail=$(grep 'Number of failed logins' /tmp/aureport.txt |awk '{print $NF}')
-echo &quot;登录失败次数: $logins_fail&quot;
+logins_fail=$(grep &#39;Number of failed logins&#39; /tmp/aureport.txt |awk &#39;{print $NF}&#39;)
+echo &#34;登录失败次数: $logins_fail&#34;
 
-login_user=$(grep 'Number of users' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;登录用户数: $login_user&quot;
+login_user=$(grep &#39;Number of users&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;登录用户数: $login_user&#34;
 
-auth_num=$(grep 'Number of authentications' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;认证成功次数: $auth_num&quot;
+auth_num=$(grep &#39;Number of authentications&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;认证成功次数: $auth_num&#34;
 
-auth_fail=$(grep 'Number of failed authentications' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;认证失败次数: $auth_fail&quot;
+auth_fail=$(grep &#39;Number of failed authentications&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;认证失败次数: $auth_fail&#34;
 
-anomaly=$(grep 'Number of anomaly events' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;异常事件次数: $anomaly&quot;
+anomaly=$(grep &#39;Number of anomaly events&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;异常事件次数: $anomaly&#34;
 
-sys_call=$(grep 'Number of failed syscalls' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;系统调用失败次数: $sys_call&quot;
+sys_call=$(grep &#39;Number of failed syscalls&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;系统调用失败次数: $sys_call&#34;
 
-crypto=$(grep 'Number of crypto events' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;加密事件次数: $crypto&quot;
+crypto=$(grep &#39;Number of crypto events&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;加密事件次数: $crypto&#34;
 
-event=$(grep 'Number of events' /tmp/aureport.txt | awk '{print $NF}')
-echo &quot;事件数: $event&quot;
+event=$(grep &#39;Number of events&#39; /tmp/aureport.txt | awk &#39;{print $NF}&#39;)
+echo &#34;事件数: $event&#34;
 
-echo &quot;&quot;
-echo &quot;&quot;
+echo &#34;&#34;
+echo &#34;&#34;
 /sbin/aureport --login --summary -i -if /var/log/audit/audit.log &gt; /tmp/aureport.txt 2&gt;&amp;1
-echo &quot;登录用户及次数如下:&quot;
+echo &#34;登录用户及次数如下:&#34;
 cat /tmp/aureport.txt |grep -v audit.log
 </code></pre>
         </div>
@@ -678,9 +642,9 @@ cat /tmp/aureport.txt |grep -v audit.log
         
 <div class="post-archive">
     <ul class="post-copyright">
-        <li><strong>原文作者：</strong><a rel="author" href="https://xinxiaoyu.github.io/">堂吉哈哈德</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/">https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</a></li>
-        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+        <li><strong></strong><a rel="author" href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客</a></li>
+        <li style="word-break:break-all"><strong></strong><a href="https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/">https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/</a></li>
+        <li><strong></strong><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. </li>
     </ul>
 </div>
 <br/>
@@ -690,7 +654,7 @@ cat /tmp/aureport.txt |grep -v audit.log
         
 
 <div class="post-archive">
-    <h2>See Also</h2>
+    <h2></h2>
     <ul class="listing">
         
         <li><a href="/post/MySQL/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/">Mysql命令合集</a></li>
@@ -734,6 +698,9 @@ cat /tmp/aureport.txt |grep -v audit.log
       </script>
     </div>
     
+    
+    
+
 </div>
 
                     <footer id="footer">
@@ -757,6 +724,7 @@ cat /tmp/aureport.txt |grep -v audit.log
 
 
     
+    
     <script type="text/javascript">
         window.MathJax = {
             tex2jax: {
@@ -765,22 +733,102 @@ cat /tmp/aureport.txt |grep -v audit.log
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-108398306-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLB4K7SNHM"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LLB4K7SNHM');
+        }
+      </script>
+
+
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 
 
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
@@ -792,22 +840,65 @@ if (!doNotTrack) {
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='https://xinxiaoyu.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='https://xinxiaoyu.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="https://xinxiaoyu.github.io/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        
+        <h3 class="widget-title"></h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Hahawriting/hongloumeng/" title="红楼梦繁体版120回字数和词汇量统计" target="_blank">红楼梦繁体版120回字数和词汇量统计</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Hahawriting/%E7%96%AB%E6%83%85%E6%9C%9F%E9%97%B4%E5%B1%85%E5%AE%B6%E9%9A%94%E7%A6%BB%E7%9A%84%E7%89%A9%E8%B5%84%E8%B4%AD%E4%B9%B0%E6%8E%A5%E6%94%B6%E6%94%BF%E5%BA%9C%E5%8F%91%E7%9A%84%E8%AE%B0%E5%BD%95%E6%B8%85%E5%8D%95/" title="疫情期间居家隔离的物资购买（接收，政府发的）记录清单" target="_blank">疫情期间居家隔离的物资购买（接收，政府发的）记录清单</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Django/Django%E5%85%A5%E9%97%A8%E5%88%86%E4%BA%AB/" title="Django入门分享" target="_blank">Django入门分享</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/docker/docker%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="docker代理设置" target="_blank">docker代理设置</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Kubernetes/k8s%E4%B8%ADyaml%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E6%AE%B5/" title="k8s中yaml一些常用的字段写法" target="_blank">k8s中yaml一些常用的字段写法</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/tcpdumpWireshark/wireshark/" title="wireshark记录" target="_blank">wireshark记录</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/Linux/%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="代理设置" target="_blank">代理设置</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/clickhouse/clickhouse%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2/" title="clickhouse容器部署" target="_blank">clickhouse容器部署</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/LoadBalancing/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" title="跨域问题" target="_blank">跨域问题</a>
+    </li>
+    
+    <li>
+        <a href="https://xinxiaoyu.github.io/post/SoftSetting/%E6%9C%AC%E5%91%A8%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%9800/" title="本周遇到的错误问题(00)" target="_blank">本周遇到的错误问题(00)</a>
+    </li>
+    
+</ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'></a></h3>
 <ul class="widget-list">
     
     <li><a href="https://xinxiaoyu.github.io/categories/Aliyun/">Aliyun (3)</a></li>
@@ -868,39 +959,39 @@ if (!doNotTrack) {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+        <h3 class="widget-title"><a href='/tags/'></a></h3>
 <div class="tagcloud">
     
-    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2011/">2011</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2014/">2014</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2015/">2015</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2016/">2016</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (9)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2017/">2017</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (10)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (9)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2016/">2016 (6)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2020/">2020</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2015/">2015 (5)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2014/">2014 (2)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2022/">2022</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024</a>
     
-    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL</a>
     
 </div>
     </section>
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title"></h3>
     <ul class="widget-list">
         
         <li>
@@ -912,16 +1003,11 @@ if (!doNotTrack) {
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title"></h3>
         <ul class="widget-list">
-            <li><a href="https://xinxiaoyu.github.io/index.xml">文章 RSS</a></li>
+            <li><a href="https://xinxiaoyu.github.io/index.xml"></a></li>
         </ul>
     </section>
-    <span id="busuanzi_container_site_pv">
-        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
-        <br>
-        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
-        </span>
 </div>
             </div>
         </div>

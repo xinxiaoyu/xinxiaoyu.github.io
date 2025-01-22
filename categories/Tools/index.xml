@@ -4,35 +4,30 @@
     <title>Tools on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/Tools/</link>
     <description>Recent content in Tools on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Aug 2021 17:53:31 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 17:53:31 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/Tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arthas tunnel server使用</title>
       <link>https://xinxiaoyu.github.io/post/Java/arthas/</link>
       <pubDate>Mon, 02 Aug 2021 17:53:31 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Java/arthas/</guid>
-      <description>Arthas tunnel server是一个spring boot fat j</description>
+      <description>&lt;p&gt;Arthas tunnel server是一个spring boot fat jar应用，可以让用户通过浏览器诊断java进程。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>nginx安全设置</title>
       <link>https://xinxiaoyu.github.io/post/Security/nginx_security/</link>
       <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Security/nginx_security/</guid>
-      <description>添加认证 yum install httpd-tools htpasswd -c -b /etc/nginx/passwd/kibana.passwd user auth_basic &amp;quot;Kibana Auth&amp;quot;; auth_basic_user_file /etc/nginx/passwd/kibana.passwd; 更改默</description>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;添加认证&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;yum install httpd-tools&#xD;&#xA;&#xD;&#xA;htpasswd -c -b /etc/nginx/passwd/kibana.passwd user&#xD;&#xA;&#xD;&#xA;auth_basic &amp;#34;Kibana Auth&amp;#34;;&#xD;&#xA;auth_basic_user_file /etc/nginx/passwd/kibana.passwd;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;更改默认超时时间&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;client_header_timeout 20s;   #读取客户端请求头超时时间，默认60s&#xD;&#xA;client_body_timeout 10s;     #读取客户端body超时时间，默认60s&#xD;&#xA;send_timeout 30s;            #服务端向客户端传输数据的超时时间，默认60s&#xD;&#xA;&#xD;&#xA;增加上面三个参数，增强抵抗Slow HTTP Denial of Service Attack 能力&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;黑名单功能&#xA;location字段中增加IP黑名单&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;if ($http_x_forwarded_for ~ 192.168.1.14|192.168.1.5|192.168.2.23) {&#xD;&#xA;    return 403;&#xD;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;http指令内&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>安全工具</title>
       <link>https://xinxiaoyu.github.io/post/Security/security_tools/</link>
       <pubDate>Sat, 02 Aug 2014 17:53:31 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Security/security_tools/</guid>
-      <description>拓扑分析工具：DNS Sweep、Nslo</description>
+      <description>&lt;p&gt;拓扑分析工具：DNS Sweep、Nslookup等&#xA;自动化扫描工具：、Nessus、AIScanner等&#xA;端口扫描、服务检测：Nmap、SuperScan等&#xA;密码、口令破解：John the ripper、L0phtcrack、MD5 Crack、Cain等&#xA;嗅探分析工具：Ethereal、Entercap、Dsniff等&#xA;Exploiting 利用工具：Metasploit Framework、Core Impact、Canvas等&#xA;应用缺陷分析工具：SQLMAP等&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

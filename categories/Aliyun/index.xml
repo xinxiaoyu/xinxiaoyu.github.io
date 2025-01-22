@@ -4,35 +4,30 @@
     <title>Aliyun on 堂吉哈哈德的博客</title>
     <link>https://xinxiaoyu.github.io/categories/Aliyun/</link>
     <description>Recent content in Aliyun on 堂吉哈哈德的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 14 Jul 2021 14:10:24 +0800</lastBuildDate><atom:link href="https://xinxiaoyu.github.io/categories/Aliyun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jul 2021 14:10:24 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/Aliyun/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>阿里云cam授权案例</title>
       <link>https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</link>
       <pubDate>Wed, 14 Jul 2021 14:10:24 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/</guid>
-      <description>一、 阿里云oss权限自定义策略 { &amp;quot;Version&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;Statement&amp;quot;: [</description>
+      <description>&lt;p&gt;一、 阿里云oss权限自定义策略&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{&#xD;&#xA;    &amp;#34;Version&amp;#34;: &amp;#34;1&amp;#34;,&#xD;&#xA;    &amp;#34;Statement&amp;#34;: [&#xD;&#xA;        {&#xD;&#xA;            &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;,&#xD;&#xA;            &amp;#34;Action&amp;#34;: &amp;#34;oss:*&amp;#34;,&#xD;&#xA;            &amp;#34;Resource&amp;#34;: [&#xD;&#xA;                &amp;#34;acs:oss:*:*:dc-odsopr&amp;#34;,&#xD;&#xA;                &amp;#34;acs:oss:*:*:dc-odsopr/*&amp;#34;&#xD;&#xA;            ]&#xD;&#xA;        }&#xD;&#xA;    ]&#xD;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;二、  dataworks授权文档地址&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>金融云VPN新建用户操作步骤－管理员版本</title>
       <link>https://xinxiaoyu.github.io/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</link>
       <pubDate>Tue, 14 Jul 2015 14:10:24 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E7%AE%A1%E7%90%86%E5%91%98%E7%89%88%E6%9C%AC/</guid>
-      <description>标签（空格分隔）： 金融云 vpn 1. 下载风云令 2.</description>
+      <description>&lt;p&gt;标签（空格分隔）： 金融云 vpn&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h4 id=&#34;1-下载风云令httpotpaliyuncomspm0000c3ly6x&#34;&gt;1. 下载&lt;a href=&#34;http://otp.aliyun.com/?spm=0.0.0.0.C3LY6x&#34;&gt;风云令&lt;/a&gt;&lt;/h4&gt;&#xA;&lt;h4 id=&#34;2-登录vpn自助控制台httpscloudvpnconsolealiyuncom&#34;&gt;2. 登录&lt;a href=&#34;https://cloudvpn.console.aliyun.com/&#34;&gt;VPN自助控制台&lt;/a&gt;&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在“我的VPN”里记住客户端IP列表&lt;/li&gt;&#xA;&lt;li&gt;然后在“终端管理”—&amp;gt;“添加终端用户”，完成用户添加（SN可通过风云令获取）&lt;/li&gt;&#xA;&lt;li&gt;添加完后可以在“我的VPN”里头看到多出一个ip地址，此地址即为新分配给自己的地址&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;3-修改入站规则httpsecs4financeconsolealiyuncomspm00000okd8msecuritygroupregioncn-hangzhou&#34;&gt;3. 修改&lt;a href=&#34;https://ecs4finance.console.aliyun.com/?spm=0.0.0.0.0OKD8M#/securityGroup/region/cn-hangzhou&#34;&gt;入站规则&lt;/a&gt;&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在云服务ecs-&amp;gt;安全组-&amp;gt;名称为ssh的列表-&amp;gt;配置规则-&amp;gt;内网入方向中找到端口22的规则列表-&amp;gt;克隆规则，将授权对象改为自己分配到的ip地址即可&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;4-设置密码httpsvpnjbpaliyuncomprx000httplocalhostloginindexhtml&#34;&gt;4. &lt;a href=&#34;https://vpn.jbp.aliyun.com/prx/000/http/localhost/login/index.html&#34;&gt;设置密码&lt;/a&gt;&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;按提示操作即可，第一次密码输入风云令动态码，然后输入两次自设密码，最后输入密码＋风云令动态码即可&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;5-账号设置完成下载vpn客户端httpsupportarraynetworkscomcntroubleshootingindexhtmlag系列产品完成登陆&#34;&gt;5. 账号设置完成,&lt;a href=&#34;http://support.arraynetworks.com.cn/troubleshooting/index.html&#34;&gt;下载VPN客户端&lt;/a&gt;&amp;ldquo;AG系列产品&amp;quot;完成登陆&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;客户端域名: vpn.jbp.aliyun.com&lt;/li&gt;&#xA;&lt;li&gt;用户名记得加@domain.com后缀&lt;/li&gt;&#xA;&lt;li&gt;端口443&lt;/li&gt;&#xA;&lt;li&gt;登录密码为密码+风云令动态码&lt;/li&gt;&#xA;&lt;li&gt;其他默认设置即可&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;注：&#xA;风云令APP的有自带时间校验功能，如果时间不同可能造成登录失败。&#xA;更加详细的官网文档地址：&lt;a href=&#34;https://cloudvpn.console.aliyun.com/&#34;&gt;VPN自助管理控制台&lt;/a&gt; 页面找到&lt;em&gt;&lt;strong&gt;帮助&lt;/strong&gt;&lt;/em&gt;入口。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>金融云VPN新用户申请操作步骤－普通用户版</title>
       <link>https://xinxiaoyu.github.io/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</link>
       <pubDate>Tue, 14 Jul 2015 14:02:51 +0800</pubDate>
-      
       <guid>https://xinxiaoyu.github.io/post/Aliyun/%E9%87%91%E8%9E%8D%E4%BA%91VPN%E6%96%B0%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%89%88/</guid>
-      <description>标签（空格分隔）： 金融云 vpn 1. 下载风云令,</description>
+      <description>&lt;p&gt;标签（空格分隔）： 金融云 vpn&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h4 id=&#34;1-下载风云令httpotpaliyuncomspm0000c3ly6x-将风云令sn序列号发给管理员&#34;&gt;1. 下载&lt;a href=&#34;http://otp.aliyun.com/?spm=0.0.0.0.C3LY6x&#34;&gt;风云令&lt;/a&gt;, 将风云令sn序列号发给管理员&lt;/h4&gt;&#xA;&lt;h4 id=&#34;2-待管理员为自己开好账号后自己即可设置密码httpsvpnjbpaliyuncomprx000httplocalhostloginindexhtml&#34;&gt;2. 待管理员为自己开好账号后自己即可&lt;a href=&#34;https://vpn.jbp.aliyun.com/prx/000/http/localhost/login/index.html&#34;&gt;设置密码&lt;/a&gt;&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;按提示操作即可，第一次密码输入风云令动态码（完整账号为“帐号@.com”），然后输入两次自设密码，最后输入密码＋风云令动态码即可&lt;/li&gt;&#xA;&lt;li&gt;操作完成可关闭网页&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;3-账号设置完成下载vpn客户端httpsupportarraynetworkscomcntroubleshootingindexhtmlspm000089uunitip完成登陆&#34;&gt;3. 账号设置完成,&lt;a href=&#34;http://support.arraynetworks.com.cn/troubleshooting/index.html?spm=0.0.0.0.89UUnI#tip&#34;&gt;下载VPN客户端&lt;/a&gt;完成登陆&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;客户端域名: vpn.jbp.aliyun.com&lt;/li&gt;&#xA;&lt;li&gt;端口为443&lt;/li&gt;&#xA;&lt;li&gt;用户名记得加@qi.com后缀&lt;/li&gt;&#xA;&lt;li&gt;登录密码为密码+风云令动态码&lt;/li&gt;&#xA;&lt;li&gt;其他默认设置即可&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;注：&#xA;风云令APP的有自带时间校验功能，如果时间不同可能造成登录失败。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
