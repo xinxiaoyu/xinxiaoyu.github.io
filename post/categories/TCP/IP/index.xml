@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TCP/IP on 堂吉哈哈德的博客</title>
+    <link>https://xinxiaoyu.github.io/categories/TCP/IP/</link>
+    <description>Recent content in TCP/IP on 堂吉哈哈德的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 24 Jun 2019 14:06:48 +0800</lastBuildDate>
+    <atom:link href="https://xinxiaoyu.github.io/categories/TCP/IP/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>半连接队列</title>
+      <link>https://xinxiaoyu.github.io/post/TCP/%E5%8D%8A%E8%BF%9E%E6%8E%A5%E9%98%9F%E5%88%97/</link>
+      <pubDate>Mon, 24 Jun 2019 14:06:48 +0800</pubDate>
+      <guid>https://xinxiaoyu.github.io/post/TCP/%E5%8D%8A%E8%BF%9E%E6%8E%A5%E9%98%9F%E5%88%97/</guid>
+      <description>&lt;p&gt;抓包相关&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SACK_PERM=1&#xD;&#xA;SACK:  选择确认，只传送缺少的数据而不重传已经正确到达接送方的数据。&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;半连接队列&#xA;&lt;code&gt;net.ipv4.tcp_max_syn_backlog&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

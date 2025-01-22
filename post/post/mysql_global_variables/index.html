@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Mysql_global_variables(MySQL8.0) | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Mysql_global_variables(MySQL8.0) - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-06-09T17:43:05&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-06-09T17:43:05&#43;08:00'>
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis">
+    <meta name="description" content="Mysql_global_variables(MySQL8.0)">
+        
+    <meta name="author" content="堂吉哈哈德">
+    <meta property="og:url" content="https://www.tangjihede.fun/post/mysql_global_variables/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.tangjihede.fun/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">Devops相关技术</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.tangjihede.fun/">首页</a>
+                    
+                    <a  href="https://www.tangjihede.fun/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://www.tangjihede.fun/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.tangjihede.fun/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Mysql_global_variables(MySQL8.0)</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年6月9日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/MySQL'>MySQL</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>版本: MySQL 8.0</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">302
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">303
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">304
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">305
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">306
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">307
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">308
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">309
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">310
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">311
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">312
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">313
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">314
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">315
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">316
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">317
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">318
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">319
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">320
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">321
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">322
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">323
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">324
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">325
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">326
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">327
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">328
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">329
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">330
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">331
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">332
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">333
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">334
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">335
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">336
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">337
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">338
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">339
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">340
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">341
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">342
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">343
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">344
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">345
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">346
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">347
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">348
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">349
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">350
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">351
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">352
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">353
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">354
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">355
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">356
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">357
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">358
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">359
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">360
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">361
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">362
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">363
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">364
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">365
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">366
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">367
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">368
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">369
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">370
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">371
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">372
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">373
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">374
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">375
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">376
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">377
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">378
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">379
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">380
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">381
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">382
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">383
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">384
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">385
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">386
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">387
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">388
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">389
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">390
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">391
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">392
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">393
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">394
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">395
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">396
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">397
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">398
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">399
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">400
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">401
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">402
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">403
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">404
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">405
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">406
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">407
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">408
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">409
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">410
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">411
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">412
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">413
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">414
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">415
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">416
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">417
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">418
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">419
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">420
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">421
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">422
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">423
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">424
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">425
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">426
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">427
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">428
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">429
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">430
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">431
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">432
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">433
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">434
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">435
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">436
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">437
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">438
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">439
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">440
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">441
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">442
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">443
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">444
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">445
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">446
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">447
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">448
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">449
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">450
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">451
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">452
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">453
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">454
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">455
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">456
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">457
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">458
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">459
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">460
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">461
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">462
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">463
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">464
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">465
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">466
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">467
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">468
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">469
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">470
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">471
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">472
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">473
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">474
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">475
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">476
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">477
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">478
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">479
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">480
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">481
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">482
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">483
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">484
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">485
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">486
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">487
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">488
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">489
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">490
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">491
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">492
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">493
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">494
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">495
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">496
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">497
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">498
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">499
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">500
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">501
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">502
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">503
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">504
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">505
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">506
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">507
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">508
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">509
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">510
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">511
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">512
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">513
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">514
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">515
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">516
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">517
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">518
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">519
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">520
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">521
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/*
+-- Query: show global variables
+-- Date: 2021-06-09 17:32
+-- 更新时间: 2021-06-10
+*/
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;back_log&#39;</span>,<span style="color:#d14">&#39;151&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;basedir&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;big_tables&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_cache_size&#39;</span>,<span style="color:#d14">&#39;32768&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_checksum&#39;</span>,<span style="color:#d14">&#39;CRC32&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 设置为CRC32后，binglog文件中每个 event 都会有CRC32 的值</span>
+<span style="color:#998;font-style:italic"># binlog_checksum支持NONE（disabled）和CRC32这两个值。默认值是CRC32。你不能在一个事务中改变binlog_checksum的值。</span>
+<span style="color:#998;font-style:italic"># 修改方式: set global binlog_checksum=NONE;</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_direct_non_transactional_updates&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_encryption&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_error_action&#39;</span>,<span style="color:#d14">&#39;ABORT_SERVER&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_expire_logs_seconds&#39;</span>,<span style="color:#d14">&#39;2592000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_flush_log_at_trx_commit&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># redo log 用于保证 crash-safe 能力。innodb_flush_log_at_trx_commit 这个参数设置成 1 的时候，表示每次事务</span>
+<span style="color:#998;font-style:italic"># 的 redo log都直接持久化到磁盘,这样可以保证 MySQL 异常重启之后数据不丢失。</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_format&#39;</span>,<span style="color:#d14">&#39;ROW&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># binlog_format有三种格式: statement，row, mixed</span>
+<span style="color:#998;font-style:italic"># statement: binlog里面会记录SQL语句的原文，如果SQL语句有limit，则可能会因为主、从的查询索引不一样导致主从数据不一致</span>
+<span style="color:#998;font-style:italic"># row: binlog里面记录了真实修改行的主键id,不会出现主从不一致的情况，但在某些场景下会耗费磁盘空间、I/O资源，适合数据恢复场景</span>
+<span style="color:#998;font-style:italic"># mixed: 意思是，MySQL自己会判断这条SQL语句是否可能引起主备不一致,如果有可能，就用row格式，否则就用statement格式。</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sync_binlog&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 0：默认值。事务提交后，将二进制日志从缓冲写入磁盘，但是不进行刷新操作（fsync()），此时只是写入了操</span>
+<span style="color:#998;font-style:italic">#    作系统缓冲，若操作系统宕机则会丢失部分二进制日志。</span>
+<span style="color:#998;font-style:italic"># 1：事务提交后，将二进制文件写入磁盘并立即执行刷新操作，相当于是同步写入磁盘，不经过操作系统的缓存。</span>
+<span style="color:#998;font-style:italic"># N：每写N次操作系统缓冲就执行一次刷新操作</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slow_query_log&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 慢查询开关,set global slow_query_log=&#39;ON&#39;开启;</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sql_safe_updates&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># set global sql_safe_updates=1;  #开启命令</span>
+<span style="color:#998;font-style:italic"># SET SQL_SAFE_UPDATES = 0;       #关闭命令</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_queries_not_using_indexes&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 未使用索引的查询是否记录到慢查询日志中</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_raw&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_slave_updates&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 表示备库执行 relay log 后生成 binlog</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_slow_admin_statements&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_slow_extra&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_slow_slave_statements&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_statements_unsafe_for_binlog&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_throttle_queries_not_using_indexes&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;long_query_time&#39;</span>,<span style="color:#d14">&#39;10.000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 慢查询时间，默认为10秒</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;low_priority_updates&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;lower_case_file_system&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;lower_case_table_names&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;master_info_repository&#39;</span>,<span style="color:#d14">&#39;TABLE&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;master_verify_checksum&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_allowed_packet&#39;</span>,<span style="color:#d14">&#39;67108864&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># ERROR 2006 (HY000): MySQL server has gone away No connection. Trying to reconnect...</span>
+<span style="color:#998;font-style:italic"># 将此值设置大些: set global max_allowed_packet=100M </span>
+
+tx_isolation
+<span style="color:#998;font-style:italic">#事务隔离级别</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_io_capacity&#39;</span>,<span style="color:#d14">&#39;200&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 根据磁盘iops设置</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_group_commit_sync_delay&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_group_commit_sync_no_delay_count&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_gtid_simple_recovery&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_max_flush_queue_time&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_order_commits&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_rotate_encryption_master_key_at_startup&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_row_event_max_size&#39;</span>,<span style="color:#d14">&#39;8192&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_row_image&#39;</span>,<span style="color:#d14">&#39;FULL&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_row_metadata&#39;</span>,<span style="color:#d14">&#39;MINIMAL&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_row_value_options&#39;</span>,<span style="color:#d14">&#39;&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_rows_query_log_events&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_stmt_cache_size&#39;</span>,<span style="color:#d14">&#39;32768&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_transaction_compression&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_transaction_compression_level_zstd&#39;</span>,<span style="color:#d14">&#39;3&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_transaction_dependency_history_size&#39;</span>,<span style="color:#d14">&#39;25000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;binlog_transaction_dependency_tracking&#39;</span>,<span style="color:#d14">&#39;COMMIT_ORDER&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;block_encryption_mode&#39;</span>,<span style="color:#d14">&#39;aes-128-ecb&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;bulk_insert_buffer_size&#39;</span>,<span style="color:#d14">&#39;8388608&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;check_proxy_users&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;completion_type&#39;</span>,<span style="color:#d14">&#39;NO_CHAIN&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;concurrent_insert&#39;</span>,<span style="color:#d14">&#39;AUTO&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;connect_timeout&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;core_file&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;create_admin_listener_thread&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;cte_max_recursion_depth&#39;</span>,<span style="color:#d14">&#39;1000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;default_password_lifetime&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;default_storage_engine&#39;</span>,<span style="color:#d14">&#39;InnoDB&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;default_table_encryption&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;default_tmp_storage_engine&#39;</span>,<span style="color:#d14">&#39;InnoDB&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;default_week_format&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;delay_key_write&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;delayed_insert_limit&#39;</span>,<span style="color:#d14">&#39;100&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;delayed_insert_timeout&#39;</span>,<span style="color:#d14">&#39;300&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;delayed_queue_size&#39;</span>,<span style="color:#d14">&#39;1000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;disconnect_on_expired_password&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;div_precision_increment&#39;</span>,<span style="color:#d14">&#39;4&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;end_markers_in_json&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;enforce_gtid_consistency&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;eq_range_index_dive_limit&#39;</span>,<span style="color:#d14">&#39;200&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;event_scheduler&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;expire_logs_days&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;explicit_defaults_for_timestamp&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;flush&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;flush_time&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;foreign_key_checks&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;ft_max_word_len&#39;</span>,<span style="color:#d14">&#39;84&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;ft_min_word_len&#39;</span>,<span style="color:#d14">&#39;4&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;ft_query_expansion_limit&#39;</span>,<span style="color:#d14">&#39;20&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;ft_stopword_file&#39;</span>,<span style="color:#d14">&#39;(built-in)&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;general_log&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;general_log_file&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\data\\DESKTOP-D4DB1RU.log&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;generated_random_password_length&#39;</span>,<span style="color:#d14">&#39;20&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;group_concat_max_len&#39;</span>,<span style="color:#d14">&#39;1024&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;group_replication_consistency&#39;</span>,<span style="color:#d14">&#39;EVENTUAL&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;gtid_executed&#39;</span>,<span style="color:#d14">&#39;&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;gtid_executed_compression_period&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;gtid_mode&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_compress&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_dynamic_loading&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_geometry&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_openssl&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_profiling&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_query_cache&#39;</span>,<span style="color:#d14">&#39;NO&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_rtree_keys&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_statement_timeout&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;have_symlink&#39;</span>,<span style="color:#d14">&#39;DISABLED&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;histogram_generation_max_mem_size&#39;</span>,<span style="color:#d14">&#39;20000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;host_cache_size&#39;</span>,<span style="color:#d14">&#39;279&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;hostname&#39;</span>,<span style="color:#d14">&#39;DESKTOP-D4DB1RU&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;information_schema_stats_expiry&#39;</span>,<span style="color:#d14">&#39;86400&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_adaptive_flushing&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_adaptive_flushing_lwm&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_adaptive_hash_index&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_adaptive_hash_index_parts&#39;</span>,<span style="color:#d14">&#39;8&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_adaptive_max_sleep_delay&#39;</span>,<span style="color:#d14">&#39;150000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_api_bk_commit_interval&#39;</span>,<span style="color:#d14">&#39;5&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_api_disable_rowlock&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_api_enable_binlog&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_api_enable_mdl&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_api_trx_level&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_autoextend_increment&#39;</span>,<span style="color:#d14">&#39;64&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_autoinc_lock_mode&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_chunk_size&#39;</span>,<span style="color:#d14">&#39;134217728&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_dump_at_shutdown&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_dump_now&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_dump_pct&#39;</span>,<span style="color:#d14">&#39;25&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_filename&#39;</span>,<span style="color:#d14">&#39;ib_buffer_pool&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_in_core_file&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_instances&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_load_abort&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_load_at_startup&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_load_now&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_buffer_pool_size&#39;</span>,<span style="color:#d14">&#39;134217728&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_change_buffer_max_size&#39;</span>,<span style="color:#d14">&#39;25&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 表示 change buffer 的大小最多只能占用 buffer pool 的 25%。</span>
+<span style="color:#998;font-style:italic"># 详细解释： https://time.geekbang.org/column/article/70848</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_change_buffering&#39;</span>,<span style="color:#d14">&#39;all&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_cmp_per_index_enabled&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_commit_concurrency&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_compression_failure_threshold_pct&#39;</span>,<span style="color:#d14">&#39;5&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_compression_level&#39;</span>,<span style="color:#d14">&#39;6&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_compression_pad_pct_max&#39;</span>,<span style="color:#d14">&#39;50&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_concurrency_tickets&#39;</span>,<span style="color:#d14">&#39;5000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_data_file_path&#39;</span>,<span style="color:#d14">&#39;ibdata1:12M:autoextend&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_deadlock_detect&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_dedicated_server&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_default_row_format&#39;</span>,<span style="color:#d14">&#39;dynamic&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_disable_sort_file_cache&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_doublewrite&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_doublewrite_batch_size&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_doublewrite_files&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_doublewrite_pages&#39;</span>,<span style="color:#d14">&#39;4&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_extend_and_initialize&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_fast_shutdown&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_file_per_table&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_fill_factor&#39;</span>,<span style="color:#d14">&#39;100&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_flush_log_at_timeout&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_flush_method&#39;</span>,<span style="color:#d14">&#39;unbuffered&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_flush_neighbors&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_flush_sync&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_flushing_avg_loops&#39;</span>,<span style="color:#d14">&#39;30&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_force_load_corrupted&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_force_recovery&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_fsync_threshold&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_cache_size&#39;</span>,<span style="color:#d14">&#39;8000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_enable_diag_print&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_enable_stopword&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_max_token_size&#39;</span>,<span style="color:#d14">&#39;84&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_min_token_size&#39;</span>,<span style="color:#d14">&#39;3&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_num_word_optimize&#39;</span>,<span style="color:#d14">&#39;2000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_result_cache_limit&#39;</span>,<span style="color:#d14">&#39;2000000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_sort_pll_degree&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_ft_total_cache_size&#39;</span>,<span style="color:#d14">&#39;640000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_idle_flush_pct&#39;</span>,<span style="color:#d14">&#39;100&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_io_capacity_max&#39;</span>,<span style="color:#d14">&#39;2000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 它会告诉 InnoDB 你的磁盘能力。这个值我建议你设置成磁盘的 IOPS</span>
+<span style="color:#998;font-style:italic"># https://time.geekbang.org/column/article/71806</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_lock_wait_timeout&#39;</span>,<span style="color:#d14">&#39;50&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_buffer_size&#39;</span>,<span style="color:#d14">&#39;16777216&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_checksums&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_compressed_pages&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_file_size&#39;</span>,<span style="color:#d14">&#39;50331648&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_files_in_group&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_spin_cpu_abs_lwm&#39;</span>,<span style="color:#d14">&#39;80&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_spin_cpu_pct_hwm&#39;</span>,<span style="color:#d14">&#39;50&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_wait_for_flush_spin_hwm&#39;</span>,<span style="color:#d14">&#39;400&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_write_ahead_size&#39;</span>,<span style="color:#d14">&#39;8192&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_log_writer_threads&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_lru_scan_depth&#39;</span>,<span style="color:#d14">&#39;1024&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_max_dirty_pages_pct&#39;</span>,<span style="color:#d14">&#39;90.000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_max_dirty_pages_pct_lwm&#39;</span>,<span style="color:#d14">&#39;10.000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_max_purge_lag&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_max_purge_lag_delay&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_max_undo_log_size&#39;</span>,<span style="color:#d14">&#39;1073741824&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_old_blocks_pct&#39;</span>,<span style="color:#d14">&#39;37&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_old_blocks_time&#39;</span>,<span style="color:#d14">&#39;1000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_online_alter_log_max_size&#39;</span>,<span style="color:#d14">&#39;134217728&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_open_files&#39;</span>,<span style="color:#d14">&#39;4000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_optimize_fulltext_only&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_page_cleaners&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_page_size&#39;</span>,<span style="color:#d14">&#39;16384&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_parallel_read_threads&#39;</span>,<span style="color:#d14">&#39;4&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_print_all_deadlocks&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_print_ddl_logs&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_purge_batch_size&#39;</span>,<span style="color:#d14">&#39;300&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_purge_rseg_truncate_frequency&#39;</span>,<span style="color:#d14">&#39;128&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_purge_threads&#39;</span>,<span style="color:#d14">&#39;4&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_random_read_ahead&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_read_ahead_threshold&#39;</span>,<span style="color:#d14">&#39;56&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_read_io_threads&#39;</span>,<span style="color:#d14">&#39;4&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_read_only&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_redo_log_encrypt&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_replication_delay&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_rollback_on_timeout&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_rollback_segments&#39;</span>,<span style="color:#d14">&#39;128&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_sort_buffer_size&#39;</span>,<span style="color:#d14">&#39;1048576&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_spin_wait_delay&#39;</span>,<span style="color:#d14">&#39;6&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_spin_wait_pause_multiplier&#39;</span>,<span style="color:#d14">&#39;50&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_stats_auto_recalc&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_stats_include_delete_marked&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_stats_method&#39;</span>,<span style="color:#d14">&#39;nulls_equal&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_stats_on_metadata&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_stats_persistent&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_stats_persistent_sample_pages&#39;</span>,<span style="color:#d14">&#39;20&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_stats_transient_sample_pages&#39;</span>,<span style="color:#d14">&#39;8&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_status_output&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_status_output_locks&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_strict_mode&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_sync_array_size&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_sync_spin_loops&#39;</span>,<span style="color:#d14">&#39;30&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_table_locks&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_temp_data_file_path&#39;</span>,<span style="color:#d14">&#39;ibtmp1:12M:autoextend&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_thread_concurrency&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_thread_sleep_delay&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_undo_log_encrypt&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_undo_log_truncate&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_undo_tablespaces&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_use_native_aio&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_validate_tablespace_paths&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;innodb_write_io_threads&#39;</span>,<span style="color:#d14">&#39;4&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;interactive_timeout&#39;</span>,<span style="color:#d14">&#39;28800&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;internal_tmp_mem_storage_engine&#39;</span>,<span style="color:#d14">&#39;TempTable&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;join_buffer_size&#39;</span>,<span style="color:#d14">&#39;262144&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;keep_files_on_create&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;large_files_support&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;large_page_size&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;large_pages&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;lock_wait_timeout&#39;</span>,<span style="color:#d14">&#39;31536000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_bin&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_bin_basename&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\data\\binlog&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_bin_index&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\data\\binlog.index&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_bin_trust_function_creators&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_bin_use_v1_row_events&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_error&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\data\\DESKTOP-D4DB1RU.err&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_error_services&#39;</span>,<span style="color:#d14">&#39;log_filter_internal; log_sink_internal&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_error_verbosity&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;log_output&#39;</span>,<span style="color:#d14">&#39;FILE&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_binlog_cache_size&#39;</span>,<span style="color:#d14">&#39;18446744073709547520&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_binlog_size&#39;</span>,<span style="color:#d14">&#39;1073741824&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_binlog_stmt_cache_size&#39;</span>,<span style="color:#d14">&#39;18446744073709547520&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_connect_errors&#39;</span>,<span style="color:#d14">&#39;100&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_connections&#39;</span>,<span style="color:#d14">&#39;151&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_delayed_threads&#39;</span>,<span style="color:#d14">&#39;20&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_digest_length&#39;</span>,<span style="color:#d14">&#39;1024&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_error_count&#39;</span>,<span style="color:#d14">&#39;1024&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_execution_time&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_heap_table_size&#39;</span>,<span style="color:#d14">&#39;16777216&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_insert_delayed_threads&#39;</span>,<span style="color:#d14">&#39;20&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_join_size&#39;</span>,<span style="color:#d14">&#39;18446744073709551615&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_length_for_sort_data&#39;</span>,<span style="color:#d14">&#39;4096&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_points_in_geometry&#39;</span>,<span style="color:#d14">&#39;65536&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_prepared_stmt_count&#39;</span>,<span style="color:#d14">&#39;16382&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_relay_log_size&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_seeks_for_key&#39;</span>,<span style="color:#d14">&#39;4294967295&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_sort_length&#39;</span>,<span style="color:#d14">&#39;1024&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_sp_recursion_depth&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_user_connections&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;max_write_lock_count&#39;</span>,<span style="color:#d14">&#39;4294967295&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;min_examined_row_limit&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;myisam_data_pointer_size&#39;</span>,<span style="color:#d14">&#39;6&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;myisam_max_sort_file_size&#39;</span>,<span style="color:#d14">&#39;2146435072&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;myisam_mmap_size&#39;</span>,<span style="color:#d14">&#39;18446744073709551615&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;myisam_recover_options&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;myisam_repair_threads&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;myisam_sort_buffer_size&#39;</span>,<span style="color:#d14">&#39;8388608&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;myisam_stats_method&#39;</span>,<span style="color:#d14">&#39;nulls_unequal&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;myisam_use_mmap&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_compression_algorithms&#39;</span>,<span style="color:#d14">&#39;DEFLATE_STREAM,LZ4_MESSAGE,ZSTD_STREAM&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_connect_timeout&#39;</span>,<span style="color:#d14">&#39;30&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_deflate_default_compression_level&#39;</span>,<span style="color:#d14">&#39;3&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_deflate_max_client_compression_level&#39;</span>,<span style="color:#d14">&#39;5&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_document_id_unique_prefix&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_enable_hello_notice&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_idle_worker_thread_timeout&#39;</span>,<span style="color:#d14">&#39;60&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_interactive_timeout&#39;</span>,<span style="color:#d14">&#39;28800&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_lz4_default_compression_level&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_lz4_max_client_compression_level&#39;</span>,<span style="color:#d14">&#39;8&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_max_allowed_packet&#39;</span>,<span style="color:#d14">&#39;67108864&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_max_connections&#39;</span>,<span style="color:#d14">&#39;100&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_min_worker_threads&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_port_open_timeout&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_read_timeout&#39;</span>,<span style="color:#d14">&#39;30&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_wait_timeout&#39;</span>,<span style="color:#d14">&#39;28800&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_write_timeout&#39;</span>,<span style="color:#d14">&#39;60&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_zstd_default_compression_level&#39;</span>,<span style="color:#d14">&#39;3&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;mysqlx_zstd_max_client_compression_level&#39;</span>,<span style="color:#d14">&#39;11&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;named_pipe&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;net_buffer_length&#39;</span>,<span style="color:#d14">&#39;16384&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;net_read_timeout&#39;</span>,<span style="color:#d14">&#39;30&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;net_retry_count&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;net_write_timeout&#39;</span>,<span style="color:#d14">&#39;60&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;ngram_token_size&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;offline_mode&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;old_alter_table&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;open_files_limit&#39;</span>,<span style="color:#d14">&#39;10209&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;optimizer_prune_level&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;optimizer_search_depth&#39;</span>,<span style="color:#d14">&#39;62&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;optimizer_trace&#39;</span>,<span style="color:#d14">&#39;enabled=off,one_line=off&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;optimizer_trace_limit&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;optimizer_trace_max_mem_size&#39;</span>,<span style="color:#d14">&#39;1048576&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;optimizer_trace_offset&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;partial_revokes&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;password_history&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;password_require_current&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;password_reuse_interval&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_accounts_size&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_digests_size&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_error_size&#39;</span>,<span style="color:#d14">&#39;4890&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_events_stages_history_long_size&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_events_stages_history_size&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_events_statements_history_long_size&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_events_statements_history_size&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_events_transactions_history_long_size&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_events_transactions_history_size&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_events_waits_history_long_size&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_events_waits_history_size&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_hosts_size&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_cond_classes&#39;</span>,<span style="color:#d14">&#39;100&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_cond_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_digest_length&#39;</span>,<span style="color:#d14">&#39;1024&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_digest_sample_age&#39;</span>,<span style="color:#d14">&#39;60&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_file_classes&#39;</span>,<span style="color:#d14">&#39;80&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_file_handles&#39;</span>,<span style="color:#d14">&#39;32768&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_file_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_index_stat&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_memory_classes&#39;</span>,<span style="color:#d14">&#39;450&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_metadata_locks&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_mutex_classes&#39;</span>,<span style="color:#d14">&#39;300&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_mutex_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_prepared_statements_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_program_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_rwlock_classes&#39;</span>,<span style="color:#d14">&#39;60&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_rwlock_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_socket_classes&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_socket_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_sql_text_length&#39;</span>,<span style="color:#d14">&#39;1024&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_stage_classes&#39;</span>,<span style="color:#d14">&#39;175&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_statement_classes&#39;</span>,<span style="color:#d14">&#39;218&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_statement_stack&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_table_handles&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_table_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_table_lock_stat&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_thread_classes&#39;</span>,<span style="color:#d14">&#39;100&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_max_thread_instances&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_session_connect_attrs_size&#39;</span>,<span style="color:#d14">&#39;512&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_setup_actors_size&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_setup_objects_size&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_show_processlist&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;performance_schema_users_size&#39;</span>,<span style="color:#d14">&#39;-1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;persisted_globals_load&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;pid_file&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\data\\DESKTOP-D4DB1RU.pid&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;preload_buffer_size&#39;</span>,<span style="color:#d14">&#39;32768&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;print_identified_with_as_hex&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;profiling&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;profiling_history_size&#39;</span>,<span style="color:#d14">&#39;15&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;protocol_compression_algorithms&#39;</span>,<span style="color:#d14">&#39;zlib,zstd,uncompressed&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;protocol_version&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;query_alloc_block_size&#39;</span>,<span style="color:#d14">&#39;8192&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;query_prealloc_size&#39;</span>,<span style="color:#d14">&#39;8192&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;range_alloc_block_size&#39;</span>,<span style="color:#d14">&#39;4096&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;range_optimizer_max_mem_size&#39;</span>,<span style="color:#d14">&#39;8388608&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;rbr_exec_mode&#39;</span>,<span style="color:#d14">&#39;STRICT&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;read_buffer_size&#39;</span>,<span style="color:#d14">&#39;131072&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;read_only&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;read_rnd_buffer_size&#39;</span>,<span style="color:#d14">&#39;262144&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;regexp_stack_limit&#39;</span>,<span style="color:#d14">&#39;8000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;regexp_time_limit&#39;</span>,<span style="color:#d14">&#39;32&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log&#39;</span>,<span style="color:#d14">&#39;DESKTOP-D4DB1RU-relay-bin&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log_basename&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\data\\DESKTOP-D4DB1RU-relay-bin&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log_index&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\data\\DESKTOP-D4DB1RU-relay-bin.index&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log_info_file&#39;</span>,<span style="color:#d14">&#39;relay-log.info&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log_info_repository&#39;</span>,<span style="color:#d14">&#39;TABLE&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log_purge&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log_recovery&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;relay_log_space_limit&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;replication_optimize_for_static_plugin_config&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;replication_sender_observe_commit_only&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;require_secure_transport&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;rpl_read_size&#39;</span>,<span style="color:#d14">&#39;8192&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;rpl_stop_slave_timeout&#39;</span>,<span style="color:#d14">&#39;31536000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;schema_definition_cache&#39;</span>,<span style="color:#d14">&#39;256&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;secondary_engine_cost_threshold&#39;</span>,<span style="color:#d14">&#39;100000.000000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;secure_file_priv&#39;</span>,<span style="color:#d14">&#39;NULL&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 如果设置为 empty，表示不限制文件生成的位置，这是不安全的设置；</span>
+<span style="color:#998;font-style:italic"># 如果设置为一个表示路径的字符串，就要求生成的文件只能放在这个指定的目录，或者它的子目录；</span>
+<span style="color:#998;font-style:italic"># 如果设置为 NULL，就表示禁止在这个 MySQL 实例上执行 select … into outfile 操作。</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;select_into_buffer_size&#39;</span>,<span style="color:#d14">&#39;131072&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;select_into_disk_sync&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;select_into_disk_sync_delay&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;server_id&#39;</span>,<span style="color:#d14">&#39;1&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;server_id_bits&#39;</span>,<span style="color:#d14">&#39;32&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;server_uuid&#39;</span>,<span style="color:#d14">&#39;f9fbf9f9-bc38-11eb-8231-00ff44c1d31a&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;show_create_table_verbosity&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;show_old_temporals&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;skip_external_locking&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;skip_name_resolve&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;skip_networking&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;skip_show_database&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;skip_slave_start&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_allow_batching&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_checkpoint_group&#39;</span>,<span style="color:#d14">&#39;512&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_checkpoint_period&#39;</span>,<span style="color:#d14">&#39;300&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_compressed_protocol&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_exec_mode&#39;</span>,<span style="color:#d14">&#39;STRICT&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_load_tmpdir&#39;</span>,<span style="color:#d14">&#39;C:\\WINDOWS\\TEMP&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_max_allowed_packet&#39;</span>,<span style="color:#d14">&#39;1073741824&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_net_timeout&#39;</span>,<span style="color:#d14">&#39;60&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_parallel_type&#39;</span>,<span style="color:#d14">&#39;DATABASE&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_parallel_workers&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_pending_jobs_size_max&#39;</span>,<span style="color:#d14">&#39;134217728&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_preserve_commit_order&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_rows_search_algorithms&#39;</span>,<span style="color:#d14">&#39;INDEX_SCAN,HASH_SCAN&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_skip_errors&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_sql_verify_checksum&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slave_transaction_retries&#39;</span>,<span style="color:#d14">&#39;10&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slow_launch_time&#39;</span>,<span style="color:#d14">&#39;2&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;slow_query_log_file&#39;</span>,<span style="color:#d14">&#39;D:\\mysql-8.0.25-winx64\\data\\DESKTOP-D4DB1RU-slow.log&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sort_buffer_size&#39;</span>,<span style="color:#d14">&#39;262144&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sql_auto_is_null&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sql_big_selects&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sql_buffer_result&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sql_log_off&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sql_require_primary_key&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sql_slave_skip_counter&#39;</span>,<span style="color:#d14">&#39;0&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sql_warnings&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;stored_program_cache&#39;</span>,<span style="color:#d14">&#39;256&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;stored_program_definition_cache&#39;</span>,<span style="color:#d14">&#39;256&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;super_read_only&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sync_master_info&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sync_relay_log&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;sync_relay_log_info&#39;</span>,<span style="color:#d14">&#39;10000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;table_definition_cache&#39;</span>,<span style="color:#d14">&#39;2000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;table_encryption_privilege_check&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;table_open_cache&#39;</span>,<span style="color:#d14">&#39;4000&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;table_open_cache_instances&#39;</span>,<span style="color:#d14">&#39;16&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;tablespace_definition_cache&#39;</span>,<span style="color:#d14">&#39;256&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;temptable_max_mmap&#39;</span>,<span style="color:#d14">&#39;1073741824&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;temptable_max_ram&#39;</span>,<span style="color:#d14">&#39;1073741824&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;temptable_use_mmap&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;thread_cache_size&#39;</span>,<span style="color:#d14">&#39;9&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;thread_handling&#39;</span>,<span style="color:#d14">&#39;one-thread-per-connection&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;thread_stack&#39;</span>,<span style="color:#d14">&#39;286720&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;tmp_table_size&#39;</span>,<span style="color:#d14">&#39;16777216&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;transaction_alloc_block_size&#39;</span>,<span style="color:#d14">&#39;8192&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;transaction_isolation&#39;</span>,<span style="color:#d14">&#39;REPEATABLE-READ&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 事务隔离级别,默认是RR可重复读</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;transaction_prealloc_size&#39;</span>,<span style="color:#d14">&#39;4096&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;transaction_read_only&#39;</span>,<span style="color:#d14">&#39;OFF&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;unique_checks&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;updatable_views_with_limit&#39;</span>,<span style="color:#d14">&#39;YES&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;wait_timeout&#39;</span>,<span style="color:#d14">&#39;28800&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+<span style="color:#998;font-style:italic"># 连接超时时间，单位秒，默认8小时</span>
+<span style="color:#998;font-style:italic"># 连接被断开之后,客户端再发送请求就会收到错误：Lost connection to MySQL server during query</span>
+
+<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;windowing_use_high_precision&#39;</span>,<span style="color:#d14">&#39;ON&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.tangjihede.fun/">堂吉哈哈德</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/mysql_global_variables/">https://www.tangjihede.fun/post/mysql_global_variables/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/jenkins_pipeline/">Jenkins pipeline知识点</a></li>
+        
+        <li><a href="/post/mysql_privileges/">MySQL用户权限汇总</a></li>
+        
+        <li><a href="/post/python%E7%9A%84selenium%E5%BA%93%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/">Python的selenium库使用汇总</a></li>
+        
+        <li><a href="/post/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/">Docker镜像清理</a></li>
+        
+        <li><a href="/post/hugo%E4%BD%BF%E7%94%A8/">Hugo使用</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2021'>2021</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108398306-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.tangjihede.fun/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.tangjihede.fun/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Error/">Error (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Hugo/">Hugo (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (9)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (7)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/RabbitMQ/">RabbitMQ (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
+<div class="tagcloud">
+     
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(40)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(13)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(4)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(5)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(5)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(5)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+    <br>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+    </span>
+
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

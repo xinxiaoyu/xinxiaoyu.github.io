@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    <meta charset="utf-8">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>本周遇到的错误问题(00) | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="本周遇到的错误问题(00) - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2022-06-08T15:54:07&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-06-08T15:54:07&#43;08:00'>
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="本周遇到的错误问题(00)">
+        
+    <meta name="author" content="堂吉哈哈德">
+    <meta property="og:url" content="https://www.tangjihede.fun/post/SoftSetting/virtualbox/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.tangjihede.fun/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">工作内容存档记录</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.tangjihede.fun/">首页</a>
+                    
+                    <a  href="https://www.tangjihede.fun/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://www.tangjihede.fun/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.tangjihede.fun/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">本周遇到的错误问题(00)</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年6月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/SoftSetting'>SoftSetting</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h3 id="00-virtualbox老是获取不到ip的问题">00. virtualbox老是获取不到ip的问题</h3>
+<p>virtualbox作为本人首选的虚拟化应用软件，有时会遇到一些诡异的问题。</p>
+<p>有一次在Mac上用桥接模式、无线网卡死活获取不到ip地址，但用网线就可以。</p>
+<p>如果宿主机开了vpn，那么宿主机可能无法连接到虚机。如果想连接，可以断掉vpn，再连虚机，然后再连vpn，此时宿主机和虚机的已有连接可能不。。会。。断。。。</p>
+<p>windows上的virtualbox和docker、VMware尽量不要共存，安装其中的一个最好。最近忘记这点了，先后安装了docker和VMware的客户端，然后virtualbox老是获取不到ip。</p>
+<h3 id="01-php_network_getaddresses-getaddrinfo-failed-temporary-failure-in-name-resolution-please-check-if-wacore-is-running-wacore6252">01. php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution. Please check if wacore is running: wacore:6252</h3>
+<p>用docker-compose部署WhatsApp Business API的时候报这个错误，是因为waweb找不到wacore的机器（无法解析wacore的主机名），需要增加hosts或者dns</p>
+<h3 id="02--腾讯云容器和阿里云容器的nginx-ingress的注解">02.  腾讯云容器和阿里云容器的nginx ingress的注解</h3>
+<p>阿里云kubernetes的ingress默认不会强制http到https跳转，如果需要跳转，则需要加上注解<code>nginx.ingress.kubernetes.io/ssl-redirect: 'true'</code></p>
+<p>而腾讯云kubernetes的ingress默认开启强制http到https跳转，如果不需要跳转，需要显示加上注解<code>nginx.ingress.kubernetes.io/ssl-redirect: &quot;false&quot;</code></p>
+<h3 id="03-deployment添加hosts">03. deployment添加hosts</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">      </span><span style="color:#000080">dnsPolicy</span>:<span style="color:#bbb"> </span>ClusterFirst<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">nodeSelector</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">group</span>:<span style="color:#bbb"> </span>default<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">restartPolicy</span>:<span style="color:#bbb"> </span>Always<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>...省略其他<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">hostAliases</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>- <span style="color:#000080">ip</span>:<span style="color:#bbb"> </span><span style="color:#099">10.149.30.13</span><span style="color:#bbb">
+</span><span style="color:#bbb">          </span><span style="color:#000080">hostnames</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">            </span>- a.test.com<span style="color:#bbb">
+</span><span style="color:#bbb">            </span>- b.test.com<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="04--consul的health-check错误">04.  consul的health check错误</h3>
+<p>如果是i/o timeout，则一般是网络问题， agent 到consul的8500端口通，consul机器到agent的机器不通。</p>
+<p>如果是connection refused，则agent端有问题。</p>
+<p>下线掉其他agent，则用命令 <code>curl -v -X PUT http://ip:8500/v1/agent/service/deregister/${id}</code></p>
+<h3 id="05-rabbitmq的网络分区错误">05. RabbitMQ的网络分区错误</h3>
+<p><code>Mnesia reports that this RabbitMQ cluster has experienced a network partition. There is a risk of losing data. Please read  RabbitMQ documentation about network partitions and the possible solutions.</code></p>
+<p>这个原因比较复杂，后边需要单独写篇文章。</p>
+<h3 id="06-nginx-ingress-webhook">06. nginx ingress webhook</h3>
+<p><code>admission webhook &quot;validate.nginx.ingress.kubernetes.io&quot; denied the request: nginx.ingress.kubernetes.io/configuration-snippet annotation cannot be used. Snippet directives are disabled by the Ingress administrator</code></p>
+<p>详情地址： <a href="https://github.com/kubernetes/ingress-nginx/pull/8221">https://github.com/kubernetes/ingress-nginx/pull/8221</a></p>
+<h3 id="07-nginx-ingress开启png压缩">07. nginx ingress开启png压缩</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">    </span><span style="color:#000080">nginx.ingress.kubernetes.io/server-snippet</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
+</span><span style="color:#d14">      gzip on;
+</span><span style="color:#d14">      gzip_vary on;
+</span><span style="color:#d14">      gzip_proxied any;
+</span><span style="color:#d14">      gzip_comp_level 6;
+</span><span style="color:#d14">      gzip_buffers 16 8k;
+</span><span style="color:#d14">      gzip_http_version 1.1;
+</span><span style="color:#d14">      gzip_min_length 256;
+</span><span style="color:#d14">      gzip_types application/atom+xml application/javascript application/x-javascript application/json application/rss+xml application/vnd.ms-fontobject application/x-font-ttf application/x-web-app-manifest+json application/xhtml+xml application/xml font/opentype image/svg+xml image/x-icon text/css text/plain text/x-component image/png;</span><span style="color:#bbb">      
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="08-ssh开启一个代理端口">08. SSH开启一个代理端口</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ssh -D <span style="color:#099">10821</span> root@hostname -p <span style="color:#099">22</span> -NTC
+</code></pre></td></tr></table>
+</div>
+</div><p>然后Firefox设置里头开启代理配置就行，Firefox还支持<code>使用 SOCKS v5 时代理 DNS 查询</code>和<code>启用基于 HTTPS 的 DNS</code>。</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.tangjihede.fun/">堂吉哈哈德</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/SoftSetting/virtualbox/">https://www.tangjihede.fun/post/SoftSetting/virtualbox/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/Hahawriting/%E7%96%AB%E6%83%85%E6%9C%9F%E9%97%B4%E5%B1%85%E5%AE%B6%E9%9A%94%E7%A6%BB%E7%9A%84%E7%89%A9%E8%B5%84%E8%B4%AD%E4%B9%B0%E6%8E%A5%E6%94%B6%E6%94%BF%E5%BA%9C%E5%8F%91%E7%9A%84%E8%AE%B0%E5%BD%95%E6%B8%85%E5%8D%95/">疫情期间居家隔离的物资购买（接收，政府发的）记录清单</a></li>
+        
+        <li><a href="/post/Hahawriting/hongloumeng/">红楼梦繁体版120回字数和词汇量统计</a></li>
+        
+        <li><a href="/post/Hahawriting/test/">hugo建站工具通过github action自动发布到github page</a></li>
+        
+        <li><a href="/post/Hahawriting/%E6%95%85%E4%BA%8B%E4%B8%80%E5%88%991/">我的老姥姥的一个小故事</a></li>
+        
+        <li><a href="/post/CICD/hugo%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83/">hugo自动化发布文章测试页面</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2022'>2022</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108398306-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.tangjihede.fun/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.tangjihede.fun/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.tangjihede.fun/categories/Aliyun/">Aliyun (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/ELK/">ELK (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Error/">Error (10)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (7)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Hardware/">Hardware (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (12)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (7)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (10)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Security/">Security (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/SoftSetting/">SoftSetting (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Tools/">Tools (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Zabbix/">Zabbix (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.tangjihede.fun/tags/2022/">2022 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2021/">2021 (30)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2019/">2019 (8)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2018/">2018 (9)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2017/">2017 (9)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2015/">2015 (5)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2014/">2014 (2)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL (87)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

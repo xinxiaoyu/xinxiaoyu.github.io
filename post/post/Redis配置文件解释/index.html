@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Redis配置文件解释 | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Redis配置文件解释 - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2017-06-22T10:41:05&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2017-06-22T10:41:05&#43;08:00'>
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis">
+    <meta name="description" content="Redis配置文件解释">
+        
+    <meta name="author" content="堂吉哈哈德">
+    <meta property="og:url" content="https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.tangjihede.fun/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">Devops相关技术</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.tangjihede.fun/">首页</a>
+                    
+                    <a  href="https://www.tangjihede.fun/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://www.tangjihede.fun/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.tangjihede.fun/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Redis配置文件解释</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2017年6月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Redis'>Redis</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <pre><code>protected-mode yes
+port 6379
+tcp-backlog 511
+timeout 0
+tcp-keepalive 300
+daemonize yes
+supervised no
+pidfile /var/run/redis_6379.pid
+loglevel notice
+logfile &quot;/var/log/redis.log&quot;
+databases 16
+always-show-logo yes
+
+save 900 1
+save 300 10
+save 60 10000
+# 只要满足以下三个条件中的任意一个，BGSAVE命令就会被执行:
+# 服务器在900秒之内，对数据库进行了至少1次修改
+# 服务器在300秒之内，对数据库进行了至少10次修改
+# 服务器在60秒之内，对数据库进行了至少10000次修改
+
+stop-writes-on-bgsave-error yes
+rdbcompression yes
+rdbchecksum yes
+dbfilename dump.rdb
+
+dir ./
+slave-serve-stale-data yes
+slave-read-only yes
+repl-diskless-sync no
+repl-diskless-sync-delay 5
+repl-disable-tcp-nodelay no
+slave-priority 100
+lazyfree-lazy-eviction no
+lazyfree-lazy-expire no
+lazyfree-lazy-server-del no
+slave-lazy-flush no
+appendonly no
+appendfilename &quot;appendonly.aof&quot;
+appendfsync everysec
+no-appendfsync-on-rewrite no
+auto-aof-rewrite-percentage 100
+auto-aof-rewrite-min-size 64mb
+aof-load-truncated yes
+aof-use-rdb-preamble no
+lua-time-limit 5000
+
+slowlog-log-slower-than 10000
+单位是微妙（1秒=1000毫秒=1000000微秒），默认值10000
+
+slowlog-max-len 128
+latency-monitor-threshold 0
+notify-keyspace-events &quot;&quot;
+hash-max-ziplist-entries 512
+hash-max-ziplist-value 64
+list-max-ziplist-size -2
+list-compress-depth 0
+set-max-intset-entries 512
+zset-max-ziplist-entries 128
+zset-max-ziplist-value 64
+hll-sparse-max-bytes 3000
+activerehashing yes
+client-output-buffer-limit normal 0 0 0
+client-output-buffer-limit slave 256mb 64mb 60
+client-output-buffer-limit pubsub 32mb 8mb 60
+hz 10
+aof-rewrite-incremental-fsync yes
+
+masterauth &quot;123&quot;,&quot;ALL&quot;
+# 针对master对应的slave节点设置的，在slave节点数据同步的时候用到
+
+requirepass &quot;1234&quot;,&quot;ALL&quot;
+# 本节点（实例）登录权限的限制
+</code></pre>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.tangjihede.fun/">堂吉哈哈德</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/">https://www.tangjihede.fun/post/Redis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/Windows/Exchange2010%E5%A2%9E%E5%8A%A0%E4%BC%9A%E8%AE%AE%E5%AE%A4%E5%8A%9F%E8%83%BD/">Exchange2010增加会议室功能</a></li>
+        
+        <li><a href="/post/MySQL%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">MySQL8.0安装使用(centos8)</a></li>
+        
+        <li><a href="/post/Redis%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">Redis安装使用</a></li>
+        
+        <li><a href="/post/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/">Shell知识点合集</a></li>
+        
+        <li><a href="/post/mysql%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86/">Mysql命令合集</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2017'>2017</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://www.tangjihede.fun/">堂吉哈哈德的博客 By 堂吉哈哈德</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108398306-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.tangjihede.fun/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.tangjihede.fun/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.tangjihede.fun/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/CI/CD/">CI/CD (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Error/">Error (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/HahaWriting/">HahaWriting (2)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Hugo/">Hugo (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Kubernetes/">Kubernetes (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Linux/">Linux (9)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/LoadBalancing/">LoadBalancing (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/MySQL/">MySQL (7)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Python/">Python (3)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/RabbitMQ/">RabbitMQ (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Redis/">Redis (4)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://www.tangjihede.fun/categories/Windows/">Windows (2)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>年份</a></h3>
+<div class="tagcloud">
+     
+    <a href="https://www.tangjihede.fun/tags/ALL/">ALL</a>(40)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2021/">2021</a>(13)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2020/">2020</a>(4)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2019/">2019</a>(5)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2018/">2018</a>(6)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2017/">2017</a>(5)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2016/">2016</a>(5)<br>
+     
+    <a href="https://www.tangjihede.fun/tags/2011/">2011</a>(2)<br>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.tangjihede.fun/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+    <br>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+    </span>
+
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    <meta charset="utf-8">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Kubernetes | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Kubernetes - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="Kubernetes">
+        <meta name="author" content="">
+        
+    <meta property="og:url" content="https://xinxiaoyu.github.io/categories/Kubernetes/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml" href="https://xinxiaoyu.github.io/categories/Kubernetes/index.xml" title="堂吉哈哈德的博客" />
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xinxiaoyu.github.io/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">每一行错误，都值得记录。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xinxiaoyu.github.io/">首页</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <h3 class="archive-title">
+        分类
+        <span class="keyword">Kubernetes</span>
+        中的文章
+    </h3>
+    
+
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/k8s%E4%B8%ADyaml%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E6%AE%B5/">k8s中yaml一些常用的字段写法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2024年4月7日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>1、 HostAliases：定义了 Pod 的 hosts 文件（比如 /etc/hosts）里的内容，用法如下：</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/k8s%E4%B8%ADyaml%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E6%AE%B5/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/prometheus_label/">Prometheus标签的增删改</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月7日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>像类似ELK(beat -&gt; kafka -&gt; logstash -&gt; es -&gt; kibana)技术一样，k8s监控也是个chain。</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/prometheus_label/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/spinnaker_deployment_error/">Spinnaker_deployment_error</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月1日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+            <a href='/categories/CI/CD'>CI/CD</a>
+            
+            <a href='/categories/Error'>Error</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>腾讯云coding平台部署错误</p>
+<pre tabindex="0"><code>Check that the Docker image name above matches the name used in the image field of your manifest.Failing the stage as this is likely a configuration error.
+</code></pre><p>是因为【启动所需制品】下【仓库】的镜像配置和自定义变量【dockerImage】的镜像名不一致。</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/spinnaker_deployment_error/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/podtemplate/">Deployment yaml模板</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月22日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0550ae">apiVersion</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>apps/v1<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">kind</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>Deployment<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">metadata</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">labels</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">app</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">environment</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${RUN_ENV}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">namespace</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${NAMESPACE}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">spec</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">progressDeadlineSeconds</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">600</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">replicas</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${REPLICAS}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">selector</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">matchLabels</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">app</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">environment</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${RUN_ENV}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">template</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">metadata</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">labels</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">app</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">environment</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${RUN_ENV}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">annotations</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">prometheus.io/scrape</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;${ENABLE_SCRAPE}&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">prometheus.io/port</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;${RUN_PORT}&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">prometheus.io/path</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;${METRICS_PATH}&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">kubesphere.io/collectSavedLog</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;true&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">logging.kubesphere.io/logsidecar-config</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;{&#34;containerLogConfigs&#34;:{&#34;${APP_NAME}&#34;:{&#34;${APP_NAME}-log-volume&#34;:[&#34;*.log&#34;]}}}&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">spec</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">volumes</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}-log-volume<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">emptyDir</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>{}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>heap-dumps<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">emptyDir</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>{}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">containers</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">env</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>JAVA_OPTS<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">value</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>-server -Dapp.id=${APP_NAME} -Denv=${RUN_ENV} -Dapollo.cacheDir=/services/apollo -Dspring.profiles.active=${RUN_ENV} -Xms${HEAP_XMS} -Xmx${HEAP_XMX} -Xss512k -XX:ParallelGCThreads=4 -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:InitiatingHeapOccupancyPercent=45 -Xlog:gc* -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/dumper -Dsun.net.inetaddr.ttl=60 -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark -Dcom.sun.management.jmxremote.port=19185 -Dtomcat.base=/services/tomcat -Dio.netty.tryReflectionSetAccessible=true --add-exports java.base/jdk.internal.misc=ALL-UNNAMED -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dlog.base=/services/logs/  -verbose:gc -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:19085<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">image</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>$REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:${RUN_ENV}-${BRANCH_NAME}-${COMMIT_HASH}-$DATE-${BUILD_NUMBER}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">lifecycle</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">postStart</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">exec</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">                </span><span style="color:#0550ae">command</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">                  </span>- <span style="color:#0a3069">&#34;sh&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">                  </span>- <span style="color:#0a3069">&#34;-c&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">                  </span>- <span style="color:#1f2328">&gt;</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">                    wget -P /services/  http://192.168.0.169:12306/download/finch.jar;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">                    nohup java -Dapp.id=finch -Denv=${RUN_ENV} -jar /services/finch.jar &amp;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">volumeMounts</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">mountPath</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;/services/logs/&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}-log-volume<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">mountPath</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>/dumper<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>heap-dumps<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">livenessProbe</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">httpGet</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">path</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${HEALTH_PATH}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">port</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${RUN_PORT}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">initialDelaySeconds</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">60</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">periodSeconds</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">30</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">timeoutSeconds</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">3</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">successThreshold</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">failureThreshold</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">10</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">readinessProbe</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">httpGet</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">path</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${HEALTH_PATH}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">port</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${RUN_PORT}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">initialDelaySeconds</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">60</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">periodSeconds</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">30</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">successThreshold</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">failureThreshold</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">10</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">imagePullPolicy</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>IfNotPresent<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">ports</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">containerPort</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${RUN_PORT}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">protocol</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>TCP<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">resources</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">limits</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">cpu</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${LIMIT_CPU}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">memory</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${LIMIT_MEMORY}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">requests</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">cpu</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${REQUEST_CPU}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">memory</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${REQUEST_MEMORY}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">terminationMessagePath</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>/dev/termination-log<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">terminationMessagePolicy</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>File<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">securityContext</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">runAsUser</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">5000</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">runAsGroup</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">5000</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">allowPrivilegeEscalation</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#cf222e">false</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>dumper<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">image</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;harbor.m.cn/library/dumper:1.96&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">env</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>COS_BUCKETURL<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">value</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;https://jvm-dump.cos.ap-guangzhou.myqcloud.com&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>COS_DUMPER_ROOT<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">value</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>/<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>APP_NAME<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">value</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>DUMPER_ROOT<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">value</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>/dumper/<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>RUN_ENV_NAME<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">value</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${RUN_ENV}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">resources</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">limits</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">cpu</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>4000m<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">memory</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>4000Mi<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">requests</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">cpu</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>1000m<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">memory</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>1000Mi<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">volumeMounts</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>heap-dumps<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">mountPath</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>/dumper<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">terminationMessagePath</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>/dev/termination-log<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">terminationMessagePolicy</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>File<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span><span style="color:#0550ae">imagePullPolicy</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>IfNotPresent            <span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">dnsPolicy</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>ClusterFirst<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">restartPolicy</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>Always<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">terminationGracePeriodSeconds</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">30</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">imagePullSecrets</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- <span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${IMAGE_PULL_SECRETS}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>```<span style="color:#fff">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/podtemplate/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/">Pod探针</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月22日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>kubernetes的POD有三种用途的探针：</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/Pod%E6%8E%A2%E9%92%88/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/">Docker镜像清理</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月21日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>运行<code>docker system df </code>命令：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#0550ae">[</span>root@VM_100_4_centos ~<span style="color:#0550ae">]</span><span style="color:#57606a"># docker system df </span>
+</span></span><span style="display:flex;"><span>TYPE                TOTAL                       SIZE                RECLAIMABLE
+</span></span><span style="display:flex;"><span>Images              <span style="color:#0550ae">955</span>                         77.06GB             74.21GB <span style="color:#0550ae">(</span>96%<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>Containers          <span style="color:#0550ae">65</span>                          3.28MB              0B <span style="color:#0550ae">(</span>0%<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>Local Volumes       <span style="color:#0550ae">0</span>                           0B                  0B
+</span></span><span style="display:flex;"><span>Build Cache         <span style="color:#0550ae">0</span>                           0B                  0B
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年3月11日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#24292e">---</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">apiVersion</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>networking.k8s.io/v1beta1<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">kind</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>Ingress<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">metadata</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">namespace</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${NAMESPACE}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}-ingress<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">annotations</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">nginx.ingress.kubernetes.io/service-upstream</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#cf222e">true</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">nginx.ingress.kubernetes.io/ssl-redirect</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#cf222e">true</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">kubernetes.io/ingress.class</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;public-nginx-ingress&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#57606a"># 重写规则，相当于location /api/</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">nginx.ingress.kubernetes.io/configuration-snippet</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">|</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      rewrite ^/api/(.*)$ /$1 break;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">kubernetes.io/ingress.rule-mix</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;true&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">nginx.ingress.kubernetes.io/use-regex</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;true&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">spec</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">tls</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>- <span style="color:#0550ae">hosts</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span>- ${PUBLIC_DOMAIN}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">secretName</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${TLS_SECRET}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">rules</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>- <span style="color:#0550ae">host</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${PUBLIC_DOMAIN}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">http</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">paths</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span>- <span style="color:#0550ae">path</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${REQUEST_PATH}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">backend</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">serviceName</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${APP_NAME}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">servicePort</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${RUN_PORT}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>- <span style="color:#0550ae">host</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>www.tangjihede.fun<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">http</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#0550ae">paths</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">          </span>- <span style="color:#0550ae">path</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>/api/<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#0550ae">backend</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">serviceName</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>api<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">              </span><span style="color:#0550ae">servicePort</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">8080</span><span style="color:#fff">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/ingress_yaml/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/nginx_ingress_%E6%B3%A8%E8%A7%A3/">nginx ingress 注解大全</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年3月11日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#57606a"># http 跳转https</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">nginx.ingress.kubernetes.io/ssl-redirect</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#cf222e">true</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 腾讯云公网类型</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">kubernetes.io/ingress.class</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;public-nginx-ingress&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 重写规则，相当于location /api/</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">nginx.ingress.kubernetes.io/configuration-snippet</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">|</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">  rewrite ^/api/(.*)$ /$1 break;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 重写</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">annotations</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">     </span><span style="color:#0550ae">nginx.ingress.kubernetes.io/server-snippet</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">|</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">         rewrite ^/v4/(.*)/card/query http://foo.bar.com/v5/#!/card/query permanent;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">     </span><span style="color:#0550ae">nginx.ingress.kubernetes.io/configuration-snippet</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">|</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">         rewrite ^/v6/(.*)/card/query http://foo.bar.com/v7/#!/card/query permanent;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 支持websocket协议</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">nginx.ingress.kubernetes.io/server-snippets</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">|</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      proxy_set_header Upgrade $http_upgrade;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      proxy_http_version 1.1;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      proxy_set_header X-Forwarded-Host $http_host;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      proxy_set_header X-Forwarded-Proto $scheme;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      proxy_set_header X-Forwarded-For $remote_addr;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      proxy_set_header Host $host;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      proxy_set_header Connection &#34;upgrade&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">      proxy_cache_bypass $http_upgrade;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 腾讯云 https://cloud.tencent.com/document/product/457/45693</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">kubernetes.io/ingress.rule-mix</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;true&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 支持正则</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">nginx.ingress.kubernetes.io/use-regex</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;true&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 后端是https协议</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">nginx.ingress.kubernetes.io/backend-protocol</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;HTTPS&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 白名单配置</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">nginx.ingress.kubernetes.io/whitelist-source-range</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;58.246.135.154,58.246.135.155&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a">#开启ingress access日志</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">nginx.ingress.kubernetes.io/enable-access-log</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#cf222e">true</span><span style="color:#fff">  
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#57606a"># 跨域参考</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span>https://www.tangjihede.fun/post/LoadBalancing/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/<span style="color:#fff">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>链接：</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/nginx_ingress_%E6%B3%A8%E8%A7%A3/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Kubernetes/kubectl_command/">Kubectl常用命令汇总</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月26日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Kubernetes'>Kubernetes</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <ol>
+<li>从容器中拷贝文件</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl cp -n namespace pod_name:app/test.txt ./test.txt --kubeconfig<span style="color:#0550ae">=</span>./.kube/mykubeconfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 上面是linux，如果是windows的话，如下</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubectl cp -n namespace pod_name:app/test.txt .<span style="color:#0a3069">\t</span>est.txt --kubeconfig<span style="color:#0550ae">=</span>.<span style="color:#0a3069">\.</span>kube<span style="color:#0a3069">\m</span>ykubeconfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a"># 从本地拷贝到容器里</span>
+</span></span><span style="display:flex;"><span>kubectl cp -n kubesphere-controls-system .<span style="color:#0a3069">\c</span>url kubectl-6f7f88ff9b-27lcq:tmp/curl --kubeconfig<span style="color:#0550ae">=</span>.<span style="color:#0a3069">\.</span>kube<span style="color:#0a3069">\l</span>ocal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker cp container_name:file_path file_save_path
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>查看pod详情</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>kubectl describe pods -n namespace
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>删除节点</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#57606a">#先停止服务</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>systemctl stop docker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>systemctl stop kubelet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubectl delete node node_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>删除pod</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl delete pod pod_name -n namespace
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>强制删除
+</span></span><span style="display:flex;"><span>kubectl delete pod pod_name -n namespace --grace-period<span style="color:#0550ae">=</span><span style="color:#0550ae">0</span> --force
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>回滚</li>
+</ol>
+<pre tabindex="0"><code>kubectl rollout history deployment/grafana -n kubesphere-monitoring-system
+
+kubectl rollout history deployment/grafana --revision=83 -n kubesphere-monitoring-system
+
+kubectl rollout undo deployment/grafana --to-revision=1 -n kubesphere-monitoring-system
+</code></pre><ol start="6">
+<li>进入容器</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl <span style="color:#6639ba">exec</span> -it pod_name -n mynamespace --kubeconfig<span style="color:#0550ae">=</span>/path/file -- /bin/bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>旧版命令会有相应提示，其实就是命令前面加了个<span style="color:#0a3069">&#39;--&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">[</span>root@master ~<span style="color:#0550ae">]</span><span style="color:#57606a"># kubectl exec -it nginx-deployment-f7ccf9478-ddxr6 -n default &#34;/bin/bash&#34;</span>
+</span></span><span style="display:flex;"><span>kubectl <span style="color:#6639ba">exec</span> <span style="color:#0550ae">[</span>POD<span style="color:#0550ae">]</span> <span style="color:#0550ae">[</span>COMMAND<span style="color:#0550ae">]</span> is DEPRECATED and will be removed in a future version. 
+</span></span><span style="display:flex;"><span>Use kubectl <span style="color:#6639ba">exec</span> <span style="color:#0550ae">[</span>POD<span style="color:#0550ae">]</span> -- <span style="color:#0550ae">[</span>COMMAND<span style="color:#0550ae">]</span> instead.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>多集群</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>使用--kubeconfig
+</span></span><span style="display:flex;"><span>kubectl get svc -n default --kubeconfig<span style="color:#0550ae">=</span>/path/.kube/config_file
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>节点label</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>查看
+</span></span><span style="display:flex;"><span>kubectl get nodes --show-labels
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>设置label
+</span></span><span style="display:flex;"><span>kubectl label nodes slave01 kubernetes.io/role<span style="color:#0550ae">=</span>worker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>覆盖
+</span></span><span style="display:flex;"><span>kubectl label --overwrite nodes slave01 kubernetes.io/role<span style="color:#0550ae">=</span>worker1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="9">
+<li>查看api</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl api-resources
+</span></span><span style="display:flex;"><span>NAME                     SHORTNAMES   APIVERSION   NAMESPACED   KIND
+</span></span><span style="display:flex;"><span>bindings                              v1           <span style="color:#6639ba">true</span>         Binding
+</span></span><span style="display:flex;"><span>componentstatuses        cs           v1           <span style="color:#6639ba">false</span>        ComponentStatus
+</span></span><span style="display:flex;"><span>configmaps               cm           v1           <span style="color:#6639ba">true</span>         ConfigMap
+</span></span><span style="display:flex;"><span>endpoints                ep           v1           <span style="color:#6639ba">true</span>         Endpoints
+</span></span><span style="display:flex;"><span>events                   ev           v1           <span style="color:#6639ba">true</span>         Event
+</span></span><span style="display:flex;"><span>limitranges              limits       v1           <span style="color:#6639ba">true</span>         LimitRange
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubectl api-resources -v <span style="color:#0550ae">6</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>I0108 ... GET https://192.168.58.2:8443/api?timeout<span style="color:#0550ae">=</span>32s <span style="color:#0550ae">200</span> OK in <span style="color:#0550ae">10</span> milliseconds
+</span></span><span style="display:flex;"><span>I0108 ... GET https://192.168.58.2:8443/apis?timeout<span style="color:#0550ae">=</span>32s <span style="color:#0550ae">200</span> OK in <span style="color:#0550ae">1</span> milliseconds
+</span></span><span style="display:flex;"><span>I0108 ... GET https://192.168.58.2:8443/apis/apiregistration.k8s.io/v1?timeout<span style="color:#0550ae">=</span>32s <span style="color:#0550ae">200</span> OK in <span style="color:#0550ae">7</span> milliseconds
+</span></span><span style="display:flex;"><span>I0108 ... GET https://192.168.58.2:8443/api/v1?timeout<span style="color:#0550ae">=</span>32s <span style="color:#0550ae">200</span> OK in <span style="color:#0550ae">13</span> milliseconds
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="10">
+<li>secret</li>
+</ol>
+<pre tabindex="0"><code># 创建tls证书
+kubectl create secret tls my-tls-secret --cert=path/to/cert/file --key=path/to/key/file -n foreground --kubeconfig=.\.kube\kubeconfig
+
+# 加密证书Opaque
+kubectl create secret generic mycerts --from-file=private-rsa.pfx=.\private-rsa.pfx -n foreground  \
+--kubeconfig=.\.kube\kubeconfig
+
+然后yaml引用
+```yaml
+spec:
+  volumes:
+    - name: mycerts
+      secret:
+        secretName: mycerts
+        defaultMode: 420
+  ...
+  containers:
+    volumeMounts:
+      - name: mycerts
+        readOnly: true
+        mountPath: /data/cer/
+</code></pre><h1 id="创建镜像仓库连接认证">创建镜像仓库连接认证</h1>
+<p>kubectl create secret docker-registry secret-tiger-docker <br>
+&ndash;<a href="mailto:docker-email=tiger@acme.example">docker-email=tiger@acme.example</a> <br>
+&ndash;docker-username=tiger <br>
+&ndash;docker-password=pass1234 <br>
+&ndash;docker-server=my-registry.example:5000</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Kubernetes/kubectl_command/">阅读全文</a></p>
+        </div>
+    </article>
+    
+
+    
+
+
+
+
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2025 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 </a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLB4K7SNHM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLB4K7SNHM');
+</script>
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xinxiaoyu.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xinxiaoyu.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Aliyun/">Aliyun (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/CI/CD/">CI/CD (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Django/">Django (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (4)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Error/">Error (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/HahaWriting/">HahaWriting (7)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/MySQL/">MySQL (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Security/">Security (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/SoftSetting/">SoftSetting (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Tools/">Tools (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Windows/">Windows (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2015/">2015 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2014/">2014 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xinxiaoyu.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

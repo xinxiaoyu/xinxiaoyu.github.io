@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    <meta charset="utf-8">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Skywalking | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Skywalking - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="Skywalking">
+        <meta name="author" content="">
+        
+    <meta property="og:url" content="https://xinxiaoyu.github.io/categories/Skywalking/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml" href="https://xinxiaoyu.github.io/categories/Skywalking/index.xml" title="堂吉哈哈德的博客" />
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xinxiaoyu.github.io/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">每一行错误，都值得记录。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xinxiaoyu.github.io/">首页</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <h3 class="archive-title">
+        分类
+        <span class="keyword">Skywalking</span>
+        中的文章
+    </h3>
+    
+
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/">使用helm chart部署skywalking</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年9月26日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Skywalking'>Skywalking</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>简易版yaml文件(es7.yml)如下</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0550ae">oap</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>oap<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">dynamicConfigEnabled</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#cf222e">false</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">image</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">tag</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">8.5.2</span>-es7<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">replicas</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">storageType</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>elasticsearch7<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">resources</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">limits</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">cpu</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">2</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">memory</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>2Gi<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">requests</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">cpu</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">0.1</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">memory</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>1Gi<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">env</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">SW_NAMESPACE</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>skywalking<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">dayStep</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">15</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">ui</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">image</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">tag</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">8.5.0</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">service</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">type</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>NodePort<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff"></span><span style="color:#0550ae">elasticsearch</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">enabled</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#cf222e">false</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">config</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">host</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">192.168.2.206</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">port</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">      </span><span style="color:#0550ae">http</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0550ae">9200</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">user</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">password</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;&#34;</span><span style="color:#fff">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>参考地址：</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Skywalking/%E4%BD%BF%E7%94%A8helm-chart%E9%83%A8%E7%BD%B2skywalking/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">使用k8s configmap管理skywalking配置文件</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年9月26日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Skywalking'>Skywalking</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>依赖helm部署后的skywalking</p>
+<h4 id="0-修改oap的yaml配置文件开启动态配置支持">0. 修改oap的yaml配置文件,开启动态配置支持</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0550ae">oap</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">name</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>oap<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">dynamicConfigEnabled</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#cf222e">true</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span>....<span style="color:#fff">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="1-修改applicationyml文件">1. 修改application.yml文件</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#0550ae">configuration</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">selector</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${SW_CONFIGURATION:k8s-configmap}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span>......<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">  </span><span style="color:#0550ae">k8s-configmap</span><span style="color:#1f2328">:</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">period</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${SW_CONFIG_CONFIGMAP_PERIOD:60}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">namespace</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${SW_CLUSTER_K8S_NAMESPACE:default}<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#0550ae">labelSelector</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span>${SW_CLUSTER_K8S_LABEL:app=collector,release=skywalking}<span style="color:#fff">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>主要将selector: ${SW_CONFIGURATION:none}改为selector: ${SW_CONFIGURATION:k8s-configmap}</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Skywalking/%E4%BD%BF%E7%94%A8k8s_configmap%E7%AE%A1%E7%90%86skywalking%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">阅读全文</a></p>
+        </div>
+    </article>
+    
+
+    
+
+
+
+
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2025 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 </a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLB4K7SNHM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLB4K7SNHM');
+</script>
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xinxiaoyu.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xinxiaoyu.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Aliyun/">Aliyun (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/CI/CD/">CI/CD (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Django/">Django (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (4)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Error/">Error (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/HahaWriting/">HahaWriting (7)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/MySQL/">MySQL (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Security/">Security (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/SoftSetting/">SoftSetting (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Tools/">Tools (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Windows/">Windows (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2015/">2015 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2014/">2014 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xinxiaoyu.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

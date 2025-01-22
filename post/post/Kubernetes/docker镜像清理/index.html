@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    <meta charset="utf-8">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Docker镜像清理 | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Docker镜像清理 - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-05-21T19:48:19&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-05-21T19:48:19&#43;08:00'>
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="Docker镜像清理">
+        <meta name="author" content="">
+        
+    <meta property="og:url" content="https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xinxiaoyu.github.io/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">每一行错误，都值得记录。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xinxiaoyu.github.io/">首页</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Docker镜像清理</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Kubernetes'>Kubernetes</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>运行<code>docker system df </code>命令：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#0550ae">[</span>root@VM_100_4_centos ~<span style="color:#0550ae">]</span><span style="color:#57606a"># docker system df </span>
+</span></span><span style="display:flex;"><span>TYPE                TOTAL                       SIZE                RECLAIMABLE
+</span></span><span style="display:flex;"><span>Images              <span style="color:#0550ae">955</span>                         77.06GB             74.21GB <span style="color:#0550ae">(</span>96%<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>Containers          <span style="color:#0550ae">65</span>                          3.28MB              0B <span style="color:#0550ae">(</span>0%<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span>Local Volumes       <span style="color:#0550ae">0</span>                           0B                  0B
+</span></span><span style="display:flex;"><span>Build Cache         <span style="color:#0550ae">0</span>                           0B                  0B
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后一列RECLAIMABLE字段标明了可回收的磁盘空间大小，此处表示有74.21GB的docker镜像可以收回，而containers、volumes等没有可回收的空间。</p>
+<p>可以回收的镜像分为两类：dangling和其他未被container关联的镜像。
+dangling可以理解为TAG空的某些镜像，使用命令<code>docker images -f dangling=true</code>可以找出来，如下是在某节点上：</p>
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker images -f dangling=true
+REPOSITORY                                                    TAG                 IMAGE ID            CREATED             SIZE
+ccr.ccs.tencentyun.com/middleware/skywalking-agent        &lt;none&gt;              1054bfb1c79a        3 weeks ago         689MB
+ccr.ccs.tencentyun.com/middleware/logstash-logs           &lt;none&gt;              a0e0f37728bf        2 months ago        805MB
+ccr.ccs.tencentyun.com/middleware/log-clean               &lt;none&gt;              b4fe723fcd28        3 months ago        747MB
+ago        747MB
+ccr.ccs.tencentyun.com/middleware/clean-job               &lt;none&gt;              53aac26b0560        3 months ago        747MB
+</code></pre><p>要删除上面这些dangling镜像，执行命令<code>docker image prune</code>即可。</p>
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker image prune
+WARNING! This will remove all dangling images.
+Are you sure you want to continue? [y/N] y
+Deleted Images:
+untagged: ccr.ccs.tencentyun.com/gwy-middleware/clean-job@sha256:2633cc3ad0abc3dd632befecb5dcf90465021dde27e3cc0dcec2a7c37bfa1a50
+deleted: sha256:77c50813e2090e2a45c4988eece1bdb79672c0dec070fad7eec1179e743c06e2
+deleted: sha256:cdd7d4f6cc290f6220c3ee07061f64227646e1efdf9382204a150c735bd5a028
+deleted: sha256:5c603aa4622920d7b242ab6e106538a4a5d72d72febef6e1e60d5d2c515f2311
+untagged: ccr.ccs.tencentyun.com/gwy-middleware/filebeat-logs@sha256:e9ed0280250d74eb3ff9d506fd275cad280e3e781afd745aab5f0226e28d111e
+deleted: sha256:45db79ccd3b44940c85c4979c3b307907d723bc7e4379d77abfecb5ca006e030
+deleted: sha256:eb93a48f29bba12835ade4123e2bd1538d80b755f621369704675a9c19b18f65
+......
+
+Total reclaimed space: 1.478GB
+</code></pre><p>如果要删除所有未被使用的镜像，包括dangling镜像，可以用<code>docker image prune -a</code>，这里可以加上时间参数，比如删除30天（720小时）前创建的所有不再使用的镜像。</p>
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker image prune -a --force --filter &#34;until=720h&#34;
+Deleted Images:
+untagged: ccr.ccs.tencentyun.com/gwy-cloud/guowy-cloud-zuul:202103041715
+untagged: ccr.ccs.tencentyun.com/gwy-cloud/guowy-cloud-zuul@sha256:9e2d18d259582ca6a04b27d1609c8201a648f8feae37ff984f237dc4e907da6b
+deleted: sha256:95f7d7107c50e77f0aa4a93ace02f031ae29edd13b56531757ed86fd63b9cc04
+deleted: sha256:68d9605658fa91174c1867a5f91d6b6cc063f3ace1fbb061c72abbc84ea5de5b
+
+Total reclaimed space: 63.23GB
+</code></pre><p>对比<code>docker system df</code>可以看到效果，释放了60多GB的空间。该节点的磁盘空间使用率也从原来的83%的降到了18%。</p>
+<pre tabindex="0"><code>[root@VM_100_4_centos ~]# docker system df
+TYPE                TOTAL               ACTIVE              SIZE                RECLAIMABLE
+Images              131                 33                  12.36GB             8.979GB (72%)
+Containers          65                  59                  3.287MB             0B (0%)
+Local Volumes       0                   0                   0B                  0B
+Build Cache         0                   0                   0B                  0B
+</code></pre><p>同理，回收containers、volumes磁盘空间的方法是一样的。
+而docker提供了一个删除所有未使用的资源的命令<code>docker system prune -a</code>，这包括了container状态是exited的情况。</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/">https://xinxiaoyu.github.io/post/Kubernetes/docker%E9%95%9C%E5%83%8F%E6%B8%85%E7%90%86/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/SoftSetting/hugo%E4%BD%BF%E7%94%A8/">Hugo使用</a></li>
+        
+        <li><a href="/post/MySQL/%E8%85%BE%E8%AE%AF%E4%BA%91Mysql%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93/">腾讯云Mysql物理备份恢复数据库</a></li>
+        
+        <li><a href="/post/Kubernetes/ingress_yaml/">Ingress_yaml nginx模板</a></li>
+        
+        <li><a href="/post/Kubernetes/nginx_ingress_%E6%B3%A8%E8%A7%A3/">nginx ingress 注解大全</a></li>
+        
+        <li><a href="/post/Error/git_push_err1/">github push error</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2021'>2021</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2025 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 </a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLB4K7SNHM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLB4K7SNHM');
+</script>
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xinxiaoyu.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xinxiaoyu.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Aliyun/">Aliyun (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/CI/CD/">CI/CD (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Django/">Django (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (4)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Error/">Error (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/HahaWriting/">HahaWriting (7)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/MySQL/">MySQL (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Security/">Security (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/SoftSetting/">SoftSetting (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Tools/">Tools (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Windows/">Windows (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2015/">2015 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2014/">2014 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xinxiaoyu.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

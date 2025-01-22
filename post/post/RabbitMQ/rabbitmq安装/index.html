@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    <meta charset="utf-8">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Rabbitmq rpm安装 | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Rabbitmq rpm安装 - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-07-23T13:53:37&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-07-23T13:53:37&#43;08:00'>
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="Rabbitmq rpm安装">
+        <meta name="author" content="">
+        
+    <meta property="og:url" content="https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xinxiaoyu.github.io/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">每一行错误，都值得记录。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xinxiaoyu.github.io/">首页</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Rabbitmq rpm安装</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>centos安装命令：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh <span style="color:#1f2328">|</span> sudo bash
+</span></span><span style="display:flex;"><span>curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh <span style="color:#1f2328">|</span> sudo bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>yum install rabbitmq-server
+</span></span><span style="display:flex;"><span>rabbitmq-plugins <span style="color:#6639ba">enable</span> rabbitmq_management
+</span></span><span style="display:flex;"><span>systemctl start rabbitmq-server
+</span></span><span style="display:flex;"><span>rabbitmqctl add_user admin admin
+</span></span><span style="display:flex;"><span>rabbitmqctl set_user_tags admin administrator
+</span></span><span style="display:flex;"><span>rabbitmqctl set_permissions -p / admin <span style="color:#0a3069">&#34;.*&#34;</span> <span style="color:#0a3069">&#34;.*&#34;</span> <span style="color:#0a3069">&#34;.*&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>设置密码：
+</span></span><span style="display:flex;"><span>rabbitmqctl  change_password  admin password
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本地址：
+<a href="https://packagecloud.io/rabbitmq/erlang/install#bash-rpm">https://packagecloud.io/rabbitmq/erlang/install#bash-rpm</a></p>
+<p>这个脚本写的好，帖在此处，仅供学习。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>unknown_os <span style="color:#0550ae">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Unfortunately, your operating system distribution and version are not supported by this script.&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;You can override the OS detection by setting os= and dist= prior to running this script.&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;You can find a list of supported OSes and distributions on our website: https://packagecloud.io/docs#os_distro_version&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;For example, to force CentOS 6: os=el dist=6 ./script.sh&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Please email support@packagecloud.io and let us know if you run into any issues.&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">exit</span> <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl_check <span style="color:#0550ae">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Checking for curl...&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#6639ba">command</span> -v curl &gt; /dev/null<span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Detected curl...&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Installing curl...&#34;</span>
+</span></span><span style="display:flex;"><span>    yum install -d0 -e0 -y curl
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>detect_os <span style="color:#0550ae">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[[</span> <span style="color:#0550ae">(</span> -z <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">)</span> <span style="color:#0550ae">&amp;&amp;</span> <span style="color:#0550ae">(</span> -z <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">dist</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">)</span> <span style="color:#0550ae">]]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> -e /etc/os-release <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>      . /etc/os-release
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">${</span><span style="color:#953800">ID</span><span style="color:#0a3069">}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;poky&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">${</span><span style="color:#953800">VERSION_ID</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;sles&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">${</span><span style="color:#953800">VERSION_ID</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;opensuse&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">${</span><span style="color:#953800">VERSION_ID</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;opensuse-leap&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">os</span><span style="color:#0550ae">=</span>opensuse
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">${</span><span style="color:#953800">VERSION_ID</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">${</span><span style="color:#953800">VERSION_ID</span><span style="color:#0a3069">}</span> <span style="color:#1f2328">|</span> awk -F <span style="color:#0a3069">&#39;.&#39;</span> <span style="color:#0a3069">&#39;{ print $1 }&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">`</span>which lsb_release 2&gt;/dev/null<span style="color:#0a3069">`</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#57606a"># get major version (e.g. &#39;5&#39; or &#39;6&#39;)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>lsb_release -r <span style="color:#1f2328">|</span> cut -f2 <span style="color:#1f2328">|</span> awk -F <span style="color:#0a3069">&#39;.&#39;</span> <span style="color:#0a3069">&#39;{ print $1 }&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#57606a"># get os (e.g. &#39;centos&#39;, &#39;redhatenterpriseserver&#39;, etc)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>lsb_release -i <span style="color:#1f2328">|</span> cut -f2 <span style="color:#1f2328">|</span> awk <span style="color:#0a3069">&#39;{ print tolower($1) }&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> -e /etc/oracle-release <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>cut -f5 --delimiter<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39; &#39;</span> /etc/oracle-release <span style="color:#1f2328">|</span> awk -F <span style="color:#0a3069">&#39;.&#39;</span> <span style="color:#0a3069">&#39;{ print $1 }&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;ol&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> -e /etc/fedora-release <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>cut -f3 --delimiter<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39; &#39;</span> /etc/fedora-release<span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;fedora&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> -e /etc/redhat-release <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">os_hint</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>cat /etc/redhat-release  <span style="color:#1f2328">|</span> awk <span style="color:#0a3069">&#39;{ print tolower($1) }&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os_hint</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;centos&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>cat /etc/redhat-release <span style="color:#1f2328">|</span> awk <span style="color:#0a3069">&#39;{ print $3 }&#39;</span> <span style="color:#1f2328">|</span> awk -F <span style="color:#0a3069">&#39;.&#39;</span> <span style="color:#0a3069">&#39;{ print $1 }&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;centos&#39;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os_hint</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;scientific&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>cat /etc/redhat-release <span style="color:#1f2328">|</span> awk <span style="color:#0a3069">&#39;{ print $4 }&#39;</span> <span style="color:#1f2328">|</span> awk -F <span style="color:#0a3069">&#39;.&#39;</span> <span style="color:#0a3069">&#39;{ print $1 }&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;scientific&#39;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>cat /etc/redhat-release  <span style="color:#1f2328">|</span> awk <span style="color:#0a3069">&#39;{ print tolower($7) }&#39;</span> <span style="color:#1f2328">|</span> cut -f1 --delimiter<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;.&#39;</span><span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;redhatenterpriseserver&#39;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#953800">aws</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>grep -q Amazon /etc/issue<span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">$?</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;0&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;6&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;aws&#39;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>        unknown_os
+</span></span><span style="display:flex;"><span>      <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[[</span> <span style="color:#0550ae">(</span> -z <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">)</span> <span style="color:#0550ae">||</span> <span style="color:#0550ae">(</span> -z <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">dist</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">)</span> <span style="color:#0550ae">]]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    unknown_os
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#57606a"># remove whitespace from OS and dist name</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#953800">os</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#1f2328">// /</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#953800">dist</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">dist</span><span style="color:#1f2328">// /</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Detected operating system as </span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">/</span><span style="color:#0a3069">${</span><span style="color:#953800">dist</span><span style="color:#0a3069">}</span><span style="color:#0a3069">.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">dist</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;8&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">_skip_pygpgme</span><span style="color:#0550ae">=</span><span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">_skip_pygpgme</span><span style="color:#0550ae">=</span><span style="color:#0550ae">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>finalize_yum_repo <span style="color:#0550ae">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">$_skip_pygpgme</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">0</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Installing pygpgme to verify GPG signatures...&#34;</span>
+</span></span><span style="display:flex;"><span>    yum install -y pygpgme --disablerepo<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;rabbitmq_erlang&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">pypgpme_check</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>rpm -qa <span style="color:#1f2328">|</span> grep -qw pygpgme<span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">$?</span><span style="color:#0a3069">&#34;</span> !<span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;0&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;WARNING: &#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;The pygpgme package could not be installed. This means GPG verification is not possible for any RPM installed on your system. &#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;To fix this, add a repository with pygpgme. Usualy, the EPEL repository for your system will have this. &#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;More information: https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#57606a"># set the repo_gpgcheck option to 0</span>
+</span></span><span style="display:flex;"><span>      sed -i<span style="color:#0a3069">&#39;&#39;</span> <span style="color:#0a3069">&#39;s/repo_gpgcheck=1/repo_gpgcheck=0/&#39;</span> /etc/yum.repos.d/rabbitmq_erlang.repo
+</span></span><span style="display:flex;"><span>    <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Installing yum-utils...&#34;</span>
+</span></span><span style="display:flex;"><span>  yum install -y yum-utils --disablerepo<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;rabbitmq_erlang&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#953800">yum_utils_check</span><span style="color:#0550ae">=</span><span style="color:#0a3069">`</span>rpm -qa <span style="color:#1f2328">|</span> grep -qw yum-utils<span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">$?</span><span style="color:#0a3069">&#34;</span> !<span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;0&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;WARNING: &#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;The yum-utils package could not be installed. This means you may not be able to install source RPMs or use other yum features.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Generating yum cache for rabbitmq_erlang...&#34;</span>
+</span></span><span style="display:flex;"><span>  yum -q makecache -y --disablerepo<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;*&#39;</span> --enablerepo<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;rabbitmq_erlang&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Generating yum cache for rabbitmq_erlang-source...&#34;</span>
+</span></span><span style="display:flex;"><span>  yum -q makecache -y --disablerepo<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;*&#39;</span> --enablerepo<span style="color:#0550ae">=</span><span style="color:#0a3069">&#39;rabbitmq_erlang-source&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>finalize_zypper_repo <span style="color:#0550ae">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  zypper --gpg-auto-import-keys refresh rabbitmq_erlang
+</span></span><span style="display:flex;"><span>  zypper --gpg-auto-import-keys refresh rabbitmq_erlang-source
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main <span style="color:#0550ae">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">{</span>
+</span></span><span style="display:flex;"><span>  detect_os
+</span></span><span style="display:flex;"><span>  curl_check
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#953800">yum_repo_config_url</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;https://packagecloud.io/install/repositories/rabbitmq/erlang/config_file.repo?os=</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&amp;dist=</span><span style="color:#0a3069">${</span><span style="color:#953800">dist</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&amp;source=script&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;sles&#34;</span> <span style="color:#0550ae">]</span> <span style="color:#0550ae">||</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;opensuse&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">yum_repo_path</span><span style="color:#0550ae">=</span>/etc/zypp/repos.d/rabbitmq_erlang.repo
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#953800">yum_repo_path</span><span style="color:#0550ae">=</span>/etc/yum.repos.d/rabbitmq_erlang.repo
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Downloading repository file: </span><span style="color:#0a3069">${</span><span style="color:#953800">yum_repo_config_url</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  curl -sSf <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">yum_repo_config_url</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> &gt; <span style="color:#953800">$yum_repo_path</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#953800">curl_exit_code</span><span style="color:#0550ae">=</span><span style="color:#953800">$?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">$curl_exit_code</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;22&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> -n <span style="color:#0a3069">&#34;Unable to download repo config from: &#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">yum_repo_config_url</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;This usually happens if your operating system is not supported by &#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;packagecloud.io, or this script&#39;s OS detection failed.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;You can override the OS detection by setting os= and dist= prior to running this script.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;You can find a list of supported OSes and distributions on our website: https://packagecloud.io/docs#os_distro_version&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;For example, to force CentOS 6: os=el dist=6 ./script.sh&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;If you are running a supported OS, please email support@packagecloud.io and report this.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">[</span> -e <span style="color:#953800">$yum_repo_path</span> <span style="color:#0550ae">]</span> <span style="color:#0550ae">&amp;&amp;</span> rm <span style="color:#953800">$yum_repo_path</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">exit</span> <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">$curl_exit_code</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;35&#34;</span> -o <span style="color:#0a3069">&#34;</span><span style="color:#953800">$curl_exit_code</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;60&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;curl is unable to connect to packagecloud.io over TLS when running: &#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;    curl </span><span style="color:#0a3069">${</span><span style="color:#953800">yum_repo_config_url</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;This is usually due to one of two things:&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34; 1.) Missing CA root certificates (make sure the ca-certificates package is installed)&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34; 2.) An old version of libssl. Try upgrading libssl on your system to a more recent version&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Contact support@packagecloud.io with information about your system for help.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">[</span> -e <span style="color:#953800">$yum_repo_path</span> <span style="color:#0550ae">]</span> <span style="color:#0550ae">&amp;&amp;</span> rm <span style="color:#953800">$yum_repo_path</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">exit</span> <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">elif</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#953800">$curl_exit_code</span><span style="color:#0a3069">&#34;</span> -gt <span style="color:#0a3069">&#34;0&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Unable to run: &#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;    curl </span><span style="color:#0a3069">${</span><span style="color:#953800">yum_repo_config_url</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;Double check your curl installation and try again.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">[</span> -e <span style="color:#953800">$yum_repo_path</span> <span style="color:#0550ae">]</span> <span style="color:#0550ae">&amp;&amp;</span> rm <span style="color:#953800">$yum_repo_path</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">exit</span> <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;done.&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;sles&#34;</span> <span style="color:#0550ae">]</span> <span style="color:#0550ae">||</span> <span style="color:#0550ae">[</span> <span style="color:#0a3069">&#34;</span><span style="color:#0a3069">${</span><span style="color:#953800">os</span><span style="color:#0a3069">}</span><span style="color:#0a3069">&#34;</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;opensuse&#34;</span> <span style="color:#0550ae">]</span><span style="color:#1f2328">;</span> <span style="color:#cf222e">then</span>
+</span></span><span style="display:flex;"><span>    finalize_zypper_repo
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">else</span>
+</span></span><span style="display:flex;"><span>    finalize_yum_repo
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;The repository is setup! You can now install packages.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/">https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/Python/redis_command_tool/">Redis命令行工具</a></li>
+        
+        <li><a href="/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/">阿里云cam授权案例</a></li>
+        
+        <li><a href="/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/">腾讯云CAM自定义策略</a></li>
+        
+        <li><a href="/post/Kubernetes/prometheus_label/">Prometheus标签的增删改</a></li>
+        
+        <li><a href="/post/MQ/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">RabbitMQ常用命令</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/2021'>2021</a></li>
+                
+                <li><a href='/tags/ALL'>ALL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xinxiaoyu/xinxiaoyu.github.io"
+            issue-term="blog_issue"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2025 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 </a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLB4K7SNHM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLB4K7SNHM');
+</script>
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xinxiaoyu.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xinxiaoyu.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Aliyun/">Aliyun (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/CI/CD/">CI/CD (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Django/">Django (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (4)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Error/">Error (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/HahaWriting/">HahaWriting (7)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/MySQL/">MySQL (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Security/">Security (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/SoftSetting/">SoftSetting (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Tools/">Tools (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Windows/">Windows (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2015/">2015 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2014/">2014 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xinxiaoyu.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

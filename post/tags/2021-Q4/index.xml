@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2021-Q4 on 堂吉哈哈德的博客</title>
+    <link>https://www.tangjihede.fun/tags/2021-Q4/</link>
+    <description>Recent content in 2021-Q4 on 堂吉哈哈德的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Dec 2020 18:03:09 +0800</lastBuildDate><atom:link href="https://www.tangjihede.fun/tags/2021-Q4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubectl常用命令汇总</title>
+      <link>https://www.tangjihede.fun/post/kubectl_command/</link>
+      <pubDate>Sat, 26 Dec 2020 18:03:09 +0800</pubDate>
+      
+      <guid>https://www.tangjihede.fun/post/kubectl_command/</guid>
+      <description>从容器中拷贝文件 1 kubectl</description>
+    </item>
+    
+  </channel>
+</rss>

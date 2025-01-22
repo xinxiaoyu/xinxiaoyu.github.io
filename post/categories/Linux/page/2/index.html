@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    <meta charset="utf-8">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Linux | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Linux - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="Linux">
+        <meta name="author" content="">
+        
+    <meta property="og:url" content="https://xinxiaoyu.github.io/categories/Linux/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml" href="https://xinxiaoyu.github.io/categories/Linux/index.xml" title="堂吉哈哈德的博客" />
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xinxiaoyu.github.io/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">每一行错误，都值得记录。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xinxiaoyu.github.io/">首页</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <h3 class="archive-title">
+        分类
+        <span class="keyword">Linux</span>
+        中的文章
+    </h3>
+    
+
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Awk常用命令</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年6月23日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Linux'>Linux</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <ol>
+<li>
+<p>列出最常的十条命令：
+<code>history | awk '{$1=&quot;&quot;;print $0}' | awk '{a[$0]++}END{for(i in a){print a[i],i}}' | sort -rn |head</code></p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Linux/awk%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/">curl命令手册</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年6月23日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Linux'>Linux</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <pre tabindex="0"><code>curl --location --request GET &#39;https://test.abc.com/v1/health&#39; --header &#39;Authorization: Apikey 20220602&#39;
+
+-H &#34;Content-Type: application/json&#34;
+
+-d &#34;{ \&#34;claimStatus\&#34;: 0, \&#34;lastBillMonth\&#34;: 202208, \&#34;occurDateTime\&#34;: \&#34;2022-09-01 00:00:00\&#34;}&#34;
+
+curl -k --resolve foo.bar:443:127.0.0.1 &#39;https://foo.bar/foobar&#39; -v -so /dev/null -w &#39;%{size_download}&#39; 
+
+curl -H &#39;Host: web-host&#39; http://192.168.1.100
+
+curl $KUBE_API/apis/apps/v1/deployments \
+  --cacert ~/.minikube/ca.crt \
+  --cert ~/.minikube/profiles/cluster1/client.crt \
+  --key ~/.minikube/profiles/cluster1/client.key
+
+
+for i in `cat url.txt`
+do
+    code=`curl -o /dev/null -s -w &#34;%{http_code}&#34; $i`
+    if [ $code != 200 ];then
+        curl -H &#34;Content-Type: application/json;charset=utf-8&#34; \
+             -d &#34;{&#39;msgtype&#39;: &#39;text&#39;,&#39;text&#39;: {&#39;content&#39;: $i, &#39;预发环境: 地址异常&#39;}}&#34; \
+             https://oapi.dingtalk.com/robot/send?access_token=15026b8e5b68ec
+    fi
+done
+
+curl --insecure https://www.example.com -H &#39;X-Forwarded-For: 1.1.1.1&#39;
+
+curl --user &#34;gwy:Q1&#34; guowy-cloud-eureka-server-0.eureka-headless.default.svc.cluster.local:8080
+curl -u guowy: -X POST http://pre-prometheus..com/-/reload
+
+curl -L -w &#34;namelookup: %{time_namelookup}\nconnect: %{time_connect}\nappconnect: %{time_appconnect}\npretransfer: %{time_pretransfer}\nstarttransfer: %{time_starttransfer}\ntotal: %{time_total}\n&#34; https://example.com/
+</code></pre>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Linux/curl%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/">Shell知识点合集</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2016年6月11日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Linux'>Linux</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <ol>
+<li>数组</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#953800">arr</span><span style="color:#0550ae">=(</span>str1 str2 str3<span style="color:#0550ae">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> i in <span style="color:#0a3069">${</span><span style="color:#953800">arr</span><span style="color:#1f2328">[@]</span><span style="color:#0a3069">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">do</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#953800">$i</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>预定义变量</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#953800">$#</span> 表示命令中位置参数的数量
+</span></span><span style="display:flex;"><span><span style="color:#953800">$*</span> 表示所有的位置参数的内容
+</span></span><span style="display:flex;"><span><span style="color:#953800">$?</span> 表示命令执行后的返回的状态，用于检查上一个命令的执行是否正确。在linux中，命令退出状态为0表示命令执行正确，任何非0值的表示命令执行错误。
+</span></span><span style="display:flex;"><span><span style="color:#953800">$$</span> 表示当前进程的进程号
+</span></span><span style="display:flex;"><span><span style="color:#953800">$!</span> 表示后台运行的最后一个进程的进程号
+</span></span><span style="display:flex;"><span><span style="color:#953800">$0</span> 所有参数
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>测试语句</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-eq Equal <span style="color:#953800">to</span> <span style="color:#0550ae">=</span> Equal to   
+</span></span><span style="display:flex;"><span>-ne Not equal to !<span style="color:#0550ae">=</span> Not equal to
+</span></span><span style="display:flex;"><span>-lt Less than <span style="color:#0a3069">\&lt;</span> Less than <span style="color:#0550ae">(</span>ASCII<span style="color:#0550ae">)</span> *
+</span></span><span style="display:flex;"><span>-le Less than or equal to
+</span></span><span style="display:flex;"><span>-gt Greater than &gt; Greater than <span style="color:#0550ae">(</span>ASCII<span style="color:#0550ae">)</span> *
+</span></span><span style="display:flex;"><span>-ge Greater than or equal to
+</span></span><span style="display:flex;"><span>re-directs output of one file to another.
+</span></span><span style="display:flex;"><span>-a file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists.
+</span></span><span style="display:flex;"><span>-b file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a block special file.
+</span></span><span style="display:flex;"><span>-c file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a character special file.
+</span></span><span style="display:flex;"><span>-d file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a directory.
+</span></span><span style="display:flex;"><span>-e file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists.
+</span></span><span style="display:flex;"><span>-f file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a regular file.
+</span></span><span style="display:flex;"><span>-g file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is set-group-id.
+</span></span><span style="display:flex;"><span>-h file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a symbolic link.
+</span></span><span style="display:flex;"><span>-k file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and its <span style="color:#0a3069">``</span>sticky<span style="color:#0a3069">&#39;&#39;</span> bit is set.
+</span></span><span style="display:flex;"><span>-p file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a named pipe <span style="color:#0550ae">(</span>FIFO<span style="color:#0550ae">)</span>.
+</span></span><span style="display:flex;"><span>-r file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is readable.
+</span></span><span style="display:flex;"><span>-s file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and has a size greater than zero.
+</span></span><span style="display:flex;"><span>-t fd True <span style="color:#cf222e">if</span> file descriptor fd is open and refers to a terminal.
+</span></span><span style="display:flex;"><span>-u file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and its set-user-id bit is set.
+</span></span><span style="display:flex;"><span>-w file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is writable.
+</span></span><span style="display:flex;"><span>-x file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is executable.
+</span></span><span style="display:flex;"><span>-G file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is owned by the effective group id.
+</span></span><span style="display:flex;"><span>-L file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a symbolic link.
+</span></span><span style="display:flex;"><span>-N file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and has been modified since it was last read.
+</span></span><span style="display:flex;"><span>-O file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is owned by the effective user id.
+</span></span><span style="display:flex;"><span>-S file
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file exists and is a socket.
+</span></span><span style="display:flex;"><span>file1 -ef file2
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file1 and file2 refer to the same device and inode numbers.
+</span></span><span style="display:flex;"><span>file1 -nt file2
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file1 is newer <span style="color:#0550ae">(</span>according to modification date<span style="color:#0550ae">)</span> than file2, or <span style="color:#cf222e">if</span> file1 exists and file2 does not.
+</span></span><span style="display:flex;"><span>file1 -ot file2
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> file1 is older than file2, or <span style="color:#cf222e">if</span> file2 exists and file1 does not.
+</span></span><span style="display:flex;"><span>-o optname
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> the shell option optname is enabled. See the list of options under the description of the -o option to the <span style="color:#6639ba">set</span> <span style="color:#6639ba">builtin</span> below.
+</span></span><span style="display:flex;"><span>-v varname
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> the shell variable varname is <span style="color:#6639ba">set</span> <span style="color:#0550ae">(</span>has been assigned a value<span style="color:#0550ae">)</span>.
+</span></span><span style="display:flex;"><span>-z string
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> the length of string is zero.
+</span></span><span style="display:flex;"><span>string
+</span></span><span style="display:flex;"><span>-n string
+</span></span><span style="display:flex;"><span>True <span style="color:#cf222e">if</span> the length of string is non-zero.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>发送邮件</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;content&#34;</span> <span style="color:#1f2328">|</span> mail -s title 1248247511@qq.com
+</span></span><span style="display:flex;"><span><span style="color:#57606a">#mail 命令依赖 yum install mailx</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>计算</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">`</span>expr <span style="color:#0550ae">1</span> + 1<span style="color:#0a3069">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;1+3&#34;</span>,<span style="color:#0a3069">&#34;ALL&#34;</span> <span style="color:#1f2328">|</span> bc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>函数</li>
+</ol>
+<p>函数的定义和调用</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Linux/shell%E7%9F%A5%E8%AF%86%E7%82%B9%E5%90%88%E9%9B%86/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Linux/inotify_rsync/">Inotify_rsync_unison使用记录</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2015年1月10日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/Linux'>Linux</a>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>inotifywait</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>/usr/bin/inotifywait -mrq --timefmt <span style="color:#0a3069">&#39;%Y-%m-%d %H:%M&#39;</span> --format <span style="color:#0a3069">&#39;%T %w %f %e&#39;</span> -e create,delete,modify,move --exclude <span style="color:#0a3069">&#34;\.(tmp|swp|log|info)&#34;</span> <span style="color:#953800">$mon_file</span> &gt;&gt; <span style="color:#953800">$log_file</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>rsync</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#57606a">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a"></span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">[</span> ! -e <span style="color:#0a3069">&#39;exclude.list&#39;</span> <span style="color:#0550ae">]</span> <span style="color:#0550ae">&amp;&amp;</span> <span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#39;No exclude.list file, exit.&#39;</span> <span style="color:#0550ae">&amp;&amp;</span> <span style="color:#6639ba">exit</span> <span style="color:#0550ae">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rsync -avz --delete --exclude-from<span style="color:#0550ae">=</span>exclude.list /usr/local/sonatype-work 192.168.1.1:/usr/local
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;`date +%Y-%m-%d&#34;</span> <span style="color:#0a3069">&#34;%H:%M:%S` -- sync done.&#34;</span> &gt;&gt; /var/log/rsync.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">echo</span> <span style="color:#0a3069">&#34;----------------------------------------------------------&#34;</span> &gt;&gt; /var/log/rsync.log
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>&ndash;delete参数会删除源目标没有的文件，等于覆盖
+&ndash;exclude-from=exclude.list, exclude.list文件是相对路径</p>……
+            <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Linux/inotify_rsync/">阅读全文</a></p>
+        </div>
+    </article>
+    
+
+    
+
+
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="https://xinxiaoyu.github.io/categories/Linux/">上一页</a>
+    </li>
+    
+
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/categories/Linux/">1</a>
+    </li>
+    
+    <li  class="current">
+        <a href="https://xinxiaoyu.github.io/categories/Linux/page/2/">2</a>
+    </li>
+    
+
+    
+</ol>
+
+
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2025 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 </a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLB4K7SNHM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLB4K7SNHM');
+</script>
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xinxiaoyu.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xinxiaoyu.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Aliyun/">Aliyun (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/CI/CD/">CI/CD (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Django/">Django (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (4)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Error/">Error (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/HahaWriting/">HahaWriting (7)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/MySQL/">MySQL (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Security/">Security (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/SoftSetting/">SoftSetting (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Tools/">Tools (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Windows/">Windows (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2015/">2015 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2014/">2014 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xinxiaoyu.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    <meta charset="utf-8">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Posts | 堂吉哈哈德的博客</title>
+    <meta property="og:title" content="Posts - 堂吉哈哈德的博客">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="Devops,golang,Linux,LoadBalancing,Nginx,LVS,HAProxy,CI/CD,MySQL,Redis，Python">
+    <meta name="description" content="Posts">
+        <meta name="author" content="">
+        
+    <meta property="og:url" content="https://xinxiaoyu.github.io/post/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml" href="https://xinxiaoyu.github.io/post/index.xml" title="堂吉哈哈德的博客" />
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <script data-ad-client="ca-pub-3102540396016086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?71e8fd6b49af28187b4483163098fa56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108398306-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108398306-1');
+</script>
+
+    
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xinxiaoyu.github.io/">
+                        堂吉哈哈德的博客
+                    </a>
+                
+                <p class="description">每一行错误，都值得记录。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xinxiaoyu.github.io/">首页</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/tools/" title="占位">占位</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xinxiaoyu.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/" title="golang程序镜像Dockerfile">golang程序镜像Dockerfile</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Docker'>Docker</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <pre tabindex="0"><code>FROM centos:centos7
+RUN yum install -y epel-release --nogpgcheck
+RUN yum install -y golang git --nogpgcheck
+RUN go env -w GO111MODULE=off
+RUN mkdir /dumper
+RUN mkdir /app
+COPY main.go /app
+COPY src /app
+COPY pkg /app
+WORKDIR /app
+RUN go get github.com/tencentyun/cos-go-sdk-v5
+RUN go get github.com/fsnotify/fsnotify
+RUN go build -tags netgo main.go
+CMD [&#34;/app/main&#34;]
+</code></pre>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/docker/go%E7%A8%8B%E5%BA%8F%E9%95%9C%E5%83%8F/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" title="Docker使用记录">Docker使用记录</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Docker'>Docker</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>安装（centos7）</p>
+<pre tabindex="0"><code>yum remove docker \
+    docker-client \
+    docker-client-latest \
+    docker-common \
+    docker-latest \
+    docker-latest-logrotate \
+    docker-logrotate \
+    docker-engine
+
+yum install -y yum-utils
+
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+# 查看具体版本
+# yum list docker-ce --showduplicates | sort -r
+
+yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+systemctl start docker
+
+curl -sL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
+chmod +x /usr/bin/docker-compose
+</code></pre><p>常用命令，以<code>jenkins/jenkins:2.359-jdk11</code>镜像为例</p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/docker/docker%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Java/arthas/" title="Arthas tunnel server使用">Arthas tunnel server使用</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月2日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+            <span class="meta-category"><a href='/categories/Tools'>Tools</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>Arthas tunnel server是一个spring boot fat jar应用，可以让用户通过浏览器诊断java进程。</p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Java/arthas/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/RabbitMQ/python_client/" title="Python rabbitmq client">Python rabbitmq client</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>rabbitmq官方代码： <a href="https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/python/send.py">https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/python/send.py</a></p>
+<p>自己更改后的版本：</p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/RabbitMQ/python_client/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq_exchange/" title="Rabbitmq_exchange文档">Rabbitmq_exchange文档</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>发现对exchange解释的比较好的是阿里云的rabbitmq的文档。</p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq_exchange/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/" title="Rabbitmq rpm安装">Rabbitmq rpm安装</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>centos安装命令：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh <span style="color:#1f2328">|</span> sudo bash
+</span></span><span style="display:flex;"><span>curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh <span style="color:#1f2328">|</span> sudo bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>yum install rabbitmq-server
+</span></span><span style="display:flex;"><span>rabbitmq-plugins <span style="color:#6639ba">enable</span> rabbitmq_management
+</span></span><span style="display:flex;"><span>systemctl start rabbitmq-server
+</span></span><span style="display:flex;"><span>rabbitmqctl add_user admin admin
+</span></span><span style="display:flex;"><span>rabbitmqctl set_user_tags admin administrator
+</span></span><span style="display:flex;"><span>rabbitmqctl set_permissions -p / admin <span style="color:#0a3069">&#34;.*&#34;</span> <span style="color:#0a3069">&#34;.*&#34;</span> <span style="color:#0a3069">&#34;.*&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>设置密码：
+</span></span><span style="display:flex;"><span>rabbitmqctl  change_password  admin password
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本地址：
+<a href="https://packagecloud.io/rabbitmq/erlang/install#bash-rpm">https://packagecloud.io/rabbitmq/erlang/install#bash-rpm</a></p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/RabbitMQ/rabbitmq%E5%AE%89%E8%A3%85/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Python/redis_command_tool/" title="Redis命令行工具">Redis命令行工具</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Redis'>Redis</a></span>
+            
+            <span class="meta-category"><a href='/categories/Python'>Python</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>封装了下redis的scan命令和delete命令，可以安全的使用scan命令查找未知类型的正则匹配的key和批量删除key。</p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Python/redis_command_tool/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Python/redis_scan%E8%84%9A%E6%9C%AC/" title="Redis使用iptables做端口转发">Redis使用iptables做端口转发</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月16日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Redis'>Redis</a></span>
+            
+            <span class="meta-category"><a href='/categories/Linux'>Linux</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>腾讯云redis使用iptables开启转发（云redis本身 不支持设置外网地址）</p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Python/redis_scan%E8%84%9A%E6%9C%AC/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/" title="阿里云cam授权案例">阿里云cam授权案例</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月14日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Aliyun'>Aliyun</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>一、 阿里云oss权限自定义策略</p>
+<pre tabindex="0"><code>{
+    &#34;Version&#34;: &#34;1&#34;,
+    &#34;Statement&#34;: [
+        {
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: &#34;oss:*&#34;,
+            &#34;Resource&#34;: [
+                &#34;acs:oss:*:*:dc-odsopr&#34;,
+                &#34;acs:oss:*:*:dc-odsopr/*&#34;
+            ]
+        }
+    ]
+}
+</code></pre><p>二、  dataworks授权文档地址</p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/Aliyun/cam-%E4%BA%91%E8%B5%84%E6%BA%90%E6%8E%88%E6%9D%83/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xinxiaoyu.github.io/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/" title="腾讯云CAM自定义策略">腾讯云CAM自定义策略</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月14日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/TencentCloud'>TencentCloud</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>新建自定义策略，有四种方式，目前看主要使用【按策略生成器创建】、【按策略语法创建】两种。</p>……
+        </div>
+        <p class="readmore"><a href="https://xinxiaoyu.github.io/post/TencentCloud/%E8%85%BE%E8%AE%AF%E4%BA%91CAM%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5/">阅读全文</a></p>
+    </article>
+    
+    
+    
+
+
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="https://xinxiaoyu.github.io/post/page/2/">上一页</a>
+    </li>
+    
+
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/">1</a>
+    </li>
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/page/2/">2</a>
+    </li>
+    
+    <li  class="current">
+        <a href="https://xinxiaoyu.github.io/post/page/3/">3</a>
+    </li>
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/page/4/">4</a>
+    </li>
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/page/5/">5</a>
+    </li>
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/page/6/">6</a>
+    </li>
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/page/7/">7</a>
+    </li>
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/page/8/">8</a>
+    </li>
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/page/9/">9</a>
+    </li>
+    
+    <li >
+        <a href="https://xinxiaoyu.github.io/post/page/10/">10</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://xinxiaoyu.github.io/post/page/4/">下一页</a>
+    </li>
+    
+</ol>
+
+
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2025 <a href="https://xinxiaoyu.github.io/">堂吉哈哈德的博客 </a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLB4K7SNHM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLB4K7SNHM');
+</script>
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xinxiaoyu.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xinxiaoyu.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>categories</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Aliyun/">Aliyun (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Ansible/">Ansible (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/CI/CD/">CI/CD (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ClickHouse/">ClickHouse (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Diagnostic/">Diagnostic (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Django/">Django (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Docker/">Docker (4)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/ELK/">ELK (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Error/">Error (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/HahaWriting/">HahaWriting (7)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Hardware/">Hardware (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Kubernetes/">Kubernetes (9)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Linux/">Linux (14)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/LoadBalancing/">LoadBalancing (8)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/MySQL/">MySQL (10)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Python/">Python (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/RabbitMQ/">RabbitMQ (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Redis/">Redis (6)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Security/">Security (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Skywalking/">Skywalking (2)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/SoftSetting/">SoftSetting (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TCP/IP/">TCP/IP (1)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/TencentCloud/">TencentCloud (5)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Tools/">Tools (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Windows/">Windows (3)</a></li>
+    
+    <li><a href="https://xinxiaoyu.github.io/categories/Zabbix/">Zabbix (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>time</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xinxiaoyu.github.io/tags/2024/">2024 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2022/">2022 (8)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2021/">2021 (34)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2020/">2020 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2019/">2019 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2018/">2018 (10)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2017/">2017 (9)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2016/">2016 (6)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2015/">2015 (5)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2014/">2014 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/2011/">2011 (2)</br></a>
+    
+    <a href="https://xinxiaoyu.github.io/tags/ALL/">ALL (100)</br></a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xinxiaoyu.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次<br> 
+        <br>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次<br> 
+        </span>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
